@@ -1,0 +1,580 @@
+[
+{
+"id": "EST-001",
+"m": "RLE",
+"a": "EST",
+"s": "Média aritmética",
+"q": "O número de incidentes registrados em cinco dias foi: 4, 6, 8, 10 e 12. A média diária de incidentes é:",
+"o": [
+"6",
+"7",
+"8",
+"9",
+"10"
+],
+"c": 2,
+"e": "(4 + 6 + 8 + 10 + 12)/5 = 40/5 = 8.",
+"x": [
+"Errada: cálculo incorreto.",
+"Errada: cálculo incorreto.",
+"Correta: 40/5.",
+"Errada: cálculo incorreto.",
+"Errada: cálculo incorreto."
+]
+},
+{
+"id": "EST-002",
+"m": "RLE",
+"a": "EST",
+"s": "Mediana",
+"q": "A mediana do conjunto {3, 7, 1, 9, 5, 8} é:",
+"o": [
+"5",
+"5,5",
+"6",
+"7",
+"5,5 ou 7"
+],
+"c": 2,
+"e": "Ordenando: 1, 3, 5, 7, 8, 9. Com n par, a mediana é a média dos dois centrais: (5 + 7)/2 = 6.",
+"x": [
+"Errada: é um dos termos centrais.",
+"Errada: é a média aritmética do conjunto (33/6).",
+"Correta: (5 + 7)/2.",
+"Errada: é o outro termo central.",
+"Errada: a mediana é única."
+]
+},
+{
+"id": "EST-003",
+"m": "RLE",
+"a": "EST",
+"s": "Moda",
+"q": "A moda do conjunto {2, 3, 3, 5, 7, 7, 7, 9} é:",
+"o": [
+"3",
+"5",
+"5,375",
+"7",
+"9"
+],
+"c": 3,
+"e": "Moda é o valor de maior frequência: 7 aparece três vezes.",
+"x": [
+"Errada: aparece duas vezes.",
+"Errada: 5 aparece apenas uma vez.",
+"Errada: é a média (43/8).",
+"Correta: maior frequência.",
+"Errada: aparece uma vez."
+]
+},
+{
+"id": "EST-004",
+"m": "RLE",
+"a": "EST",
+"s": "Média ponderada",
+"q": "No concurso, a nota final é a média ponderada da prova de Conhecimentos Gerais (peso 1) e da de Conhecimentos Específicos (peso 2). Um candidato obteve 7,0 em Gerais e 5,5 em Específicos. Sua nota final é:",
+"o": [
+"6,25",
+"6,00",
+"5,75",
+"6,50",
+"12,50"
+],
+"c": 1,
+"e": "(7,0 × 1 + 5,5 × 2)/(1 + 2) = (7 + 11)/3 = 18/3 = 6,00.",
+"x": [
+"Errada: média simples (sem pesos).",
+"Correta: média ponderada.",
+"Errada: cálculo incorreto.",
+"Errada: cálculo incorreto.",
+"Errada: soma das notas."
+]
+},
+{
+"id": "EST-005",
+"m": "RLE",
+"a": "EST",
+"s": "Amplitude",
+"q": "A amplitude total do conjunto {12, 5, 20, 8} é:",
+"o": [
+"8",
+"12",
+"15",
+"20",
+"11,25"
+],
+"c": 2,
+"e": "Amplitude = maior valor − menor valor = 20 − 5 = 15.",
+"x": [
+"Errada: diferença incorreta.",
+"Errada: diferença incorreta.",
+"Correta: 20 − 5.",
+"Errada: é o valor máximo.",
+"Errada: é a média."
+]
+},
+{
+"id": "EST-006",
+"m": "RLE",
+"a": "EST",
+"s": "Desvio padrão",
+"q": "O desvio padrão populacional do conjunto {2, 4, 4, 4, 5, 5, 7, 9} é:",
+"o": [
+"4",
+"2",
+"5",
+"1,5",
+"32"
+],
+"c": 1,
+"e": "Média = 40/8 = 5. Soma dos quadrados dos desvios: 9+1+1+1+0+0+4+16 = 32. Variância = 32/8 = 4. Desvio padrão = √4 = 2.",
+"x": [
+"Errada: é a variância.",
+"Correta: raiz da variância.",
+"Errada: é a média.",
+"Errada: cálculo incorreto.",
+"Errada: é a soma dos quadrados dos desvios."
+]
+},
+{
+"id": "EST-007",
+"m": "RLE",
+"a": "EST",
+"s": "Desvio médio",
+"q": "O desvio médio absoluto do conjunto {2, 4, 6, 8} é:",
+"o": [
+"1",
+"2",
+"3",
+"4",
+"5"
+],
+"c": 1,
+"e": "Média = 5. Desvios absolutos: 3, 1, 1, 3 → soma 8. Desvio médio = 8/4 = 2.",
+"x": [
+"Errada: cálculo incorreto.",
+"Correta: 8/4.",
+"Errada: maior desvio individual.",
+"Errada: cálculo incorreto.",
+"Errada: é a média."
+]
+},
+{
+"id": "EST-008",
+"m": "RLE",
+"a": "EST",
+"s": "Propriedades da média e da variância",
+"q": "Se somarmos 10 a todos os valores de um conjunto de dados, então:",
+"o": [
+"a média e a variância aumentam 10 unidades.",
+"a média aumenta 10 unidades e a variância não se altera.",
+"a média não se altera e a variância aumenta 100.",
+"a média e o desvio padrão permanecem iguais.",
+"a média aumenta 10 unidades e o desvio padrão aumenta 10 unidades."
+],
+"c": 1,
+"e": "Somar uma constante desloca todos os valores igualmente: a média aumenta da constante, mas a dispersão (variância e desvio padrão) não muda.",
+"x": [
+"Errada: a variância não muda.",
+"Correta: propriedade da média e da variância.",
+"Errada: a média muda.",
+"Errada: a média muda.",
+"Errada: o desvio padrão não muda."
+]
+},
+{
+"id": "EST-009",
+"m": "RLE",
+"a": "EST",
+"s": "Propriedades da variância",
+"q": "Se todos os valores de um conjunto forem multiplicados por 3, a variância do novo conjunto será:",
+"o": [
+"igual à original",
+"3 vezes a original",
+"6 vezes a original",
+"9 vezes a original",
+"a original somada de 3"
+],
+"c": 3,
+"e": "Multiplicar os dados por k multiplica o desvio padrão por |k| e a variância por k² = 9.",
+"x": [
+"Errada: a dispersão muda.",
+"Errada: isso vale para o desvio padrão.",
+"Errada: cálculo incorreto.",
+"Correta: k² = 9.",
+"Errada: somar constante não é o caso."
+]
+},
+{
+"id": "EST-010",
+"m": "RLE",
+"a": "EST",
+"s": "Coeficiente de variação",
+"q": "Um conjunto de dados tem média 50 e desvio padrão 10. Seu coeficiente de variação é:",
+"o": [
+"5%",
+"10%",
+"20%",
+"50%",
+"500%"
+],
+"c": 2,
+"e": "CV = desvio padrão / média = 10/50 = 0,20 = 20%.",
+"x": [
+"Errada: razão invertida (50/10).",
+"Errada: cálculo incorreto.",
+"Correta: 10/50.",
+"Errada: cálculo incorreto.",
+"Errada: razão invertida em porcentagem."
+]
+},
+{
+"id": "EST-011",
+"m": "RLE",
+"a": "EST",
+"s": "Gráfico de setores",
+"q": "Em um gráfico de setores, uma categoria que representa 25% do total ocupa um ângulo central de:",
+"o": [
+"25°",
+"45°",
+"90°",
+"120°",
+"180°"
+],
+"c": 2,
+"e": "25% de 360° = 90°.",
+"x": [
+"Errada: confunde porcentagem com graus.",
+"Errada: corresponde a 12,5%.",
+"Correta: 0,25 × 360°.",
+"Errada: corresponde a 33,3%.",
+"Errada: corresponde a 50%."
+]
+},
+{
+"id": "EST-012",
+"m": "RLE",
+"a": "EST",
+"s": "Frequência relativa",
+"q": "Em uma pesquisa com 40 clientes, 10 disseram usar o internet banking diariamente. A frequência relativa dessa resposta é:",
+"o": [
+"10%",
+"25%",
+"40%",
+"4%",
+"30%"
+],
+"c": 1,
+"e": "Frequência relativa = 10/40 = 0,25 = 25%.",
+"x": [
+"Errada: confunde frequência absoluta com relativa.",
+"Correta: 10/40.",
+"Errada: é o total de clientes.",
+"Errada: razão invertida.",
+"Errada: cálculo incorreto."
+]
+},
+{
+"id": "EST-013",
+"m": "RLE",
+"a": "EST",
+"s": "Média – inclusão de valor",
+"q": "A média de 10 valores é 20. Incluindo-se o valor 31 ao conjunto, a nova média passa a ser:",
+"o": [
+"20,5",
+"21",
+"25,5",
+"22",
+"20"
+],
+"c": 1,
+"e": "Soma original = 200. Nova soma = 231. Nova média = 231/11 = 21.",
+"x": [
+"Errada: cálculo incorreto.",
+"Correta: 231/11.",
+"Errada: média entre 20 e 31.",
+"Errada: cálculo incorreto.",
+"Errada: a média se altera."
+]
+},
+{
+"id": "EST-014",
+"m": "RLE",
+"a": "EST",
+"s": "Medidas resistentes",
+"q": "Em um conjunto de salários com alguns valores muito altos (outliers), a medida de tendência central menos afetada por esses valores extremos é a:",
+"o": [
+"média aritmética",
+"média ponderada",
+"mediana",
+"amplitude",
+"variância"
+],
+"c": 2,
+"e": "A mediana depende apenas da posição central dos dados ordenados, sendo robusta a valores extremos.",
+"x": [
+"Errada: a média é sensível a outliers.",
+"Errada: também é sensível a outliers.",
+"Correta: medida resistente.",
+"Errada: é medida de dispersão e muito sensível a extremos.",
+"Errada: é medida de dispersão."
+]
+},
+{
+"id": "EST-015",
+"m": "RLE",
+"a": "EST",
+"s": "Assimetria",
+"q": "Em uma distribuição na qual a média é maior que a mediana, que é maior que a moda, diz-se que a distribuição é:",
+"o": [
+"simétrica",
+"assimétrica positiva (à direita)",
+"assimétrica negativa (à esquerda)",
+"bimodal",
+"uniforme"
+],
+"c": 1,
+"e": "Quando média > mediana > moda, a cauda alonga-se para os valores maiores: assimetria positiva.",
+"x": [
+"Errada: na simétrica as três medidas coincidem.",
+"Correta: cauda à direita.",
+"Errada: seria média < mediana < moda.",
+"Errada: bimodal refere-se a duas modas.",
+"Errada: não decorre da relação dada."
+]
+},
+{
+"id": "EST-016",
+"m": "RLE",
+"a": "EST",
+"s": "Média de grupos",
+"q": "Um setor tem 10 funcionários com salário médio de R$ 3.000 e outro tem 30 funcionários com salário médio de R$ 5.000. O salário médio dos 40 funcionários é:",
+"o": [
+"R$ 4.000",
+"R$ 4.500",
+"R$ 4.250",
+"R$ 3.500",
+"R$ 4.750"
+],
+"c": 1,
+"e": "(10 × 3.000 + 30 × 5.000)/40 = (30.000 + 150.000)/40 = 4.500.",
+"x": [
+"Errada: média simples das médias, ignorando o tamanho dos grupos.",
+"Correta: média ponderada pelos tamanhos.",
+"Errada: cálculo incorreto.",
+"Errada: cálculo incorreto.",
+"Errada: cálculo incorreto."
+]
+},
+{
+"id": "EST-017",
+"m": "RLE",
+"a": "EST",
+"s": "Variância amostral",
+"q": "Na variância amostral, a soma dos quadrados dos desvios em relação à média é dividida por n − 1, e não por n, porque:",
+"o": [
+"isso torna o cálculo mais simples.",
+"assim obtém-se um estimador não viesado da variância populacional.",
+"a amostra sempre tem um elemento a mais.",
+"isso reduz o valor da variância.",
+"é convenção sem fundamento estatístico."
+],
+"c": 1,
+"e": "A correção de Bessel (n − 1) compensa o fato de os desvios serem medidos em relação à média amostral, tornando o estimador não viesado.",
+"x": [
+"Errada: não é o motivo.",
+"Correta: estimador não viesado.",
+"Errada: não procede.",
+"Errada: na verdade aumenta o valor.",
+"Errada: há fundamento estatístico."
+]
+},
+{
+"id": "EST-018",
+"m": "RLE",
+"a": "EST",
+"s": "Tipos de variáveis",
+"q": "Para a variável qualitativa nominal “banco de preferência do cliente”, a única medida de tendência central aplicável é:",
+"o": [
+"média",
+"mediana",
+"moda",
+"desvio padrão",
+"média geométrica"
+],
+"c": 2,
+"e": "Dados nominais não têm ordem nem valores numéricos; só é possível identificar a categoria mais frequente (moda).",
+"x": [
+"Errada: exige valores numéricos.",
+"Errada: exige ordenação.",
+"Correta: categoria mais frequente.",
+"Errada: é medida de dispersão e exige valores numéricos.",
+"Errada: exige valores numéricos positivos."
+]
+},
+{
+"id": "EST-019",
+"m": "RLE",
+"a": "EST",
+"s": "Média de dados agrupados",
+"q": "Uma distribuição de tempos de atendimento (em minutos) tem as classes 0 ⊢ 10 (frequência 2), 10 ⊢ 20 (frequência 5) e 20 ⊢ 30 (frequência 3). Usando os pontos médios das classes, a média é:",
+"o": [
+"15",
+"16",
+"17",
+"18",
+"20"
+],
+"c": 1,
+"e": "Pontos médios: 5, 15, 25. Média = (5×2 + 15×5 + 25×3)/10 = (10 + 75 + 75)/10 = 16.",
+"x": [
+"Errada: média dos pontos médios sem ponderar.",
+"Correta: 160/10.",
+"Errada: cálculo incorreto.",
+"Errada: cálculo incorreto.",
+"Errada: cálculo incorreto."
+]
+},
+{
+"id": "EST-020",
+"m": "RLE",
+"a": "EST",
+"s": "Leitura de tabelas",
+"t": "Chamados abertos no suporte de TI:\nJaneiro: 120\nFevereiro: 150\nMarço: 90\nAbril: 140",
+"q": "A variação percentual do número de chamados de fevereiro para março foi de:",
+"o": [
+"−60%",
+"−40%",
+"−66,7%",
+"+40%",
+"−30%"
+],
+"c": 1,
+"e": "(90 − 150)/150 = −60/150 = −0,40 = −40%.",
+"x": [
+"Errada: confundiu a diferença absoluta (60) com porcentagem.",
+"Correta: queda de 40%.",
+"Errada: dividiu pelo valor de março.",
+"Errada: o número caiu.",
+"Errada: cálculo incorreto."
+]
+},
+{
+"id": "EST-021",
+"m": "RLE",
+"a": "EST",
+"s": "Leitura de tabelas",
+"t": "Chamados abertos no suporte de TI:\nJaneiro: 120\nFevereiro: 150\nMarço: 90\nAbril: 140",
+"q": "A média mensal de chamados no quadrimestre e a mediana são, respectivamente:",
+"o": [
+"125 e 130",
+"125 e 125",
+"130 e 125",
+"120 e 130",
+"125 e 140"
+],
+"c": 0,
+"e": "Média = (120 + 150 + 90 + 140)/4 = 500/4 = 125. Ordenando: 90, 120, 140, 150 → mediana = (120 + 140)/2 = 130.",
+"x": [
+"Correta: média 125, mediana 130.",
+"Errada: a mediana não é 125.",
+"Errada: inverteu os valores.",
+"Errada: cálculo incorreto.",
+"Errada: cálculo incorreto da mediana."
+]
+},
+{
+"id": "EST-022",
+"m": "RLE",
+"a": "EST",
+"s": "Desvio padrão nulo",
+"q": "Se o desvio padrão de um conjunto de dados é igual a zero, conclui-se que:",
+"o": [
+"a média é zero.",
+"todos os valores são iguais.",
+"a mediana é zero.",
+"há valores negativos.",
+"a amostra é pequena."
+],
+"c": 1,
+"e": "Desvio padrão zero significa que nenhum valor se afasta da média, ou seja, todos são iguais à média.",
+"x": [
+"Errada: a média pode ser qualquer valor.",
+"Correta: ausência de dispersão.",
+"Errada: não decorre.",
+"Errada: não decorre.",
+"Errada: não decorre."
+]
+},
+{
+"id": "EST-023",
+"m": "RLE",
+"a": "EST",
+"s": "Histograma",
+"q": "Sobre histogramas, é correto afirmar:",
+"o": [
+"São indicados para variáveis qualitativas nominais.",
+"As barras são separadas por espaços para indicar categorias distintas.",
+"Representam distribuições de frequência de variáveis quantitativas contínuas agrupadas em classes, com barras justapostas.",
+"A altura das barras representa sempre a média de cada classe.",
+"Não permitem identificar a classe modal."
+],
+"c": 2,
+"e": "No histograma, as classes são intervalos contíguos de uma variável quantitativa; as barras são justapostas e a área (ou altura, com classes iguais) representa a frequência.",
+"x": [
+"Errada: para qualitativas usam-se gráficos de barras ou setores.",
+"Errada: barras separadas caracterizam o gráfico de barras.",
+"Correta: definição de histograma.",
+"Errada: representa frequência (ou densidade).",
+"Errada: a classe modal é a barra mais alta (com classes de mesma amplitude)."
+]
+},
+{
+"id": "EST-024",
+"m": "RLE",
+"a": "EST",
+"s": "Frequência acumulada",
+"t": "Idade dos funcionários de um setor:\n20 ⊢ 30: 6\n30 ⊢ 40: 10\n40 ⊢ 50: 8\n50 ⊢ 60: 6",
+"q": "O percentual de funcionários com menos de 40 anos é, aproximadamente:",
+"o": [
+"33,3%",
+"46,7%",
+"53,3%",
+"60,0%",
+"20,0%"
+],
+"c": 2,
+"e": "Total = 30. Menos de 40 anos: 6 + 10 = 16 → 16/30 ≈ 53,3%.",
+"x": [
+"Errada: corresponde a 10/30.",
+"Errada: cálculo incorreto.",
+"Correta: frequência acumulada 16/30.",
+"Errada: cálculo incorreto.",
+"Errada: corresponde apenas à primeira classe."
+]
+},
+{
+"id": "EST-025",
+"m": "RLE",
+"a": "EST",
+"s": "Variância",
+"q": "A variância populacional do conjunto {1, 3, 5} é:",
+"o": [
+"2",
+"4",
+"8/3",
+"3",
+"√(8/3)"
+],
+"c": 2,
+"e": "Média = 3. Desvios ao quadrado: 4, 0, 4 → soma 8. Variância populacional = 8/3 ≈ 2,67.",
+"x": [
+"Errada: valor incorreto (o desvio médio seria 4/3).",
+"Errada: é a variância amostral (8/2).",
+"Correta: 8/3.",
+"Errada: é a média.",
+"Errada: é o desvio padrão."
+]
+}
+]
