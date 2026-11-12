@@ -87,3 +87,42 @@ export async function isAlreadyInstalled(): Promise<boolean> {
   }
   return false
 }
+
+// ---- Navegadores específicos ----
+const OUTROS_IOS = /CriOS|FxiOS|EdgiOS|OPiOS|OPT\/|GSA\/|YaBrowser|DuckDuckGo|Instagram|FBAN|FBAV|Line\/|Twitter|LinkedInApp|Snapchat/i
+
+// Safari “de verdade” no iPhone/iPad (único que instala PWA de forma padrão)
+export function isIOSSafari() {
+  return isIOS() && /Safari/i.test(ua()) && !OUTROS_IOS.test(ua())
+}
+
+// Google Chrome no Android (instala PWA com um toque)
+export function isAndroidChrome() {
+  return isAndroid() && /Chrome\//i.test(ua()) && !/EdgA|OPR\/|SamsungBrowser|Firefox|; wv\)|YaBrowser|FBAN|FBAV|Instagram|Line\/|GSA\//i.test(ua())
+}
+
+const PARAM = 'instalar'
+
+// Abre o app no Safari (iOS 17+) já pedindo para mostrar o guia de instalação
+export function safariUrl() {
+  const u = new URL(window.location.origin + '/')
+  u.searchParams.set(PARAM, '1')
+  return 'x-safari-' + u.toString()
+}
+
+// Abre o app no Chrome do Android (intent), já pedindo para mostrar a instalação
+export function chromeIntentUrl() {
+  const host = window.location.host
+  return `intent://${host}/?${PARAM}=1#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(
+    window.location.origin + '/?' + PARAM + '=1'
+  )};end`
+}
+
+// Veio de um atalho “Instalar app”? (lê e limpa o parâmetro da URL)
+export function consumeInstallParam(): boolean {
+  const u = new URL(window.location.href)
+  if (u.searchParams.get(PARAM) !== '1') return false
+  u.searchParams.delete(PARAM)
+  window.history.replaceState(null, '', u.pathname + (u.search ? u.search : '') + u.hash)
+  return true
+}

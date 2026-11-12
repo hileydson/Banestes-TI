@@ -1480,3 +1480,62 @@ input {
   margin-top: 8px;
   opacity: 0.8;
 }
+
+.install-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.install-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.install-block .btn.big {
+  margin: 4px 0;
+}
+.pulse-btn {
+  animation: pulseBtn 1.8s ease-in-out infinite;
+}
+@keyframes pulseBtn {
+  0%,
+  100% {
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35), 0 0 0 0 rgba(96, 165, 250, 0.55);
+  }
+  50% {
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35), 0 0 0 12px rgba(96, 165, 250, 0);
+  }
+}
+.install-steps.big {
+  font-size: 1rem;
+}
+.guia-scrim {
+  place-items: center;
+}
+.guia {
+  width: min(420px, 100%);
+}
+.guia-seta {
+  position: fixed;
+  left: 50%;
+  margin-left: -21px;
+  color: #fbbf24;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+  z-index: 61;
+  pointer-events: none;
+}
+.guia-seta.baixo {
+  bottom: calc(14px + env(safe-area-inset-bottom));
+}
+.guia-seta.cima {
+  top: calc(10px + env(safe-area-inset-top));
+}
+.guia-seta.cima.direita {
+  left: auto;
+  right: 18px;
+  margin-left: 0;
+}
