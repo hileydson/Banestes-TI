@@ -7,6 +7,7 @@ const MATERIAS = ['POR', 'RLE', 'ATU', 'ETI', 'ESP']
 const AREAS = { RLE: ['RL', 'EST'], ESP: ['PDS', 'GOV', 'PRG', 'BD', 'WEB', 'ARQ', 'DEV', 'SO', 'RED', 'SRV', 'SEG', 'NUV', 'ING'] }
 const ids = new Set()
 const cont = {}
+const vies = {}
 let erros = 0
 const err = (f, id, msg) => {
   erros++
@@ -33,8 +34,24 @@ for (const f of readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) {
     if (Array.isArray(q.o) && new Set(q.o).size !== q.o.length) err(f, q.id, 'alternativas repetidas')
     const k = q.a ? `${q.m}/${q.a}` : q.m
     cont[k] = (cont[k] ?? 0) + 1
+    // Viés de tamanho: chance de acertar chutando sempre a alternativa mais longa
+    if (Array.isArray(q.o) && q.o.length === 5) {
+      const L = q.o.map((o) => o.length)
+      const max = Math.max(...L)
+      const empatadas = L.filter((l) => l === max).length
+      const v = (vies[q.m] ??= { n: 0, acerto: 0 })
+      v.n++
+      if (L[q.c] === max) v.acerto += 1 / empatadas
+    }
   }
 }
 console.table(cont)
+// Com 5 alternativas, o acaso dá 20%; acima de 35% a alternativa mais longa vira “dica”.
+const LIMITE_VIES = 0.35
+for (const [m, v] of Object.entries(vies)) {
+  const taxa = v.acerto / v.n
+  console.log(`Chute “mais longa” em ${m}: ${(taxa * 100).toFixed(0)}%`)
+  if (taxa > LIMITE_VIES) err('-', m, `a correta costuma ser a mais longa (${(taxa * 100).toFixed(0)}%); equilibre o tamanho das alternativas`)
+}
 console.log(`Total: ${ids.size} questões. Erros: ${erros}`)
 process.exit(erros ? 1 : 0)
