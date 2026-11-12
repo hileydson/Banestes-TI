@@ -1,4 +1,5 @@
 import type { MateriaId } from './materias'
+import type { Zeradas } from './zeradas'
 
 export interface AppUser {
   uid: string
@@ -24,6 +25,7 @@ export interface Profile {
   melhorNotaProva: number
   somaNotasProvas: number
   ultimaNotaProva?: number
+  zeradas?: Zeradas // matérias zeradas (acertou todas as questões do banco)
   createdAt: number
   updatedAt: number
 }
@@ -39,6 +41,7 @@ export interface QuickTestState {
   itens: { id: string; ordem: number[]; marcada?: number }[]
   atual: number
   repetidas: number
+  fase?: 'teste' | 'revisao' // 'revisao': já finalizado e contabilizado, falta concluir a revisão
   updatedAt?: number
 }
 

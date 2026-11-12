@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowLeft, ArrowRight, Flag, HelpCircle, Pause, Play, RotateCcw, Trash2 } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpenCheck, Flag, HelpCircle, Pause, Play, RotateCcw, Trash2 } from 'lucide-react'
 import confetti from 'canvas-confetti'
 import { useSession } from '../lib/session'
 import { TESTE_RAPIDO, MATERIAS } from '../lib/materias'
@@ -8,6 +8,8 @@ import { getQuestion, pickQuestions, randomOrder } from '../lib/questions'
 import QuestionView from '../components/QuestionView'
 import Review, { type ReviewItem } from '../components/Review'
 import InsightModal from '../components/InsightModal'
+import { acertadasParaSorteio } from '../lib/zeradas'
+import { scrollToTop } from '../lib/scroll'
 import type { Profile } from '../lib/types'
 
 type Fase = 'inicio' | 'teste' | 'resultado'
@@ -52,6 +54,17 @@ export default function Inicio() {
     []
   )
 
+  // Ao avançar/voltar de questão (ou abrir a revisão), volta ao início do enunciado
+  const primeiraRolagem = useRef(true)
+  useEffect(() => {
+    if (fase === 'inicio') return
+    if (primeiraRolagem.current) {
+      primeiraRolagem.current = false
+      return
+    }
+    scrollToTop()
+  }, [teste?.atual, fase])
+
   const pausar = async () => {
     if (!teste) return
     clearTimeout(timerRef.current)
@@ -60,10 +73,26 @@ export default function Inicio() {
     setTeste(null)
   }
 
+  const emRevisao = quickTest?.fase === 'revisao'
+
   const continuar = () => {
     if (!quickTest) return
     setTeste({ itens: quickTest.itens, atual: quickTest.atual ?? 0, repetidas: quickTest.repetidas ?? 0 })
-    setFase('teste')
+    setFase(quickTest.fase === 'revisao' ? 'resultado' : 'teste')
+  }
+
+  // Revisão dos erros: pausar só volta para a tela inicial (o teste já está salvo como “em revisão”)
+  const pausarRevisao = () => {
+    setModal(false)
+    setFase('inicio')
+    setTeste(null)
+  }
+
+  // Só ao pedir um novo teste a revisão é considerada concluída
+  const novoTeste = async () => {
+    setModal(false)
+    await saveQuickTest(null)
+    clicarIniciar()
   }
 
   const descartar = async () => {
@@ -92,7 +121,7 @@ export default function Inicio() {
     setAviso(false)
     const peso: Record<string, number> = {}
     for (const [a, s] of Object.entries(profile?.areaStats ?? {})) peso[a] = s.e / Math.max(1, s.a + s.e)
-    const { ids, repetidas } = pickQuestions(questions, TESTE_RAPIDO, new Set(progress.correct), new Set(), peso)
+    const { ids, repetidas } = pickQuestions(questions, TESTE_RAPIDO, acertadasParaSorteio(questions, progress.correct), new Set(), peso)
     setTeste({ itens: ids.map((id) => ({ id, ordem: randomOrder() })), atual: 0, repetidas })
     setFase('teste')
   }
@@ -115,7 +144,8 @@ export default function Inicio() {
       )
       atualRef.current = { fase: 'resultado', teste }
       setFase('resultado')
-      saveQuickTest(null)
+      // continua “em aberto” até a pessoa pedir um novo teste: dá para pausar e retomar a revisão
+      saveQuickTest({ ...teste, fase: 'revisao' })
       const acertos = teste.itens.filter((i) => i.marcada === getQuestion(i.id)?.c).length
       if (acertos / teste.itens.length >= 0.7) confetti({ particleCount: 140, spread: 80, origin: { y: 0.6 } })
       setTimeout(() => setModal(true), 700)
@@ -142,8 +172,18 @@ export default function Inicio() {
         </p>
         {quickTest && (
           <motion.div className="glass pausado-info" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-            <Pause size={16} /> Teste pausado: {quickTest.itens.filter((i) => i.marcada !== undefined).length} de {quickTest.itens.length}{' '}
-            respondidas. Toque em <b>CONTINUAR</b> para seguir de onde parou.
+            {emRevisao ? (
+              <>
+                <BookOpenCheck size={16} /> Revisão pausada: você acertou{' '}
+                {quickTest.itens.filter((i) => i.marcada === getQuestion(i.id)?.c).length} de {quickTest.itens.length}. Toque em <b>CONTINUAR</b> para
+                rever os erros.
+              </>
+            ) : (
+              <>
+                <Pause size={16} /> Teste pausado: {quickTest.itens.filter((i) => i.marcada !== undefined).length} de {quickTest.itens.length}{' '}
+                respondidas. Toque em <b>CONTINUAR</b> para seguir de onde parou.
+              </>
+            )}
           </motion.div>
         )}
         <motion.button
@@ -160,11 +200,16 @@ export default function Inicio() {
           <Play size={40} fill="currentColor" />
           <b>{quickTest ? 'CONTINUAR' : 'INICIAR'}</b>
         </motion.button>
-        {quickTest && (
-          <button className="link-btn" onClick={() => setConfirmarDescarte('novo')}>
-            <Trash2 size={14} /> Descartar e começar um novo teste
-          </button>
-        )}
+        {quickTest &&
+          (emRevisao ? (
+            <button className="link-btn" onClick={novoTeste}>
+              <RotateCcw size={14} /> Encerrar a revisão e começar um novo teste
+            </button>
+          ) : (
+            <button className="link-btn" onClick={() => setConfirmarDescarte('novo')}>
+              <Trash2 size={14} /> Descartar e começar um novo teste
+            </button>
+          ))}
         <div className="hero-stats">
           <div className="glass stat">
             <b>{questions.length}</b>
@@ -209,11 +254,14 @@ export default function Inicio() {
               Você acertou {acertos} de {teste.itens.length} questões. +{acertos} pontos somados ao seu perfil.
             </p>
             <div className="row gap">
-              <button className="btn primary" onClick={clicarIniciar}>
+              <button className="btn primary" onClick={novoTeste}>
                 <RotateCcw size={18} /> Novo teste
               </button>
               <button className="btn ghost" onClick={() => setModal(true)}>
                 Ver análise
+              </button>
+              <button className="btn ghost" onClick={pausarRevisao}>
+                <Pause size={16} /> Pausar
               </button>
             </div>
           </div>

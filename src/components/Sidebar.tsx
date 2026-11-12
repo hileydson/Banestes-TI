@@ -5,8 +5,8 @@ import { useSession } from '../lib/session'
 
 const itens = [
   { to: '/', label: 'Teste rápido', icon: PlayCircle },
-  { to: '/resultados', label: 'Ver resultados', icon: BarChart3 },
   { to: '/prova', label: 'Prova', icon: FileText },
+  { to: '/resultados', label: 'Ver resultados', icon: BarChart3 },
   { to: '/ranking', label: 'Ranking', icon: Trophy }
 ]
 

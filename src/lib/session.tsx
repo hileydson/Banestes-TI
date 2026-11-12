@@ -1,3 +1,4 @@
+import { calcZeradas, mesmasZeradas } from './zeradas'
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react'
 import { getBackend, type Backend } from './backend'
 import { loadQuestions, getQuestion, type Question } from './questions'
@@ -89,6 +90,16 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     }
   }, [backend, user, authReady])
 
+  // Mantém o selo de “matéria zerada” coerente com o banco atual (ex.: novas questões adicionadas)
+  useEffect(() => {
+    if (!backend || !profile || !dataReady || !questions.length) return
+    const z = calcZeradas(questions, progress.correct)
+    if (mesmasZeradas(profile.zeradas, z)) return
+    const p = { ...profile, zeradas: z }
+    setProfile(p)
+    backend.saveProfile(p).catch(() => {})
+  }, [backend, profile, progress, questions, dataReady])
+
   const reloadProfile = useCallback(async () => {
     if (!backend || !user) return
     setProfile(await backend.getProfile(user.uid))
@@ -135,6 +146,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         }
       }
       pr.correct = [...correctSet]
+      p.zeradas = calcZeradas(questions, correctSet)
       p.pontos += acertos
       if (tipo === 'teste') p.testes += 1
       if (tipo === 'prova') {
@@ -158,7 +170,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       setProgress(pr)
       return attempt
     },
-    [backend, user, profile, progress]
+    [backend, user, profile, progress, questions]
   )
 
   const bumpQuickStarts = useCallback(async () => {

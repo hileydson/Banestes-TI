@@ -5,6 +5,8 @@ import confetti from 'canvas-confetti'
 import { useSession } from '../lib/session'
 import { SECOES_PROVA, TEMPO_REFERENCIA_PROVA_SEG } from '../lib/materias'
 import { getQuestion, pickQuestions, randomOrder } from '../lib/questions'
+import { acertadasParaSorteio } from '../lib/zeradas'
+import { scrollToTop } from '../lib/scroll'
 import { notaEdital } from '../lib/insights'
 import QuestionView from '../components/QuestionView'
 import Review from '../components/Review'
@@ -45,7 +47,7 @@ export default function Prova() {
     if (!backend || !user) return
     setPerguntar(false)
     const usados = new Set<string>()
-    const acertadas = new Set(progress.correct)
+    const acertadas = acertadasParaSorteio(questions, progress.correct)
     const peso: Record<string, number> = {}
     for (const [a, s] of Object.entries(profile?.areaStats ?? {})) peso[a] = s.e / Math.max(1, s.a + s.e)
     const secoes = SECOES_PROVA.map((sp) => {
@@ -220,6 +222,16 @@ function ProvaEmCurso({ inicial, onPausar, onConcluir }: { inicial: ExamState; o
       document.removeEventListener('visibilitychange', vis)
     }
   }, [persistir])
+
+  // ao trocar de questão, volta ao início do enunciado
+  const primeira = useRef(true)
+  useEffect(() => {
+    if (primeira.current) {
+      primeira.current = false
+      return
+    }
+    scrollToTop()
+  }, [exam.secaoAtual, exam.indiceAtual])
 
   const secao = exam.secoes[exam.secaoAtual]
   const item = secao.questoes[exam.indiceAtual]

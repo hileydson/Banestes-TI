@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
-import { BarChart3 } from 'lucide-react'
+import { BarChart3, Trophy } from 'lucide-react'
 import {
   Bar,
   BarChart,
@@ -25,6 +25,7 @@ import { useSession } from '../lib/session'
 import { AREAS, MATERIAS } from '../lib/materias'
 import { computeInsight, fmtPct, pct, total } from '../lib/insights'
 import type { Attempt } from '../lib/types'
+import { progressoMaterias } from '../lib/zeradas'
 
 const tooltipStyle = {
   contentStyle: { background: '#111c3d', border: '1px solid rgba(255,255,255,.12)', borderRadius: 12, color: '#e6ecff' },
@@ -33,7 +34,7 @@ const tooltipStyle = {
 }
 
 export default function Resultados() {
-  const { profile, backend, user } = useSession()
+  const { profile, backend, user, questions, progress } = useSession()
   const [attempts, setAttempts] = useState<Attempt[]>([])
   useEffect(() => {
     if (backend && user) backend.listAttempts(user.uid).then(setAttempts)
@@ -65,6 +66,8 @@ export default function Resultados() {
       <h2 className="page-title">
         <BarChart3 /> Seus resultados
       </h2>
+
+      <MateriasZeradas questions={questions} correct={progress.correct} />
 
       <div className="kpis">
         {[
@@ -218,6 +221,68 @@ function ChartCard({ titulo, children, delay = 0, wide }: { titulo: string; chil
     <motion.div className={'glass chart-card' + (wide ? ' wide' : '')} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay }}>
       <h3>{titulo}</h3>
       {children}
+    </motion.div>
+  )
+}
+
+// Topo da tela: matérias zeradas (todas as questões do banco acertadas) e quanto falta nas demais
+function MateriasZeradas({ questions, correct }: { questions: Parameters<typeof progressoMaterias>[0]; correct: string[] }) {
+  const prog = progressoMaterias(questions, correct)
+  const zeradas = prog.filter((p) => p.zerada)
+  return (
+    <motion.div className="glass zeradas-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
+      <h3>
+        <Trophy size={18} /> Matérias zeradas{' '}
+        <span className="muted small">
+          ({zeradas.length} de {prog.length})
+        </span>
+      </h3>
+      <p className="muted small">
+        Zerar uma matéria = acertar todas as questões dela que existem no banco. A partir daí, qualquer questão da matéria pode voltar a cair nos
+        testes. Se entrarem questões novas, o selo sai até você acertá-las também.
+      </p>
+      {zeradas.length > 0 && (
+        <div className="zeradas-selos">
+          {zeradas.map((p, i) => {
+            const m = MATERIAS.find((x) => x.id === p.id)!
+            return (
+              <motion.div
+                key={p.id}
+                className="zerada-medalha"
+                style={{ borderColor: m.cor }}
+                initial={{ scale: 0, rotate: -20 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ type: 'spring', delay: 0.15 + i * 0.1 }}
+              >
+                <span className="zerada-emoji">🏆</span>
+                <b style={{ color: m.cor }}>{m.curto}</b>
+                <small>{p.total} de {p.total}</small>
+              </motion.div>
+            )
+          })}
+        </div>
+      )}
+      <div className="zeradas-barras">
+        {prog
+          .filter((p) => !p.zerada)
+          .map((p) => {
+            const m = MATERIAS.find((x) => x.id === p.id)!
+            const pc = p.total ? (p.acertadas / p.total) * 100 : 0
+            return (
+              <div key={p.id} className="ibar">
+                <div className="ibar-label">
+                  <span>{m.nome}</span>
+                  <b>
+                    {p.acertadas}/{p.total}
+                  </b>
+                </div>
+                <div className="ibar-track">
+                  <motion.div className="ibar-fill" style={{ background: m.cor }} initial={{ width: 0 }} animate={{ width: `${pc}%` }} transition={{ duration: 0.8 }} />
+                </div>
+              </div>
+            )
+          })}
+      </div>
     </motion.div>
   )
 }
