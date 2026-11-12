@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
 import { AREA_BY_ID, MATERIA_BY_ID } from '../lib/materias'
-import { LETRAS, type Question } from '../lib/questions'
+import { HelpCircle } from 'lucide-react'
+import { LETRAS, NAO_SEI, type Question } from '../lib/questions'
 
 interface Props {
   q: Question
@@ -9,9 +10,10 @@ interface Props {
   ordem: number[]
   marcada?: number
   onMarcar(original: number): void
+  permitirNaoSei?: boolean
 }
 
-export default function QuestionView({ q, numero, total, ordem, marcada, onMarcar }: Props) {
+export default function QuestionView({ q, numero, total, ordem, marcada, onMarcar, permitirNaoSei }: Props) {
   const m = MATERIA_BY_ID[q.m]
   const area = AREA_BY_ID[q.area]
   return (
@@ -50,6 +52,21 @@ export default function QuestionView({ q, numero, total, ordem, marcada, onMarca
             <span className="opt-text">{renderText(q.o[orig])}</span>
           </motion.button>
         ))}
+        {permitirNaoSei && (
+          <motion.button
+            className={'option nao-sei' + (marcada === NAO_SEI ? ' selected' : '')}
+            onClick={() => onMarcar(NAO_SEI)}
+            whileTap={{ scale: 0.98 }}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
+          >
+            <span className="letter">
+              <HelpCircle size={16} />
+            </span>
+            <span className="opt-text">Não sei responder</span>
+          </motion.button>
+        )}
       </div>
     </motion.div>
   )

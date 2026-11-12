@@ -4,7 +4,7 @@ import { BarChart3, FileText, LogOut, PlayCircle, Trophy, X } from 'lucide-react
 import { useSession } from '../lib/session'
 
 const itens = [
-  { to: '/', label: 'Iniciar', icon: PlayCircle },
+  { to: '/', label: 'Teste rápido', icon: PlayCircle },
   { to: '/resultados', label: 'Ver resultados', icon: BarChart3 },
   { to: '/prova', label: 'Prova', icon: FileText },
   { to: '/ranking', label: 'Ranking', icon: Trophy }

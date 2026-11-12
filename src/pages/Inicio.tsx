@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowLeft, ArrowRight, Flag, Play, RotateCcw } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Flag, HelpCircle, Play, RotateCcw } from 'lucide-react'
 import confetti from 'canvas-confetti'
 import { useSession } from '../lib/session'
 import { TESTE_RAPIDO, MATERIAS } from '../lib/materias'
@@ -21,13 +21,14 @@ interface TesteState {
 const storeKey = (uid: string) => `bti-teste-${uid}`
 
 export default function Inicio() {
-  const { questions, progress, profile, user, record } = useSession()
+  const { questions, progress, profile, user, record, bumpQuickStarts } = useSession()
   const [fase, setFase] = useState<Fase>('inicio')
   const [teste, setTeste] = useState<TesteState | null>(null)
   const [salvando, setSalvando] = useState(false)
   const [modal, setModal] = useState(false)
   const [snap, setSnap] = useState<Profile | null>(null)
   const [confirmar, setConfirmar] = useState(false)
+  const [aviso, setAviso] = useState(false)
 
   // retoma teste não concluído (ex.: app fechado no meio)
   useEffect(() => {
@@ -58,7 +59,15 @@ export default function Inicio() {
     return questions.filter((q) => !acert.has(q.id)).length
   }, [questions, progress])
 
+  // Ao apertar INICIAR: mostra o aviso do “Não sei responder” na 1ª e na 3ª vez de cada usuário
+  const clicarIniciar = async () => {
+    const n = await bumpQuickStarts()
+    if (n === 1 || n === 3) setAviso(true)
+    else iniciar()
+  }
+
   const iniciar = () => {
+    setAviso(false)
     const peso: Record<string, number> = {}
     for (const [a, s] of Object.entries(profile?.areaStats ?? {})) peso[a] = s.e / Math.max(1, s.a + s.e)
     const { ids, repetidas } = pickQuestions(questions, TESTE_RAPIDO, new Set(progress.correct), new Set(), peso)
@@ -108,7 +117,7 @@ export default function Inicio() {
         </p>
         <motion.button
           className="start-btn"
-          onClick={iniciar}
+          onClick={clicarIniciar}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           initial={{ scale: 0 }}
@@ -134,6 +143,7 @@ export default function Inicio() {
             <small>testes feitos</small>
           </div>
         </div>
+        <AvisoNaoSei aberto={aviso} onOk={iniciar} />
         <div className="banco-mini glass">
           {MATERIAS.map((m) => {
             const n = questions.filter((q) => q.m === m.id).length
@@ -162,7 +172,7 @@ export default function Inicio() {
               Você acertou {acertos} de {teste.itens.length} questões. +{acertos} pontos somados ao seu perfil.
             </p>
             <div className="row gap">
-              <button className="btn primary" onClick={iniciar}>
+              <button className="btn primary" onClick={clicarIniciar}>
                 <RotateCcw size={18} /> Novo teste
               </button>
               <button className="btn ghost" onClick={() => setModal(true)}>
@@ -172,6 +182,7 @@ export default function Inicio() {
           </div>
         </motion.div>
         <Review itens={teste.itens} />
+        <AvisoNaoSei aberto={aviso} onOk={iniciar} />
         {(snap ?? profile) && <InsightModal profile={(snap ?? profile)!} open={modal} onClose={() => setModal(false)} titulo="Seu rendimento até agora" />}
       </div>
     )
@@ -204,7 +215,7 @@ export default function Inicio() {
         ))}
       </div>
       <AnimatePresence mode="wait">
-        <QuestionView key={q.id} q={q} numero={teste.atual + 1} total={teste.itens.length} ordem={item.ordem} marcada={item.marcada} onMarcar={marcar} />
+        <QuestionView key={q.id} q={q} numero={teste.atual + 1} total={teste.itens.length} ordem={item.ordem} marcada={item.marcada} onMarcar={marcar} permitirNaoSei />
       </AnimatePresence>
       <div className="quiz-nav">
         <button className="btn ghost" disabled={teste.atual === 0} onClick={() => setTeste({ ...teste, atual: teste.atual - 1 })}>
@@ -274,5 +285,39 @@ export function ScoreRing({ valor, total, label }: { valor: number; total: numbe
         <small>{Math.round(p * 100)}%</small>
       </div>
     </div>
+  )
+}
+
+function AvisoNaoSei({ aberto, onOk }: { aberto: boolean; onOk(): void }) {
+  return (
+    <AnimatePresence>
+      {aberto && (
+        <motion.div className="modal-scrim" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+          <motion.div
+            className="modal glass"
+            initial={{ scale: 0.85, y: 30, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+          >
+            <div className="modal-icon">
+              <HelpCircle size={28} />
+            </div>
+            <h2>Não chute!</h2>
+            <p>
+              Se você <b>não souber</b> a resposta de uma questão, escolha a última opção: <b>“Não sei responder”</b>.
+            </p>
+            <ul className="aviso-lista muted">
+              <li>Ela conta como erro, e no final você vê qual era a alternativa correta e o porquê.</li>
+              <li>A questão volta a aparecer nos próximos testes, até você acertar de verdade.</li>
+              <li>Acertar no chute engana as suas estatísticas e tira a questão do seu estudo.</li>
+            </ul>
+            <button className="btn primary" onClick={onOk}>
+              Entendi, começar
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }

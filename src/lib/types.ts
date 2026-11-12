@@ -31,6 +31,7 @@ export interface Profile {
 export interface Progress {
   correct: string[]
   wrongCount: Record<string, number>
+  quickStarts?: number // quantas vezes o usuário iniciou um teste rápido
 }
 
 export interface Attempt {

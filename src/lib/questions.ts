@@ -122,3 +122,6 @@ function spreadByArea(pool: Question[], n: number, peso: Record<string, number>)
 }
 
 export const LETRAS = ['A', 'B', 'C', 'D', 'E']
+
+// Valor gravado quando o usuário escolhe “Não sei responder” (conta como erro)
+export const NAO_SEI = -1

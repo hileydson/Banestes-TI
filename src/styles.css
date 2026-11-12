@@ -1365,3 +1365,84 @@ code {
 .login-card.form label {
   text-align: left;
 }
+
+/* --- sem zoom / redimensionamento / rotação --- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+body {
+  overscroll-behavior: none;
+}
+button,
+a,
+input {
+  touch-action: manipulation;
+}
+#rotate-lock {
+  display: none;
+}
+@media (orientation: landscape) and (max-height: 520px) and (pointer: coarse) {
+  #rotate-lock {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: #0b1530;
+    color: #e6ecff;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    padding: 24px;
+  }
+  #rotate-lock .rotate-icon {
+    font-size: 3rem;
+    animation: girar 1.6s ease-in-out infinite;
+  }
+  #root {
+    display: none;
+  }
+}
+@keyframes girar {
+  0%,
+  100% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+/* --- opção “Não sei responder” --- */
+.option.nao-sei {
+  border-style: dashed;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.option.nao-sei .letter {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fde68a;
+}
+.option.nao-sei.selected {
+  border-color: var(--warn);
+  border-style: solid;
+  background: rgba(251, 191, 36, 0.12);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.18);
+  color: var(--text);
+}
+.option.nao-sei.selected .letter {
+  background: var(--warn);
+  color: #422006;
+}
+.aviso-lista {
+  margin: 4px 0 6px;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}

@@ -4,9 +4,11 @@ import { BrowserRouter } from 'react-router-dom'
 import { registerSW } from 'virtual:pwa-register'
 import App from './App'
 import { SessionProvider } from './lib/session'
+import { lockScreen } from './lib/lockScreen'
 import './styles.css'
 
 registerSW({ immediate: true })
+lockScreen()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

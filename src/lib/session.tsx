@@ -15,6 +15,7 @@ interface SessionCtx {
   setNickname(n: string): Promise<void>
   record(tipo: Attempt['tipo'], respostas: Resposta[], extra?: Partial<Attempt>): Promise<Attempt>
   reloadProfile(): Promise<void>
+  bumpQuickStarts(): Promise<number>
 }
 
 export interface Resposta {
@@ -58,7 +59,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     Promise.all([backend.getProfile(user.uid), backend.getProgress(user.uid)])
       .then(([p, pr]) => {
         setProfile(p)
-        setProgress({ correct: pr.correct ?? [], wrongCount: pr.wrongCount ?? {} })
+        setProgress({ correct: pr.correct ?? [], wrongCount: pr.wrongCount ?? {}, quickStarts: pr.quickStarts ?? 0 })
       })
       .finally(() => setDataReady(true))
   }, [backend, user, authReady])
@@ -82,7 +83,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     async (tipo: Attempt['tipo'], respostas: Resposta[], extra: Partial<Attempt> = {}) => {
       if (!backend || !user || !profile) throw new Error('Sem sessão')
       const p: Profile = structuredClone(profile)
-      const pr: Progress = { correct: [...progress.correct], wrongCount: { ...progress.wrongCount } }
+      const pr: Progress = { ...progress, correct: [...progress.correct], wrongCount: { ...progress.wrongCount } }
       const correctSet = new Set(pr.correct)
       const porMateria: Partial<Record<MateriaId, Score>> = {}
       let acertos = 0
@@ -133,6 +134,14 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     [backend, user, profile, progress]
   )
 
+  const bumpQuickStarts = useCallback(async () => {
+    const n = (progress.quickStarts ?? 0) + 1
+    const pr: Progress = { ...progress, quickStarts: n }
+    setProgress(pr)
+    if (backend && user) await backend.saveProgress(user.uid, pr).catch(() => {})
+    return n
+  }, [backend, user, progress])
+
   return (
     <Ctx.Provider
       value={{
@@ -145,7 +154,8 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         questions,
         setNickname,
         record,
-        reloadProfile
+        reloadProfile,
+        bumpQuickStarts
       }}
     >
       {children}

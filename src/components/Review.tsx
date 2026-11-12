@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { CheckCircle2, ChevronDown, XCircle } from 'lucide-react'
 import { AREA_BY_ID, MATERIA_BY_ID } from '../lib/materias'
-import { getQuestion, LETRAS } from '../lib/questions'
+import { getQuestion, LETRAS, NAO_SEI } from '../lib/questions'
 import { renderText } from './QuestionView'
 
 export interface ReviewItem {
@@ -75,9 +75,13 @@ function ReviewCard({ item, index, aberto = false }: { item: ReviewItem; index: 
             {!acertou && (
               <div className="explain err">
                 <strong>
-                  {item.marcada === undefined ? 'Você deixou em branco.' : `Por que a alternativa ${letraDe(item.marcada)} está errada:`}
+                  {item.marcada === undefined
+                    ? 'Você deixou em branco.'
+                    : item.marcada === NAO_SEI
+                      ? 'Você marcou “Não sei responder”. Esta questão voltará a aparecer nos próximos testes.'
+                      : `Por que a alternativa ${letraDe(item.marcada)} está errada:`}
                 </strong>
-                {item.marcada !== undefined && <p>{renderText(q.x[item.marcada])}</p>}
+                {item.marcada !== undefined && item.marcada !== NAO_SEI && <p>{renderText(q.x[item.marcada])}</p>}
               </div>
             )}
             <div className="explain ok">
