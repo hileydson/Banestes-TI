@@ -17,7 +17,11 @@ export default defineConfig({
         background_color: '#0b1530',
         display: 'standalone',
         orientation: 'portrait-primary',
+        id: '/',
         start_url: '/',
+        scope: '/',
+        prefer_related_applications: false,
+        related_applications: [{ platform: 'webapp', url: 'https://estudo-banestes-ti.netlify.app/manifest.webmanifest' }],
         icons: [
           { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
           { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },

@@ -5,8 +5,10 @@ import { registerSW } from 'virtual:pwa-register'
 import App from './App'
 import { SessionProvider } from './lib/session'
 import { lockScreen } from './lib/lockScreen'
+import { initInstallCapture } from './lib/pwa'
 import './styles.css'
 
+initInstallCapture()
 registerSW({ immediate: true })
 lockScreen()
 

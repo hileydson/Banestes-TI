@@ -1446,3 +1446,37 @@ input {
   flex-direction: column;
   gap: 6px;
 }
+
+/* --- tela de instalação (celular/tablet) --- */
+.install-card {
+  gap: 12px;
+}
+.install-icon {
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
+}
+.install-steps {
+  text-align: left;
+  width: 100%;
+  margin: 4px 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.install-steps li svg {
+  vertical-align: -3px;
+  margin: 0 2px;
+}
+.install-ok {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--ok);
+  font-size: 1.1rem;
+}
+.install-foot {
+  margin-top: 8px;
+  opacity: 0.8;
+}

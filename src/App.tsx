@@ -11,12 +11,16 @@ import Inicio from './pages/Inicio'
 import Resultados from './pages/Resultados'
 import Prova from './pages/Prova'
 import Ranking from './pages/Ranking'
+import InstalarApp from './pages/InstalarApp'
+import { mustInstallFirst } from './lib/pwa'
 
 export default function App() {
   const { ready, authReady, user, profile, backend } = useSession()
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
 
+  // No celular/tablet, só libera o uso quando aberto pelo app instalado (PWA)
+  if (mustInstallFirst()) return <InstalarApp />
   if (!authReady) return <Splash />
   if (!user) return <Login />
   if (!ready) return <Splash />
