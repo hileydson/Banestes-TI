@@ -34,6 +34,14 @@ export interface Progress {
   quickStarts?: number // quantas vezes o usuário iniciou um teste rápido
 }
 
+// Teste rápido pausado/em andamento (salvo na conta do usuário)
+export interface QuickTestState {
+  itens: { id: string; ordem: number[]; marcada?: number }[]
+  atual: number
+  repetidas: number
+  updatedAt?: number
+}
+
 export interface Attempt {
   id: string
   tipo: 'teste' | 'prova'

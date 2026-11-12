@@ -1,5 +1,5 @@
 import { firebaseConfig } from './firebaseConfig'
-import type { AppUser, Attempt, ExamState, Profile, Progress } from './types'
+import type { AppUser, Attempt, ExamState, Profile, Progress, QuickTestState } from './types'
 
 export const USERNAME_RE = /^[a-z0-9._-]{3,20}$/
 const EMAIL_DOMAIN = 'usuario.estudo-banestes.app'
@@ -24,6 +24,8 @@ export interface Backend {
   listAttempts(uid: string): Promise<Attempt[]>
   listExams(uid: string): Promise<ExamState[]>
   saveExam(uid: string, e: ExamState): Promise<void>
+  getQuickTest(uid: string): Promise<QuickTestState | null>
+  saveQuickTest(uid: string, t: QuickTestState | null): Promise<void>
 }
 
 export class FriendlyError extends Error {}
@@ -147,7 +149,12 @@ async function createFirebaseBackend(): Promise<Backend> {
       const s = await fs.getDocs(fs.collection(db, 'users', uid, 'exams'))
       return s.docs.map((d) => d.data() as ExamState).sort((a, b) => b.startedAt - a.startedAt)
     },
-    saveExam: (uid, e) => fs.setDoc(fs.doc(db, 'users', uid, 'exams', e.id), JSON.parse(JSON.stringify(e)))
+    saveExam: (uid, e) => fs.setDoc(fs.doc(db, 'users', uid, 'exams', e.id), JSON.parse(JSON.stringify(e))),
+    getQuickTest: async (uid) => {
+      const s = await fs.getDoc(fs.doc(db, 'users', uid, 'private', 'quickTest'))
+      return s.exists() ? ((s.data().teste as QuickTestState | null) ?? null) : null
+    },
+    saveQuickTest: (uid, t) => fs.setDoc(fs.doc(db, 'users', uid, 'private', 'quickTest'), { teste: t ? JSON.parse(JSON.stringify(t)) : null })
   }
 }
 
@@ -163,6 +170,7 @@ function createLocalBackend(): Backend {
     progress: Record<string, Progress>
     attempts: Record<string, Attempt[]>
     exams: Record<string, Record<string, ExamState>>
+    quick?: Record<string, QuickTestState | null>
   }
   const load = (): DB => {
     try {
@@ -266,6 +274,14 @@ function createLocalBackend(): Backend {
     async saveExam(uid, e) {
       const db = load()
       ;(db.exams[uid] ??= {})[e.id] = e
+      save(db)
+    },
+    async getQuickTest(uid) {
+      return load().quick?.[uid] ?? null
+    },
+    async saveQuickTest(uid, t) {
+      const db = load()
+      ;(db.quick ??= {})[uid] = t
       save(db)
     }
   }

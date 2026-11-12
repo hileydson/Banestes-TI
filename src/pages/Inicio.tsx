@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowLeft, ArrowRight, Flag, HelpCircle, Play, RotateCcw } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Flag, HelpCircle, Pause, Play, RotateCcw, Trash2 } from 'lucide-react'
 import confetti from 'canvas-confetti'
 import { useSession } from '../lib/session'
 import { TESTE_RAPIDO, MATERIAS } from '../lib/materias'
@@ -18,10 +18,8 @@ interface TesteState {
   repetidas: number
 }
 
-const storeKey = (uid: string) => `bti-teste-${uid}`
-
 export default function Inicio() {
-  const { questions, progress, profile, user, record, bumpQuickStarts } = useSession()
+  const { questions, progress, profile, record, bumpQuickStarts, quickTest, saveQuickTest } = useSession()
   const [fase, setFase] = useState<Fase>('inicio')
   const [teste, setTeste] = useState<TesteState | null>(null)
   const [salvando, setSalvando] = useState(false)
@@ -29,30 +27,54 @@ export default function Inicio() {
   const [snap, setSnap] = useState<Profile | null>(null)
   const [confirmar, setConfirmar] = useState(false)
   const [aviso, setAviso] = useState(false)
+  const [confirmarDescarte, setConfirmarDescarte] = useState<null | 'abandonar' | 'novo'>(null)
 
-  // retoma teste não concluído (ex.: app fechado no meio)
-  useEffect(() => {
-    if (!user) return
-    try {
-      const raw = localStorage.getItem(storeKey(user.uid))
-      if (raw) {
-        setTeste(JSON.parse(raw))
-        setFase('teste')
-      }
-    } catch {
-      /* ignora */
-    }
-  }, [user])
+  // ---- Salvamento automático do teste em andamento (fica “pausado” se a pessoa sair da tela) ----
+  const atualRef = useRef<{ fase: Fase; teste: TesteState | null }>({ fase, teste })
+  atualRef.current = { fase, teste }
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+  const saveRef = useRef(saveQuickTest)
+  saveRef.current = saveQuickTest
 
   useEffect(() => {
-    if (!user) return
-    try {
-      if (fase === 'teste' && teste) localStorage.setItem(storeKey(user.uid), JSON.stringify(teste))
-      else localStorage.removeItem(storeKey(user.uid))
-    } catch {
-      /* ignora */
-    }
-  }, [teste, fase, user])
+    if (fase !== 'teste' || !teste) return
+    clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => saveRef.current(teste), 600)
+  }, [teste, fase])
+
+  // Saiu da tela (menu lateral, outra aba do app) no meio do teste: grava na hora
+  useEffect(
+    () => () => {
+      clearTimeout(timerRef.current)
+      const { fase: f, teste: t } = atualRef.current
+      if (f === 'teste' && t) saveRef.current(t)
+    },
+    []
+  )
+
+  const pausar = async () => {
+    if (!teste) return
+    clearTimeout(timerRef.current)
+    await saveQuickTest(teste)
+    setFase('inicio')
+    setTeste(null)
+  }
+
+  const continuar = () => {
+    if (!quickTest) return
+    setTeste({ itens: quickTest.itens, atual: quickTest.atual ?? 0, repetidas: quickTest.repetidas ?? 0 })
+    setFase('teste')
+  }
+
+  const descartar = async () => {
+    const acao = confirmarDescarte
+    setConfirmarDescarte(null)
+    clearTimeout(timerRef.current)
+    await saveQuickTest(null)
+    setFase('inicio')
+    setTeste(null)
+    if (acao === 'novo') clicarIniciar()
+  }
 
   const disponiveis = useMemo(() => {
     const acert = new Set(progress.correct)
@@ -85,12 +107,15 @@ export default function Inicio() {
     if (!teste) return
     setConfirmar(false)
     setSalvando(true)
+    clearTimeout(timerRef.current)
     try {
       await record(
         'teste',
         teste.itens.map((i) => ({ id: i.id, marcada: i.marcada }))
       )
+      atualRef.current = { fase: 'resultado', teste }
       setFase('resultado')
+      saveQuickTest(null)
       const acertos = teste.itens.filter((i) => i.marcada === getQuestion(i.id)?.c).length
       if (acertos / teste.itens.length >= 0.7) confetti({ particleCount: 140, spread: 80, origin: { y: 0.6 } })
       setTimeout(() => setModal(true), 700)
@@ -115,9 +140,15 @@ export default function Inicio() {
           Cada rodada traz 12 questões inéditas para você, no estilo FCC:
           <br />2 Português · 2 Raciocínio Lógico · 1 Estatística · 1 Atualidades · 1 Ética/ESG · 5 Específicas
         </p>
+        {quickTest && (
+          <motion.div className="glass pausado-info" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
+            <Pause size={16} /> Teste pausado: {quickTest.itens.filter((i) => i.marcada !== undefined).length} de {quickTest.itens.length}{' '}
+            respondidas. Toque em <b>CONTINUAR</b> para seguir de onde parou.
+          </motion.div>
+        )}
         <motion.button
-          className="start-btn"
-          onClick={clicarIniciar}
+          className={'start-btn' + (quickTest ? ' continuar' : '')}
+          onClick={quickTest ? continuar : clicarIniciar}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           initial={{ scale: 0 }}
@@ -127,8 +158,13 @@ export default function Inicio() {
           <span className="pulse" />
           <span className="pulse delay" />
           <Play size={40} fill="currentColor" />
-          <b>INICIAR</b>
+          <b>{quickTest ? 'CONTINUAR' : 'INICIAR'}</b>
         </motion.button>
+        {quickTest && (
+          <button className="link-btn" onClick={() => setConfirmarDescarte('novo')}>
+            <Trash2 size={14} /> Descartar e começar um novo teste
+          </button>
+        )}
         <div className="hero-stats">
           <div className="glass stat">
             <b>{questions.length}</b>
@@ -144,6 +180,7 @@ export default function Inicio() {
           </div>
         </div>
         <AvisoNaoSei aberto={aviso} onOk={iniciar} />
+        <ConfirmarDescarte tipo={confirmarDescarte} onCancelar={() => setConfirmarDescarte(null)} onConfirmar={descartar} />
         <div className="banco-mini glass">
           {MATERIAS.map((m) => {
             const n = questions.filter((q) => q.m === m.id).length
@@ -201,6 +238,9 @@ export default function Inicio() {
         <span>
           {respondidas}/{teste.itens.length}
         </span>
+        <button className="btn ghost sm" onClick={pausar}>
+          <Pause size={16} /> Pausar
+        </button>
       </div>
       <div className="dots">
         {teste.itens.map((it, i) => (
@@ -231,9 +271,10 @@ export default function Inicio() {
           </button>
         )}
       </div>
-      <button className="link-btn" onClick={() => (setFase('inicio'), setTeste(null))}>
+      <button className="link-btn" onClick={() => setConfirmarDescarte('abandonar')}>
         Abandonar teste
       </button>
+      <ConfirmarDescarte tipo={confirmarDescarte} onCancelar={() => setConfirmarDescarte(null)} onConfirmar={descartar} />
       <AnimatePresence>
         {confirmar && (
           <motion.div className="modal-scrim" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -315,6 +356,32 @@ function AvisoNaoSei({ aberto, onOk }: { aberto: boolean; onOk(): void }) {
             <button className="btn primary" onClick={onOk}>
               Entendi, começar
             </button>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}
+
+function ConfirmarDescarte({ tipo, onCancelar, onConfirmar }: { tipo: null | 'abandonar' | 'novo'; onCancelar(): void; onConfirmar(): void }) {
+  return (
+    <AnimatePresence>
+      {tipo && (
+        <motion.div className="modal-scrim" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onCancelar}>
+          <motion.div className="modal glass" initial={{ scale: 0.9 }} animate={{ scale: 1 }} onClick={(e) => e.stopPropagation()}>
+            <h2>{tipo === 'novo' ? 'Descartar o teste pausado?' : 'Abandonar o teste?'}</h2>
+            <p className="muted">
+              As respostas deste teste não serão salvas nem contarão pontos.{' '}
+              {tipo === 'abandonar' && 'Se quiser continuar depois, use o botão Pausar.'}
+            </p>
+            <div className="row gap">
+              <button className="btn ghost" onClick={onCancelar}>
+                Voltar
+              </button>
+              <button className="btn primary" onClick={onConfirmar}>
+                {tipo === 'novo' ? 'Descartar e começar novo' : 'Abandonar'}
+              </button>
+            </div>
           </motion.div>
         </motion.div>
       )}

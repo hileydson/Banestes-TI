@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 import { getBackend, type Backend } from './backend'
 import { loadQuestions, getQuestion, type Question } from './questions'
 import type { MateriaId } from './materias'
-import { emptyProfile, type AppUser, type Attempt, type Profile, type Progress, type Score } from './types'
+import { emptyProfile, type AppUser, type Attempt, type Profile, type Progress, type QuickTestState, type Score } from './types'
 
 interface SessionCtx {
   ready: boolean
@@ -17,6 +17,8 @@ interface SessionCtx {
   record(tipo: Attempt['tipo'], respostas: Resposta[], extra?: Partial<Attempt>): Promise<Attempt>
   reloadProfile(): Promise<void>
   bumpQuickStarts(): Promise<number>
+  quickTest: QuickTestState | null
+  saveQuickTest(t: QuickTestState | null): Promise<void>
 }
 
 export interface Resposta {
@@ -36,6 +38,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   const [questions, setQuestions] = useState<Question[]>([])
   const [dataReady, setDataReady] = useState(false)
   const [reconectando, setReconectando] = useState(false)
+  const [quickTest, setQuickTest] = useState<QuickTestState | null>(null)
 
   useEffect(() => {
     let unsub = () => {}
@@ -64,10 +67,11 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     let timer: ReturnType<typeof setTimeout> | undefined
     // Se a conexão falhar (ex.: aba voltando de suspensão), tenta de novo em vez de tratar como “sem perfil”
     const carregar = (tentativa: number) => {
-      Promise.all([backend.getProfile(user.uid), backend.getProgress(user.uid)])
-        .then(([p, pr]) => {
+      Promise.all([backend.getProfile(user.uid), backend.getProgress(user.uid), backend.getQuickTest(user.uid)])
+        .then(([p, pr, qt]) => {
           if (cancelado) return
           setProfile(p)
+          setQuickTest(qt)
           setProgress({ correct: pr.correct ?? [], wrongCount: pr.wrongCount ?? {}, quickStarts: pr.quickStarts ?? 0 })
           setReconectando(false)
           setDataReady(true)
@@ -165,6 +169,15 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     return n
   }, [backend, user, progress])
 
+  const saveQuickTest = useCallback(
+    async (t: QuickTestState | null) => {
+      const v = t ? { ...t, updatedAt: Date.now() } : null
+      setQuickTest(v)
+      if (backend && user) await backend.saveQuickTest(user.uid, v).catch(() => {})
+    },
+    [backend, user]
+  )
+
   return (
     <Ctx.Provider
       value={{
@@ -179,7 +192,9 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         setNickname,
         record,
         reloadProfile,
-        bumpQuickStarts
+        bumpQuickStarts,
+        quickTest,
+        saveQuickTest
       }}
     >
       {children}
