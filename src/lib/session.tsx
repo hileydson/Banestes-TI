@@ -7,6 +7,7 @@ import { emptyProfile, type AppUser, type Attempt, type Profile, type Progress, 
 interface SessionCtx {
   ready: boolean
   authReady: boolean
+  reconectando: boolean
   backend: Backend | null
   user: AppUser | null
   profile: Profile | null
@@ -34,13 +35,15 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   const [progress, setProgress] = useState<Progress>({ correct: [], wrongCount: {} })
   const [questions, setQuestions] = useState<Question[]>([])
   const [dataReady, setDataReady] = useState(false)
+  const [reconectando, setReconectando] = useState(false)
 
   useEffect(() => {
     let unsub = () => {}
     getBackend().then((b) => {
       setBackend(b)
       unsub = b.onAuthChange((u) => {
-        setUser(u)
+        // só troca o usuário se ele realmente mudou (evita recarregar tudo à toa)
+        setUser((prev) => (prev?.uid === u?.uid ? prev : u))
         setAuthReady(true)
       })
     })
@@ -56,12 +59,30 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       return
     }
     setDataReady(false)
-    Promise.all([backend.getProfile(user.uid), backend.getProgress(user.uid)])
-      .then(([p, pr]) => {
-        setProfile(p)
-        setProgress({ correct: pr.correct ?? [], wrongCount: pr.wrongCount ?? {}, quickStarts: pr.quickStarts ?? 0 })
-      })
-      .finally(() => setDataReady(true))
+    setReconectando(false)
+    let cancelado = false
+    let timer: ReturnType<typeof setTimeout> | undefined
+    // Se a conexão falhar (ex.: aba voltando de suspensão), tenta de novo em vez de tratar como “sem perfil”
+    const carregar = (tentativa: number) => {
+      Promise.all([backend.getProfile(user.uid), backend.getProgress(user.uid)])
+        .then(([p, pr]) => {
+          if (cancelado) return
+          setProfile(p)
+          setProgress({ correct: pr.correct ?? [], wrongCount: pr.wrongCount ?? {}, quickStarts: pr.quickStarts ?? 0 })
+          setReconectando(false)
+          setDataReady(true)
+        })
+        .catch(() => {
+          if (cancelado) return
+          setReconectando(true)
+          timer = setTimeout(() => carregar(tentativa + 1), Math.min(2000 * (tentativa + 1), 10000))
+        })
+    }
+    carregar(0)
+    return () => {
+      cancelado = true
+      if (timer) clearTimeout(timer)
+    }
   }, [backend, user, authReady])
 
   const reloadProfile = useCallback(async () => {
@@ -72,7 +93,9 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   const setNickname = useCallback(
     async (n: string) => {
       if (!backend || !user) return
-      const p = profile ? { ...profile, nickname: n } : emptyProfile(user.uid, n)
+      // Nunca recria um perfil zerado: confere no servidor se ele já existe
+      const atual = profile ?? (await backend.getProfile(user.uid))
+      const p = atual ? { ...atual, nickname: n } : emptyProfile(user.uid, n)
       await backend.saveProfile(p)
       setProfile(p)
     },
@@ -147,6 +170,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       value={{
         ready: authReady && dataReady && questions.length > 0,
         authReady,
+        reconectando,
         backend,
         user,
         profile,

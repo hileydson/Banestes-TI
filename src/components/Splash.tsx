@@ -1,6 +1,8 @@
 import { motion } from 'motion/react'
+import { useSession } from '../lib/session'
 
 export default function Splash() {
+  const { reconectando } = useSession()
   return (
     <div className="splash">
       <motion.img
@@ -11,7 +13,7 @@ export default function Splash() {
         animate={{ scale: [1, 1.08, 1], rotate: [0, 4, -4, 0] }}
         transition={{ repeat: Infinity, duration: 1.6 }}
       />
-      <p>Carregando…</p>
+      <p>{reconectando ? 'Reconectando… verifique sua internet' : 'Carregando…'}</p>
     </div>
   )
 }

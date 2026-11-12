@@ -59,7 +59,16 @@ async function createFirebaseBackend(): Promise<Backend> {
   const fs = await import('firebase/firestore')
 
   const app = initializeApp(firebaseConfig!)
-  const auth = authMod.getAuth(app)
+  // Sessão guardada de forma permanente no navegador (sem expiração por tempo)
+  let auth: import('firebase/auth').Auth
+  try {
+    auth = authMod.initializeAuth(app, {
+      persistence: [authMod.indexedDBLocalPersistence, authMod.browserLocalPersistence],
+      popupRedirectResolver: authMod.browserPopupRedirectResolver
+    })
+  } catch {
+    auth = authMod.getAuth(app)
+  }
   let db: import('firebase/firestore').Firestore
   try {
     db = fs.initializeFirestore(app, { localCache: fs.persistentLocalCache({ tabManager: fs.persistentMultipleTabManager() }) })
