@@ -1,16 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowLeft, ArrowRight, BookOpenCheck, Flag, HelpCircle, Pause, Play, RotateCcw, Trash2 } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpenCheck, Flag, HelpCircle, Layers, Pause, Play, RotateCcw, Trash2, X } from 'lucide-react'
 import confetti from 'canvas-confetti'
 import { useSession } from '../lib/session'
-import { TESTE_RAPIDO, MATERIAS } from '../lib/materias'
+import { TESTE_RAPIDO, MATERIA_BY_ID, type MateriaId } from '../lib/materias'
 import { getQuestion, pickQuestions, randomOrder } from '../lib/questions'
 import QuestionView from '../components/QuestionView'
 import Review, { type ReviewItem } from '../components/Review'
 import InsightModal from '../components/InsightModal'
-import { acertadasParaSorteio } from '../lib/zeradas'
+import { acertadasParaSorteio, progressoMaterias } from '../lib/zeradas'
 import { scrollToTop } from '../lib/scroll'
-import type { Profile } from '../lib/types'
+import type { Profile, TestSlot } from '../lib/types'
 
 type Fase = 'inicio' | 'teste' | 'resultado'
 
@@ -18,10 +18,26 @@ interface TesteState {
   itens: ReviewItem[]
   atual: number
   repetidas: number
+  materia?: MateriaId // teste por matéria
 }
 
+// Teste por matéria: 5 questões da matéria escolhida
+export const QTD_TESTE_MATERIA = 5
+
 export default function Inicio() {
-  const { questions, progress, profile, record, bumpQuickStarts, quickTest, saveQuickTest } = useSession()
+  return <TesteCurto modo="rapido" />
+}
+
+// Tela do teste curto, usada pelo teste rápido (12 questões variadas) e pelo teste por matéria (5 de uma matéria).
+// Cada modo tem o seu próprio teste salvo: dá para pausar um e continuar o outro.
+export function TesteCurto({ modo }: { modo: TestSlot }) {
+  const sess = useSession()
+  const { questions, progress, profile, record, bumpQuickStarts } = sess
+  const porMateria = modo === 'materia'
+  const quickTest = porMateria ? sess.materiaTest : sess.quickTest
+  const saveQuickTest = porMateria ? sess.saveMateriaTest : sess.saveQuickTest
+  const [escolher, setEscolher] = useState(false)
+  const materiaPendente = useRef<MateriaId | undefined>(undefined)
   const [fase, setFase] = useState<Fase>('inicio')
   const [teste, setTeste] = useState<TesteState | null>(null)
   const [salvando, setSalvando] = useState(false)
@@ -77,7 +93,7 @@ export default function Inicio() {
 
   const continuar = () => {
     if (!quickTest) return
-    setTeste({ itens: quickTest.itens, atual: quickTest.atual ?? 0, repetidas: quickTest.repetidas ?? 0 })
+    setTeste({ itens: quickTest.itens, atual: quickTest.atual ?? 0, repetidas: quickTest.repetidas ?? 0, materia: quickTest.materia })
     setFase(quickTest.fase === 'revisao' ? 'resultado' : 'teste')
   }
 
@@ -92,6 +108,11 @@ export default function Inicio() {
   const novoTeste = async () => {
     setModal(false)
     await saveQuickTest(null)
+    // Por matéria: volta à tela inicial e abre a escolha da matéria (fechar a escolha deixa o INICIAR)
+    if (porMateria) {
+      setFase('inicio')
+      setTeste(null)
+    }
     clicarIniciar()
   }
 
@@ -110,8 +131,18 @@ export default function Inicio() {
     return questions.filter((q) => !acert.has(q.id)).length
   }, [questions, progress])
 
-  // Ao apertar INICIAR: mostra o aviso do “Não sei responder” na 1ª e na 3ª vez de cada usuário
-  const clicarIniciar = async () => {
+  const progressoMat = useMemo(() => progressoMaterias(questions, progress.correct), [questions, progress])
+
+  // Ao apertar INICIAR: no teste por matéria, primeiro escolhe a matéria
+  const clicarIniciar = () => {
+    if (porMateria) setEscolher(true)
+    else comecar()
+  }
+
+  // Mostra o aviso do “Não sei responder” na 1ª e na 3ª vez de cada usuário (contador comum aos dois testes)
+  const comecar = async (materia?: MateriaId) => {
+    setEscolher(false)
+    materiaPendente.current = materia
     const n = await bumpQuickStarts()
     if (n === 1 || n === 3) setAviso(true)
     else iniciar()
@@ -121,8 +152,18 @@ export default function Inicio() {
     setAviso(false)
     const peso: Record<string, number> = {}
     for (const [a, s] of Object.entries(profile?.areaStats ?? {})) peso[a] = s.e / Math.max(1, s.a + s.e)
-    const { ids, repetidas } = pickQuestions(questions, TESTE_RAPIDO, acertadasParaSorteio(questions, progress.correct), new Set(), peso)
-    setTeste({ itens: ids.map((id) => ({ id, ordem: randomOrder() })), atual: 0, repetidas })
+    const acertadas = acertadasParaSorteio(questions, progress.correct)
+    const materia = porMateria ? materiaPendente.current : undefined
+    if (porMateria && !materia) return
+    const slots = materia ? [{ materia, n: QTD_TESTE_MATERIA }] : TESTE_RAPIDO
+    let { ids, repetidas } = pickQuestions(questions, slots, acertadas, new Set(), peso)
+    // Por matéria: nunca traz questão já acertada (se a matéria foi zerada, o conjunto acima já libera todas)
+    if (materia) {
+      ids = ids.filter((id) => !acertadas.has(id))
+      repetidas = 0
+    }
+    if (!ids.length) return
+    setTeste({ itens: ids.map((id) => ({ id, ordem: randomOrder() })), atual: 0, repetidas, materia })
     setFase('teste')
   }
 
@@ -140,7 +181,8 @@ export default function Inicio() {
     try {
       await record(
         'teste',
-        teste.itens.map((i) => ({ id: i.id, marcada: i.marcada }))
+        teste.itens.map((i) => ({ id: i.id, marcada: i.marcada })),
+        teste.materia ? { materia: teste.materia } : {}
       )
       atualRef.current = { fase: 'resultado', teste }
       setFase('resultado')
@@ -164,14 +206,23 @@ export default function Inicio() {
     return (
       <div className="hero">
         <motion.h2 initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
-          Olá, {profile?.nickname}! 👋
+          {porMateria ? 'Teste por matéria' : `Olá, ${profile?.nickname}! 👋`}
         </motion.h2>
-        <p className="muted center">
-          Cada rodada traz 12 questões inéditas para você, no estilo FCC:
-          <br />2 Português · 2 Raciocínio Lógico · 1 Estatística · 1 Atualidades · 1 Ética/ESG · 5 Específicas
-        </p>
+        {porMateria ? (
+          <p className="muted center">
+            Escolha uma matéria e responda {QTD_TESTE_MATERIA} questões dela que você ainda não acertou, no estilo FCC.
+            <br />
+            Matéria zerada (🏆): qualquer questão dela pode voltar.
+          </p>
+        ) : (
+          <p className="muted center">
+            Cada rodada traz 12 questões inéditas para você, no estilo FCC:
+            <br />2 Português · 2 Raciocínio Lógico · 1 Estatística · 1 Atualidades · 1 Ética/ESG · 5 Específicas
+          </p>
+        )}
         {quickTest && (
           <motion.div className="glass pausado-info" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
+            {quickTest.materia && <MateriaTag id={quickTest.materia} />}
             {emRevisao ? (
               <>
                 <BookOpenCheck size={16} /> Revisão pausada: você acertou{' '}
@@ -226,14 +277,16 @@ export default function Inicio() {
         </div>
         <AvisoNaoSei aberto={aviso} onOk={iniciar} />
         <ConfirmarDescarte tipo={confirmarDescarte} onCancelar={() => setConfirmarDescarte(null)} onConfirmar={descartar} />
+        <EscolherMateria aberto={escolher} progresso={progressoMat} onEscolher={comecar} onFechar={() => setEscolher(false)} />
         <div className="banco-mini glass">
-          {MATERIAS.map((m) => {
-            const n = questions.filter((q) => q.m === m.id).length
+          {porMateria && <p className="muted small banco-legenda">Acertadas / total de questões de cada matéria</p>}
+          {progressoMat.map((p) => {
+            const m = MATERIA_BY_ID[p.id]
             return (
               <div key={m.id} className="banco-row">
                 <span className="dot" style={{ background: m.cor }} />
                 <span>{m.nome}</span>
-                <b>{n}</b>
+                <b>{porMateria ? (p.zerada ? `🏆 ${p.total}/${p.total}` : `${p.acertadas}/${p.total}`) : p.total}</b>
               </div>
             )
           })}
@@ -249,7 +302,8 @@ export default function Inicio() {
         <motion.div className="score-card glass" initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}>
           <ScoreRing valor={acertos} total={teste.itens.length} />
           <div>
-            <h2>{acertos >= 9 ? 'Excelente!' : acertos >= 7 ? 'Muito bom!' : acertos >= 5 ? 'Bom caminho!' : 'Bora revisar!'}</h2>
+            {teste.materia && <MateriaTag id={teste.materia} />}
+            <h2>{tituloResultado(acertos / teste.itens.length)}</h2>
             <p className="muted">
               Você acertou {acertos} de {teste.itens.length} questões. +{acertos} pontos somados ao seu perfil.
             </p>
@@ -278,6 +332,12 @@ export default function Inicio() {
   const respondidas = teste.itens.filter((i) => i.marcada !== undefined).length
   return (
     <div className="quiz">
+      {teste.materia && <MateriaTag id={teste.materia} />}
+      {teste.materia && teste.itens.length < QTD_TESTE_MATERIA && (
+        <div className="alert info">
+          Só restavam {teste.itens.length} questão(ões) que você ainda não acertou em {MATERIA_BY_ID[teste.materia].nome}.
+        </div>
+      )}
       {teste.repetidas > 0 && <div className="alert info">Algumas matérias já foram 100% acertadas por você — {teste.repetidas} questão(ões) repetida(s) para completar o teste.</div>}
       <div className="progress-wrap">
         <div className="progress">
@@ -342,6 +402,76 @@ export default function Inicio() {
         )}
       </AnimatePresence>
     </div>
+  )
+}
+
+// Mesmas faixas de antes (9, 7 e 5 de 12), em proporção, para servir também ao teste de 5 questões
+function tituloResultado(p: number) {
+  return p >= 0.75 ? 'Excelente!' : p >= 7 / 12 ? 'Muito bom!' : p >= 5 / 12 ? 'Bom caminho!' : 'Bora revisar!'
+}
+
+function MateriaTag({ id }: { id: MateriaId }) {
+  const m = MATERIA_BY_ID[id]
+  return (
+    <span className="materia-tag" style={{ borderColor: m.cor, color: m.cor }}>
+      <Layers size={14} /> {m.nome}
+    </span>
+  )
+}
+
+function EscolherMateria({
+  aberto,
+  progresso,
+  onEscolher,
+  onFechar
+}: {
+  aberto: boolean
+  progresso: ReturnType<typeof progressoMaterias>
+  onEscolher(m: MateriaId): void
+  onFechar(): void
+}) {
+  return (
+    <AnimatePresence>
+      {aberto && (
+        <motion.div className="modal-scrim" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onFechar}>
+          <motion.div
+            className="modal glass escolher-materia"
+            initial={{ scale: 0.9, y: 20, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="icon-btn modal-x" onClick={onFechar} aria-label="Fechar">
+              <X size={20} />
+            </button>
+            <h2>Qual matéria?</h2>
+            <p className="muted small">Vêm {QTD_TESTE_MATERIA} questões que você ainda não acertou na matéria escolhida.</p>
+            <div className="materia-opcoes">
+              {progresso.map((p, i) => {
+                const m = MATERIA_BY_ID[p.id]
+                const faltam = p.total - p.acertadas
+                return (
+                  <motion.button
+                    key={p.id}
+                    className="materia-opcao"
+                    style={{ borderColor: m.cor }}
+                    onClick={() => onEscolher(p.id)}
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.04 * i }}
+                    whileTap={{ scale: 0.97 }}
+                  >
+                    <span className="dot" style={{ background: m.cor }} />
+                    <span className="materia-opcao-nome">{m.nome}</span>
+                    <small className="muted">{p.zerada ? '🏆 zerada · todas podem cair' : `${faltam} para acertar`}</small>
+                  </motion.button>
+                )
+              })}
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
 

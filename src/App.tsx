@@ -8,8 +8,10 @@ import Splash from './components/Splash'
 import Login from './pages/Login'
 import Apelido from './pages/Apelido'
 import Inicio from './pages/Inicio'
+import TestePorMateria from './pages/TestePorMateria'
 import Resultados from './pages/Resultados'
 import Prova from './pages/Prova'
+import Estudo from './pages/Estudo'
 import Ranking from './pages/Ranking'
 import InstalarApp from './pages/InstalarApp'
 import { mustInstallFirst } from './lib/pwa'
@@ -60,8 +62,10 @@ export default function App() {
           >
             <Routes location={location}>
               <Route path="/" element={<Inicio />} />
+              <Route path="/materia" element={<TestePorMateria />} />
               <Route path="/resultados" element={<Resultados />} />
               <Route path="/prova" element={<Prova />} />
+              <Route path="/estudo" element={<Estudo />} />
               <Route path="/ranking" element={<Ranking />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

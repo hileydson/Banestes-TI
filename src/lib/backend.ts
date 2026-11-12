@@ -1,5 +1,8 @@
 import { firebaseConfig } from './firebaseConfig'
-import type { AppUser, Attempt, ExamState, Profile, Progress, QuickTestState } from './types'
+import type { AppUser, Attempt, EstudoState, ExamState, Profile, Progress, QuickTestState, TestSlot } from './types'
+
+// Documento (em users/{uid}/private) onde cada tipo de teste fica salvo enquanto pausado/em revisão
+const docTeste = (slot: TestSlot) => (slot === 'materia' ? 'materiaTest' : 'quickTest')
 
 export const USERNAME_RE = /^[a-z0-9._-]{3,20}$/
 const EMAIL_DOMAIN = 'usuario.estudo-banestes.app'
@@ -24,8 +27,10 @@ export interface Backend {
   listAttempts(uid: string): Promise<Attempt[]>
   listExams(uid: string): Promise<ExamState[]>
   saveExam(uid: string, e: ExamState): Promise<void>
-  getQuickTest(uid: string): Promise<QuickTestState | null>
-  saveQuickTest(uid: string, t: QuickTestState | null): Promise<void>
+  getQuickTest(uid: string, slot?: TestSlot): Promise<QuickTestState | null>
+  saveQuickTest(uid: string, t: QuickTestState | null, slot?: TestSlot): Promise<void>
+  getEstudo(uid: string): Promise<EstudoState>
+  saveEstudo(uid: string, e: EstudoState): Promise<void>
 }
 
 export class FriendlyError extends Error {}
@@ -150,11 +155,17 @@ async function createFirebaseBackend(): Promise<Backend> {
       return s.docs.map((d) => d.data() as ExamState).sort((a, b) => b.startedAt - a.startedAt)
     },
     saveExam: (uid, e) => fs.setDoc(fs.doc(db, 'users', uid, 'exams', e.id), JSON.parse(JSON.stringify(e))),
-    getQuickTest: async (uid) => {
-      const s = await fs.getDoc(fs.doc(db, 'users', uid, 'private', 'quickTest'))
+    getQuickTest: async (uid, slot = 'rapido') => {
+      const s = await fs.getDoc(fs.doc(db, 'users', uid, 'private', docTeste(slot)))
       return s.exists() ? ((s.data().teste as QuickTestState | null) ?? null) : null
     },
-    saveQuickTest: (uid, t) => fs.setDoc(fs.doc(db, 'users', uid, 'private', 'quickTest'), { teste: t ? JSON.parse(JSON.stringify(t)) : null })
+    saveQuickTest: (uid, t, slot = 'rapido') => fs.setDoc(fs.doc(db, 'users', uid, 'private', docTeste(slot)), { teste: t ? JSON.parse(JSON.stringify(t)) : null }),
+    getEstudo: async (uid) => {
+      const s = await fs.getDoc(fs.doc(db, 'users', uid, 'private', 'estudo'))
+      const d = s.exists() ? (s.data() as Partial<EstudoState>) : {}
+      return { entendidos: d.entendidos ?? {}, pausa: d.pausa ?? null }
+    },
+    saveEstudo: (uid, e) => fs.setDoc(fs.doc(db, 'users', uid, 'private', 'estudo'), JSON.parse(JSON.stringify(e)))
   }
 }
 
@@ -171,6 +182,7 @@ function createLocalBackend(): Backend {
     attempts: Record<string, Attempt[]>
     exams: Record<string, Record<string, ExamState>>
     quick?: Record<string, QuickTestState | null>
+    estudo?: Record<string, EstudoState>
   }
   const load = (): DB => {
     try {
@@ -276,12 +288,20 @@ function createLocalBackend(): Backend {
       ;(db.exams[uid] ??= {})[e.id] = e
       save(db)
     },
-    async getQuickTest(uid) {
-      return load().quick?.[uid] ?? null
+    async getQuickTest(uid, slot = 'rapido') {
+      return load().quick?.[slot === 'rapido' ? uid : `${uid}:${slot}`] ?? null
     },
-    async saveQuickTest(uid, t) {
+    async saveQuickTest(uid, t, slot = 'rapido') {
       const db = load()
-      ;(db.quick ??= {})[uid] = t
+      ;(db.quick ??= {})[slot === 'rapido' ? uid : `${uid}:${slot}`] = t
+      save(db)
+    },
+    async getEstudo(uid) {
+      return load().estudo?.[uid] ?? { entendidos: {}, pausa: null }
+    },
+    async saveEstudo(uid, e) {
+      const db = load()
+      ;(db.estudo ??= {})[uid] = e
       save(db)
     }
   }

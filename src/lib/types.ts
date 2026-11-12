@@ -36,13 +36,30 @@ export interface Progress {
   quickStarts?: number // quantas vezes o usuário iniciou um teste rápido
 }
 
-// Teste rápido pausado/em andamento (salvo na conta do usuário)
+// Tipos de teste curto: rápido (12 questões variadas) e por matéria (5 de uma matéria escolhida)
+export type TestSlot = 'rapido' | 'materia'
+
+// Teste rápido / por matéria pausado ou em andamento (salvo na conta do usuário)
 export interface QuickTestState {
+  materia?: MateriaId // só no teste por matéria
   itens: { id: string; ordem: number[]; marcada?: number }[]
   atual: number
   repetidas: number
   fase?: 'teste' | 'revisao' // 'revisao': já finalizado e contabilizado, falta concluir a revisão
   updatedAt?: number
+}
+
+// Estudo: assuntos marcados como entendidos e o ponto onde o aluno parou (pausa)
+export interface EstudoPausa {
+  assunto: string // id do assunto
+  rolagem: number // posição da rolagem (px)
+  trecho: number // trecho do áudio em que parou (0 = início)
+  updatedAt: number
+}
+
+export interface EstudoState {
+  entendidos: Record<string, number> // id do assunto -> quando foi marcado
+  pausa?: EstudoPausa | null
 }
 
 export interface Attempt {
@@ -52,6 +69,7 @@ export interface Attempt {
   total: number
   acertos: number
   porMateria: Partial<Record<MateriaId, Score>>
+  materia?: MateriaId // teste por matéria
   nota?: number
   duracaoSeg?: number
 }

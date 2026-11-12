@@ -1,9 +1,9 @@
 import { calcZeradas, mesmasZeradas } from './zeradas'
-import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react'
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
 import { getBackend, type Backend } from './backend'
 import { loadQuestions, getQuestion, type Question } from './questions'
 import type { MateriaId } from './materias'
-import { emptyProfile, type AppUser, type Attempt, type Profile, type Progress, type QuickTestState, type Score } from './types'
+import { emptyProfile, type AppUser, type Attempt, type EstudoState, type Profile, type Progress, type QuickTestState, type Score } from './types'
 
 interface SessionCtx {
   ready: boolean
@@ -20,6 +20,10 @@ interface SessionCtx {
   bumpQuickStarts(): Promise<number>
   quickTest: QuickTestState | null
   saveQuickTest(t: QuickTestState | null): Promise<void>
+  materiaTest: QuickTestState | null
+  saveMateriaTest(t: QuickTestState | null): Promise<void>
+  estudo: EstudoState
+  updateEstudo(fn: (e: EstudoState) => EstudoState): Promise<void>
 }
 
 export interface Resposta {
@@ -40,6 +44,10 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   const [dataReady, setDataReady] = useState(false)
   const [reconectando, setReconectando] = useState(false)
   const [quickTest, setQuickTest] = useState<QuickTestState | null>(null)
+  const [materiaTest, setMateriaTest] = useState<QuickTestState | null>(null)
+  const [estudo, setEstudo] = useState<EstudoState>({ entendidos: {}, pausa: null })
+  const estudoRef = useRef(estudo)
+  estudoRef.current = estudo
 
   useEffect(() => {
     let unsub = () => {}
@@ -68,11 +76,13 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     let timer: ReturnType<typeof setTimeout> | undefined
     // Se a conexão falhar (ex.: aba voltando de suspensão), tenta de novo em vez de tratar como “sem perfil”
     const carregar = (tentativa: number) => {
-      Promise.all([backend.getProfile(user.uid), backend.getProgress(user.uid), backend.getQuickTest(user.uid)])
-        .then(([p, pr, qt]) => {
+      Promise.all([backend.getProfile(user.uid), backend.getProgress(user.uid), backend.getQuickTest(user.uid), backend.getQuickTest(user.uid, 'materia'), backend.getEstudo(user.uid)])
+        .then(([p, pr, qt, mt, es]) => {
           if (cancelado) return
           setProfile(p)
           setQuickTest(qt)
+          setMateriaTest(mt)
+          setEstudo(es)
           setProgress({ correct: pr.correct ?? [], wrongCount: pr.wrongCount ?? {}, quickStarts: pr.quickStarts ?? 0 })
           setReconectando(false)
           setDataReady(true)
@@ -190,6 +200,26 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     [backend, user]
   )
 
+  // Estudo: aplica a mudança sobre o estado mais recente e grava na conta
+  const updateEstudo = useCallback(
+    async (fn: (e: EstudoState) => EstudoState) => {
+      const novo = fn(estudoRef.current)
+      estudoRef.current = novo
+      setEstudo(novo)
+      if (backend && user) await backend.saveEstudo(user.uid, novo).catch(() => {})
+    },
+    [backend, user]
+  )
+
+  const saveMateriaTest = useCallback(
+    async (t: QuickTestState | null) => {
+      const v = t ? { ...t, updatedAt: Date.now() } : null
+      setMateriaTest(v)
+      if (backend && user) await backend.saveQuickTest(user.uid, v, 'materia').catch(() => {})
+    },
+    [backend, user]
+  )
+
   return (
     <Ctx.Provider
       value={{
@@ -206,7 +236,11 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         reloadProfile,
         bumpQuickStarts,
         quickTest,
-        saveQuickTest
+        saveQuickTest,
+        materiaTest,
+        saveMateriaTest,
+        estudo,
+        updateEstudo
       }}
     >
       {children}
