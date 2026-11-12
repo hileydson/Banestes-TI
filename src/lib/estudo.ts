@@ -6,58 +6,80 @@
 //   ## Subtítulo
 //   - item de lista
 //   > Dica de prova (caixa de destaque)
-import type { MateriaId } from './materias'
+import type { CargoId } from './cargos'
 
 export interface Assunto {
   id: string
   titulo: string
-  materia: MateriaId
+  materia: string // id da matéria no perfil (cargos.ts)
   grupo: string // bloco do edital dentro da matéria
   corpo: string
 }
 
-// Ordem de exibição: arquivo -> matéria e bloco do edital
-const ARQUIVOS: { arq: string; materia: MateriaId; grupo: string }[] = [
-  { arq: 'por', materia: 'POR', grupo: 'Língua Portuguesa' },
-  { arq: 'rle-logica', materia: 'RLE', grupo: 'Raciocínio lógico' },
-  { arq: 'rle-matematica', materia: 'RLE', grupo: 'Matemática básica' },
-  { arq: 'rle-estatistica', materia: 'RLE', grupo: 'Estatística e contagem' },
-  { arq: 'rle-financeira', materia: 'RLE', grupo: 'Matemática financeira' },
-  { arq: 'atu', materia: 'ATU', grupo: 'Atualidades do mercado financeiro' },
-  { arq: 'eti', materia: 'ETI', grupo: 'Ética, compliance e ESG' },
-  { arq: 'esp-pds', materia: 'ESP', grupo: 'Processo de desenvolvimento de software' },
-  { arq: 'esp-gov', materia: 'ESP', grupo: 'Gestão e governança de TI' },
-  { arq: 'esp-prg', materia: 'ESP', grupo: 'Programação' },
-  { arq: 'esp-bd', materia: 'ESP', grupo: 'Banco de dados' },
-  { arq: 'esp-web', materia: 'ESP', grupo: 'Desenvolvimento web e mobile' },
-  { arq: 'esp-arq', materia: 'ESP', grupo: 'Arquitetura de sistemas' },
-  { arq: 'esp-dev', materia: 'ESP', grupo: 'DevOps e DevSecOps' },
-  { arq: 'esp-so', materia: 'ESP', grupo: 'Sistemas operacionais' },
-  { arq: 'esp-red', materia: 'ESP', grupo: 'Redes de computadores' },
-  { arq: 'esp-srv', materia: 'ESP', grupo: 'Serviços e gerenciamento de redes' },
-  { arq: 'esp-seg', materia: 'ESP', grupo: 'Segurança da informação' },
-  { arq: 'esp-nuv', materia: 'ESP', grupo: 'Computação em nuvem' },
-  { arq: 'esp-ing', materia: 'ESP', grupo: 'Inglês técnico' }
-]
+type Arquivo = { arq: string; materia: string; grupo: string }
 
-let cache: Assunto[] | null = null
+// Arquivos comuns aos dois perfis (o conteúdo programático é igual nos dois editais)
+const PORTUGUES: Arquivo = { arq: 'por', materia: 'POR', grupo: 'Língua Portuguesa' }
+const ATUALIDADES: Arquivo = { arq: 'atu', materia: 'ATU', grupo: 'Atualidades do mercado financeiro' }
+const ETICA: Arquivo = { arq: 'eti', materia: 'ETI', grupo: 'Ética, compliance e ESG' }
 
-export async function loadEstudo(): Promise<Assunto[]> {
-  if (cache) return cache
+// Ordem de exibição de cada perfil: arquivo -> matéria do perfil e bloco do edital
+const ARQUIVOS: Record<CargoId, Arquivo[]> = {
+  TI: [
+    PORTUGUES,
+    { arq: 'rle-logica', materia: 'RLE', grupo: 'Raciocínio lógico' },
+    { arq: 'rle-matematica', materia: 'RLE', grupo: 'Matemática básica' },
+    { arq: 'rle-estatistica', materia: 'RLE', grupo: 'Estatística e contagem' },
+    { arq: 'rle-financeira', materia: 'RLE', grupo: 'Matemática financeira' },
+    ATUALIDADES,
+    ETICA,
+    { arq: 'esp-pds', materia: 'ESP', grupo: 'Processo de desenvolvimento de software' },
+    { arq: 'esp-gov', materia: 'ESP', grupo: 'Gestão e governança de TI' },
+    { arq: 'esp-prg', materia: 'ESP', grupo: 'Programação' },
+    { arq: 'esp-bd', materia: 'ESP', grupo: 'Banco de dados' },
+    { arq: 'esp-web', materia: 'ESP', grupo: 'Desenvolvimento web e mobile' },
+    { arq: 'esp-arq', materia: 'ESP', grupo: 'Arquitetura de sistemas' },
+    { arq: 'esp-dev', materia: 'ESP', grupo: 'DevOps e DevSecOps' },
+    { arq: 'esp-so', materia: 'ESP', grupo: 'Sistemas operacionais' },
+    { arq: 'esp-red', materia: 'ESP', grupo: 'Redes de computadores' },
+    { arq: 'esp-srv', materia: 'ESP', grupo: 'Serviços e gerenciamento de redes' },
+    { arq: 'esp-seg', materia: 'ESP', grupo: 'Segurança da informação' },
+    { arq: 'esp-nuv', materia: 'ESP', grupo: 'Computação em nuvem' },
+    { arq: 'esp-ing', materia: 'ESP', grupo: 'Inglês técnico' }
+  ],
+  TB: [
+    PORTUGUES,
+    { arq: 'rle-logica', materia: 'RLQ', grupo: 'Raciocínio lógico' },
+    { arq: 'rle-matematica', materia: 'RLQ', grupo: 'Matemática básica' },
+    { arq: 'rle-estatistica', materia: 'RLQ', grupo: 'Estatística e contagem' },
+    ATUALIDADES,
+    ETICA,
+    { arq: 'ban', materia: 'BAN', grupo: 'Conhecimentos bancários e securitários' },
+    { arq: 'ven', materia: 'VEN', grupo: 'Vendas, negociação e atendimento' },
+    { arq: 'rle-financeira', materia: 'MFI', grupo: 'Matemática financeira' },
+    { arq: 'pes', materia: 'PES', grupo: 'Probabilidade e estatística' },
+    { arq: 'inf', materia: 'INF', grupo: 'Informática e comportamentos digitais' }
+  ]
+}
+
+const cache: Partial<Record<CargoId, Assunto[]>> = {}
+
+export async function loadEstudo(cargo: CargoId): Promise<Assunto[]> {
+  if (cache[cargo]) return cache[cargo]!
   const mods = import.meta.glob<string>('../data/estudo/*.md', { query: '?raw', import: 'default' })
   const textos = await Promise.all(
-    ARQUIVOS.map(async (f) => {
+    ARQUIVOS[cargo].map(async (f) => {
       const load = mods[`../data/estudo/${f.arq}.md`]
       return { f, texto: load ? await load() : '' }
     })
   )
   const out: Assunto[] = []
   for (const { f, texto } of textos) out.push(...parseArquivo(texto, f.materia, f.grupo))
-  cache = out
+  cache[cargo] = out
   return out
 }
 
-function parseArquivo(texto: string, materia: MateriaId, grupo: string): Assunto[] {
+function parseArquivo(texto: string, materia: string, grupo: string): Assunto[] {
   const out: Assunto[] = []
   let atual: Assunto | null = null
   const linhas: string[] = []

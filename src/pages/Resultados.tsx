@@ -22,7 +22,8 @@ import {
   YAxis
 } from 'recharts'
 import { useSession } from '../lib/session'
-import { AREAS, MATERIAS } from '../lib/materias'
+import { AREAS } from '../lib/materias'
+import { materiaDoCargo, scoreMateria, type Cargo } from '../lib/cargos'
 import { computeInsight, fmtPct, pct, total } from '../lib/insights'
 import type { Attempt } from '../lib/types'
 import { progressoMaterias } from '../lib/zeradas'
@@ -34,27 +35,35 @@ const tooltipStyle = {
 }
 
 export default function Resultados() {
-  const { profile, backend, user, questions, progress } = useSession()
+  const { profile, backend, user, questions, progress, cargo } = useSession()
   const [attempts, setAttempts] = useState<Attempt[]>([])
   useEffect(() => {
     if (backend && user) backend.listAttempts(user.uid).then(setAttempts)
   }, [backend, user])
   if (!profile) return null
 
-  const ins = computeInsight(profile)
+  const ins = computeInsight(profile, cargo)
   let tA = 0,
     tE = 0
-  const porMateria = MATERIAS.map((m) => {
-    const s = profile.stats[m.id] ?? { a: 0, e: 0 }
+  const porMateria = cargo.materias.map((m) => {
+    const s = scoreMateria(profile, m)
     tA += s.a
     tE += s.e
     return { nome: m.curto, completo: m.nome, Acertos: s.a, Erros: s.e, aproveitamento: Math.round(pct(s)), cor: m.cor }
   })
-  const porArea = AREAS.filter((a) => a.materia === 'ESP').map((a) => {
-    const s = profile.areaStats[a.id] ?? { a: 0, e: 0 }
-    return { nome: a.nome, Acertos: s.a, Erros: s.e, aproveitamento: Math.round(pct(s)), n: total(s) }
-  })
-  const evolucao = attempts.map((a, i) => ({
+  // Analista de TI: Específicos por área do edital; Técnico Bancário: cada matéria específica
+  const porArea = cargo.materiaComAreas
+    ? AREAS.filter((a) => a.materia === cargo.materiaComAreas).map((a) => {
+        const s = profile.areaStats[a.id] ?? { a: 0, e: 0 }
+        return { nome: a.nome, Acertos: s.a, Erros: s.e, aproveitamento: Math.round(pct(s)), n: total(s) }
+      })
+    : cargo.materias
+        .filter((m) => m.grupo === 'Conhecimentos Específicos')
+        .map((m) => {
+          const s = scoreMateria(profile, m)
+          return { nome: m.nome, Acertos: s.a, Erros: s.e, aproveitamento: Math.round(pct(s)), n: total(s) }
+        })
+  const evolucao = attempts.filter((a) => (a.cargo ?? 'TI') === cargo.id).map((a, i) => ({
     n: i + 1,
     tipo: a.tipo,
     aproveitamento: Math.round((a.acertos / Math.max(1, a.total)) * 100),
@@ -67,7 +76,7 @@ export default function Resultados() {
         <BarChart3 /> Seus resultados
       </h2>
 
-      <MateriasZeradas questions={questions} correct={progress.correct} />
+      <MateriasZeradas questions={questions} correct={progress.correct} cargo={cargo} />
 
       <div className="kpis">
         {[
@@ -159,7 +168,7 @@ export default function Resultados() {
         </ChartCard>
       </div>
 
-      <ChartCard titulo="Conhecimentos Específicos por área do edital" delay={0.5} wide>
+      <ChartCard titulo={cargo.materiaComAreas ? 'Conhecimentos Específicos por área do edital' : 'Conhecimentos Específicos por matéria'} delay={0.5} wide>
         <ResponsiveContainer width="100%" height={Math.max(300, porArea.length * 34)}>
           <BarChart data={porArea} layout="vertical" margin={{ left: 10, right: 10 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,.08)" />
@@ -226,8 +235,8 @@ function ChartCard({ titulo, children, delay = 0, wide }: { titulo: string; chil
 }
 
 // Topo da tela: matérias zeradas (todas as questões do banco acertadas) e quanto falta nas demais
-function MateriasZeradas({ questions, correct }: { questions: Parameters<typeof progressoMaterias>[0]; correct: string[] }) {
-  const prog = progressoMaterias(questions, correct)
+function MateriasZeradas({ questions, correct, cargo }: { questions: Parameters<typeof progressoMaterias>[0]; correct: string[]; cargo: Cargo }) {
+  const prog = progressoMaterias(questions, correct, cargo)
   const zeradas = prog.filter((p) => p.zerada)
   return (
     <motion.div className="glass zeradas-card" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
@@ -244,7 +253,7 @@ function MateriasZeradas({ questions, correct }: { questions: Parameters<typeof 
       {zeradas.length > 0 && (
         <div className="zeradas-selos">
           {zeradas.map((p, i) => {
-            const m = MATERIAS.find((x) => x.id === p.id)!
+            const m = materiaDoCargo(cargo, p.id)!
             return (
               <motion.div
                 key={p.id}
@@ -266,7 +275,7 @@ function MateriasZeradas({ questions, correct }: { questions: Parameters<typeof 
         {prog
           .filter((p) => !p.zerada)
           .map((p) => {
-            const m = MATERIAS.find((x) => x.id === p.id)!
+            const m = materiaDoCargo(cargo, p.id)!
             const pc = p.total ? (p.acertadas / p.total) * 100 : 0
             return (
               <div key={p.id} className="ibar">

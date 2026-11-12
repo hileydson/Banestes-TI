@@ -2,9 +2,11 @@ import { AnimatePresence, motion } from 'motion/react'
 import { Lightbulb, X } from 'lucide-react'
 import { computeInsight, fmtPct } from '../lib/insights'
 import type { Profile } from '../lib/types'
+import { useSession } from '../lib/session'
 
 export default function InsightModal({ profile, open, onClose, titulo }: { profile: Profile; open: boolean; onClose(): void; titulo: string }) {
-  const ins = computeInsight(profile)
+  const { cargo } = useSession()
+  const ins = computeInsight(profile, cargo)
   return (
     <AnimatePresence>
       {open && (

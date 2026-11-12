@@ -19,7 +19,7 @@ import {
   Trash2
 } from 'lucide-react'
 import { useSession } from '../lib/session'
-import { MATERIAS, MATERIA_BY_ID, type MateriaId } from '../lib/materias'
+import { materiaDoCargo, type MateriaCargo } from '../lib/cargos'
 import { blocos, loadEstudo, trechosParaFala, type Assunto, type Bloco } from '../lib/estudo'
 import { falaSuportada, useFala } from '../lib/fala'
 import { rolagemAtual, rolarPara, scrollToTop } from '../lib/scroll'
@@ -27,20 +27,22 @@ import { rolagemAtual, rolarPara, scrollToTop } from '../lib/scroll'
 export default function Estudo() {
   const [assuntos, setAssuntos] = useState<Assunto[] | null>(null)
   const [params] = useSearchParams()
+  const { cargo } = useSession()
   useEffect(() => {
-    loadEstudo().then(setAssuntos)
-  }, [])
+    setAssuntos(null)
+    loadEstudo(cargo.id).then(setAssuntos)
+  }, [cargo.id])
 
   if (!assuntos) return <p className="muted">Carregando conteúdo…</p>
 
   const a = params.get('a')
-  const m = params.get('m') as MateriaId | null
+  const m = params.get('m')
   const assunto = a ? assuntos.find((x) => x.id === a) : undefined
   if (assunto) {
     const daMateria = assuntos.filter((x) => x.materia === assunto.materia)
     return <AssuntoView key={assunto.id} assunto={assunto} lista={daMateria} retomar={params.get('r') === '1'} />
   }
-  if (m && MATERIA_BY_ID[m]) return <MateriaView materia={m} lista={assuntos.filter((x) => x.materia === m)} />
+  if (m && materiaDoCargo(cargo, m)) return <MateriaView materia={m} lista={assuntos.filter((x) => x.materia === m)} />
   return <EstudoInicio assuntos={assuntos} />
 }
 
@@ -50,7 +52,7 @@ const linkAssunto = (x: Assunto, retomar = false) => `/estudo?m=${x.materia}&a=$
 /* Tela inicial: pausa + matérias                                      */
 /* ------------------------------------------------------------------ */
 function EstudoInicio({ assuntos }: { assuntos: Assunto[] }) {
-  const { estudo, updateEstudo } = useSession()
+  const { estudo, updateEstudo, cargo } = useSession()
   const nav = useNavigate()
   const pausado = estudo.pausa ? assuntos.find((x) => x.id === estudo.pausa!.assunto) : undefined
   const feitos = assuntos.filter((x) => estudo.entendidos[x.id]).length
@@ -106,7 +108,7 @@ function EstudoInicio({ assuntos }: { assuntos: Assunto[] }) {
       </div>
 
       <div className="estudo-materias">
-        {MATERIAS.map((m, i) => {
+        {cargo.materias.map((m, i) => {
           const lista = assuntos.filter((x) => x.materia === m.id)
           const ok = lista.filter((x) => estudo.entendidos[x.id]).length
           return (
@@ -139,10 +141,11 @@ function EstudoInicio({ assuntos }: { assuntos: Assunto[] }) {
 /* ------------------------------------------------------------------ */
 /* Lista de assuntos de uma matéria                                    */
 /* ------------------------------------------------------------------ */
-function MateriaView({ materia, lista }: { materia: MateriaId; lista: Assunto[] }) {
+function MateriaView({ materia, lista }: { materia: string; lista: Assunto[] }) {
   const { estudo } = useSession()
   const nav = useNavigate()
-  const m = MATERIA_BY_ID[materia]
+  const { cargo } = useSession()
+  const m = materiaDoCargo(cargo, materia)!
   const ok = lista.filter((x) => estudo.entendidos[x.id]).length
   const grupos = [...new Set(lista.map((x) => x.grupo))]
   useEffect(() => scrollToTop(), [])
@@ -197,7 +200,7 @@ function MateriaView({ materia, lista }: { materia: MateriaId; lista: Assunto[] 
 /* Conteúdo de um assunto + leitura em voz                             */
 /* ------------------------------------------------------------------ */
 function AssuntoView({ assunto, lista, retomar }: { assunto: Assunto; lista: Assunto[]; retomar: boolean }) {
-  const { estudo, updateEstudo } = useSession()
+  const { estudo, updateEstudo, cargo } = useSession()
   const nav = useNavigate()
   const bs = useMemo(() => blocos(assunto.corpo), [assunto])
   const trechos = useMemo(() => trechosParaFala(assunto.titulo, bs), [assunto, bs])
@@ -274,7 +277,7 @@ function AssuntoView({ assunto, lista, retomar }: { assunto: Assunto; lista: Ass
       return { ...e, entendidos: ent }
     })
 
-  const m = MATERIA_BY_ID[assunto.materia]
+  const m = materiaDoCargo(cargo, assunto.materia)!
   return (
     <div className="estudo estudo-assunto">
       <div className="row gap estudo-topo">
@@ -407,8 +410,9 @@ function inline(s: string): ReactNode[] {
   })
 }
 
-function MateriaChip({ id }: { id: MateriaId }) {
-  const m = MATERIA_BY_ID[id]
+function MateriaChip({ id }: { id: string }) {
+  const { cargo } = useSession()
+  const m: Pick<MateriaCargo, 'cor' | 'curto'> = materiaDoCargo(cargo, id) ?? { cor: '#9fb0d9', curto: id }
   return (
     <span className="materia-tag" style={{ borderColor: m.cor, color: m.cor }}>
       {m.curto}

@@ -3,8 +3,8 @@ import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 const dir = 'src/data/questoes'
-const MATERIAS = ['POR', 'RLE', 'ATU', 'ETI', 'ESP']
-const AREAS = { RLE: ['RL', 'EST'], ESP: ['PDS', 'GOV', 'PRG', 'BD', 'WEB', 'ARQ', 'DEV', 'SO', 'RED', 'SRV', 'SEG', 'NUV', 'ING'] }
+const MATERIAS = ['POR', 'RLE', 'ATU', 'ETI', 'ESP', 'BAN', 'VEN', 'INF', 'PES']
+const AREAS = { RLE: ['RL', 'EST', 'MF'], ESP: ['PDS', 'GOV', 'PRG', 'BD', 'WEB', 'ARQ', 'DEV', 'SO', 'RED', 'SRV', 'SEG', 'NUV', 'ING'] }
 const ids = new Set()
 const cont = {}
 const vies = {}

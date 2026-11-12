@@ -1,5 +1,7 @@
 import { motion } from 'motion/react'
 import { AREA_BY_ID, MATERIA_BY_ID } from '../lib/materias'
+import { materiaDaQuestao } from '../lib/cargos'
+import { useSession } from '../lib/session'
 import { HelpCircle } from 'lucide-react'
 import { LETRAS, NAO_SEI, type Question } from '../lib/questions'
 
@@ -14,7 +16,9 @@ interface Props {
 }
 
 export default function QuestionView({ q, numero, total, ordem, marcada, onMarcar, permitirNaoSei }: Props) {
-  const m = MATERIA_BY_ID[q.m]
+  const { cargo } = useSession()
+  // nome e cor da matéria como aparecem no perfil (ex.: Matemática Financeira no Técnico Bancário)
+  const m = materiaDaQuestao(q, cargo) ?? MATERIA_BY_ID[q.m]
   const area = AREA_BY_ID[q.area]
   return (
     <motion.div

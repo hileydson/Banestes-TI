@@ -1,4 +1,5 @@
 import type { MateriaId, Slot } from './materias'
+import { materiaDoCargo, pertence, type Cargo } from './cargos'
 
 // Formato compacto usado nos arquivos JSON do banco
 export interface RawQuestion {
@@ -69,21 +70,24 @@ export function pickQuestions(
   slots: Slot[],
   acertadas: Set<string>,
   excluir: Set<string> = new Set(),
-  pesoArea: Record<string, number> = {}
+  pesoArea: Record<string, number> = {},
+  cargo: Cargo
 ): PickResult {
   const escolhidas: string[] = []
   const usados = new Set(excluir)
   let repetidas = 0
 
   for (const slot of slots) {
-    const pool = all.filter(
-      (q) => q.m === slot.materia && (!slot.area || q.area === slot.area) && !usados.has(q.id)
-    )
+    const mc = materiaDoCargo(cargo, slot.materia)
+    if (!mc) continue
+    const areas = slot.area === undefined ? undefined : Array.isArray(slot.area) ? slot.area : [slot.area]
+    const pool = all.filter((q) => pertence(q, mc) && (!areas || areas.includes(q.area)) && !usados.has(q.id))
     const ineditas = pool.filter((q) => !acertadas.has(q.id))
     const jaAcertadas = shuffle(pool.filter((q) => acertadas.has(q.id)))
 
     let pegas: Question[]
-    if (slot.materia === 'ESP' && !slot.area) {
+    // matéria com várias áreas (ex.: Específicos de TI): espalha entre as áreas, priorizando as que o aluno mais erra
+    if (new Set(pool.map((q) => q.area)).size > 2 && !slot.area) {
       pegas = spreadByArea(ineditas, slot.n, pesoArea)
     } else {
       pegas = shuffle(ineditas).slice(0, slot.n)

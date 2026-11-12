@@ -1,5 +1,6 @@
 import type { MateriaId } from './materias'
 import type { Zeradas } from './zeradas'
+import type { CargoId } from './cargos'
 
 export interface AppUser {
   uid: string
@@ -17,6 +18,7 @@ export interface Score {
 export interface Profile {
   uid: string
   nickname: string
+  cargo?: CargoId // perfil escolhido (sem valor = Analista de TI, quem se cadastrou antes da escolha)
   stats: Partial<Record<MateriaId, Score>>
   areaStats: Record<string, Score>
   pontos: number // soma de acertos (todas as atividades)
@@ -41,7 +43,7 @@ export type TestSlot = 'rapido' | 'materia'
 
 // Teste rápido / por matéria pausado ou em andamento (salvo na conta do usuário)
 export interface QuickTestState {
-  materia?: MateriaId // só no teste por matéria
+  materia?: string // só no teste por matéria (id da matéria do perfil)
   itens: { id: string; ordem: number[]; marcada?: number }[]
   atual: number
   repetidas: number
@@ -69,7 +71,8 @@ export interface Attempt {
   total: number
   acertos: number
   porMateria: Partial<Record<MateriaId, Score>>
-  materia?: MateriaId // teste por matéria
+  materia?: string // teste por matéria
+  cargo?: CargoId // perfil em que foi feito
   nota?: number
   duracaoSeg?: number
 }
@@ -100,6 +103,7 @@ export interface ExamResult {
 export interface ExamState {
   id: string
   numero: number
+  cargo?: CargoId // perfil da prova (sem valor = Analista de TI)
   status: 'andamento' | 'concluida'
   secoes: ExamSection[]
   respostas: Record<string, number> // id da questão -> índice ORIGINAL da alternativa marcada
@@ -112,11 +116,12 @@ export interface ExamState {
   resultado?: ExamResult
 }
 
-export function emptyProfile(uid: string, nickname: string): Profile {
+export function emptyProfile(uid: string, nickname: string, cargo: CargoId): Profile {
   const now = Date.now()
   return {
     uid,
     nickname,
+    cargo,
     stats: {},
     areaStats: {},
     pontos: 0,

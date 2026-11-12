@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'motion/react'
-import { BarChart3, BookOpen, FileText, Layers, LogOut, PlayCircle, Trophy, X } from 'lucide-react'
+import { BarChart3, BookOpen, FileText, Layers, LogOut, PlayCircle, Settings, Trophy, X } from 'lucide-react'
+import { pontosCargo } from '../lib/cargos'
 import { useSession } from '../lib/session'
 
 const itens = [
@@ -9,11 +10,12 @@ const itens = [
   { to: '/prova', label: 'Prova', icon: FileText },
   { to: '/estudo', label: 'Estudo', icon: BookOpen },
   { to: '/resultados', label: 'Ver resultados', icon: BarChart3 },
-  { to: '/ranking', label: 'Ranking', icon: Trophy }
+  { to: '/ranking', label: 'Ranking', icon: Trophy },
+  { to: '/config', label: 'Configurações', icon: Settings }
 ]
 
 export default function Sidebar({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const { profile, user, backend } = useSession()
+  const { profile, user, backend, cargo } = useSession()
   return (
     <AnimatePresence>
       {open && (
@@ -31,6 +33,7 @@ export default function Sidebar({ open, onClose }: { open: boolean; onClose: () 
               <div className="who">
                 <strong>{profile?.nickname}</strong>
                 <small>{user?.username ? `@${user.username}` : user?.email}</small>
+                <small className="perfil-chip">{cargo.curto}</small>
               </div>
               <button className="icon-btn" onClick={onClose} aria-label="Fechar menu">
                 <X size={20} />
@@ -49,7 +52,7 @@ export default function Sidebar({ open, onClose }: { open: boolean; onClose: () 
             <div className="sidebar-foot">
               <div className="mini-stats">
                 <div>
-                  <b>{profile?.pontos ?? 0}</b>
+                  <b>{profile ? pontosCargo(profile, cargo) : 0}</b>
                   <small>pontos</small>
                 </div>
                 <div>

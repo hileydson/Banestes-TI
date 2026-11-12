@@ -1,17 +1,21 @@
 import { useState, type FormEvent } from 'react'
 import { motion } from 'motion/react'
 import { useSession } from '../lib/session'
+import EscolhaCargo from '../components/EscolhaCargo'
+import type { CargoId } from '../lib/cargos'
 
 export default function Apelido() {
   const { user, setNickname, backend } = useSession()
   const [nick, setNick] = useState(user?.username ?? user?.displayName?.split(' ')[0] ?? '')
   const [erro, setErro] = useState('')
   const [salvando, setSalvando] = useState(false)
+  const [cargo, setCargo] = useState<CargoId | null>(null)
 
   const submit = async (e: FormEvent) => {
     e.preventDefault()
     const n = nick.trim()
     if (n.length < 2 || n.length > 20) return setErro('O apelido deve ter entre 2 e 20 caracteres.')
+    if (!cargo) return setErro('Escolha para qual cargo você vai estudar.')
     setSalvando(true)
     try {
       const todos = await backend!.listProfiles()
@@ -19,7 +23,7 @@ export default function Apelido() {
         setErro('Esse apelido já está sendo usado no ranking. Escolha outro.')
         return
       }
-      await setNickname(n)
+      await setNickname(n, cargo)
     } catch (err) {
       setErro((err as Error).message)
     } finally {
@@ -42,6 +46,17 @@ export default function Apelido() {
           Apelido
           <input value={nick} onChange={(e) => setNick(e.target.value)} maxLength={20} autoFocus required />
         </label>
+        <div className="cargo-escolha">
+          <span className="cargo-label">Para qual cargo você vai estudar?</span>
+          <EscolhaCargo
+            valor={cargo}
+            onChange={(c) => {
+              setCargo(c)
+              setErro('')
+            }}
+          />
+          <small className="muted">Dá para trocar depois em Configurações.</small>
+        </div>
         {erro && <div className="alert error">{erro}</div>}
         <button className="btn primary" disabled={salvando}>
           Começar a estudar

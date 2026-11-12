@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { ArrowLeft, ArrowRight, CheckCircle2, Clock, FileText, Flag, Pause, Play } from 'lucide-react'
 import confetti from 'canvas-confetti'
 import { useSession } from '../lib/session'
-import { SECOES_PROVA, TEMPO_REFERENCIA_PROVA_SEG } from '../lib/materias'
+import { TEMPO_REFERENCIA_PROVA_SEG } from '../lib/materias'
 import { getQuestion, pickQuestions, randomOrder } from '../lib/questions'
 import { acertadasParaSorteio } from '../lib/zeradas'
 import { scrollToTop } from '../lib/scroll'
@@ -25,7 +25,7 @@ const respondidasSecao = (e: ExamState, i: number) => e.secoes[i].questoes.filte
 const totalQuestoes = (e: ExamState) => e.secoes.reduce((s, x) => s + x.questoes.length, 0)
 
 export default function Prova() {
-  const { backend, user, questions, progress, profile } = useSession()
+  const { backend, user, questions, progress, profile, cargo } = useSession()
   const [exams, setExams] = useState<ExamState[] | null>(null)
   const [ativa, setAtiva] = useState<ExamState | null>(null)
   const [concluida, setConcluida] = useState<{ exam: ExamState; nova: boolean } | null>(null)
@@ -33,25 +33,29 @@ export default function Prova() {
 
   const carregar = useCallback(async () => {
     if (!backend || !user) return
-    setExams(await backend.listExams(user.uid))
-  }, [backend, user])
+    // Só as provas do perfil atual (provas antigas, sem perfil, são de Analista de TI)
+    const todas = await backend.listExams(user.uid)
+    setExams(todas.filter((e) => (e.cargo ?? 'TI') === cargo.id))
+  }, [backend, user, cargo.id])
 
   useEffect(() => {
     carregar()
   }, [carregar])
 
   const emAndamento = exams?.find((e) => e.status === 'andamento')
+  const totalSimulado = cargo.secoesProva.reduce((n, s) => n + s.slots.reduce((m, x) => m + x.n, 0), 0)
   const feitas = exams?.filter((e) => e.status === 'concluida') ?? []
+  const ultimaFeita = [...feitas].sort((a, b) => (b.finishedAt ?? b.startedAt) - (a.finishedAt ?? a.startedAt))[0]
 
   const criar = async () => {
     if (!backend || !user) return
     setPerguntar(false)
     const usados = new Set<string>()
-    const acertadas = acertadasParaSorteio(questions, progress.correct)
+    const acertadas = acertadasParaSorteio(questions, progress.correct, cargo)
     const peso: Record<string, number> = {}
     for (const [a, s] of Object.entries(profile?.areaStats ?? {})) peso[a] = s.e / Math.max(1, s.a + s.e)
-    const secoes = SECOES_PROVA.map((sp) => {
-      const { ids } = pickQuestions(questions, sp.slots, acertadas, usados, peso)
+    const secoes = cargo.secoesProva.map((sp) => {
+      const { ids } = pickQuestions(questions, sp.slots, acertadas, usados, peso, cargo)
       ids.forEach((id) => usados.add(id))
       return { id: sp.id, titulo: sp.titulo, grupo: sp.grupo, questoes: ids.map((id) => ({ id, ordem: randomOrder() })) }
     })
@@ -59,6 +63,7 @@ export default function Prova() {
     const exam: ExamState = {
       id: `prova-${now}`,
       numero: (exams?.length ?? 0) + 1,
+      cargo: cargo.id,
       status: 'andamento',
       secoes,
       respostas: {},
@@ -97,9 +102,8 @@ export default function Prova() {
         <FileText /> Simulado de prova
       </h2>
       <p className="muted">
-        Simulado no padrão FCC com metade da prova real do edital: <b>15 questões de Conhecimentos Gerais</b> (5 Português, 5 Raciocínio Lógico e
-        Estatística, 3 Atualidades, 2 Ética/ESG) e <b>25 de Conhecimentos Específicos</b>, em 5 seções. Tempo de referência: 2h. A nota segue o edital: Gerais
-        peso 1, Específicos peso 2, mínimo 6,0.
+        Simulado de <b>{cargo.curto}</b> no padrão FCC, com metade da prova real do edital: {cargo.provaTexto}, em {cargo.secoesProva.length} seções. Tempo de
+        referência: 2h. A nota segue o edital: Gerais peso 1, Específicos peso 2, mínimo 6,0.
       </p>
 
       {exams === null && <p className="muted">Carregando…</p>}
@@ -130,15 +134,15 @@ export default function Prova() {
 
       <div className="hero-stats">
         <div className="glass stat">
-          <b>{profile?.provas ?? 0}</b>
+          <b>{feitas.length}</b>
           <small>provas concluídas</small>
         </div>
         <div className="glass stat">
-          <b>{(profile?.melhorNotaProva ?? 0).toFixed(2)}</b>
+          <b>{Math.max(0, ...feitas.map((e) => e.resultado?.notaFinal ?? 0)).toFixed(2)}</b>
           <small>melhor nota</small>
         </div>
         <div className="glass stat">
-          <b>{profile?.ultimaNotaProva?.toFixed(2) ?? '—'}</b>
+          <b>{ultimaFeita?.resultado ? ultimaFeita.resultado.notaFinal.toFixed(2) : '—'}</b>
           <small>última nota</small>
         </div>
       </div>
@@ -174,7 +178,7 @@ export default function Prova() {
                 <FileText size={28} />
               </div>
               <h2>Iniciar a simulação de prova?</h2>
-              <p className="muted">São 40 questões em 5 seções. O cronômetro começa assim que você confirmar. Você pode pausar e continuar depois.</p>
+              <p className="muted">São {totalSimulado} questões em {cargo.secoesProva.length} seções. O cronômetro começa assim que você confirmar. Você pode pausar e continuar depois.</p>
               <div className="row gap">
                 <button className="btn ghost" onClick={() => setPerguntar(false)}>
                   Agora não

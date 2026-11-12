@@ -1,4 +1,5 @@
-import { AREA_BY_ID, MATERIAS, type MateriaId } from './materias'
+import { AREA_BY_ID } from './materias'
+import { pertence, scoreMateria, totaisCargo, type Cargo } from './cargos'
 import type { Profile, Score } from './types'
 
 export const pct = (s?: Score) => (s && s.a + s.e > 0 ? (s.a / (s.a + s.e)) * 100 : 0)
@@ -6,7 +7,7 @@ export const total = (s?: Score) => (s ? s.a + s.e : 0)
 export const fmtPct = (n: number) => `${Math.round(n)}%`
 
 export interface InsightMateria {
-  id: MateriaId
+  id: string
   nome: string
   cor: string
   aproveitamento: number
@@ -24,16 +25,11 @@ export interface Insight {
   mensagens: string[]
 }
 
-export function computeInsight(p: Profile): Insight {
-  let a = 0
-  let e = 0
-  for (const m of MATERIAS) {
-    a += p.stats[m.id]?.a ?? 0
-    e += p.stats[m.id]?.e ?? 0
-  }
+export function computeInsight(p: Profile, cargo: Cargo): Insight {
+  const { a, e } = totaisCargo(p, cargo)
   const geral = a + e ? (a / (a + e)) * 100 : 0
-  const materias: InsightMateria[] = MATERIAS.map((m) => {
-    const s = p.stats[m.id]
+  const materias: InsightMateria[] = cargo.materias.map((m) => {
+    const s = scoreMateria(p, m)
     const ap = pct(s)
     return { id: m.id, nome: m.nome, cor: m.cor, aproveitamento: ap, respondidas: total(s), diferenca: ap - geral }
   })
@@ -43,7 +39,8 @@ export function computeInsight(p: Profile): Insight {
   const melhor = ordenadas[ordenadas.length - 1]
 
   const areas = Object.entries(p.areaStats)
-    .filter(([id, s]) => AREA_BY_ID[id] && total(s) >= 2)
+    // só áreas que fazem parte das matérias do perfil
+    .filter(([id, s]) => AREA_BY_ID[id] && total(s) >= 2 && cargo.materias.some((mc) => pertence({ m: AREA_BY_ID[id].materia, area: id } as Parameters<typeof pertence>[0], mc)))
     .map(([id, s]) => ({ nome: AREA_BY_ID[id].nome, aproveitamento: pct(s), respondidas: total(s) }))
     .sort((x, y) => x.aproveitamento - y.aproveitamento)
   const piorArea = areas[0]

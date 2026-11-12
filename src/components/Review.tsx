@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { CheckCircle2, ChevronDown, XCircle } from 'lucide-react'
 import { AREA_BY_ID, MATERIA_BY_ID } from '../lib/materias'
+import { materiaDaQuestao } from '../lib/cargos'
+import { useSession } from '../lib/session'
 import { getQuestion, LETRAS, NAO_SEI } from '../lib/questions'
 import { renderText } from './QuestionView'
 
@@ -39,10 +41,11 @@ export default function Review({ itens }: { itens: ReviewItem[] }) {
 
 function ReviewCard({ item, index, aberto = false }: { item: ReviewItem; index: number; aberto?: boolean }) {
   const [open, setOpen] = useState(aberto)
+  const { cargo } = useSession()
   const q = getQuestion(item.id)
   if (!q) return null
   const acertou = item.marcada === q.c
-  const m = MATERIA_BY_ID[q.m]
+  const m = materiaDaQuestao(q, cargo) ?? MATERIA_BY_ID[q.m]
   const area = AREA_BY_ID[q.area]
   const letraDe = (orig?: number) => (orig === undefined ? '—' : LETRAS[item.ordem.indexOf(orig)])
   return (

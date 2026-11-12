@@ -2029,3 +2029,86 @@ html.forca-retrato .splash {
   color: #fca5a5;
   font-size: 0.8rem;
 }
+
+/* --- perfil (cargo) --- */
+.cargo-escolha {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+.cargo-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.cargo-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cargo-opcao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.cargo-opcao:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.cargo-opcao.ativo {
+  border-color: rgba(52, 211, 153, 0.7);
+  background: rgba(52, 211, 153, 0.1);
+}
+.cargo-icone {
+  flex-shrink: 0;
+  color: #93c5fd;
+}
+.cargo-texto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cargo-texto small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+.perfil-chip {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: rgba(96, 165, 250, 0.15);
+  color: #bfdbfe !important;
+  font-size: 0.72rem !important;
+  width: fit-content;
+}
+.config {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.config-card {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.config-card h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.config-card .btn.big {
+  margin: 4px 0 0;
+}

@@ -1,4 +1,5 @@
 import { calcZeradas, mesmasZeradas } from './zeradas'
+import { cargoDoPerfil, type Cargo, type CargoId } from './cargos'
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
 import { getBackend, type Backend } from './backend'
 import { loadQuestions, getQuestion, type Question } from './questions'
@@ -14,7 +15,9 @@ interface SessionCtx {
   profile: Profile | null
   progress: Progress
   questions: Question[]
-  setNickname(n: string): Promise<void>
+  setNickname(n: string, cargo: CargoId): Promise<void>
+  cargo: Cargo
+  setCargo(c: CargoId): Promise<void>
   record(tipo: Attempt['tipo'], respostas: Resposta[], extra?: Partial<Attempt>): Promise<Attempt>
   reloadProfile(): Promise<void>
   bumpQuickStarts(): Promise<number>
@@ -103,7 +106,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   // Mantém o selo de “matéria zerada” coerente com o banco atual (ex.: novas questões adicionadas)
   useEffect(() => {
     if (!backend || !profile || !dataReady || !questions.length) return
-    const z = calcZeradas(questions, progress.correct)
+    const z = calcZeradas(questions, progress.correct, cargoDoPerfil(profile))
     if (mesmasZeradas(profile.zeradas, z)) return
     const p = { ...profile, zeradas: z }
     setProfile(p)
@@ -116,11 +119,11 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   }, [backend, user])
 
   const setNickname = useCallback(
-    async (n: string) => {
+    async (n: string, cargo: CargoId) => {
       if (!backend || !user) return
       // Nunca recria um perfil zerado: confere no servidor se ele já existe
       const atual = profile ?? (await backend.getProfile(user.uid))
-      const p = atual ? { ...atual, nickname: n } : emptyProfile(user.uid, n)
+      const p = atual ? { ...atual, nickname: n, cargo } : emptyProfile(user.uid, n, cargo)
       await backend.saveProfile(p)
       setProfile(p)
     },
@@ -156,7 +159,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         }
       }
       pr.correct = [...correctSet]
-      p.zeradas = calcZeradas(questions, correctSet)
+      p.zeradas = calcZeradas(questions, correctSet, cargoDoPerfil(p))
       p.pontos += acertos
       if (tipo === 'teste') p.testes += 1
       if (tipo === 'prova') {
@@ -173,6 +176,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         total: respostas.length,
         acertos,
         porMateria,
+        cargo: cargoDoPerfil(p).id,
         ...extra
       }
       await Promise.all([backend.saveProfile(p), backend.saveProgress(user.uid, pr), backend.addAttempt(user.uid, attempt)])
@@ -211,6 +215,21 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     [backend, user]
   )
 
+  // Troca o perfil (cargo): os testes pausados eram do outro perfil e são descartados; as provas ficam guardadas por perfil
+  const setCargo = useCallback(
+    async (c: CargoId) => {
+      if (!backend || !user || !profile) return
+      const novo = cargoDoPerfil({ cargo: c })
+      const p: Profile = { ...profile, cargo: c, zeradas: calcZeradas(questions, progress.correct, novo) }
+      await backend.saveProfile(p)
+      setProfile(p)
+      setQuickTest(null)
+      setMateriaTest(null)
+      await Promise.all([backend.saveQuickTest(user.uid, null), backend.saveQuickTest(user.uid, null, 'materia')]).catch(() => {})
+    },
+    [backend, user, profile, questions, progress]
+  )
+
   const saveMateriaTest = useCallback(
     async (t: QuickTestState | null) => {
       const v = t ? { ...t, updatedAt: Date.now() } : null
@@ -232,6 +251,8 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         progress,
         questions,
         setNickname,
+        cargo: cargoDoPerfil(profile),
+        setCargo,
         record,
         reloadProfile,
         bumpQuickStarts,

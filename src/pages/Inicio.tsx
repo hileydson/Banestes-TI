@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { ArrowLeft, ArrowRight, BookOpenCheck, Flag, HelpCircle, Layers, Pause, Play, RotateCcw, Trash2, X } from 'lucide-react'
 import confetti from 'canvas-confetti'
 import { useSession } from '../lib/session'
-import { TESTE_RAPIDO, MATERIA_BY_ID, type MateriaId } from '../lib/materias'
+import { materiaDoCargo, pertence, type MateriaCargo } from '../lib/cargos'
 import { getQuestion, pickQuestions, randomOrder } from '../lib/questions'
 import QuestionView from '../components/QuestionView'
 import Review, { type ReviewItem } from '../components/Review'
@@ -18,7 +18,7 @@ interface TesteState {
   itens: ReviewItem[]
   atual: number
   repetidas: number
-  materia?: MateriaId // teste por matéria
+  materia?: string // teste por matéria (id da matéria do perfil)
 }
 
 // Teste por matéria: 5 questões da matéria escolhida
@@ -32,12 +32,12 @@ export default function Inicio() {
 // Cada modo tem o seu próprio teste salvo: dá para pausar um e continuar o outro.
 export function TesteCurto({ modo }: { modo: TestSlot }) {
   const sess = useSession()
-  const { questions, progress, profile, record, bumpQuickStarts } = sess
+  const { questions, progress, profile, record, bumpQuickStarts, cargo } = sess
   const porMateria = modo === 'materia'
   const quickTest = porMateria ? sess.materiaTest : sess.quickTest
   const saveQuickTest = porMateria ? sess.saveMateriaTest : sess.saveQuickTest
   const [escolher, setEscolher] = useState(false)
-  const materiaPendente = useRef<MateriaId | undefined>(undefined)
+  const materiaPendente = useRef<string | undefined>(undefined)
   const [fase, setFase] = useState<Fase>('inicio')
   const [teste, setTeste] = useState<TesteState | null>(null)
   const [salvando, setSalvando] = useState(false)
@@ -126,12 +126,14 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
     if (acao === 'novo') clicarIniciar()
   }
 
+  // Só as questões das matérias do perfil (cargo) do aluno
+  const doCargo = useMemo(() => questions.filter((q) => cargo.materias.some((mc) => pertence(q, mc))), [questions, cargo])
   const disponiveis = useMemo(() => {
     const acert = new Set(progress.correct)
-    return questions.filter((q) => !acert.has(q.id)).length
-  }, [questions, progress])
+    return doCargo.filter((q) => !acert.has(q.id)).length
+  }, [doCargo, progress])
 
-  const progressoMat = useMemo(() => progressoMaterias(questions, progress.correct), [questions, progress])
+  const progressoMat = useMemo(() => progressoMaterias(questions, progress.correct, cargo), [questions, progress, cargo])
 
   // Ao apertar INICIAR: no teste por matéria, primeiro escolhe a matéria
   const clicarIniciar = () => {
@@ -140,7 +142,7 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
   }
 
   // Mostra o aviso do “Não sei responder” na 1ª e na 3ª vez de cada usuário (contador comum aos dois testes)
-  const comecar = async (materia?: MateriaId) => {
+  const comecar = async (materia?: string) => {
     setEscolher(false)
     materiaPendente.current = materia
     const n = await bumpQuickStarts()
@@ -152,11 +154,11 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
     setAviso(false)
     const peso: Record<string, number> = {}
     for (const [a, s] of Object.entries(profile?.areaStats ?? {})) peso[a] = s.e / Math.max(1, s.a + s.e)
-    const acertadas = acertadasParaSorteio(questions, progress.correct)
+    const acertadas = acertadasParaSorteio(questions, progress.correct, cargo)
     const materia = porMateria ? materiaPendente.current : undefined
     if (porMateria && !materia) return
-    const slots = materia ? [{ materia, n: QTD_TESTE_MATERIA }] : TESTE_RAPIDO
-    let { ids, repetidas } = pickQuestions(questions, slots, acertadas, new Set(), peso)
+    const slots = materia ? [{ materia, n: QTD_TESTE_MATERIA }] : cargo.testeRapido
+    let { ids, repetidas } = pickQuestions(questions, slots, acertadas, new Set(), peso, cargo)
     // Por matéria: nunca traz questão já acertada (se a matéria foi zerada, o conjunto acima já libera todas)
     if (materia) {
       ids = ids.filter((id) => !acertadas.has(id))
@@ -217,7 +219,8 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
         ) : (
           <p className="muted center">
             Cada rodada traz 12 questões inéditas para você, no estilo FCC:
-            <br />2 Português · 2 Raciocínio Lógico · 1 Estatística · 1 Atualidades · 1 Ética/ESG · 5 Específicas
+            <br />
+            {cargo.testeRapidoTexto}
           </p>
         )}
         {quickTest && (
@@ -263,7 +266,7 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
           ))}
         <div className="hero-stats">
           <div className="glass stat">
-            <b>{questions.length}</b>
+            <b>{doCargo.length}</b>
             <small>questões no banco</small>
           </div>
           <div className="glass stat">
@@ -281,7 +284,7 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
         <div className="banco-mini glass">
           {porMateria && <p className="muted small banco-legenda">Acertadas / total de questões de cada matéria</p>}
           {progressoMat.map((p) => {
-            const m = MATERIA_BY_ID[p.id]
+            const m = materiaDoCargo(cargo, p.id)!
             return (
               <div key={m.id} className="banco-row">
                 <span className="dot" style={{ background: m.cor }} />
@@ -335,7 +338,7 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
       {teste.materia && <MateriaTag id={teste.materia} />}
       {teste.materia && teste.itens.length < QTD_TESTE_MATERIA && (
         <div className="alert info">
-          Só restavam {teste.itens.length} questão(ões) que você ainda não acertou em {MATERIA_BY_ID[teste.materia].nome}.
+          Só restavam {teste.itens.length} questão(ões) que você ainda não acertou em {materiaDoCargo(cargo, teste.materia)?.nome}.
         </div>
       )}
       {teste.repetidas > 0 && <div className="alert info">Algumas matérias já foram 100% acertadas por você — {teste.repetidas} questão(ões) repetida(s) para completar o teste.</div>}
@@ -410,8 +413,9 @@ function tituloResultado(p: number) {
   return p >= 0.75 ? 'Excelente!' : p >= 7 / 12 ? 'Muito bom!' : p >= 5 / 12 ? 'Bom caminho!' : 'Bora revisar!'
 }
 
-function MateriaTag({ id }: { id: MateriaId }) {
-  const m = MATERIA_BY_ID[id]
+function MateriaTag({ id }: { id: string }) {
+  const { cargo } = useSession()
+  const m: Pick<MateriaCargo, 'cor' | 'nome'> = materiaDoCargo(cargo, id) ?? { cor: '#9fb0d9', nome: id }
   return (
     <span className="materia-tag" style={{ borderColor: m.cor, color: m.cor }}>
       <Layers size={14} /> {m.nome}
@@ -427,9 +431,10 @@ function EscolherMateria({
 }: {
   aberto: boolean
   progresso: ReturnType<typeof progressoMaterias>
-  onEscolher(m: MateriaId): void
+  onEscolher(m: string): void
   onFechar(): void
 }) {
+  const { cargo } = useSession()
   return (
     <AnimatePresence>
       {aberto && (
@@ -448,7 +453,7 @@ function EscolherMateria({
             <p className="muted small">Vêm {QTD_TESTE_MATERIA} questões que você ainda não acertou na matéria escolhida.</p>
             <div className="materia-opcoes">
               {progresso.map((p, i) => {
-                const m = MATERIA_BY_ID[p.id]
+                const m = materiaDoCargo(cargo, p.id)!
                 const faltam = p.total - p.acertadas
                 return (
                   <motion.button
