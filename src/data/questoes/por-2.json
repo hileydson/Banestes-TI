@@ -1,0 +1,667 @@
+[
+{
+"id": "POR-041",
+"m": "POR",
+"s": "Interpretação de texto",
+"t": "Vivemos cercados de notificações. A cada alerta, a atenção se fragmenta, e retomar uma tarefa interrompida exige mais esforço do que se imagina. Pesquisadores têm demonstrado que o custo dessas interrupções não se limita aos minutos perdidos: a qualidade do raciocínio também se deteriora, pois o cérebro precisa reconstruir o contexto abandonado. Não se trata, porém, de demonizar a tecnologia, mas de usá-la com propósito. Silenciar o celular durante tarefas complexas, por exemplo, é um gesto simples que devolve ao indivíduo o controle sobre o próprio tempo.",
+"q": "Depreende-se corretamente do texto que:",
+"o": [
+"a tecnologia deve ser abandonada para preservar a atenção.",
+"as interrupções prejudicam não apenas o tempo disponível, mas também a qualidade do pensamento.",
+"retomar uma tarefa interrompida exige menos esforço do que se supõe.",
+"os pesquisadores recomendam o uso irrestrito de notificações.",
+"silenciar o celular é uma medida ineficaz."
+],
+"c": 1,
+"e": "O texto afirma que o custo das interrupções “não se limita aos minutos perdidos: a qualidade do raciocínio também se deteriora”.",
+"x": [
+"Errada: o texto diz que não se trata de demonizar a tecnologia.",
+"Correta: paráfrase do trecho central.",
+"Errada: o texto diz que exige “mais esforço do que se imagina”.",
+"Errada: não há tal recomendação.",
+"Errada: o texto a apresenta como gesto que devolve o controle do tempo."
+]
+},
+{
+"id": "POR-042",
+"m": "POR",
+"s": "Conectivos – correlação",
+"t": "Não se trata, porém, de demonizar a tecnologia, mas de usá-la com propósito.",
+"q": "No trecho, a estrutura “Não se trata (...) de (...), mas de (...)” estabelece:",
+"o": [
+"relação de causa e consequência",
+"retificação: nega-se uma interpretação e propõe-se outra",
+"adição de ideias equivalentes",
+"condição para o uso da tecnologia",
+"comparação de igualdade"
+],
+"c": 1,
+"e": "A construção “não… mas…” nega uma possibilidade (demonizar) e a substitui por outra (usar com propósito).",
+"x": [
+"Errada: não há causa/consequência.",
+"Correta: correção ou retificação de sentido.",
+"Errada: as ideias se opõem.",
+"Errada: não há condição.",
+"Errada: não há comparação."
+]
+},
+{
+"id": "POR-043",
+"m": "POR",
+"s": "Funções do “se”",
+"t": "A cada alerta, a atenção se fragmenta.",
+"q": "No trecho, o pronome “se” é:",
+"o": [
+"índice de indeterminação do sujeito",
+"partícula apassivadora",
+"parte integrante do verbo pronominal, indicando que o sujeito sofre a ação sem agente explícito (fragmentar-se)",
+"conjunção condicional",
+"pronome reflexivo recíproco"
+],
+"c": 2,
+"e": "Em “a atenção se fragmenta”, o verbo é empregado na forma pronominal (fragmentar-se), com sujeito “a atenção”, sem agente externo.",
+"x": [
+"Errada: o sujeito é determinado (“a atenção”).",
+"Errada: não há sentido de voz passiva com agente implícito, como em “vendem-se casas”.",
+"Correta.",
+"Errada: não introduz condição.",
+"Errada: não há reciprocidade."
+]
+},
+{
+"id": "POR-044",
+"m": "POR",
+"s": "Sinonímia em contexto",
+"t": "[...] a qualidade do raciocínio também se deteriora [...]",
+"q": "O verbo “deteriora-se” pode ser substituído, sem prejuízo do sentido, por:",
+"o": [
+"aprimora-se",
+"degrada-se",
+"estabiliza-se",
+"acelera-se",
+"amplia-se"
+],
+"c": 1,
+"e": "Deteriorar-se = piorar, degradar-se, estragar-se.",
+"x": [
+"Errada: sentido oposto.",
+"Correta.",
+"Errada: sentido diferente.",
+"Errada: sentido diferente.",
+"Errada: sentido diferente."
+]
+},
+{
+"id": "POR-045",
+"m": "POR",
+"s": "Coesão referencial",
+"t": "Não se trata, porém, de demonizar a tecnologia, mas de usá-la com propósito.",
+"q": "O pronome em “usá-la” retoma:",
+"o": [
+"a atenção",
+"a tarefa",
+"a tecnologia",
+"a qualidade",
+"a notificação"
+],
+"c": 2,
+"e": "“Usá-la” = usar a tecnologia, termo imediatamente anterior.",
+"x": [
+"Errada.",
+"Errada.",
+"Correta.",
+"Errada.",
+"Errada."
+]
+},
+{
+"id": "POR-046",
+"m": "POR",
+"s": "Crase",
+"q": "O sinal indicativo de crase está empregado corretamente em todas as expressões de:",
+"o": [
+"à medida que – às vezes – à vista",
+"à partir de – às vezes – à prazo",
+"a medida que – às vezes – à pé",
+"à distância de dois metros – à ela – à cavalo",
+"àquilo – à Brasília – à uma hora"
+],
+"c": 0,
+"e": "Locuções adverbiais e conjuntivas femininas levam crase: à medida que, às vezes, à vista (pagamento).",
+"x": [
+"Correta.",
+"Errada: “a partir” e “a prazo” não têm crase.",
+"Errada: “à medida que” leva crase e “a pé” não.",
+"Errada: não há crase antes de pronome pessoal (“a ela”) nem em “a cavalo”.",
+"Errada: Brasília não admite artigo; “à uma hora” é aceitável, mas “à Brasília” não."
+]
+},
+{
+"id": "POR-047",
+"m": "POR",
+"s": "Crase",
+"q": "Assinale a frase em que o acento grave foi empregado INCORRETAMENTE:",
+"o": [
+"Refiro-me àquele relatório de auditoria.",
+"Os técnicos assistiram à apresentação do novo sistema.",
+"Entregamos o crachá à funcionária recém-contratada.",
+"O sistema ficará disponível de segunda à sexta-feira.",
+"A equipe procedeu à análise dos logs."
+],
+"c": 3,
+"e": "Com “de… a”, sem artigo no primeiro termo, usa-se “a” sem crase: “de segunda a sexta”. Com artigo seria “da segunda à sexta”.",
+"x": [
+"Correta a crase: a + aquele.",
+"Correta: assistir (ver) a + a apresentação.",
+"Correta: entregar a + a funcionária.",
+"Incorreta (gabarito): falta paralelismo com “de” sem artigo.",
+"Correta: proceder (realizar) a + a análise."
+]
+},
+{
+"id": "POR-048",
+"m": "POR",
+"s": "Concordância nominal",
+"q": "Está correta a concordância em:",
+"o": [
+"É necessário muita atenção durante a migração.",
+"É necessária muita atenção durante a migração.",
+"Seguem inclusos as cópias dos contratos.",
+"As planilhas seguem anexo ao e-mail.",
+"Estavam presentes o gerente e a analista, ambas animadas."
+],
+"c": 1,
+"e": "Quando o sujeito vem determinado (muita, a, essa), o adjetivo concorda: “É necessária muita atenção”. Sem determinante, fica invariável: “É necessário atenção”.",
+"x": [
+"Errada: com o determinante “muita”, deve concordar.",
+"Correta.",
+"Errada: “Seguem inclusas as cópias”.",
+"Errada: “seguem anexas”.",
+"Errada: com masculino e feminino, o adjetivo posposto vai ao masculino plural: “ambos animados”."
+]
+},
+{
+"id": "POR-049",
+"m": "POR",
+"s": "Concordância verbal – verbos impessoais",
+"q": "Está de acordo com a norma-padrão:",
+"o": [
+"Devem fazer dez anos que o banco migrou para a nuvem.",
+"Haviam várias pendências no sistema.",
+"Deve haver soluções mais simples.",
+"Fazem meses que não há incidentes graves.",
+"Podem haver falhas no próximo deploy."
+],
+"c": 2,
+"e": "“Haver” (existir) e “fazer” (tempo decorrido) são impessoais; o auxiliar da locução também fica no singular: “Deve haver”, “Deve fazer”.",
+"x": [
+"Errada: “Deve fazer dez anos”.",
+"Errada: “Havia várias pendências”.",
+"Correta.",
+"Errada: “Faz meses”.",
+"Errada: “Pode haver falhas”."
+]
+},
+{
+"id": "POR-050",
+"m": "POR",
+"s": "Concordância – pronomes de tratamento",
+"q": "A concordância está correta em:",
+"o": [
+"Vossa Senhoria deve trazer vossos documentos.",
+"Vossa Excelência está preocupado com o prazo? (dirigido a um homem)",
+"Vossa Senhoria deveis comparecer à reunião.",
+"Vossas Senhorias sabeis da decisão.",
+"Vossa Excelência ficou preocupada? (dirigido a um homem)"
+],
+"c": 1,
+"e": "Pronomes de tratamento levam o verbo e os pronomes à 3ª pessoa; adjetivos concordam com o sexo da pessoa: “Vossa Excelência está preocupado” (homem).",
+"x": [
+"Errada: “seus documentos”.",
+"Correta.",
+"Errada: verbo na 3ª pessoa: “deve”.",
+"Errada: “sabem”.",
+"Errada: para homem, “preocupado”."
+]
+},
+{
+"id": "POR-051",
+"m": "POR",
+"s": "Regência verbal",
+"q": "A regência está correta em:",
+"o": [
+"O auditor procedeu a análise dos contratos.",
+"Prefiro trabalhar presencialmente do que remotamente.",
+"Os analistas perdoaram ao fornecedor a multa contratual.",
+"Ela simpatizou-se com a nova metodologia.",
+"O gerente informou aos clientes de que o sistema mudou."
+],
+"c": 2,
+"e": "“Perdoar”: algo (objeto direto) a alguém (objeto indireto). “Perdoar a multa ao fornecedor” está correto.",
+"x": [
+"Errada: proceder (= realizar) é VTI: “procedeu à análise”.",
+"Errada: “Prefiro trabalhar presencialmente a trabalhar remotamente”.",
+"Correta.",
+"Errada: “simpatizar” não é pronominal: “simpatizou com”.",
+"Errada: “informou aos clientes que” ou “informou os clientes de que”."
+]
+},
+{
+"id": "POR-052",
+"m": "POR",
+"s": "Regência nominal",
+"q": "Está correta a regência nominal em:",
+"o": [
+"O sistema é compatível a navegadores antigos.",
+"Ele estava ansioso para os resultados.",
+"É preferível investir em testes a corrigir falhas em produção.",
+"É mais preferível prevenir do que remediar.",
+"O documento é acessível com todos os usuários."
+],
+"c": 2,
+"e": "“Preferível” rege “a” e dispensa “mais” e “do que”: “É preferível X a Y”.",
+"x": [
+"Errada: “compatível com”.",
+"Errada: “ansioso por” (ou “de”).",
+"Correta.",
+"Errada: “mais preferível” é redundante e “do que” é inadequado.",
+"Errada: “acessível a”."
+]
+},
+{
+"id": "POR-053",
+"m": "POR",
+"s": "Conjugação verbal – verbos irregulares",
+"q": "Está correta a forma verbal em:",
+"o": [
+"Se você manter o foco, será aprovado.",
+"Quando ele propor a mudança, avalie os riscos.",
+"Se os técnicos intervissem, o problema teria sido evitado.",
+"Ele reouve os documentos extraviados.",
+"Eu me precavenho contra golpes digitais."
+],
+"c": 3,
+"e": "“Reaver” só se conjuga nas formas em que o verbo “haver” tem a letra “v”: “reouve” (pretérito perfeito) está correto.",
+"x": [
+"Errada: “mantiver” (futuro do subjuntivo de manter).",
+"Errada: “propuser”.",
+"Errada: “interviessem”.",
+"Correta.",
+"Errada: “precaver” é defectivo; não há “precavenho” (use “eu me previno” ou “eu me acautelo”)."
+]
+},
+{
+"id": "POR-054",
+"m": "POR",
+"s": "Conjugação verbal",
+"q": "Preenche corretamente a frase “O analista ___ ontem a reabertura do chamado e ___ que a equipe revisasse os logs” a alternativa:",
+"o": [
+"requisitou – requis",
+"requereu – requereu",
+"requis – requereu",
+"requereu – requis",
+"requeriu – requereu"
+],
+"c": 1,
+"e": "“Requerer” é irregular apenas na 1ª pessoa do presente do indicativo (eu requeiro) e no presente do subjuntivo (requeira); no pretérito perfeito é regular: requereu. A forma “requis” não existe.",
+"x": [
+"Errada: “requis” não existe.",
+"Correta.",
+"Errada: “requis” não existe.",
+"Errada: “requis” não existe.",
+"Errada: “requeriu” não existe."
+]
+},
+{
+"id": "POR-055",
+"m": "POR",
+"s": "Ortografia – parônimos e homônimos",
+"q": "Está correta a grafia das palavras destacadas em:",
+"o": [
+"Ele estava de MAL humor por causa do atraso.",
+"Estudou muito A FIM DE ser aprovado.",
+"ONDE você vai depois da reunião?",
+"Revise o código, SE NÃO o deploy falhará.",
+"Daqui HÁ dois meses será a prova."
+],
+"c": 1,
+"e": "“A fim de” indica finalidade (afim = que tem afinidade).",
+"x": [
+"Errada: “mau humor” (mau é adjetivo, oposto de bom).",
+"Correta.",
+"Errada: com verbo de movimento, “Aonde você vai?”.",
+"Errada: no sentido de “caso contrário”, “senão”.",
+"Errada: tempo futuro usa “a”: “daqui a dois meses”."
+]
+},
+{
+"id": "POR-056",
+"m": "POR",
+"s": "Ortografia – há, a, acerca de",
+"q": "Completa corretamente a frase “___ cerca de dois anos, discutimos ___ da migração, e ___ partir de agora a decisão será colocada em prática.”:",
+"o": [
+"A – acerca – há",
+"Há – acerca – a",
+"Há – a cerca – à",
+"A – há cerca – a",
+"Há – há cerca – a"
+],
+"c": 1,
+"e": "“Há cerca de dois anos” (tempo passado, verbo haver); “acerca de” = sobre, a respeito de; “a partir de” sem crase.",
+"x": [
+"Errada.",
+"Correta.",
+"Errada: “acerca” é junto e “a partir” não tem crase.",
+"Errada.",
+"Errada."
+]
+},
+{
+"id": "POR-057",
+"m": "POR",
+"s": "Acentuação gráfica",
+"q": "Todas as palavras estão corretamente acentuadas em:",
+"o": [
+"juíza – saúde – baú – raízes",
+"juiz – saúde – baú – raíz",
+"juíza – saude – baú – raízes",
+"juíz – saúde – baú – raízes",
+"juíza – saúde – baù – raízes"
+],
+"c": 0,
+"e": "Acentuam-se o “i” e o “u” tônicos de hiato quando sozinhos na sílaba ou seguidos de “s”: ju-í-za, sa-ú-de, ba-ú, ra-í-zes. Não se acentua quando seguidos de outra consoante na mesma sílaba: ju-iz, ra-iz.",
+"x": [
+"Correta.",
+"Errada: “raiz” não leva acento.",
+"Errada: “saúde” leva acento.",
+"Errada: “juiz” não leva acento.",
+"Errada: acento grave inexistente em “baù”."
+]
+},
+{
+"id": "POR-058",
+"m": "POR",
+"s": "Acentuação – tem/têm, vem/vêm",
+"q": "Está correta a acentuação em:",
+"o": [
+"Os bancos tem investido em segurança.",
+"Os candidatos vêem o edital com atenção.",
+"Eles têm dúvidas e vêm à reunião amanhã.",
+"Ele têm muitos projetos.",
+"Os analistas lêem a documentação."
+],
+"c": 2,
+"e": "“Têm” e “vêm” (plural) recebem acento diferencial. Já “veem”, “leem”, “creem” perderam o acento com o Acordo.",
+"x": [
+"Errada: “têm” no plural.",
+"Errada: “veem” (sem acento).",
+"Correta.",
+"Errada: no singular, “tem”.",
+"Errada: “leem”."
+]
+},
+{
+"id": "POR-059",
+"m": "POR",
+"s": "Figuras de linguagem – antítese",
+"q": "Há antítese em:",
+"o": [
+"O servidor gemia de tanto processamento.",
+"Entre o silêncio da madrugada e o barulho das notificações, ela finalmente concluiu o relatório.",
+"Ele subiu para cima da plataforma.",
+"O braço da cadeira quebrou.",
+"Que maravilha: perdemos todos os dados!"
+],
+"c": 1,
+"e": "Antítese é a aproximação de palavras ou ideias de sentidos opostos (silêncio × barulho).",
+"x": [
+"Errada: prosopopeia (personificação).",
+"Correta.",
+"Errada: pleonasmo vicioso.",
+"Errada: catacrese.",
+"Errada: ironia."
+]
+},
+{
+"id": "POR-060",
+"m": "POR",
+"s": "Figuras de linguagem – eufemismo",
+"q": "Em “O antigo diretor partiu desta para melhor no ano passado”, ocorre:",
+"o": [
+"hipérbole",
+"eufemismo",
+"metonímia",
+"antítese",
+"sinestesia"
+],
+"c": 1,
+"e": "Eufemismo suaviza uma ideia desagradável (morrer).",
+"x": [
+"Errada: exagero.",
+"Correta.",
+"Errada: substituição por contiguidade.",
+"Errada: oposição de ideias.",
+"Errada: mistura de sensações."
+]
+},
+{
+"id": "POR-061",
+"m": "POR",
+"s": "Figuras de linguagem – metáfora e comparação",
+"q": "Há metáfora (comparação implícita) em:",
+"o": [
+"O código estava organizado como uma biblioteca.",
+"Aquele sistema legado é um labirinto.",
+"O servidor parecia uma fornalha.",
+"Ela trabalha tal qual uma máquina.",
+"O relatório era claro feito água."
+],
+"c": 1,
+"e": "A metáfora estabelece a comparação sem conectivo comparativo (“é um labirinto”). Com “como”, “parecia”, “tal qual”, “feito”, tem-se comparação (símile).",
+"x": [
+"Errada: comparação explícita (“como”).",
+"Correta.",
+"Errada: comparação (“parecia”).",
+"Errada: comparação (“tal qual”).",
+"Errada: comparação (“feito”)."
+]
+},
+{
+"id": "POR-062",
+"m": "POR",
+"s": "Formação de palavras – derivação regressiva",
+"q": "É formada por derivação regressiva a palavra destacada em:",
+"o": [
+"O ATAQUE hacker foi contido rapidamente.",
+"O JANTAR da equipe foi adiado.",
+"Ele agiu INFELIZMENTE sem consultar ninguém.",
+"O AUTOMÓVEL estava na garagem.",
+"A equipe fez um PONTAPÉ inicial no projeto."
+],
+"c": 0,
+"e": "Derivação regressiva forma substantivos a partir de verbos, com redução: atacar → ataque.",
+"x": [
+"Correta.",
+"Errada: derivação imprópria (verbo usado como substantivo).",
+"Errada: derivação prefixal e sufixal.",
+"Errada: hibridismo (grego + latim).",
+"Errada: composição por justaposição."
+]
+},
+{
+"id": "POR-063",
+"m": "POR",
+"s": "Formação de palavras – derivação imprópria",
+"q": "Há derivação imprópria (mudança de classe gramatical sem alteração da forma) em:",
+"o": [
+"O olhar atento do auditor encontrou o erro.",
+"Os desenvolvedores reescreveram o módulo.",
+"A felicidade da equipe era visível.",
+"A digitalização avançou rapidamente.",
+"O incrível aumento de acessos surpreendeu."
+],
+"c": 0,
+"e": "“Olhar” (verbo) passa a substantivo, precedido de artigo, sem acréscimo de afixos.",
+"x": [
+"Correta.",
+"Errada: derivação prefixal.",
+"Errada: derivação sufixal.",
+"Errada: derivação sufixal.",
+"Errada: derivação prefixal e sufixal (in + crível)."
+]
+},
+{
+"id": "POR-064",
+"m": "POR",
+"s": "Pontuação – vocativo e aposto",
+"q": "Está corretamente pontuada a frase:",
+"o": [
+"Senhores a reunião será iniciada.",
+"O Banestes banco do Espírito Santo, abriu concurso.",
+"Prezados candidatos, leiam o edital com atenção.",
+"Ana a nova analista chegou cedo.",
+"Leiam, o edital candidatos."
+],
+"c": 2,
+"e": "O vocativo (“Prezados candidatos”) é separado por vírgula.",
+"x": [
+"Errada: falta vírgula após o vocativo “Senhores”.",
+"Errada: o aposto deve ficar entre vírgulas: “O Banestes, banco do Espírito Santo, abriu…”.",
+"Correta.",
+"Errada: o aposto “a nova analista” deve ficar entre vírgulas.",
+"Errada: separa verbo e complemento."
+]
+},
+{
+"id": "POR-065",
+"m": "POR",
+"s": "Pontuação – adjunto adverbial",
+"q": "Assinale a alternativa em que a vírgula é OBRIGATÓRIA (e não facultativa):",
+"o": [
+"Ontem a equipe concluiu os testes.",
+"A equipe, ontem, concluiu os testes.",
+"Em 2026 o banco ampliou o atendimento digital.",
+"Na reunião os gestores aprovaram o orçamento.",
+"Hoje haverá manutenção programada."
+],
+"c": 1,
+"e": "Adjunto adverbial curto no início da frase admite vírgula facultativa; quando intercalado entre sujeito e verbo, deve ficar entre vírgulas.",
+"x": [
+"Errada: facultativa (adjunto curto no início).",
+"Correta: adjunto intercalado exige vírgulas.",
+"Errada: facultativa.",
+"Errada: recomendada, mas facultativa.",
+"Errada: facultativa."
+]
+},
+{
+"id": "POR-066",
+"m": "POR",
+"s": "Vozes verbais",
+"q": "A frase que está na voz passiva sintética é:",
+"o": [
+"Os técnicos se reuniram cedo.",
+"Corrigiram os erros rapidamente.",
+"Revisaram-se todos os contratos do trimestre.",
+"Os contratos foram revisados pela auditoria.",
+"Precisa-se de voluntários."
+],
+"c": 2,
+"e": "Voz passiva sintética: verbo transitivo direto + “se” + sujeito paciente (“todos os contratos”), com verbo concordando com o sujeito.",
+"x": [
+"Errada: verbo pronominal (reciprocidade/reflexivo).",
+"Errada: voz ativa com sujeito indeterminado (3ª pessoa do plural).",
+"Correta.",
+"Errada: voz passiva analítica.",
+"Errada: “se” indeterminador com verbo transitivo indireto."
+]
+},
+{
+"id": "POR-067",
+"m": "POR",
+"s": "Discurso direto e indireto – imperativo",
+"q": "O gerente disse aos analistas: “Revisem os relatórios hoje.” Em discurso indireto:",
+"o": [
+"O gerente disse aos analistas que revisem os relatórios hoje.",
+"O gerente disse aos analistas que revisassem os relatórios naquele dia.",
+"O gerente disse aos analistas que revisaram os relatórios naquele dia.",
+"O gerente disse aos analistas que revisariam os relatórios hoje.",
+"O gerente disse aos analistas: revisassem os relatórios."
+],
+"c": 1,
+"e": "Imperativo → pretérito imperfeito do subjuntivo; “hoje” → “naquele dia”.",
+"x": [
+"Errada: mantém o tempo e o advérbio do discurso direto.",
+"Correta.",
+"Errada: transforma ordem em fato passado.",
+"Errada: transforma ordem em hipótese e mantém “hoje”.",
+"Errada: mistura estruturas."
+]
+},
+{
+"id": "POR-068",
+"m": "POR",
+"s": "Pronomes demonstrativos",
+"q": "Está correto o uso do pronome demonstrativo em:",
+"o": [
+"Esse é o meu objetivo: ser aprovado no concurso.",
+"O objetivo é claro: ser aprovado. Este foi o compromisso firmado com a família.",
+"Estudar todos os dias — este é o segredo que compartilho agora: disciplina.",
+"A regra é esta: quem errar revisa. Esta regra, aliás, já foi aprovada ontem.",
+"Lógica e Português: este exige leitura; aquele, raciocínio."
+],
+"c": 4,
+"e": "Na retomada de dois termos, “este” refere-se ao mais próximo (Português) e “aquele” ao mais distante (Lógica).",
+"x": [
+"Errada: para anunciar o que vem depois (catáfora), usa-se “este”.",
+"Errada: para retomar o que já foi dito (anáfora), usa-se “esse”.",
+"Errada: retoma o que foi dito antes (“estudar todos os dias”), cabendo “esse”.",
+"Errada: a segunda ocorrência retoma algo já dito: “Essa regra”.",
+"Correta."
+]
+},
+{
+"id": "POR-069",
+"m": "POR",
+"s": "Coesão – uso de “o mesmo”",
+"q": "Do ponto de vista da norma-padrão e da boa redação, é inadequado o uso de “o mesmo” em:",
+"o": [
+"Ele mesmo resolveu o problema.",
+"Antes de entrar no data center, verifique se o mesmo está liberado.",
+"Os dois sistemas usam o mesmo banco de dados.",
+"Ela fez o mesmo que o colega.",
+"Fizeram tudo ao mesmo tempo."
+],
+"c": 1,
+"e": "“O mesmo” usado como pronome pessoal para retomar substantivo (“o data center”) é vício de linguagem; prefira “se ele está liberado” ou “se está liberado”.",
+"x": [
+"Errada: “mesmo” reforça o pronome, uso adequado.",
+"Correta: uso inadequado.",
+"Errada: adjetivo (idêntico), uso adequado.",
+"Errada: “o mesmo” = a mesma coisa, uso adequado.",
+"Errada: locução adequada."
+]
+},
+{
+"id": "POR-070",
+"m": "POR",
+"s": "Orações reduzidas",
+"q": "Em “Concluída a migração, a equipe desligou os servidores antigos”, a oração reduzida “Concluída a migração” expressa ideia de:",
+"o": [
+"finalidade",
+"tempo",
+"concessão",
+"condição",
+"proporção"
+],
+"c": 1,
+"e": "Oração reduzida de particípio com valor temporal: “Depois que a migração foi concluída…”.",
+"x": [
+"Errada: não indica objetivo.",
+"Correta.",
+"Errada: não há oposição.",
+"Errada: não há hipótese.",
+"Errada: não há proporcionalidade."
+]
+}
+]

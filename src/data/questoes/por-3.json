@@ -1,0 +1,668 @@
+[
+{
+"id": "POR-071",
+"m": "POR",
+"s": "Interpretação de texto",
+"t": "Durante décadas, o atendimento bancário foi sinônimo de filas. O cliente reservava a manhã para pagar contas, sacar dinheiro ou simplesmente pedir um extrato. A chegada dos caixas eletrônicos aliviou parte desse peso, mas foi a internet que, de fato, deslocou o banco para fora da agência. Hoje, paradoxalmente, a agência física sobrevive menos como lugar de transações e mais como espaço de aconselhamento: é ali que se negociam dívidas, se discutem investimentos e se resolvem os casos que nenhum aplicativo consegue entender.",
+"q": "Segundo o texto, a agência física atualmente:",
+"o": [
+"deixou de existir por causa da internet.",
+"concentra a maior parte das transações financeiras.",
+"tende a assumir papel de aconselhamento e de solução de casos complexos.",
+"é o único local onde se pode pagar contas.",
+"perdeu importância por causa dos caixas eletrônicos."
+],
+"c": 2,
+"e": "O texto afirma que a agência sobrevive “mais como espaço de aconselhamento”.",
+"x": [
+"Errada: o texto diz que ela sobrevive.",
+"Errada: é o contrário.",
+"Correta.",
+"Errada: não há essa afirmação.",
+"Errada: os caixas apenas aliviaram parte do peso; a internet foi decisiva."
+]
+},
+{
+"id": "POR-072",
+"m": "POR",
+"s": "Semântica – paradoxo",
+"t": "Hoje, paradoxalmente, a agência física sobrevive menos como lugar de transações e mais como espaço de aconselhamento.",
+"q": "O advérbio “paradoxalmente” indica que o autor considera a situação descrita:",
+"o": [
+"previsível e óbvia",
+"aparentemente contraditória em relação ao que se esperaria",
+"irrelevante para o tema",
+"temporária e passageira",
+"negativa para os clientes"
+],
+"c": 1,
+"e": "Paradoxal = que contraria a expectativa: esperava-se que a agência desaparecesse, mas ela ganhou outro papel.",
+"x": [
+"Errada: é o oposto.",
+"Correta.",
+"Errada: não procede.",
+"Errada: não procede.",
+"Errada: o autor não faz juízo negativo."
+]
+},
+{
+"id": "POR-073",
+"m": "POR",
+"s": "Concordância – voz passiva sintética",
+"t": "[...] é ali que se negociam dívidas, se discutem investimentos e se resolvem os casos [...]",
+"q": "Sobre a concordância verbal no trecho, é correto afirmar:",
+"o": [
+"Os verbos deveriam estar no singular, pois o “se” indetermina o sujeito.",
+"Os verbos estão no plural porque concordam com os sujeitos pacientes “dívidas”, “investimentos” e “os casos”.",
+"O verbo “negociam” concorda com “ali”.",
+"Há erro de concordância em “se resolvem”.",
+"Os verbos concordam com “agência”."
+],
+"c": 1,
+"e": "Voz passiva sintética: o verbo transitivo direto concorda com o sujeito paciente (dívidas são negociadas…).",
+"x": [
+"Errada: com VTD, o “se” é apassivador.",
+"Correta.",
+"Errada: “ali” é advérbio.",
+"Errada: concorda com “os casos”.",
+"Errada: não procede."
+]
+},
+{
+"id": "POR-074",
+"m": "POR",
+"s": "Conectivos",
+"t": "A chegada dos caixas eletrônicos aliviou parte desse peso, mas foi a internet que, de fato, deslocou o banco para fora da agência.",
+"q": "A expressão “de fato”, no contexto, tem valor de:",
+"o": [
+"dúvida",
+"ênfase/confirmação (realmente)",
+"condição",
+"finalidade",
+"tempo"
+],
+"c": 1,
+"e": "“De fato” = realmente, efetivamente; reforça a afirmação sobre o papel da internet.",
+"x": [
+"Errada.",
+"Correta.",
+"Errada.",
+"Errada.",
+"Errada."
+]
+},
+{
+"id": "POR-075",
+"m": "POR",
+"s": "Expressão expletiva “é que”",
+"t": "[...] foi a internet que, de fato, deslocou o banco para fora da agência.",
+"q": "Na estrutura “foi a internet que (...) deslocou”, as palavras “foi (...) que” têm função:",
+"o": [
+"de sujeito composto",
+"expletiva (de realce), podendo ser retiradas sem prejuízo sintático: “a internet deslocou o banco”",
+"de conjunção causal",
+"de pronome relativo com função de objeto",
+"de locução adverbial de tempo"
+],
+"c": 1,
+"e": "“Ser… que” é expressão de realce (expletiva), que destaca o termo “a internet”.",
+"x": [
+"Errada.",
+"Correta.",
+"Errada.",
+"Errada.",
+"Errada."
+]
+},
+{
+"id": "POR-076",
+"m": "POR",
+"s": "Reescrita – equivalência",
+"q": "Mantém o sentido e a correção de “Caso o sistema apresente instabilidade, o atendimento será feito por telefone” a seguinte redação:",
+"o": [
+"Embora o sistema apresente instabilidade, o atendimento será feito por telefone.",
+"Se o sistema apresentar instabilidade, o atendimento será feito por telefone.",
+"Porque o sistema apresentou instabilidade, o atendimento será feito por telefone.",
+"Mesmo que o sistema apresente instabilidade, o atendimento será feito por telefone.",
+"Assim que o sistema apresentasse instabilidade, o atendimento será feito por telefone."
+],
+"c": 1,
+"e": "“Caso” e “se” são conjunções condicionais; com “se”, usa-se o futuro do subjuntivo (apresentar).",
+"x": [
+"Errada: concessiva.",
+"Correta.",
+"Errada: causal e muda o tempo.",
+"Errada: concessiva.",
+"Errada: temporal e com correlação inadequada."
+]
+},
+{
+"id": "POR-077",
+"m": "POR",
+"s": "Paralelismo sintático",
+"q": "Está redigida com paralelismo adequado a frase:",
+"o": [
+"O curso exige dedicação, disciplina e que o aluno resolva questões.",
+"O curso exige dedicação, disciplina e resolução frequente de questões.",
+"O curso exige dedicar-se, disciplina e resolver questões.",
+"O curso exige que haja dedicação, disciplina e resolver questões.",
+"O curso exige dedicação, ser disciplinado e de questões."
+],
+"c": 1,
+"e": "Paralelismo: termos coordenados devem ter a mesma estrutura (três substantivos: dedicação, disciplina, resolução).",
+"x": [
+"Errada: mistura substantivos e oração.",
+"Correta.",
+"Errada: mistura verbo e substantivo.",
+"Errada: mistura estruturas.",
+"Errada: mistura estruturas."
+]
+},
+{
+"id": "POR-078",
+"m": "POR",
+"s": "Colocação pronominal – futuro",
+"q": "Está correta, segundo a norma-padrão, a colocação pronominal em:",
+"o": [
+"Entregarei-lhe o relatório amanhã.",
+"Entregar-lhe-ei o relatório amanhã.",
+"Lhe entregarei o relatório amanhã.",
+"Entregarei o lhe relatório amanhã.",
+"Entregaria-lhe o relatório amanhã."
+],
+"c": 1,
+"e": "Com futuro do presente/pretérito e sem palavra atrativa, usa-se mesóclise (entregar-lhe-ei) — nunca ênclise. Havendo palavra atrativa, usa-se próclise (“Não lhe entregarei”).",
+"x": [
+"Errada: não há ênclise com futuro.",
+"Correta: mesóclise.",
+"Errada: não se inicia frase com pronome átono.",
+"Errada: posição inadequada.",
+"Errada: com futuro do pretérito também não cabe ênclise (seria “entregar-lhe-ia”)."
+]
+},
+{
+"id": "POR-079",
+"m": "POR",
+"s": "Classes de palavras – “que”",
+"q": "O vocábulo “que” é pronome relativo em:",
+"o": [
+"Espero que a prova seja justa.",
+"O sistema que desenvolvemos já está em produção.",
+"Que dia difícil!",
+"Estudou tanto que passou em primeiro lugar.",
+"É importante que todos participem."
+],
+"c": 1,
+"e": "Pronome relativo retoma um antecedente (“o sistema”) e introduz oração adjetiva (= o qual).",
+"x": [
+"Errada: conjunção integrante.",
+"Correta.",
+"Errada: pronome/advérbio exclamativo (intensidade).",
+"Errada: conjunção consecutiva (tanto… que).",
+"Errada: conjunção integrante."
+]
+},
+{
+"id": "POR-080",
+"m": "POR",
+"s": "Orações subordinadas adverbiais",
+"q": "Em “À medida que os dados aumentam, as consultas ficam mais lentas”, a oração destacada expressa:",
+"o": [
+"causa",
+"proporção",
+"concessão",
+"finalidade",
+"conformidade"
+],
+"c": 1,
+"e": "“À medida que” e “à proporção que” são conjunções proporcionais.",
+"x": [
+"Errada.",
+"Correta.",
+"Errada.",
+"Errada.",
+"Errada."
+]
+},
+{
+"id": "POR-081",
+"m": "POR",
+"s": "Orações subordinadas adverbiais",
+"q": "Em “Conforme determina o edital, a prova terá duração de quatro horas”, a oração destacada é adverbial:",
+"o": [
+"causal",
+"conformativa",
+"comparativa",
+"consecutiva",
+"temporal"
+],
+"c": 1,
+"e": "“Conforme”, “segundo”, “como” (= conforme) introduzem orações conformativas.",
+"x": [
+"Errada.",
+"Correta.",
+"Errada.",
+"Errada.",
+"Errada."
+]
+},
+{
+"id": "POR-082",
+"m": "POR",
+"s": "Orações subordinadas adjetivas",
+"q": "Em “Os candidatos que estudaram com antecedência sentiram-se seguros”, a oração adjetiva:",
+"o": [
+"é explicativa, pois generaliza para todos os candidatos.",
+"é restritiva, pois delimita quais candidatos se sentiram seguros.",
+"é substantiva subjetiva.",
+"é adverbial causal.",
+"deveria estar obrigatoriamente entre vírgulas."
+],
+"c": 1,
+"e": "Sem vírgulas, a adjetiva é restritiva: apenas os candidatos que estudaram com antecedência.",
+"x": [
+"Errada: explicativa viria entre vírgulas.",
+"Correta.",
+"Errada.",
+"Errada.",
+"Errada: as vírgulas mudariam o sentido."
+]
+},
+{
+"id": "POR-083",
+"m": "POR",
+"s": "Termos da oração – sujeito",
+"q": "Há sujeito oculto (desinencial) em:",
+"o": [
+"Choveu muito durante a madrugada.",
+"Precisa-se de analistas.",
+"Entregamos o projeto no prazo.",
+"Os gestores aprovaram o plano.",
+"Houve falhas no sistema."
+],
+"c": 2,
+"e": "Em “Entregamos”, o sujeito “nós” é identificado pela desinência verbal.",
+"x": [
+"Errada: oração sem sujeito (fenômeno da natureza).",
+"Errada: sujeito indeterminado.",
+"Correta.",
+"Errada: sujeito simples explícito.",
+"Errada: oração sem sujeito (haver = existir)."
+]
+},
+{
+"id": "POR-084",
+"m": "POR",
+"s": "Termos da oração – complemento nominal",
+"q": "O termo destacado é complemento nominal em:",
+"o": [
+"A confiança DO CLIENTE aumentou.",
+"A proteção DOS DADOS é obrigatória.",
+"O carro DO GERENTE quebrou.",
+"A sala DE REUNIÃO está ocupada.",
+"O livro DE LÓGICA é ótimo."
+],
+"c": 1,
+"e": "Complemento nominal completa nome de sentido transitivo e tem valor passivo (os dados são protegidos). Em “confiança do cliente”, o cliente confia (valor ativo) → adjunto adnominal.",
+"x": [
+"Errada: adjunto adnominal (valor agente).",
+"Correta.",
+"Errada: adjunto adnominal (posse).",
+"Errada: adjunto adnominal (especificação).",
+"Errada: adjunto adnominal."
+]
+},
+{
+"id": "POR-085",
+"m": "POR",
+"s": "Termos da oração – agente da passiva",
+"q": "Em “O relatório foi revisado pela auditoria interna”, o termo “pela auditoria interna” é:",
+"o": [
+"objeto indireto",
+"adjunto adverbial de modo",
+"agente da passiva",
+"complemento nominal",
+"predicativo do sujeito"
+],
+"c": 2,
+"e": "Na voz passiva analítica, o agente da passiva indica quem pratica a ação.",
+"x": [
+"Errada.",
+"Errada.",
+"Correta.",
+"Errada.",
+"Errada."
+]
+},
+{
+"id": "POR-086",
+"m": "POR",
+"s": "Sinonímia e antonímia",
+"q": "É antônimo de “efêmero” a palavra:",
+"o": [
+"passageiro",
+"duradouro",
+"transitório",
+"breve",
+"fugaz"
+],
+"c": 1,
+"e": "Efêmero = de curta duração; antônimo: duradouro, perene.",
+"x": [
+"Errada: sinônimo.",
+"Correta.",
+"Errada: sinônimo.",
+"Errada: sinônimo.",
+"Errada: sinônimo."
+]
+},
+{
+"id": "POR-087",
+"m": "POR",
+"s": "Sinonímia em contexto",
+"t": "A medida foi considerada inócua pelos especialistas, que esperavam resultados mais expressivos.",
+"q": "No contexto, “inócua” significa:",
+"o": [
+"nociva",
+"ineficaz, sem efeito",
+"inovadora",
+"urgente",
+"polêmica"
+],
+"c": 1,
+"e": "Inócuo = que não produz efeito; inofensivo. O contexto (“esperavam resultados mais expressivos”) confirma o sentido de ineficaz.",
+"x": [
+"Errada: sentido oposto (que causa dano).",
+"Correta.",
+"Errada.",
+"Errada.",
+"Errada."
+]
+},
+{
+"id": "POR-088",
+"m": "POR",
+"s": "Plural de substantivos",
+"q": "Está correto o plural em:",
+"o": [
+"cidadões – pãos – capitães",
+"cidadãos – pães – capitães",
+"cidadãos – pãos – capitões",
+"cidadões – pães – capitões",
+"cidadãs – pãos – capitães"
+],
+"c": 1,
+"e": "Cidadão → cidadãos; pão → pães; capitão → capitães.",
+"x": [
+"Errada.",
+"Correta.",
+"Errada.",
+"Errada.",
+"Errada."
+]
+},
+{
+"id": "POR-089",
+"m": "POR",
+"s": "Plural de compostos",
+"q": "Está correto o plural dos substantivos compostos em:",
+"o": [
+"os guardas-chuvas – os bem-te-vis – os segundas-feiras",
+"os guarda-chuvas – os bem-te-vis – as segundas-feiras",
+"os guarda-chuva – os bens-te-vis – as segunda-feiras",
+"os guardas-chuva – os bem-te-vis – as segundas-feira",
+"os guarda-chuvas – os bens-te-vis – as segundas-feiras"
+],
+"c": 1,
+"e": "Verbo + substantivo: só o substantivo varia (guarda-chuvas). Onomatopeias/frases substantivadas: só o último elemento (bem-te-vis). Numeral + substantivo: ambos variam (segundas-feiras).",
+"x": [
+"Errada.",
+"Correta.",
+"Errada.",
+"Errada.",
+"Errada."
+]
+},
+{
+"id": "POR-090",
+"m": "POR",
+"s": "Denotação e conotação",
+"q": "A palavra destacada está em sentido DENOTATIVO em:",
+"o": [
+"Ele tem um coração de PEDRA.",
+"A notícia caiu como uma BOMBA na reunião.",
+"A PEDRA rolou da encosta após a chuva.",
+"O mercado está AQUECIDO.",
+"Ela é a ESTRELA da equipe."
+],
+"c": 2,
+"e": "Sentido denotativo é o literal, de dicionário.",
+"x": [
+"Errada: conotativo (insensível).",
+"Errada: conotativo.",
+"Correta.",
+"Errada: conotativo (em alta).",
+"Errada: conotativo (destaque)."
+]
+},
+{
+"id": "POR-091",
+"m": "POR",
+"s": "Intertextualidade",
+"q": "Quando um texto retoma outro conservando o sentido original, mas com outras palavras, ocorre:",
+"o": [
+"paródia",
+"paráfrase",
+"ironia",
+"pastiche satírico",
+"antítese"
+],
+"c": 1,
+"e": "Paráfrase reafirma o sentido do texto-fonte; paródia o recria com intenção crítica ou humorística, subvertendo-o.",
+"x": [
+"Errada: subverte o sentido.",
+"Correta.",
+"Errada: figura de linguagem.",
+"Errada: imitação de estilo, não retomada de sentido.",
+"Errada: figura de linguagem."
+]
+},
+{
+"id": "POR-092",
+"m": "POR",
+"s": "Concordância – sujeito composto",
+"q": "A concordância está correta em:",
+"o": [
+"O gerente e a analista chegou cedo.",
+"Fui eu que resolveu o problema.",
+"Mais de um técnico participou da reunião.",
+"Os Estados Unidos impôs novas regras.",
+"Faltou ainda dois relatórios."
+],
+"c": 2,
+"e": "“Mais de um” leva o verbo, em regra, ao singular.",
+"x": [
+"Errada: sujeito composto anteposto → plural: “chegaram”.",
+"Errada: com “que”, o verbo concorda com o antecedente: “Fui eu que resolvi”.",
+"Correta.",
+"Errada: com artigo plural, verbo no plural: “impuseram”.",
+"Errada: “Faltaram ainda dois relatórios”."
+]
+},
+{
+"id": "POR-093",
+"m": "POR",
+"s": "Concordância – “bastante”, “meio”, “mesmo”",
+"q": "Está de acordo com a norma-padrão:",
+"o": [
+"Havia bastante candidatos na sala.",
+"As analistas estavam meias cansadas.",
+"Elas mesmas apresentaram os resultados.",
+"Os técnicos ficaram bastantes satisfeitos.",
+"Ela própria e ele mesmos fizeram a revisão."
+],
+"c": 2,
+"e": "“Mesmo” como reforço concorda com o pronome: “elas mesmas”.",
+"x": [
+"Errada: adjetivo junto a substantivo varia: “bastantes candidatos”.",
+"Errada: advérbio não varia: “meio cansadas”.",
+"Correta.",
+"Errada: advérbio não varia: “bastante satisfeitos”.",
+"Errada: “ele mesmo”."
+]
+},
+{
+"id": "POR-094",
+"m": "POR",
+"s": "Ortografia – x/ch, s/z, g/j",
+"q": "Estão corretamente grafadas todas as palavras de:",
+"o": [
+"enxurrada – paralisar – majestade – beleza",
+"enchurrada – paralizar – magestade – beleza",
+"enxurrada – paralizar – majestade – belesa",
+"enxurrada – paralisar – magestade – beleza",
+"enchurrada – paralisar – majestade – beleza"
+],
+"c": 0,
+"e": "Após “en” inicial usa-se x (enxurrada); paralisar (de paralisia); majestade com j; sufixo “-eza” em substantivos derivados de adjetivos (belo → beleza).",
+"x": [
+"Correta.",
+"Errada.",
+"Errada.",
+"Errada: “majestade”.",
+"Errada: “enxurrada”."
+]
+},
+{
+"id": "POR-095",
+"m": "POR",
+"s": "Hífen",
+"q": "De acordo com o Acordo Ortográfico, estão corretamente grafadas:",
+"o": [
+"autoescola – microondas – anti-inflamatório",
+"autoescola – micro-ondas – anti-inflamatório",
+"auto-escola – micro-ondas – antiinflamatório",
+"autoescola – micro-ondas – antinflamatório",
+"auto escola – microondas – anti inflamatório"
+],
+"c": 1,
+"e": "Usa-se hífen quando o prefixo termina com a mesma vogal que inicia o segundo elemento (micro-ondas, anti-inflamatório); não se usa quando as vogais são diferentes (autoescola).",
+"x": [
+"Errada: “micro-ondas”.",
+"Correta.",
+"Errada: “autoescola” e “anti-inflamatório”.",
+"Errada: “anti-inflamatório”.",
+"Errada."
+]
+},
+{
+"id": "POR-096",
+"m": "POR",
+"s": "Regência verbal – assistir, aspirar, visar",
+"q": "Está correta a regência verbal em:",
+"o": [
+"O médico assistiu o paciente durante a madrugada.",
+"Assistimos o jogo pela televisão.",
+"Os jovens aspiram uma vaga no banco.",
+"Os candidatos obedeceram o regulamento.",
+"O gerente chegou no escritório às oito horas."
+],
+"c": 0,
+"e": "“Assistir”, no sentido de prestar assistência, é transitivo direto: “assistiu o paciente”.",
+"x": [
+"Correta.",
+"Errada: assistir (= ver) pede “a”: “assistimos ao jogo”.",
+"Errada: aspirar (= desejar) pede “a”: “aspiram a uma vaga”.",
+"Errada: obedecer pede “a”: “obedeceram ao regulamento”.",
+"Errada: verbos de movimento pedem “a”: “chegou ao escritório”."
+]
+},
+{
+"id": "POR-097",
+"m": "POR",
+"s": "Regência verbal – lembrar, esquecer",
+"q": "Está de acordo com a norma-padrão:",
+"o": [
+"Lembrei do prazo da prova.",
+"Esqueci do documento em casa.",
+"Lembrei-me do prazo da prova.",
+"Me esqueci o documento em casa.",
+"Lembrei-me o prazo da prova."
+],
+"c": 2,
+"e": "“Lembrar-se de algo” (pronominal + “de”) ou “lembrar algo” (direto). O mesmo vale para “esquecer”.",
+"x": [
+"Errada: sem pronome, “lembrei o prazo”.",
+"Errada: sem pronome, “esqueci o documento”.",
+"Correta.",
+"Errada: pronominal pede “de”, e não se inicia frase com pronome átono.",
+"Errada: pronominal pede “de”."
+]
+},
+{
+"id": "POR-098",
+"m": "POR",
+"s": "Redação – frase correta",
+"q": "Assinale a frase redigida corretamente:",
+"o": [
+"Fazem dois anos que trabalho com segurança.",
+"A maioria dos candidatos estudou à noite.",
+"Houveram muitos acertos na última prova.",
+"Aluga-se apartamentos próximos à sede.",
+"Os dados que precisamos estão no servidor."
+],
+"c": 1,
+"e": "Com expressão partitiva (“a maioria de”), o verbo pode ficar no singular (concordando com “maioria”) ou ir ao plural.",
+"x": [
+"Errada: “Faz dois anos”.",
+"Correta.",
+"Errada: “Houve muitos acertos”.",
+"Errada: “Alugam-se apartamentos”.",
+"Errada: “precisar de” → “Os dados de que precisamos”."
+]
+},
+{
+"id": "POR-099",
+"m": "POR",
+"s": "Redação – organização de períodos",
+"q": "Considere as frases: “O sistema foi atualizado.” / “Os clientes ainda relatam lentidão.” A junção que mantém a relação lógica de contraste é:",
+"o": [
+"O sistema foi atualizado, portanto os clientes ainda relatam lentidão.",
+"Como o sistema foi atualizado, os clientes ainda relatam lentidão.",
+"Embora o sistema tenha sido atualizado, os clientes ainda relatam lentidão.",
+"O sistema foi atualizado porque os clientes ainda relatam lentidão.",
+"Se o sistema foi atualizado, os clientes ainda relatam lentidão."
+],
+"c": 2,
+"e": "A relação entre as frases é de concessão/contraste: apesar da atualização, persiste a lentidão.",
+"x": [
+"Errada: conclusão.",
+"Errada: causa.",
+"Correta.",
+"Errada: inverte a causa.",
+"Errada: condição."
+]
+},
+{
+"id": "POR-100",
+"m": "POR",
+"s": "Correlação de tempos e modos",
+"q": "Completa corretamente a frase “Se os candidatos ___ mais cedo, ___ revisar todo o conteúdo.”:",
+"o": [
+"começarem – conseguiriam",
+"começassem – conseguiriam",
+"começassem – conseguirão",
+"começaram – conseguiriam",
+"começarem – conseguiram"
+],
+"c": 1,
+"e": "Pretérito imperfeito do subjuntivo (começassem) correlaciona-se com futuro do pretérito (conseguiriam). Futuro do subjuntivo (começarem) correlaciona-se com futuro do presente (conseguirão).",
+"x": [
+"Errada: correlação inadequada.",
+"Correta.",
+"Errada: correlação inadequada.",
+"Errada: modo indicativo inadequado.",
+"Errada: correlação inadequada."
+]
+}
+]
