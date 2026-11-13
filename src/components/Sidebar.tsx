@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'motion/react'
 import { BarChart3, BookOpen, FileText, Layers, LogOut, PlayCircle, Settings, Trophy, X } from 'lucide-react'
-import { pontosCargo } from '../lib/cargos'
 import { useSession } from '../lib/session'
 
 const itens = [
@@ -52,7 +51,7 @@ export default function Sidebar({ open, onClose }: { open: boolean; onClose: () 
             <div className="sidebar-foot">
               <div className="mini-stats">
                 <div>
-                  <b>{profile ? pontosCargo(profile, cargo) : 0}</b>
+                  <b>{profile?.pontos ?? 0}</b>
                   <small>pontos</small>
                 </div>
                 <div>

@@ -15,11 +15,10 @@ import Estudo from './pages/Estudo'
 import Ranking from './pages/Ranking'
 import InstalarApp from './pages/InstalarApp'
 import { mustInstallFirst } from './lib/pwa'
-import { pontosCargo } from './lib/cargos'
 import Configuracoes from './pages/Configuracoes'
 
 export default function App() {
-  const { ready, authReady, user, profile, backend, cargo } = useSession()
+  const { ready, authReady, user, profile, backend } = useSession()
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
 
@@ -46,8 +45,8 @@ export default function App() {
           <img src="/icons/favicon.svg" alt="" width={28} height={28} />
           <span>Estudo Banestes TI</span>
         </div>
-        <div className="chip" title={`Pontos no perfil ${cargo.curto} (acertos)`}>
-          ⭐ {pontosCargo(profile, cargo)}
+        <div className="chip" title="Pontuação total (acertos)">
+          ⭐ {profile.pontos}
         </div>
       </header>
       {backend?.mode === 'local' && (

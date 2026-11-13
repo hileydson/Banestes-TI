@@ -2112,3 +2112,17 @@ html.forca-retrato .splash {
 .config-card .btn.big {
   margin: 4px 0 0;
 }
+.perfil-tag {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+  background: rgba(96, 165, 250, 0.15);
+  color: #bfdbfe;
+}
+.perfil-tag.tb {
+  background: rgba(244, 114, 182, 0.15);
+  color: #fbcfe8;
+}

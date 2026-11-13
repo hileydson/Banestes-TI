@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import { Award, Crown, FileText, Medal, Trophy } from 'lucide-react'
 import { useSession } from '../lib/session'
-import { materiaDoCargo, pontosCargo, scoreMateria, totaisCargo, type Cargo } from '../lib/cargos'
+import { cargoDoPerfil, CARGOS, materiaDoCargo, scoreMateria, type Cargo, type CargoId } from '../lib/cargos'
 import { totaisPorMateria, zeradasValidas } from '../lib/zeradas'
 import { fmtPct, pct, total } from '../lib/insights'
 import type { Profile } from '../lib/types'
@@ -19,28 +19,33 @@ export default function Ranking() {
 
   if (!perfis) return <p className="muted">Carregando ranking…</p>
 
-  // Cada perfil (cargo) tem o seu ranking; pontos = acertos nas matérias do cargo
-  const doCargo = perfis.filter((p) => (p.cargo ?? 'TI') === cargo.id)
-  const pts = (p: Profile) => pontosCargo(p, cargo)
-  const geralPct = (p: Profile) => pctGeral(p, cargo)
+  // Ranking único com todos os participantes, dos dois perfis: pontos = total de acertos, sem peso
+  const todos = perfis
+  const pts = (p: Profile) => p.pontos
+  const geralPct = (p: Profile) => pctGeral(p)
   const respondidas = (p: Profile) => {
-    const t = totaisCargo(p, cargo)
+    const t = totaisGerais(p)
     return t.a + t.e
   }
 
   // Desempate: melhor aproveitamento; depois quem respondeu menos questões; depois o apelido
-  const geral = [...doCargo]
+  const geral = [...todos]
     .sort((a, b) => pts(b) - pts(a) || geralPct(b) - geralPct(a) || respondidas(a) - respondidas(b) || a.nickname.localeCompare(b.nickname))
     .slice(0, 20)
-  const totais = totaisPorMateria(questions, cargo)
-  const zer = (p: Profile) => zeradasValidas(p.zeradas, totais, cargo)
-  const maisProvas = [...doCargo].filter((p) => p.provas > 0).sort((a, b) => b.provas - a.provas).slice(0, 10)
+  // Selo de matéria zerada: vale conforme o perfil de cada participante
+  const totaisPorCargo = {} as Partial<Record<CargoId, Record<string, number>>>
+  const zer = (p: Profile) => {
+    const c = cargoDoPerfil(p)
+    const tot = (totaisPorCargo[c.id] ??= totaisPorMateria(questions, c))
+    return zeradasValidas(p.zeradas, tot, c)
+  }
+  const maisProvas = [...todos].filter((p) => p.provas > 0).sort((a, b) => b.provas - a.provas).slice(0, 10)
   // Top provas: maior nota de cada pessoa em uma prova (desempate: soma das notas)
-  const topProvas = [...doCargo]
+  const topProvas = [...todos]
     .filter((p) => p.provas > 0)
     .sort((a, b) => b.melhorNotaProva - a.melhorNotaProva || b.somaNotasProvas - a.somaNotasProvas)
     .slice(0, 20)
-  const somaProvas = [...doCargo].filter((p) => p.provas > 0).sort((a, b) => b.somaNotasProvas - a.somaNotasProvas).slice(0, 10)
+  const somaProvas = [...todos].filter((p) => p.provas > 0).sort((a, b) => b.somaNotasProvas - a.somaNotasProvas).slice(0, 10)
 
   return (
     <div className="ranking">
@@ -48,7 +53,7 @@ export default function Ranking() {
         <Trophy /> Ranking
       </h2>
       <p className="muted small">
-        Perfil <b>{cargo.curto}</b>: aparecem só os estudantes desse perfil, com os acertos nas matérias dele.
+        Todos os participantes, dos dois perfis (Analista de Sistemas e Técnico Bancário). Pontos = total de acertos, sem peso.
       </p>
 
       <div className="glass rank-card">
@@ -74,7 +79,8 @@ export default function Ranking() {
                   </div>
                   <strong>{p.nickname}</strong>
                   <small>{pts(p)} pts</small>
-                  <SelosZerada ids={zer(p)} />
+                  <PerfilTag p={p} />
+                  <SelosZerada ids={zer(p)} cargo={cargoDoPerfil(p)} />
                   <div className="podium-base">
                     <span>{pos + 1}º</span>
                   </div>
@@ -94,7 +100,8 @@ export default function Ranking() {
             >
               <span className="pos">{i + 1}</span>
               <span className="name">{p.nickname}</span>
-              <SelosZerada ids={zer(p)} />
+              <PerfilTag p={p} />
+              <SelosZerada ids={zer(p)} cargo={cargoDoPerfil(p)} />
               <span className="muted">{fmtPct(geralPct(p))}</span>
               <b>{pts(p)}</b>
             </motion.li>
@@ -141,7 +148,7 @@ export default function Ranking() {
       <div className="rank-grid">
         {cargo.materias.map((m, idx) => {
           const sc = (p: Profile) => scoreMateria(p, m)
-          const lista = doCargo
+          const lista = todos
             .filter((p) => total(sc(p)) >= MIN_QUESTOES_MATERIA)
             .sort((a, b) => pct(sc(b)) - pct(sc(a)) || total(sc(b)) - total(sc(a)))
             .slice(0, 5)
@@ -178,8 +185,17 @@ export default function Ranking() {
 }
 
 // Selo “matéria zerada”: acertou todas as questões existentes da matéria
-function SelosZerada({ ids }: { ids: string[] }) {
-  const { cargo } = useSession()
+// Perfil do participante (cargo), para saber de qual edital ele é
+function PerfilTag({ p }: { p: Profile }) {
+  const c = cargoDoPerfil(p)
+  return (
+    <span className={'perfil-tag ' + c.id.toLowerCase()} title={CARGOS[c.id].nome}>
+      {c.id === 'TB' ? 'Técnico' : 'Analista'}
+    </span>
+  )
+}
+
+function SelosZerada({ ids, cargo }: { ids: string[]; cargo: Cargo }) {
   if (!ids.length) return null
   return (
     <span className="selos-zerada">
@@ -196,8 +212,18 @@ function SelosZerada({ ids }: { ids: string[] }) {
   )
 }
 
-function pctGeral(p: Profile, cargo: Cargo) {
-  const { a, e } = totaisCargo(p, cargo)
+function totaisGerais(p: Profile) {
+  let a = 0,
+    e = 0
+  for (const s of Object.values(p.stats)) {
+    a += s?.a ?? 0
+    e += s?.e ?? 0
+  }
+  return { a, e }
+}
+
+function pctGeral(p: Profile) {
+  const { a, e } = totaisGerais(p)
   return a + e ? (a / (a + e)) * 100 : 0
 }
 
