@@ -91,7 +91,7 @@ function ReviewCard({ item, index, aberto = false }: { item: ReviewItem; index: 
               <strong>Resposta correta: {letraDe(q.c)}</strong>
               <p>{renderText(q.e)}</p>
             </div>
-            <details className="all-comments">
+            <details className="all-comments" open={!acertou}>
               <summary>Comentário de todas as alternativas</summary>
               <ul>
                 {item.ordem.map((orig, i) => (

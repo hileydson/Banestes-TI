@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { motion } from 'motion/react'
-import { Award, Crown, FileText, Medal, Trophy } from 'lucide-react'
+import { Award, Crown, FileText, Medal, RefreshCw, Trophy } from 'lucide-react'
 import { useSession } from '../lib/session'
 import { cargoDoPerfil, CARGOS, materiaDoCargo, scoreMateria, type Cargo, type CargoId } from '../lib/cargos'
 import { totaisPorMateria, zeradasValidas } from '../lib/zeradas'
@@ -9,13 +9,36 @@ import type { Profile } from '../lib/types'
 
 const MIN_QUESTOES_MATERIA = 5
 const NOTA_MINIMA = 6 // edital, item 11.3
+const AUTO_REFRESH_MS = 60_000
 
 export default function Ranking() {
   const { backend, user, questions, cargo } = useSession()
   const [perfis, setPerfis] = useState<Profile[] | null>(null)
-  useEffect(() => {
-    backend?.listProfiles().then(setPerfis)
+  const [atualizando, setAtualizando] = useState(false)
+  const [atualizadoEm, setAtualizadoEm] = useState<Date | null>(null)
+
+  const carregar = useCallback(async () => {
+    if (!backend) return
+    setAtualizando(true)
+    try {
+      setPerfis(await backend.listProfiles())
+      setAtualizadoEm(new Date())
+    } finally {
+      setAtualizando(false)
+    }
   }, [backend])
+
+  // Carrega ao abrir, ao voltar para a aba e a cada minuto enquanto a tela estiver visível
+  useEffect(() => {
+    carregar()
+    const tick = () => document.visibilityState === 'visible' && carregar()
+    const id = window.setInterval(tick, AUTO_REFRESH_MS)
+    document.addEventListener('visibilitychange', tick)
+    return () => {
+      window.clearInterval(id)
+      document.removeEventListener('visibilitychange', tick)
+    }
+  }, [carregar])
 
   if (!perfis) return <p className="muted">Carregando ranking…</p>
 
@@ -49,9 +72,20 @@ export default function Ranking() {
 
   return (
     <div className="ranking">
-      <h2 className="page-title">
-        <Trophy /> Ranking
-      </h2>
+      <div className="rank-header">
+        <h2 className="page-title">
+          <Trophy /> Ranking
+        </h2>
+        <button
+          className={'btn-refresh' + (atualizando ? ' girando' : '')}
+          onClick={carregar}
+          disabled={atualizando}
+          title={atualizadoEm ? `Atualizar (última: ${atualizadoEm.toLocaleTimeString('pt-BR')})` : 'Atualizar'}
+          aria-label="Atualizar ranking"
+        >
+          <RefreshCw size={18} />
+        </button>
+      </div>
       <p className="muted small">
         Todos os participantes, dos dois perfis (Analista de Sistemas e Técnico Bancário). Pontos = total de acertos, sem peso.
       </p>
