@@ -6,6 +6,7 @@ import { materiaDaQuestao } from '../lib/cargos'
 import { useSession } from '../lib/session'
 import { getQuestion, LETRAS, NAO_SEI } from '../lib/questions'
 import { renderText } from './QuestionView'
+import SeloReal from './SeloReal'
 
 export interface ReviewItem {
   id: string
@@ -60,11 +61,18 @@ function ReviewCard({ item, index, aberto = false }: { item: ReviewItem; index: 
           {m.curto}
         </span>
         <span className="review-title">{area && area.materia === 'ESP' ? `${area.nome} · ${q.s}` : q.s}</span>
+        <SeloReal q={q} curto />
         <ChevronDown size={18} className={'chev' + (open ? ' up' : '')} />
       </button>
       <AnimatePresence initial={false}>
         {open && (
           <motion.div className="review-body" initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}>
+            {q.r && (
+              <p className="muted small origem-real">
+                Questão real da FCC: {q.r}
+                {q.rc ? ` – ${q.rc}` : ''}
+              </p>
+            )}
             {q.t && <div className="q-texto small">{renderText(q.t)}</div>}
             <div className="q-enunciado">{renderText(q.q)}</div>
             <ul className="review-opts">

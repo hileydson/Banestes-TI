@@ -4,6 +4,7 @@ import { materiaDaQuestao } from '../lib/cargos'
 import { useSession } from '../lib/session'
 import { HelpCircle } from 'lucide-react'
 import { LETRAS, NAO_SEI, type Question } from '../lib/questions'
+import SeloReal from './SeloReal'
 
 interface Props {
   q: Question
@@ -13,9 +14,10 @@ interface Props {
   marcada?: number
   onMarcar(original: number): void
   permitirNaoSei?: boolean
+  modoReal?: boolean // teste prova real: marca também as questões que só completam o teste
 }
 
-export default function QuestionView({ q, numero, total, ordem, marcada, onMarcar, permitirNaoSei }: Props) {
+export default function QuestionView({ q, numero, total, ordem, marcada, onMarcar, permitirNaoSei, modoReal }: Props) {
   const { cargo } = useSession()
   // nome e cor da matéria como aparecem no perfil (ex.: Matemática Financeira no Técnico Bancário)
   const m = materiaDaQuestao(q, cargo) ?? MATERIA_BY_ID[q.m]
@@ -34,6 +36,7 @@ export default function QuestionView({ q, numero, total, ordem, marcada, onMarca
           {m.nome}
         </span>
         {area && area.materia === 'ESP' && <span className="badge subtle">{area.nome}</span>}
+        <SeloReal q={q} modoReal={modoReal} />
         <span className="q-num">
           Questão {numero} de {total}
         </span>

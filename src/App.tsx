@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import Apelido from './pages/Apelido'
 import Inicio from './pages/Inicio'
 import TestePorMateria from './pages/TestePorMateria'
+import TesteProvaReal from './pages/TesteProvaReal'
 import Resultados from './pages/Resultados'
 import Prova from './pages/Prova'
 import Estudo from './pages/Estudo'
@@ -64,6 +65,7 @@ export default function App() {
             <Routes location={location}>
               <Route path="/" element={<Inicio />} />
               <Route path="/materia" element={<TestePorMateria />} />
+              <Route path="/real" element={<TesteProvaReal />} />
               <Route path="/resultados" element={<Resultados />} />
               <Route path="/prova" element={<Prova />} />
               <Route path="/estudo" element={<Estudo />} />

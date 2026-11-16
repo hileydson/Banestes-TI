@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowLeft, ArrowRight, BookOpenCheck, Flag, HelpCircle, Layers, Pause, Play, RotateCcw, Trash2, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpenCheck, Flag, HelpCircle, Layers, Pause, Play, RotateCcw, Stamp, Trash2, X } from 'lucide-react'
 import confetti from 'canvas-confetti'
 import { useSession } from '../lib/session'
 import { materiaDoCargo, pertence, type MateriaCargo } from '../lib/cargos'
-import { getQuestion, pickQuestions, randomOrder } from '../lib/questions'
+import { ehReal, getQuestion, pickQuestions, randomOrder } from '../lib/questions'
 import QuestionView from '../components/QuestionView'
 import Review, { type ReviewItem } from '../components/Review'
 import InsightModal from '../components/InsightModal'
@@ -18,6 +18,7 @@ interface TesteState {
   itens: ReviewItem[]
   atual: number
   repetidas: number
+  completadas?: number // teste prova real: questões inéditas que completaram o teste
   materia?: string // teste por matéria (id da matéria do perfil)
 }
 
@@ -28,14 +29,16 @@ export default function Inicio() {
   return <TesteCurto modo="rapido" />
 }
 
-// Tela do teste curto, usada pelo teste rápido (12 questões variadas) e pelo teste por matéria (5 de uma matéria).
+// Tela do teste curto, usada pelo teste rápido (12 questões variadas), pelo teste por matéria (5 de uma matéria)
+// e pelo teste prova real (12 como no rápido, priorizando questões reais de provas da FCC).
 // Cada modo tem o seu próprio teste salvo: dá para pausar um e continuar o outro.
 export function TesteCurto({ modo }: { modo: TestSlot }) {
   const sess = useSession()
   const { questions, progress, profile, record, bumpQuickStarts, cargo } = sess
   const porMateria = modo === 'materia'
-  const quickTest = porMateria ? sess.materiaTest : sess.quickTest
-  const saveQuickTest = porMateria ? sess.saveMateriaTest : sess.saveQuickTest
+  const real = modo === 'real'
+  const quickTest = porMateria ? sess.materiaTest : real ? sess.realTest : sess.quickTest
+  const saveQuickTest = porMateria ? sess.saveMateriaTest : real ? sess.saveRealTest : sess.saveQuickTest
   const [escolher, setEscolher] = useState(false)
   const materiaPendente = useRef<string | undefined>(undefined)
   const [fase, setFase] = useState<Fase>('inicio')
@@ -93,7 +96,13 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
 
   const continuar = () => {
     if (!quickTest) return
-    setTeste({ itens: quickTest.itens, atual: quickTest.atual ?? 0, repetidas: quickTest.repetidas ?? 0, materia: quickTest.materia })
+    setTeste({
+      itens: quickTest.itens,
+      atual: quickTest.atual ?? 0,
+      repetidas: quickTest.repetidas ?? 0,
+      completadas: quickTest.completadas,
+      materia: quickTest.materia
+    })
     setFase(quickTest.fase === 'revisao' ? 'resultado' : 'teste')
   }
 
@@ -126,14 +135,18 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
     if (acao === 'novo') clicarIniciar()
   }
 
-  // Só as questões das matérias do perfil (cargo) do aluno
-  const doCargo = useMemo(() => questions.filter((q) => cargo.materias.some((mc) => pertence(q, mc))), [questions, cargo])
+  // Só as questões das matérias do perfil (cargo) do aluno; no teste prova real, só as reais
+  const doCargo = useMemo(
+    () => questions.filter((q) => cargo.materias.some((mc) => pertence(q, mc)) && (!real || ehReal(q))),
+    [questions, cargo, real]
+  )
   const disponiveis = useMemo(() => {
     const acert = new Set(progress.correct)
     return doCargo.filter((q) => !acert.has(q.id)).length
   }, [doCargo, progress])
 
   const progressoMat = useMemo(() => progressoMaterias(questions, progress.correct, cargo), [questions, progress, cargo])
+  const reaisPorMateria = useMemo(() => (real ? progressoMaterias(questions.filter(ehReal), progress.correct, cargo) : []), [questions, progress, cargo, real])
 
   // Ao apertar INICIAR: no teste por matéria, primeiro escolhe a matéria
   const clicarIniciar = () => {
@@ -158,14 +171,14 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
     const materia = porMateria ? materiaPendente.current : undefined
     if (porMateria && !materia) return
     const slots = materia ? [{ materia, n: QTD_TESTE_MATERIA }] : cargo.testeRapido
-    let { ids, repetidas } = pickQuestions(questions, slots, acertadas, new Set(), peso, cargo)
+    let { ids, repetidas, completadas } = pickQuestions(questions, slots, acertadas, new Set(), peso, cargo, real ? ehReal : undefined)
     // Por matéria: nunca traz questão já acertada (se a matéria foi zerada, o conjunto acima já libera todas)
     if (materia) {
       ids = ids.filter((id) => !acertadas.has(id))
       repetidas = 0
     }
     if (!ids.length) return
-    setTeste({ itens: ids.map((id) => ({ id, ordem: randomOrder() })), atual: 0, repetidas, materia })
+    setTeste({ itens: ids.map((id) => ({ id, ordem: randomOrder() })), atual: 0, repetidas, completadas: real ? completadas : undefined, materia })
     setFase('teste')
   }
 
@@ -184,7 +197,7 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
       await record(
         'teste',
         teste.itens.map((i) => ({ id: i.id, marcada: i.marcada })),
-        teste.materia ? { materia: teste.materia } : {}
+        teste.materia ? { materia: teste.materia } : real ? { real: true } : {}
       )
       atualRef.current = { fase: 'resultado', teste }
       setFase('resultado')
@@ -208,13 +221,25 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
     return (
       <div className="hero">
         <motion.h2 initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
-          {porMateria ? 'Teste por matéria' : `Olá, ${profile?.nickname}! 👋`}
+          {porMateria ? 'Teste por matéria' : real ? 'Teste prova real' : `Olá, ${profile?.nickname}! 👋`}
         </motion.h2>
         {porMateria ? (
           <p className="muted center">
             Escolha uma matéria e responda {QTD_TESTE_MATERIA} questões dela que você ainda não acertou, no estilo FCC.
             <br />
             Matéria zerada (🏆): qualquer questão dela pode voltar.
+          </p>
+        ) : real ? (
+          <p className="muted center">
+            12 questões como no teste rápido, mas tiradas de <b>provas reais da FCC</b>, marcadas com o selo{' '}
+            <span className="badge selo-real inline">
+              <Stamp size={12} /> Prova real
+            </span>
+            .
+            <br />
+            {cargo.testeRapidoTexto}
+            <br />
+            Se faltar questão real em alguma matéria, o teste é completado com questões de treino (sem o selo).
           </p>
         ) : (
           <p className="muted center">
@@ -267,11 +292,11 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
         <div className="hero-stats">
           <div className="glass stat">
             <b>{doCargo.length}</b>
-            <small>questões no banco</small>
+            <small>{real ? 'questões reais' : 'questões no banco'}</small>
           </div>
           <div className="glass stat">
             <b>{disponiveis}</b>
-            <small>ainda não acertadas</small>
+            <small>{real ? 'reais não acertadas' : 'ainda não acertadas'}</small>
           </div>
           <div className="glass stat">
             <b>{profile?.testes ?? 0}</b>
@@ -283,13 +308,14 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
         <EscolherMateria aberto={escolher} progresso={progressoMat} onEscolher={comecar} onFechar={() => setEscolher(false)} />
         <div className="banco-mini glass">
           {porMateria && <p className="muted small banco-legenda">Acertadas / total de questões de cada matéria</p>}
-          {progressoMat.map((p) => {
+          {real && <p className="muted small banco-legenda">Questões reais acertadas / total de cada matéria</p>}
+          {(real ? reaisPorMateria : progressoMat).map((p) => {
             const m = materiaDoCargo(cargo, p.id)!
             return (
               <div key={m.id} className="banco-row">
                 <span className="dot" style={{ background: m.cor }} />
                 <span>{m.nome}</span>
-                <b>{porMateria ? (p.zerada ? `🏆 ${p.total}/${p.total}` : `${p.acertadas}/${p.total}`) : p.total}</b>
+                <b>{porMateria ? (p.zerada ? `🏆 ${p.total}/${p.total}` : `${p.acertadas}/${p.total}`) : real ? `${p.acertadas}/${p.total}` : p.total}</b>
               </div>
             )
           })}
@@ -306,6 +332,11 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
           <ScoreRing valor={acertos} total={teste.itens.length} />
           <div>
             {teste.materia && <MateriaTag id={teste.materia} />}
+            {real && (
+              <span className="materia-tag selo-real-tag">
+                <Stamp size={14} /> Teste prova real · {teste.itens.filter((i) => ehReal(getQuestion(i.id))).length} de {teste.itens.length} questões reais
+              </span>
+            )}
             <h2>{tituloResultado(acertos / teste.itens.length)}</h2>
             <p className="muted">
               Você acertou {acertos} de {teste.itens.length} questões. +{acertos} pontos somados ao seu perfil.
@@ -341,6 +372,11 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
           Só restavam {teste.itens.length} questão(ões) que você ainda não acertou em {materiaDoCargo(cargo, teste.materia)?.nome}.
         </div>
       )}
+      {real && (teste.completadas ?? 0) > 0 && (
+        <div className="alert info">
+          Faltaram questões reais em algumas matérias: {teste.completadas} questão(ões) de treino, sem o selo de prova real, completam o teste.
+        </div>
+      )}
       {teste.repetidas > 0 && <div className="alert info">Algumas matérias já foram 100% acertadas por você — {teste.repetidas} questão(ões) repetida(s) para completar o teste.</div>}
       <div className="progress-wrap">
         <div className="progress">
@@ -366,7 +402,7 @@ export function TesteCurto({ modo }: { modo: TestSlot }) {
         ))}
       </div>
       <AnimatePresence mode="wait">
-        <QuestionView key={q.id} q={q} numero={teste.atual + 1} total={teste.itens.length} ordem={item.ordem} marcada={item.marcada} onMarcar={marcar} permitirNaoSei />
+        <QuestionView key={q.id} q={q} numero={teste.atual + 1} total={teste.itens.length} ordem={item.ordem} marcada={item.marcada} onMarcar={marcar} permitirNaoSei modoReal={real} />
       </AnimatePresence>
       <div className="quiz-nav">
         <button className="btn ghost" disabled={teste.atual === 0} onClick={() => setTeste({ ...teste, atual: teste.atual - 1 })}>

@@ -9,6 +9,7 @@ const ids = new Set()
 const cont = {}
 const vies = {}
 let erros = 0
+let reais = 0
 const err = (f, id, msg) => {
   erros++
   console.error(`✗ ${f} ${id ?? ''}: ${msg}`)
@@ -34,8 +35,11 @@ for (const f of readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) {
     if (Array.isArray(q.o) && new Set(q.o).size !== q.o.length) err(f, q.id, 'alternativas repetidas')
     const k = q.a ? `${q.m}/${q.a}` : q.m
     cont[k] = (cont[k] ?? 0) + 1
+    if (q.r !== undefined && (typeof q.r !== 'string' || !q.r)) err(f, q.id, 'origem (r) inválida')
+    if (q.r) reais++
     // Viés de tamanho: chance de acertar chutando sempre a alternativa mais longa
-    if (Array.isArray(q.o) && q.o.length === 5) {
+    // (só nas inéditas: as questões reais ficam como a banca aplicou)
+    if (!q.r && Array.isArray(q.o) && q.o.length === 5) {
       const L = q.o.map((o) => o.length)
       const max = Math.max(...L)
       const empatadas = L.filter((l) => l === max).length
@@ -53,5 +57,5 @@ for (const [m, v] of Object.entries(vies)) {
   console.log(`Chute “mais longa” em ${m}: ${(taxa * 100).toFixed(0)}%`)
   if (taxa > LIMITE_VIES) err('-', m, `a correta costuma ser a mais longa (${(taxa * 100).toFixed(0)}%); equilibre o tamanho das alternativas`)
 }
-console.log(`Total: ${ids.size} questões. Erros: ${erros}`)
+console.log(`Total: ${ids.size} questões (${reais} reais de provas FCC). Erros: ${erros}`)
 process.exit(erros ? 1 : 0)

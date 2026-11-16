@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'motion/react'
-import { BarChart3, BookOpen, FileText, Layers, LogOut, PlayCircle, Settings, Trophy, X } from 'lucide-react'
+import { BarChart3, BookOpen, FileText, Layers, LogOut, PlayCircle, Settings, Stamp, Trophy, X } from 'lucide-react'
 import { useSession } from '../lib/session'
 
 const itens = [
   { to: '/', label: 'Teste rápido', icon: PlayCircle },
   { to: '/materia', label: 'Teste por matéria', icon: Layers },
+  { to: '/real', label: 'Teste prova real', icon: Stamp },
   { to: '/prova', label: 'Prova', icon: FileText },
   { to: '/estudo', label: 'Estudo', icon: BookOpen },
   { to: '/resultados', label: 'Ver resultados', icon: BarChart3 },

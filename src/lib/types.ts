@@ -38,8 +38,9 @@ export interface Progress {
   quickStarts?: number // quantas vezes o usuário iniciou um teste rápido
 }
 
-// Tipos de teste curto: rápido (12 questões variadas) e por matéria (5 de uma matéria escolhida)
-export type TestSlot = 'rapido' | 'materia'
+// Tipos de teste curto: rápido (12 questões variadas), por matéria (5 de uma matéria escolhida)
+// e prova real (12 questões como no rápido, priorizando questões reais de provas FCC)
+export type TestSlot = 'rapido' | 'materia' | 'real'
 
 // Teste rápido / por matéria pausado ou em andamento (salvo na conta do usuário)
 export interface QuickTestState {
@@ -47,6 +48,7 @@ export interface QuickTestState {
   itens: { id: string; ordem: number[]; marcada?: number }[]
   atual: number
   repetidas: number
+  completadas?: number // teste prova real: questões inéditas (não reais) usadas para completar
   fase?: 'teste' | 'revisao' // 'revisao': já finalizado e contabilizado, falta concluir a revisão
   updatedAt?: number
 }
@@ -72,6 +74,7 @@ export interface Attempt {
   acertos: number
   porMateria: Partial<Record<MateriaId, Score>>
   materia?: string // teste por matéria
+  real?: boolean // teste prova real
   cargo?: CargoId // perfil em que foi feito
   nota?: number
   duracaoSeg?: number

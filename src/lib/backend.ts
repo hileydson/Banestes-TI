@@ -2,7 +2,7 @@ import { firebaseConfig } from './firebaseConfig'
 import type { AppUser, Attempt, EstudoState, ExamState, Profile, Progress, QuickTestState, TestSlot } from './types'
 
 // Documento (em users/{uid}/private) onde cada tipo de teste fica salvo enquanto pausado/em revisão
-const docTeste = (slot: TestSlot) => (slot === 'materia' ? 'materiaTest' : 'quickTest')
+const docTeste = (slot: TestSlot) => (slot === 'materia' ? 'materiaTest' : slot === 'real' ? 'realTest' : 'quickTest')
 
 export const USERNAME_RE = /^[a-z0-9._-]{3,20}$/
 const EMAIL_DOMAIN = 'usuario.estudo-banestes.app'

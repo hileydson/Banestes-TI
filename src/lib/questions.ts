@@ -13,6 +13,8 @@ export interface RawQuestion {
   c: number // índice da correta (0-4)
   e: string // explicação da correta
   x: string[] // comentário de cada alternativa
+  r?: string // questão real de prova FCC: órgão e ano (ex.: "TRT · 2013")
+  rc?: string // cargo da prova real
 }
 
 export interface Question extends RawQuestion {
@@ -41,6 +43,9 @@ export function getQuestion(id: string): Question | undefined {
   return byId?.get(id)
 }
 
+// Questão real, já aplicada em prova da FCC (as demais são inéditas, no estilo FCC)
+export const ehReal = (q?: Pick<Question, 'r'>) => !!q?.r
+
 export function shuffle<T>(arr: T[]): T[] {
   const a = [...arr]
   for (let i = a.length - 1; i > 0; i--) {
@@ -58,6 +63,7 @@ export function randomOrder(): number[] {
 export interface PickResult {
   ids: string[]
   repetidas: number // quantas tiveram de vir de questões já acertadas (banco esgotado)
+  completadas: number // com “preferir”: quantas não eram preferidas e entraram só para completar
 }
 
 /**
@@ -71,11 +77,13 @@ export function pickQuestions(
   acertadas: Set<string>,
   excluir: Set<string> = new Set(),
   pesoArea: Record<string, number> = {},
-  cargo: Cargo
+  cargo: Cargo,
+  preferir?: (q: Question) => boolean
 ): PickResult {
   const escolhidas: string[] = []
   const usados = new Set(excluir)
   let repetidas = 0
+  let completadas = 0
 
   for (const slot of slots) {
     const mc = materiaDoCargo(cargo, slot.materia)
@@ -83,25 +91,31 @@ export function pickQuestions(
     const areas = slot.area === undefined ? undefined : Array.isArray(slot.area) ? slot.area : [slot.area]
     const pool = all.filter((q) => pertence(q, mc) && (!areas || areas.includes(q.area)) && !usados.has(q.id))
     const ineditas = pool.filter((q) => !acertadas.has(q.id))
-    const jaAcertadas = shuffle(pool.filter((q) => acertadas.has(q.id)))
-
-    let pegas: Question[]
+    const jaAcertadas = pool.filter((q) => acertadas.has(q.id))
     // matéria com várias áreas (ex.: Específicos de TI): espalha entre as áreas, priorizando as que o aluno mais erra
-    if (new Set(pool.map((q) => q.area)).size > 2 && !slot.area) {
-      pegas = spreadByArea(ineditas, slot.n, pesoArea)
-    } else {
-      pegas = shuffle(ineditas).slice(0, slot.n)
-    }
-    while (pegas.length < slot.n && jaAcertadas.length) {
-      pegas.push(jaAcertadas.shift()!)
+    const espalhar = new Set(pool.map((q) => q.area)).size > 2 && !slot.area
+    const sortear = (lista: Question[], n: number) => (espalhar ? spreadByArea(lista, n, pesoArea) : shuffle(lista).slice(0, n))
+
+    // Com “preferir” (teste prova real): primeiro as preferidas, depois as outras só para completar
+    const grupos = preferir
+      ? [ineditas.filter(preferir), ineditas.filter((q) => !preferir(q))]
+      : [ineditas]
+    const pegas: Question[] = []
+    for (const g of grupos) pegas.push(...sortear(g, slot.n - pegas.length))
+    const repor = preferir
+      ? [...shuffle(jaAcertadas.filter(preferir)), ...shuffle(jaAcertadas.filter((q) => !preferir(q)))]
+      : shuffle(jaAcertadas)
+    while (pegas.length < slot.n && repor.length) {
+      pegas.push(repor.shift()!)
       repetidas++
     }
+    if (preferir) completadas += pegas.filter((q) => !preferir(q)).length
     for (const q of pegas) {
       usados.add(q.id)
       escolhidas.push(q.id)
     }
   }
-  return { ids: escolhidas, repetidas }
+  return { ids: escolhidas, repetidas, completadas }
 }
 
 function spreadByArea(pool: Question[], n: number, peso: Record<string, number>): Question[] {

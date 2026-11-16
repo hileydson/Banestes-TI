@@ -25,6 +25,8 @@ interface SessionCtx {
   saveQuickTest(t: QuickTestState | null): Promise<void>
   materiaTest: QuickTestState | null
   saveMateriaTest(t: QuickTestState | null): Promise<void>
+  realTest: QuickTestState | null
+  saveRealTest(t: QuickTestState | null): Promise<void>
   estudo: EstudoState
   updateEstudo(fn: (e: EstudoState) => EstudoState): Promise<void>
 }
@@ -48,6 +50,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   const [reconectando, setReconectando] = useState(false)
   const [quickTest, setQuickTest] = useState<QuickTestState | null>(null)
   const [materiaTest, setMateriaTest] = useState<QuickTestState | null>(null)
+  const [realTest, setRealTest] = useState<QuickTestState | null>(null)
   const [estudo, setEstudo] = useState<EstudoState>({ entendidos: {}, pausa: null })
   const estudoRef = useRef(estudo)
   estudoRef.current = estudo
@@ -79,12 +82,13 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     let timer: ReturnType<typeof setTimeout> | undefined
     // Se a conexão falhar (ex.: aba voltando de suspensão), tenta de novo em vez de tratar como “sem perfil”
     const carregar = (tentativa: number) => {
-      Promise.all([backend.getProfile(user.uid), backend.getProgress(user.uid), backend.getQuickTest(user.uid), backend.getQuickTest(user.uid, 'materia'), backend.getEstudo(user.uid)])
-        .then(([p, pr, qt, mt, es]) => {
+      Promise.all([backend.getProfile(user.uid), backend.getProgress(user.uid), backend.getQuickTest(user.uid), backend.getQuickTest(user.uid, 'materia'), backend.getQuickTest(user.uid, 'real'), backend.getEstudo(user.uid)])
+        .then(([p, pr, qt, mt, rt, es]) => {
           if (cancelado) return
           setProfile(p)
           setQuickTest(qt)
           setMateriaTest(mt)
+          setRealTest(rt)
           setEstudo(es)
           setProgress({ correct: pr.correct ?? [], wrongCount: pr.wrongCount ?? {}, quickStarts: pr.quickStarts ?? 0 })
           setReconectando(false)
@@ -225,7 +229,12 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       setProfile(p)
       setQuickTest(null)
       setMateriaTest(null)
-      await Promise.all([backend.saveQuickTest(user.uid, null), backend.saveQuickTest(user.uid, null, 'materia')]).catch(() => {})
+      setRealTest(null)
+      await Promise.all([
+        backend.saveQuickTest(user.uid, null),
+        backend.saveQuickTest(user.uid, null, 'materia'),
+        backend.saveQuickTest(user.uid, null, 'real')
+      ]).catch(() => {})
     },
     [backend, user, profile, questions, progress]
   )
@@ -235,6 +244,15 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       const v = t ? { ...t, updatedAt: Date.now() } : null
       setMateriaTest(v)
       if (backend && user) await backend.saveQuickTest(user.uid, v, 'materia').catch(() => {})
+    },
+    [backend, user]
+  )
+
+  const saveRealTest = useCallback(
+    async (t: QuickTestState | null) => {
+      const v = t ? { ...t, updatedAt: Date.now() } : null
+      setRealTest(v)
+      if (backend && user) await backend.saveQuickTest(user.uid, v, 'real').catch(() => {})
     },
     [backend, user]
   )
@@ -260,6 +278,8 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         saveQuickTest,
         materiaTest,
         saveMateriaTest,
+        realTest,
+        saveRealTest,
         estudo,
         updateEstudo
       }}

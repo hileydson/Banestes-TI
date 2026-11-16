@@ -2165,3 +2165,31 @@ html.forca-retrato .splash {
     transform: rotate(360deg);
   }
 }
+
+/* --- questões reais de prova (selo) --- */
+.badge.selo-real {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #fde68a;
+  border-color: #f59e0b88;
+  background: linear-gradient(135deg, #f59e0b33, #b4530926);
+}
+.review-head .badge.selo-real {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  padding: 2px 8px;
+}
+.origem-real {
+  margin: 0 0 8px;
+  color: #fcd34d;
+}
+.badge.selo-real.inline {
+  font-size: 0.7rem;
+  padding: 1px 7px;
+  vertical-align: middle;
+}
+.materia-tag.selo-real-tag {
+  color: #fde68a;
+  border-color: #f59e0b88;
+}
