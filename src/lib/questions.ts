@@ -15,6 +15,7 @@ export interface RawQuestion {
   x: string[] // comentário de cada alternativa
   r?: string // questão real de prova FCC: órgão e ano (ex.: "TRT · 2013")
   rc?: string // cargo da prova real
+  inativa?: string // fora do sorteio (motivo); continua acessível por id para testes/provas antigos
 }
 
 export interface Question extends RawQuestion {
@@ -34,9 +35,10 @@ export async function loadQuestions(): Promise<Question[]> {
       all.push({ ...q, area: q.a ?? q.m })
     }
   }
-  cache = all
+  // Questões inativas saem do sorteio e das contagens, mas seguem acessíveis por id
+  cache = all.filter((q) => !q.inativa)
   byId = new Map(all.map((q) => [q.id, q]))
-  return all
+  return cache
 }
 
 export function getQuestion(id: string): Question | undefined {

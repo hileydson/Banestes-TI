@@ -1,5 +1,6 @@
 import { AREA_BY_ID } from './materias'
 import { pertence, scoreMateria, totaisCargo, type Cargo } from './cargos'
+import { aproveitamentoGeral } from './aproveitamento'
 import type { Profile, Score } from './types'
 
 export const pct = (s?: Score) => (s && s.a + s.e > 0 ? (s.a / (s.a + s.e)) * 100 : 0)
@@ -10,8 +11,9 @@ export interface InsightMateria {
   id: string
   nome: string
   cor: string
-  aproveitamento: number
-  respondidas: number
+  aproveitamento: number // últimas 10 questões da matéria
+  respondidas: number // total de questões já feitas na matéria
+  recentes: number // questões consideradas no aproveitamento (até 10)
   diferenca: number // pontos percentuais em relação à média geral
 }
 
@@ -25,15 +27,16 @@ export interface Insight {
   mensagens: string[]
 }
 
+// Aproveitamento por matéria = últimas 10 questões dela; geral = média das matérias do perfil
 export function computeInsight(p: Profile, cargo: Cargo): Insight {
   const { a, e } = totaisCargo(p, cargo)
-  const geral = a + e ? (a / (a + e)) * 100 : 0
-  const materias: InsightMateria[] = cargo.materias.map((m) => {
-    const s = scoreMateria(p, m)
-    const ap = pct(s)
-    return { id: m.id, nome: m.nome, cor: m.cor, aproveitamento: ap, respondidas: total(s), diferenca: ap - geral }
+  const ap = aproveitamentoGeral(p, cargo)
+  const geral = ap.pct
+  const materias: InsightMateria[] = cargo.materias.map((m, i) => {
+    const r = ap.materias[i]
+    return { id: m.id, nome: m.nome, cor: m.cor, aproveitamento: r.pct, respondidas: total(scoreMateria(p, m)), recentes: r.n, diferenca: r.pct - geral }
   })
-  const comDados = materias.filter((m) => m.respondidas > 0)
+  const comDados = materias.filter((m) => m.recentes > 0)
   const ordenadas = [...comDados].sort((x, y) => x.aproveitamento - y.aproveitamento)
   const pior = ordenadas[0]
   const melhor = ordenadas[ordenadas.length - 1]

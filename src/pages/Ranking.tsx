@@ -1,18 +1,20 @@
 import { useCallback, useEffect, useState } from 'react'
 import { motion } from 'motion/react'
-import { Award, Crown, FileText, Medal, RefreshCw, Trophy } from 'lucide-react'
+import { Award, Crown, FileText, Gauge, Medal, RefreshCw, Trophy } from 'lucide-react'
 import { useSession } from '../lib/session'
-import { cargoDoPerfil, CARGOS, materiaDoCargo, scoreMateria, type Cargo, type CargoId } from '../lib/cargos'
+import { cargoDoPerfil, CARGOS, materiaDoCargo, type Cargo, type CargoId } from '../lib/cargos'
 import { totaisPorMateria, zeradasValidas } from '../lib/zeradas'
-import { fmtPct, pct, total } from '../lib/insights'
+import { fmtPct } from '../lib/insights'
+import { aproveitamentoGeral, aproveitamentoMateria, JANELA_RECENTES, type AprovGeral, type AprovMateria } from '../lib/aproveitamento'
 import type { Profile } from '../lib/types'
 
-const MIN_QUESTOES_MATERIA = 5
+const MIN_QUESTOES_MATERIA = 5 // das últimas 10 da matéria
+const MIN_QUESTOES_APROV = 10 // somando as matérias, para entrar no ranking de aproveitamento
 const NOTA_MINIMA = 6 // edital, item 11.3
 const AUTO_REFRESH_MS = 60_000
 
 export default function Ranking() {
-  const { backend, user, questions, cargo } = useSession()
+  const { backend, user, questions, cargo, profile } = useSession()
   const [perfis, setPerfis] = useState<Profile[] | null>(null)
   const [atualizando, setAtualizando] = useState(false)
   const [atualizadoEm, setAtualizadoEm] = useState<Date | null>(null)
@@ -43,12 +45,16 @@ export default function Ranking() {
   if (!perfis) return <p className="muted">Carregando ranking…</p>
 
   // Ranking único com todos os participantes, dos dois perfis: pontos = total de acertos, sem peso
-  const todos = perfis
+  // o próprio perfil vem da sessão (mais atualizado que a lista do servidor)
+  const todos = profile ? perfis.map((p) => (p.uid === profile.uid ? profile : p)) : perfis
   const pts = (p: Profile) => p.pontos
-  const geralPct = (p: Profile) => pctGeral(p)
+  // Aproveitamento: últimas 10 questões de cada matéria do perfil da pessoa; geral = média das matérias
+  const aprov = new Map<string, AprovGeral>(todos.map((p) => [p.uid, aproveitamentoGeral(p, cargoDoPerfil(p))]))
+  const geralPct = (p: Profile) => aprov.get(p.uid)?.pct ?? 0
   const respondidas = (p: Profile) => {
-    const t = totaisGerais(p)
-    return t.a + t.e
+    let n = 0
+    for (const sc of Object.values(p.stats)) n += (sc?.a ?? 0) + (sc?.e ?? 0)
+    return n
   }
 
   // Desempate: melhor aproveitamento; depois quem respondeu menos questões; depois o apelido
@@ -94,7 +100,9 @@ export default function Ranking() {
         <h3>
           <Crown size={18} /> Top 20 geral (pontos = acertos)
         </h3>
-        <p className="muted small">Empate em pontos: fica na frente quem tem o melhor aproveitamento (%). 🏆 = matéria zerada.</p>
+        <p className="muted small">
+          Empate em pontos: fica na frente quem tem o melhor aproveitamento (%), calculado como na seção abaixo. 🏆 = matéria zerada.
+        </p>
         {geral.length >= 3 && (
           <div className="podium">
             {[1, 0, 2].map((pos) => {
@@ -143,6 +151,8 @@ export default function Ranking() {
         </ol>
       </div>
 
+      <SecaoAproveitamento todos={todos} aprov={aprov} me={user?.uid} />
+
       <div className="glass rank-card">
         <h3>
           <Award size={18} /> Top provas (maior nota de cada um)
@@ -178,13 +188,16 @@ export default function Ranking() {
       <h3 className="sub-title">
         <Medal size={18} /> Melhor em cada matéria
       </h3>
-      <p className="muted small">Aproveitamento = acertos ÷ questões feitas na matéria (mínimo {MIN_QUESTOES_MATERIA} questões).</p>
+      <p className="muted small">
+        Aproveitamento nas últimas {JANELA_RECENTES} questões da matéria (mínimo {MIN_QUESTOES_MATERIA} questões).
+      </p>
       <div className="rank-grid">
         {cargo.materias.map((m, idx) => {
-          const sc = (p: Profile) => scoreMateria(p, m)
+          const am = new Map(todos.map((p) => [p.uid, aproveitamentoMateria(p, m)]))
+          const sc = (p: Profile) => am.get(p.uid)!
           const lista = todos
-            .filter((p) => total(sc(p)) >= MIN_QUESTOES_MATERIA)
-            .sort((a, b) => pct(sc(b)) - pct(sc(a)) || total(sc(b)) - total(sc(a)))
+            .filter((p) => sc(p).n >= MIN_QUESTOES_MATERIA)
+            .sort((a, b) => sc(b).pct - sc(a).pct || sc(b).n - sc(a).n || a.nickname.localeCompare(b.nickname))
             .slice(0, 5)
           return (
             <motion.div key={m.id} className="glass rank-card" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.07 }}>
@@ -200,8 +213,10 @@ export default function Ranking() {
                         🏆 zerou
                       </span>
                     )}
-                    <span className="muted">{total(sc(p))} q.</span>
-                    <b>{fmtPct(pct(sc(p)))}</b>
+                    <span className="muted">
+                      {sc(p).acertos}/{sc(p).n}
+                    </span>
+                    <b>{fmtPct(sc(p).pct)}</b>
                   </li>
                 ))}
               </ol>
@@ -246,21 +261,6 @@ function SelosZerada({ ids, cargo }: { ids: string[]; cargo: Cargo }) {
   )
 }
 
-function totaisGerais(p: Profile) {
-  let a = 0,
-    e = 0
-  for (const s of Object.values(p.stats)) {
-    a += s?.a ?? 0
-    e += s?.e ?? 0
-  }
-  return { a, e }
-}
-
-function pctGeral(p: Profile) {
-  const { a, e } = totaisGerais(p)
-  return a + e ? (a / (a + e)) * 100 : 0
-}
-
 function ListaSimples({ titulo, icon, lista, valor, me }: { titulo: string; icon: React.ReactNode; lista: Profile[]; valor(p: Profile): string; me?: string }) {
   return (
     <motion.div className="glass rank-card" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}>
@@ -278,5 +278,92 @@ function ListaSimples({ titulo, icon, lista, valor, me }: { titulo: string; icon
         ))}
       </ol>
     </motion.div>
+  )
+}
+
+// Seção “Aproveitamento”: o seu, matéria por matéria (com as últimas 10 respostas), e o ranking por aproveitamento
+function SecaoAproveitamento({ todos, aprov, me }: { todos: Profile[]; aprov: Map<string, AprovGeral>; me?: string }) {
+  const meu = todos.find((p) => p.uid === me)
+  const meuAprov = meu ? aprov.get(meu.uid) : undefined
+  const lista = todos
+    .filter((p) => (aprov.get(p.uid)?.consideradas ?? 0) >= MIN_QUESTOES_APROV)
+    .sort(
+      (a, b) =>
+        aprov.get(b.uid)!.pct - aprov.get(a.uid)!.pct ||
+        aprov.get(b.uid)!.consideradas - aprov.get(a.uid)!.consideradas ||
+        a.nickname.localeCompare(b.nickname)
+    )
+    .slice(0, 20)
+  return (
+    <div className="glass rank-card aprov-card">
+      <h3>
+        <Gauge size={18} /> Aproveitamento
+      </h3>
+      <p className="muted small">
+        Por matéria: acertos nas últimas {JANELA_RECENTES} questões feitas nela. Geral: média do aproveitamento de todas as matérias do perfil
+        (matéria ainda sem questões conta 0%). Como só valem as últimas {JANELA_RECENTES}, o número acompanha a sua evolução.
+      </p>
+
+      {meu && meuAprov && (
+        <div className="aprov-meu">
+          <div className="aprov-meu-topo">
+            <span>Seu aproveitamento geral</span>
+            <b>{fmtPct(meuAprov.pct)}</b>
+          </div>
+          {meuAprov.materias.map((m) => (
+            <LinhaMateria key={m.id} m={m} />
+          ))}
+        </div>
+      )}
+
+      <h4 className="aprov-sub">Ranking de aproveitamento</h4>
+      <p className="muted small">Entra quem já tem pelo menos {MIN_QUESTOES_APROV} questões contando as janelas de todas as matérias.</p>
+      {lista.length === 0 && <p className="muted small">Ninguém atingiu o mínimo ainda.</p>}
+      <ol className="rank-list">
+        {lista.map((p, i) => {
+          const a = aprov.get(p.uid)!
+          return (
+            <motion.li
+              key={p.uid}
+              className={'aprov-row' + (p.uid === me ? ' me' : '')}
+              initial={{ opacity: 0, x: -12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.03 }}
+            >
+              <span className="pos">{i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : i + 1}</span>
+              <span className="name">{p.nickname}</span>
+              <PerfilTag p={p} />
+              <b>{fmtPct(a.pct)}</b>
+              <div className="aprov-chips">
+                {a.materias.map((m) => (
+                  <span key={m.id} className={'aprov-chip' + (m.n ? '' : ' vazio')} style={{ borderColor: m.cor + '66', color: m.cor }} title={`${m.nome}: ${m.acertos} de ${m.n}`}>
+                    {m.curto} {m.n ? fmtPct(m.pct) : '—'}
+                  </span>
+                ))}
+              </div>
+            </motion.li>
+          )
+        })}
+      </ol>
+    </div>
+  )
+}
+
+function LinhaMateria({ m }: { m: AprovMateria }) {
+  // bolinhas das últimas respostas (mais antiga → mais recente); vazias até completar 10
+  const seq = m.seq.split('')
+  return (
+    <div className="aprov-linha">
+      <span className="aprov-nome" style={{ color: m.cor }} title={m.nome}>
+        {m.curto}
+      </span>
+      <span className="aprov-dots" aria-label={`${m.acertos} acertos nas últimas ${m.n}`}>
+        {Array.from({ length: JANELA_RECENTES }, (_, k) => {
+          const v = seq[k]
+          return <i key={k} className={v === '1' ? 'ok' : v === '0' ? 'err' : ''} />
+        })}
+      </span>
+      <b className="aprov-pct">{m.n ? fmtPct(m.pct) : '—'}</b>
+    </div>
   )
 }

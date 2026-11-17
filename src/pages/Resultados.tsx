@@ -45,11 +45,12 @@ export default function Resultados() {
   const ins = computeInsight(profile, cargo)
   let tA = 0,
     tE = 0
-  const porMateria = cargo.materias.map((m) => {
+  const porMateria = cargo.materias.map((m, i) => {
     const s = scoreMateria(profile, m)
     tA += s.a
     tE += s.e
-    return { nome: m.curto, completo: m.nome, Acertos: s.a, Erros: s.e, aproveitamento: Math.round(pct(s)), cor: m.cor }
+    // aproveitamento: últimas 10 questões da matéria; acumulado: todas as questões já feitas
+    return { nome: m.curto, completo: m.nome, Acertos: s.a, Erros: s.e, aproveitamento: Math.round(ins.materias[i].aproveitamento), acumulado: Math.round(pct(s)), cor: m.cor }
   })
   // Analista de TI: Específicos por área do edital; Técnico Bancário: cada matéria específica
   const porArea = cargo.materiaComAreas
@@ -82,7 +83,7 @@ export default function Resultados() {
         {[
           { label: 'Pontos (acertos)', v: tA, cor: '#34d399' },
           { label: 'Erros', v: tE, cor: '#f87171' },
-          { label: 'Aproveitamento', v: fmtPct(ins.geral), cor: '#60a5fa' },
+          { label: 'Aproveitamento (últimas 10)', v: fmtPct(ins.geral), cor: '#60a5fa' },
           { label: 'Testes feitos', v: profile.testes, cor: '#fbbf24' },
           { label: 'Provas feitas', v: profile.provas, cor: '#a78bfa' },
           { label: 'Melhor nota em prova', v: profile.melhorNotaProva.toFixed(2), cor: '#f472b6' }
@@ -117,7 +118,7 @@ export default function Resultados() {
           </ResponsiveContainer>
         </ChartCard>
 
-        <ChartCard titulo="Aproveitamento (%) por matéria" delay={0.2}>
+        <ChartCard titulo="Aproveitamento (%) por matéria · últimas 10 questões" delay={0.2}>
           <ResponsiveContainer width="100%" height={300}>
             <RadarChart data={porMateria} outerRadius="70%">
               <PolarGrid stroke="rgba(255,255,255,.12)" />
@@ -191,7 +192,7 @@ export default function Resultados() {
               <th>Acertos</th>
               <th>Erros</th>
               <th>Total</th>
-              <th>%</th>
+              <th title="Acertos ÷ todas as questões já feitas">% total</th>
             </tr>
           </thead>
           <tbody>
@@ -205,9 +206,9 @@ export default function Resultados() {
                 <td>{m.Acertos + m.Erros}</td>
                 <td>
                   <div className="mini-bar">
-                    <span style={{ width: `${m.aproveitamento}%`, background: m.cor }} />
+                    <span style={{ width: `${m.acumulado}%`, background: m.cor }} />
                   </div>
-                  {m.aproveitamento}%
+                  {m.acumulado}%
                 </td>
               </tr>
             ))}
@@ -216,7 +217,7 @@ export default function Resultados() {
               <td className="txt-ok">{tA}</td>
               <td className="txt-err">{tE}</td>
               <td>{tA + tE}</td>
-              <td>{fmtPct(ins.geral)}</td>
+              <td>{fmtPct(pct({ a: tA, e: tE }))}</td>
             </tr>
           </tbody>
         </table>

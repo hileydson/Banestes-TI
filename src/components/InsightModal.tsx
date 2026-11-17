@@ -26,13 +26,13 @@ export default function InsightModal({ profile, open, onClose, titulo }: { profi
               <Lightbulb size={28} />
             </div>
             <h2>{titulo}</h2>
-            <p className="muted">Análise do seu histórico completo, por matéria do edital:</p>
+            <p className="muted">Aproveitamento nas suas últimas 10 questões de cada matéria do edital:</p>
             <div className="insight-bars">
               {ins.materias.map((m, i) => (
                 <div key={m.id} className="ibar">
                   <div className="ibar-label">
                     <span>{m.nome}</span>
-                    <b>{m.respondidas ? fmtPct(m.aproveitamento) : '—'}</b>
+                    <b>{m.recentes ? fmtPct(m.aproveitamento) : '—'}</b>
                   </div>
                   <div className="ibar-track">
                     <motion.div
@@ -46,7 +46,7 @@ export default function InsightModal({ profile, open, onClose, titulo }: { profi
                   </div>
                 </div>
               ))}
-              <small className="muted">A linha branca marca sua média geral ({fmtPct(ins.geral)}).</small>
+              <small className="muted">A linha branca marca seu aproveitamento geral ({fmtPct(ins.geral)}), a média das matérias.</small>
             </div>
             <ul className="insight-msgs">
               {ins.mensagens.map((msg, i) => (

@@ -28,6 +28,7 @@ export interface Profile {
   somaNotasProvas: number
   ultimaNotaProva?: number
   zeradas?: Zeradas // matérias zeradas (acertou todas as questões do banco)
+  recentes?: Record<string, string> // últimas 10 respostas por matéria do perfil ("1" acerto, "0" erro), base do aproveitamento
   createdAt: number
   updatedAt: number
 }
@@ -132,6 +133,7 @@ export function emptyProfile(uid: string, nickname: string, cargo: CargoId): Pro
     provas: 0,
     melhorNotaProva: 0,
     somaNotasProvas: 0,
+    recentes: {},
     createdAt: now,
     updatedAt: now
   }

@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { motion } from 'motion/react'
 import { AREA_BY_ID, MATERIA_BY_ID } from '../lib/materias'
 import { materiaDaQuestao } from '../lib/cargos'
@@ -79,14 +80,75 @@ export default function QuestionView({ q, numero, total, ordem, marcada, onMarca
   )
 }
 
-// Suporta quebras de linha e `código` inline simples
+// `código` inline simples
+function inline(s: string) {
+  return s.split(/(`[^`]+`)/g).map((part, j) =>
+    part.startsWith('`') && part.endsWith('`') && part.length > 1 ? <code key={j}>{part.slice(1, -1)}</code> : <span key={j}>{part}</span>
+  )
+}
+
+const ehCodigo = (l: string) => l.startsWith('    ') || l.startsWith('\t')
+const ehTabela = (l: string) => l.trimStart().startsWith('|')
+const celulas = (l: string) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim())
+// Itens de enunciado (I., II., 1., 1), a., − ...) ganham recuo próprio
+const ehItem = (l: string) => /^((I{1,3}|IV|V|VI{1,3}|IX|X|XI{1,2})\s*[.)−–-]|\d{1,2}[.)]|−)\s/.test(l)
+const ehSubitem = (l: string) => /^\s+[a-z][.)]\s/.test(l)
+
+// Texto do banco de questões: linhas, blocos de código (4 espaços), tabelas (| a | b |) e itens
 export function renderText(s: string) {
-  return s.split('\n').map((linha, i) => (
-    <span key={i} className={linha.startsWith('    ') || linha.startsWith('\t') ? 'code-line' : undefined}>
-      {linha.split(/(`[^`]+`)/g).map((part, j) =>
-        part.startsWith('`') && part.endsWith('`') && part.length > 1 ? <code key={j}>{part.slice(1, -1)}</code> : <span key={j}>{part}</span>
-      )}
-      {i < s.split('\n').length - 1 && <br />}
-    </span>
-  ))
+  if (!s.includes('\n')) return inline(s)
+  const linhas = s.split('\n')
+  const out: ReactNode[] = []
+  let i = 0
+  while (i < linhas.length) {
+    const l = linhas[i]
+    if (ehCodigo(l)) {
+      const bloco: string[] = []
+      while (i < linhas.length && (ehCodigo(linhas[i]) || (linhas[i] === '' && ehCodigo(linhas[i + 1] ?? '')))) {
+        bloco.push(linhas[i].replace(/^( {4}|\t)/, ''))
+        i++
+      }
+      out.push(
+        <pre key={i} className="code-block">
+          <code>{bloco.join('\n')}</code>
+        </pre>
+      )
+      continue
+    }
+    if (ehTabela(l)) {
+      const linhasTab: string[][] = []
+      while (i < linhas.length && ehTabela(linhas[i])) linhasTab.push(celulas(linhas[i++]))
+      const [cab, ...corpo] = linhasTab
+      out.push(
+        <div key={i} className="tabela-wrap">
+          <table className="q-tabela">
+            <thead>
+              <tr>
+                {cab.map((c, k) => (
+                  <th key={k}>{c}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {corpo.map((r, k) => (
+                <tr key={k}>
+                  {r.map((c, m) => (
+                    <td key={m}>{c}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+      continue
+    }
+    out.push(
+      <span key={i} className={'q-linha' + (ehSubitem(l) ? ' q-subitem' : ehItem(l) ? ' q-item' : '')}>
+        {inline(ehSubitem(l) ? l.trim() : l)}
+      </span>
+    )
+    i++
+  }
+  return out
 }

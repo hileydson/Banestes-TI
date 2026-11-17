@@ -1,4 +1,5 @@
 import { calcZeradas, mesmasZeradas } from './zeradas'
+import { recentesDoHistorico, registrarResposta } from './aproveitamento'
 import { cargoDoPerfil, type Cargo, type CargoId } from './cargos'
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
 import { getBackend, type Backend } from './backend'
@@ -117,6 +118,28 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     backend.saveProfile(p).catch(() => {})
   }, [backend, profile, progress, questions, dataReady])
 
+  // Aproveitamento recente (últimas 10 por matéria): quem já tinha respostas antes da mudança ganha o
+  // histórico montado a partir dos testes e provas salvos, uma única vez
+  const migrando = useRef(false)
+  useEffect(() => {
+    if (!backend || !user || !profile || !dataReady || profile.recentes || migrando.current) return
+    migrando.current = true
+    backend
+      .listAttempts(user.uid)
+      .then((attempts) => {
+        setProfile((atual) => {
+          if (!atual || atual.recentes) return atual
+          const p = { ...atual, recentes: recentesDoHistorico(atual, attempts) }
+          backend.saveProfile(p).catch(() => {})
+          return p
+        })
+      })
+      .catch(() => {})
+      .finally(() => {
+        migrando.current = false
+      })
+  }, [backend, user, profile, dataReady])
+
   const reloadProfile = useCallback(async () => {
     if (!backend || !user) return
     setProfile(await backend.getProfile(user.uid))
@@ -140,12 +163,14 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       const p: Profile = structuredClone(profile)
       const pr: Progress = { ...progress, correct: [...progress.correct], wrongCount: { ...progress.wrongCount } }
       const correctSet = new Set(pr.correct)
+      const recentes = (p.recentes ??= {})
       const porMateria: Partial<Record<MateriaId, Score>> = {}
       let acertos = 0
       for (const r of respostas) {
         const q = getQuestion(r.id)
         if (!q) continue
         const ok = r.marcada === q.c
+        registrarResposta(recentes, q, ok)
         const sm = (p.stats[q.m] ??= { a: 0, e: 0 })
         const sa = (p.areaStats[q.area] ??= { a: 0, e: 0 })
         const am = (porMateria[q.m] ??= { a: 0, e: 0 })
