@@ -1,0 +1,4298 @@
+{
+  "metadados": {
+    "geradoEm": "2026-11-18T13:52:30.693Z",
+    "projetoFirebase": "banestes-ti-estudos",
+    "uidFirebaseAutenticado": "DCxpyi0tk7U3P1LTTANbhXa7hwI3",
+    "nomeDoPerfilConfirmado": "Hileydson",
+    "escopo": "Somente users/DCxpyi0tk7U3P1LTTANbhXa7hwI3 e subcolecoes conhecidas",
+    "credenciaisIncluidas": false,
+    "dadosDeOutrosUsuariosIncluidos": false
+  },
+  "validacaoDePropriedade": {
+    "propriedadeConfirmada": true,
+    "criterio": "Todos os caminhos retornados começam com o UID autenticado; o campo uid do perfil também coincide.",
+    "documentosEncontrados": {
+      "perfil": 1,
+      "private": 4,
+      "attempts": 14,
+      "exams": 0,
+      "total": 19
+    },
+    "documentosPrivadosPresentes": [
+      "progress",
+      "quickTest",
+      "materiaTest",
+      "estudo"
+    ],
+    "documentosPrivadosAusentes": [
+      "realTest"
+    ]
+  },
+  "resumoGeral": {
+    "questoesRespondidas": 98,
+    "acertos": 30,
+    "erros": 68,
+    "aproveitamentoPercentual": 30.61,
+    "testesConcluidos": 14,
+    "simuladosConcluidos": 0
+  },
+  "desempenhoPorMateria": [
+    {
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "questoesRespondidas": 17,
+      "acertos": 2,
+      "erros": 15,
+      "aproveitamentoPercentual": 11.76
+    },
+    {
+      "materiaId": "ETI",
+      "materia": "Ética, Compliance e ESG",
+      "questoesRespondidas": 4,
+      "acertos": 1,
+      "erros": 3,
+      "aproveitamentoPercentual": 25
+    },
+    {
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "questoesRespondidas": 45,
+      "acertos": 13,
+      "erros": 32,
+      "aproveitamentoPercentual": 28.89
+    },
+    {
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "questoesRespondidas": 28,
+      "acertos": 12,
+      "erros": 16,
+      "aproveitamentoPercentual": 42.86
+    },
+    {
+      "materiaId": "ATU",
+      "materia": "Atualidades do Mercado Financeiro e Digital",
+      "questoesRespondidas": 4,
+      "acertos": 2,
+      "erros": 2,
+      "aproveitamentoPercentual": 50
+    }
+  ],
+  "desempenhoPorArea": [
+    {
+      "areaId": "EST",
+      "area": "Estatística",
+      "questoesRespondidas": 6,
+      "acertos": 0,
+      "erros": 6,
+      "aproveitamentoPercentual": 0
+    },
+    {
+      "areaId": "MF",
+      "area": "Matemática financeira",
+      "questoesRespondidas": 4,
+      "acertos": 0,
+      "erros": 4,
+      "aproveitamentoPercentual": 0
+    },
+    {
+      "areaId": "WEB",
+      "area": "Desenvolvimento web e mobile",
+      "questoesRespondidas": 4,
+      "acertos": 0,
+      "erros": 4,
+      "aproveitamentoPercentual": 0
+    },
+    {
+      "areaId": "PRG",
+      "area": "Programação",
+      "questoesRespondidas": 3,
+      "acertos": 0,
+      "erros": 3,
+      "aproveitamentoPercentual": 0
+    },
+    {
+      "areaId": "RED",
+      "area": "Redes de computadores",
+      "questoesRespondidas": 3,
+      "acertos": 0,
+      "erros": 3,
+      "aproveitamentoPercentual": 0
+    },
+    {
+      "areaId": "BD",
+      "area": "Banco de Dados",
+      "questoesRespondidas": 2,
+      "acertos": 0,
+      "erros": 2,
+      "aproveitamentoPercentual": 0
+    },
+    {
+      "areaId": "SRV",
+      "area": "Serviços e gerenciamento de redes",
+      "questoesRespondidas": 1,
+      "acertos": 0,
+      "erros": 1,
+      "aproveitamentoPercentual": 0
+    },
+    {
+      "areaId": "SO",
+      "area": "Sistemas Operacionais",
+      "questoesRespondidas": 5,
+      "acertos": 1,
+      "erros": 4,
+      "aproveitamentoPercentual": 20
+    },
+    {
+      "areaId": "ETI",
+      "area": "Ética, Compliance e ESG",
+      "questoesRespondidas": 4,
+      "acertos": 1,
+      "erros": 3,
+      "aproveitamentoPercentual": 25
+    },
+    {
+      "areaId": "ARQ",
+      "area": "Arquitetura de sistemas",
+      "questoesRespondidas": 4,
+      "acertos": 1,
+      "erros": 3,
+      "aproveitamentoPercentual": 25
+    },
+    {
+      "areaId": "RL",
+      "area": "Raciocínio Lógico e Matemática",
+      "questoesRespondidas": 7,
+      "acertos": 2,
+      "erros": 5,
+      "aproveitamentoPercentual": 28.57
+    },
+    {
+      "areaId": "SEG",
+      "area": "Segurança da Informação",
+      "questoesRespondidas": 6,
+      "acertos": 2,
+      "erros": 4,
+      "aproveitamentoPercentual": 33.33
+    },
+    {
+      "areaId": "GOV",
+      "area": "Gestão e Governança de TI",
+      "questoesRespondidas": 3,
+      "acertos": 1,
+      "erros": 2,
+      "aproveitamentoPercentual": 33.33
+    },
+    {
+      "areaId": "DEV",
+      "area": "DevOps e DevSecOps",
+      "questoesRespondidas": 3,
+      "acertos": 1,
+      "erros": 2,
+      "aproveitamentoPercentual": 33.33
+    },
+    {
+      "areaId": "NUV",
+      "area": "Computação em nuvem, Git e Kubernetes",
+      "questoesRespondidas": 5,
+      "acertos": 2,
+      "erros": 3,
+      "aproveitamentoPercentual": 40
+    },
+    {
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "questoesRespondidas": 28,
+      "acertos": 12,
+      "erros": 16,
+      "aproveitamentoPercentual": 42.86
+    },
+    {
+      "areaId": "ATU",
+      "area": "Atualidades do Mercado Financeiro e Digital",
+      "questoesRespondidas": 4,
+      "acertos": 2,
+      "erros": 2,
+      "aproveitamentoPercentual": 50
+    },
+    {
+      "areaId": "PDS",
+      "area": "Processo de desenvolvimento de software",
+      "questoesRespondidas": 3,
+      "acertos": 2,
+      "erros": 1,
+      "aproveitamentoPercentual": 66.67
+    },
+    {
+      "areaId": "ING",
+      "area": "Inglês técnico",
+      "questoesRespondidas": 3,
+      "acertos": 3,
+      "erros": 0,
+      "aproveitamentoPercentual": 100
+    }
+  ],
+  "desempenhoPorAssunto": {
+    "limitacao": "O Firestore não armazena totais exatos de acertos por assunto. Os dados abaixo refletem erros registrados e se a questão foi acertada ao menos uma vez.",
+    "assuntos": [
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Desvio padrão",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-006"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "1000BASE-TX",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-G116-Q55"
+        ]
+      },
+      {
+        "materiaId": "ETI",
+        "materia": "Ética, Compliance e ESG",
+        "assunto": "Acordo de leniência",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ETI-037"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Sinonímia e antonímia",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-086"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Firewall, IDS e IPS",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SEG-006"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Regência nominal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-052"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Concordância nominal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-004"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Concordância – pronomes de tratamento",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-050"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Orações subordinadas substantivas",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-032"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Redação – frases corretas",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-037"
+        ]
+      },
+      {
+        "materiaId": "ETI",
+        "materia": "Ética, Compliance e ESG",
+        "assunto": "Fraudes – triângulo da fraude",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ETI-021"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Porcentagem",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RL-035"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Event Sourcing",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ARQ-027"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Conjugação verbal – verbos irregulares",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-053"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OWASP – XSS",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SEG-011"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "C – passagem por valor",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "PRG-046"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Idempotência em integrações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ARQ-019"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Node.js – Express",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "WEB-053"
+        ]
+      },
+      {
+        "materiaId": "ETI",
+        "materia": "Ética, Compliance e ESG",
+        "assunto": "Lei das Estatais – nomeações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ETI-032"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Redação – frase correta",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-098"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Sinonímia em contexto",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-087"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Propriedades – multiplicação por constante",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-035"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "CSS – especificidade",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "WEB-011"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Barramentos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-G087-Q47"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "SDN – interfaces",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RED-038"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "React – hooks",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "WEB-005"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Figuras de linguagem",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-019"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Ansible",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "DEV-040"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Capitalização contínua",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RL-033"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Porcentagem – aumentos e descontos sucessivos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RL-010"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Terceira forma normal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-G142-Q42"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OSPF",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RED-007"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Linux – firewalld",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SO-038"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Modelos de cobrança",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "NUV-022"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Lógica – leis de De Morgan",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RL-004"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "SSO – SAML",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SEG-045"
+        ]
+      },
+      {
+        "materiaId": "ATU",
+        "materia": "Atualidades do Mercado Financeiro e Digital",
+        "assunto": "Inovação – sandbox regulatório",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ATU-024"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Taxa proporcional",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "MF-004"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OKR",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "GOV-047"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Bootstrap 5",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "WEB-012"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "SNMP – operações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SRV-026"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Taxa equivalente",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "MF-005"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Acentuação gráfica",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-017"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Gráfico de setores",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-036"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Características essenciais (NIST)",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "NUV-003"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Windows 64 bits e aplicativos de 16 bits",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-G104-Q58"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Arquitetura de objetos distribuídos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-B1-013-Q54"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Funções do “se”",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-012"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Concordância – sujeito composto",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-092"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "ETL x ELT",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "BD-056"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Fragmentação interna",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SO-031"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Desconto racional simples",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RL-020"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Equivalência de capitais",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "MF-021"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "ROI",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "GOV-012"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Git – merge x rebase",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "NUV-012"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Tipos de gráficos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-053"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Iterativo incremental: desvantagens",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-G113-Q27"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OWASP – SSRF",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SEG-032"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Sistema de equações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-B2-003-Q21"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Figuras de linguagem – metáfora e comparação",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-061"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Acentuação – tem/têm, vem/vêm",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-058"
+        ]
+      },
+      {
+        "materiaId": "ATU",
+        "materia": "Atualidades do Mercado Financeiro e Digital",
+        "assunto": "Finanças sustentáveis",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ATU-068"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Coeficiente de variação",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-010"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Formação de palavras",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-022"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Orientação a objetos – classe abstrata",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "PRG-066"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OpenTelemetry",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "DEV-042"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Classe modal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-050"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "C – strings",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "PRG-047"
+        ]
+      }
+    ]
+  },
+  "maioresDificuldades": {
+    "areasOrdenadasPorMenorAproveitamento": [
+      {
+        "areaId": "EST",
+        "area": "Estatística",
+        "questoesRespondidas": 6,
+        "acertos": 0,
+        "erros": 6,
+        "aproveitamentoPercentual": 0
+      },
+      {
+        "areaId": "MF",
+        "area": "Matemática financeira",
+        "questoesRespondidas": 4,
+        "acertos": 0,
+        "erros": 4,
+        "aproveitamentoPercentual": 0
+      },
+      {
+        "areaId": "WEB",
+        "area": "Desenvolvimento web e mobile",
+        "questoesRespondidas": 4,
+        "acertos": 0,
+        "erros": 4,
+        "aproveitamentoPercentual": 0
+      },
+      {
+        "areaId": "PRG",
+        "area": "Programação",
+        "questoesRespondidas": 3,
+        "acertos": 0,
+        "erros": 3,
+        "aproveitamentoPercentual": 0
+      },
+      {
+        "areaId": "RED",
+        "area": "Redes de computadores",
+        "questoesRespondidas": 3,
+        "acertos": 0,
+        "erros": 3,
+        "aproveitamentoPercentual": 0
+      },
+      {
+        "areaId": "BD",
+        "area": "Banco de Dados",
+        "questoesRespondidas": 2,
+        "acertos": 0,
+        "erros": 2,
+        "aproveitamentoPercentual": 0
+      },
+      {
+        "areaId": "SRV",
+        "area": "Serviços e gerenciamento de redes",
+        "questoesRespondidas": 1,
+        "acertos": 0,
+        "erros": 1,
+        "aproveitamentoPercentual": 0
+      },
+      {
+        "areaId": "SO",
+        "area": "Sistemas Operacionais",
+        "questoesRespondidas": 5,
+        "acertos": 1,
+        "erros": 4,
+        "aproveitamentoPercentual": 20
+      },
+      {
+        "areaId": "ETI",
+        "area": "Ética, Compliance e ESG",
+        "questoesRespondidas": 4,
+        "acertos": 1,
+        "erros": 3,
+        "aproveitamentoPercentual": 25
+      },
+      {
+        "areaId": "ARQ",
+        "area": "Arquitetura de sistemas",
+        "questoesRespondidas": 4,
+        "acertos": 1,
+        "erros": 3,
+        "aproveitamentoPercentual": 25
+      },
+      {
+        "areaId": "RL",
+        "area": "Raciocínio Lógico e Matemática",
+        "questoesRespondidas": 7,
+        "acertos": 2,
+        "erros": 5,
+        "aproveitamentoPercentual": 28.57
+      },
+      {
+        "areaId": "SEG",
+        "area": "Segurança da Informação",
+        "questoesRespondidas": 6,
+        "acertos": 2,
+        "erros": 4,
+        "aproveitamentoPercentual": 33.33
+      },
+      {
+        "areaId": "GOV",
+        "area": "Gestão e Governança de TI",
+        "questoesRespondidas": 3,
+        "acertos": 1,
+        "erros": 2,
+        "aproveitamentoPercentual": 33.33
+      },
+      {
+        "areaId": "DEV",
+        "area": "DevOps e DevSecOps",
+        "questoesRespondidas": 3,
+        "acertos": 1,
+        "erros": 2,
+        "aproveitamentoPercentual": 33.33
+      },
+      {
+        "areaId": "NUV",
+        "area": "Computação em nuvem, Git e Kubernetes",
+        "questoesRespondidas": 5,
+        "acertos": 2,
+        "erros": 3,
+        "aproveitamentoPercentual": 40
+      },
+      {
+        "areaId": "POR",
+        "area": "Língua Portuguesa",
+        "questoesRespondidas": 28,
+        "acertos": 12,
+        "erros": 16,
+        "aproveitamentoPercentual": 42.86
+      },
+      {
+        "areaId": "ATU",
+        "area": "Atualidades do Mercado Financeiro e Digital",
+        "questoesRespondidas": 4,
+        "acertos": 2,
+        "erros": 2,
+        "aproveitamentoPercentual": 50
+      },
+      {
+        "areaId": "PDS",
+        "area": "Processo de desenvolvimento de software",
+        "questoesRespondidas": 3,
+        "acertos": 2,
+        "erros": 1,
+        "aproveitamentoPercentual": 66.67
+      },
+      {
+        "areaId": "ING",
+        "area": "Inglês técnico",
+        "questoesRespondidas": 3,
+        "acertos": 3,
+        "erros": 0,
+        "aproveitamentoPercentual": 100
+      }
+    ],
+    "assuntosOrdenadosPorErrosRegistrados": [
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Desvio padrão",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-006"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "1000BASE-TX",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-G116-Q55"
+        ]
+      },
+      {
+        "materiaId": "ETI",
+        "materia": "Ética, Compliance e ESG",
+        "assunto": "Acordo de leniência",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ETI-037"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Sinonímia e antonímia",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-086"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Firewall, IDS e IPS",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SEG-006"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Regência nominal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-052"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Concordância nominal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-004"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Concordância – pronomes de tratamento",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-050"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Orações subordinadas substantivas",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-032"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Redação – frases corretas",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-037"
+        ]
+      },
+      {
+        "materiaId": "ETI",
+        "materia": "Ética, Compliance e ESG",
+        "assunto": "Fraudes – triângulo da fraude",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ETI-021"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Porcentagem",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RL-035"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Event Sourcing",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ARQ-027"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Conjugação verbal – verbos irregulares",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-053"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OWASP – XSS",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SEG-011"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "C – passagem por valor",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "PRG-046"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Idempotência em integrações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ARQ-019"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Node.js – Express",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "WEB-053"
+        ]
+      },
+      {
+        "materiaId": "ETI",
+        "materia": "Ética, Compliance e ESG",
+        "assunto": "Lei das Estatais – nomeações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ETI-032"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Redação – frase correta",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-098"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Sinonímia em contexto",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-087"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Propriedades – multiplicação por constante",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-035"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "CSS – especificidade",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "WEB-011"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Barramentos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-G087-Q47"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "SDN – interfaces",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RED-038"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "React – hooks",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "WEB-005"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Figuras de linguagem",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-019"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Ansible",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "DEV-040"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Capitalização contínua",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RL-033"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Porcentagem – aumentos e descontos sucessivos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RL-010"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Terceira forma normal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-G142-Q42"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OSPF",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RED-007"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Linux – firewalld",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SO-038"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Modelos de cobrança",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "NUV-022"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Lógica – leis de De Morgan",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RL-004"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "SSO – SAML",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SEG-045"
+        ]
+      },
+      {
+        "materiaId": "ATU",
+        "materia": "Atualidades do Mercado Financeiro e Digital",
+        "assunto": "Inovação – sandbox regulatório",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ATU-024"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Taxa proporcional",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "MF-004"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OKR",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "GOV-047"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Bootstrap 5",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "WEB-012"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "SNMP – operações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SRV-026"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Taxa equivalente",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "MF-005"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Acentuação gráfica",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-017"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Gráfico de setores",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-036"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Características essenciais (NIST)",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "NUV-003"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Windows 64 bits e aplicativos de 16 bits",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-G104-Q58"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Arquitetura de objetos distribuídos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-B1-013-Q54"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Funções do “se”",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-012"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Concordância – sujeito composto",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-092"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "ETL x ELT",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "BD-056"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Fragmentação interna",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SO-031"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Desconto racional simples",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "RL-020"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Equivalência de capitais",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "MF-021"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "ROI",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "GOV-012"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Git – merge x rebase",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "NUV-012"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Tipos de gráficos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-053"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Iterativo incremental: desvantagens",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-G113-Q27"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OWASP – SSRF",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "SEG-032"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Sistema de equações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "R-B2-003-Q21"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Figuras de linguagem – metáfora e comparação",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-061"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Acentuação – tem/têm, vem/vêm",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-058"
+        ]
+      },
+      {
+        "materiaId": "ATU",
+        "materia": "Atualidades do Mercado Financeiro e Digital",
+        "assunto": "Finanças sustentáveis",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "ATU-068"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Coeficiente de variação",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-010"
+        ]
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Formação de palavras",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "POR-022"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Orientação a objetos – classe abstrata",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "PRG-066"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OpenTelemetry",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "DEV-042"
+        ]
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Classe modal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "EST-050"
+        ]
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "C – strings",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesJaAcertadasEmAlgumMomento": 0,
+        "idsDasQuestoes": [
+          "PRG-047"
+        ]
+      }
+    ],
+    "questoesErradasRepetidamente": []
+  },
+  "questoesErradas": [
+    {
+      "id": "ARQ-019",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "ARQ",
+      "area": "Arquitetura de sistemas",
+      "assunto": "Idempotência em integrações",
+      "textoDeApoio": null,
+      "enunciado": "Em uma API de transferências que pode receber a mesma requisição duas vezes por causa de retentativas de rede, uma forma de evitar débito em duplicidade é:",
+      "alternativas": [
+        "aumentar o timeout das chamadas para vários minutos, reduzindo a chance de o cliente repetir a requisição.",
+        "exigir uma chave de idempotência por operação e devolver o resultado já gravado quando ela se repetir.",
+        "usar o método GET para as transferências, já que o HTTP o define como método idempotente.",
+        "recusar qualquer requisição com o mesmo valor e o mesmo destino de outra feita no mesmo dia.",
+        "desabilitar as retentativas no servidor, que passa a processar cada requisição recebida uma única vez."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "exigir uma chave de idempotência por operação e devolver o resultado já gravado quando ela se repetir."
+      },
+      "respostasSelecionadasDisponiveis": [
+        {
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceOriginal": 3,
+          "letra": "D",
+          "alternativa": "recusar qualquer requisição com o mesmo valor e o mesmo destino de outra feita no mesmo dia.",
+          "estavaCorreta": false
+        }
+      ],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": null
+    },
+    {
+      "id": "ARQ-027",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "ARQ",
+      "area": "Arquitetura de sistemas",
+      "assunto": "Event Sourcing",
+      "textoDeApoio": null,
+      "enunciado": "No padrão Event Sourcing:",
+      "alternativas": [
+        "armazena-se apenas o estado atual de cada entidade, sobrescrevendo o registro a cada alteração.",
+        "o estado é derivado de uma sequência imutável de eventos, permitindo auditoria e reconstrução do passado.",
+        "os eventos são descartados após o processamento, e apenas um instantâneo final é mantido no banco.",
+        "os eventos podem ser editados quando contiverem erros, para que o histórico reflita o valor correto.",
+        "é proibido combinar o padrão com CQRS, pois as consultas precisam ler diretamente a lista completa de eventos."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "o estado é derivado de uma sequência imutável de eventos, permitindo auditoria e reconstrução do passado."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "ATU-024",
+      "materiaId": "ATU",
+      "materia": "Atualidades do Mercado Financeiro e Digital",
+      "areaId": "ATU",
+      "area": "Atualidades do Mercado Financeiro e Digital",
+      "assunto": "Inovação – sandbox regulatório",
+      "textoDeApoio": null,
+      "enunciado": "O sandbox regulatório adotado por reguladores como BCB e CVM consiste em:",
+      "alternativas": [
+        "um ambiente interno de testes de software dos bancos, sem participação do regulador.",
+        "um ambiente experimental para testar produtos inovadores com regras flexibilizadas e supervisão.",
+        "a dispensa definitiva de autorização para fintechs com até determinado faturamento.",
+        "um fundo público de investimento em startups do setor financeiro.",
+        "um sistema de liquidação de pagamentos operado pelo Banco Central."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "um ambiente experimental para testar produtos inovadores com regras flexibilizadas e supervisão."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "ATU-068",
+      "materiaId": "ATU",
+      "materia": "Atualidades do Mercado Financeiro e Digital",
+      "areaId": "ATU",
+      "area": "Atualidades do Mercado Financeiro e Digital",
+      "assunto": "Finanças sustentáveis",
+      "textoDeApoio": null,
+      "enunciado": "Sobre títulos soberanos sustentáveis emitidos pelo Brasil no mercado internacional, é correto afirmar:",
+      "alternativas": [
+        "Os recursos podem ser usados livremente, sem vínculo com objetivos socioambientais.",
+        "Os recursos devem ir para despesas ambientais e sociais elegíveis, com relatórios de alocação.",
+        "São títulos emitidos por bancos privados com garantia do Tesouro Nacional.",
+        "Não pagam juros, pois o investidor é remunerado pelo impacto ambiental.",
+        "São garantidos pelo FGC até o limite de R$ 250 mil por investidor."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "Os recursos devem ir para despesas ambientais e sociais elegíveis, com relatórios de alocação."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "BD-056",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "BD",
+      "area": "Banco de Dados",
+      "assunto": "ETL x ELT",
+      "textoDeApoio": null,
+      "enunciado": "A diferença entre ETL e ELT é que:",
+      "alternativas": [
+        "não há diferença: as siglas são sinônimas e descrevem a mesma ordem de etapas.",
+        "no ETL, os dados são transformados antes da carga; no ELT, são carregados brutos e transformados no destino.",
+        "no ELT, os dados são transformados na origem antes da extração, dispensando a etapa de carga.",
+        "o ETL só funciona com bancos NoSQL, enquanto o ELT é exclusivo de bancos relacionais.",
+        "no ETL, os dados são carregados brutos no destino e só depois transformados pelo próprio data warehouse da empresa."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "no ETL, os dados são transformados antes da carga; no ELT, são carregados brutos e transformados no destino."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "DEV-040",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "DEV",
+      "area": "DevOps e DevSecOps",
+      "assunto": "Ansible",
+      "textoDeApoio": null,
+      "enunciado": "Uma característica do Ansible é:",
+      "alternativas": [
+        "exigir a instalação de um agente em cada servidor gerenciado, que consulta o servidor mestre.",
+        "ser agentless, conectando-se aos hosts por SSH e executando playbooks em YAML.",
+        "ser uma ferramenta declarativa de provisionamento de nuvem baseada na linguagem HCL.",
+        "funcionar apenas em servidores Windows, conectando-se a eles pelo protocolo RDP.",
+        "executar as aplicações em containers isolados, substituindo o Docker nos servidores."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "ser agentless, conectando-se aos hosts por SSH e executando playbooks em YAML."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "DEV-042",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "DEV",
+      "area": "DevOps e DevSecOps",
+      "assunto": "OpenTelemetry",
+      "textoDeApoio": null,
+      "enunciado": "O OpenTelemetry é:",
+      "alternativas": [
+        "um banco de dados de séries temporais para armazenar as métricas coletadas dos serviços.",
+        "um padrão aberto de APIs e SDKs para coletar e exportar traces, métricas e logs.",
+        "uma ferramenta comercial de APM vinculada a um único fornecedor de nuvem.",
+        "um painel de visualização para criar dashboards a partir de diferentes fontes de dados.",
+        "uma linguagem de consulta para pesquisar logs armazenados em clusters Elasticsearch."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "um padrão aberto de APIs e SDKs para coletar e exportar traces, métricas e logs."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "EST-006",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "EST",
+      "area": "Estatística",
+      "assunto": "Desvio padrão",
+      "textoDeApoio": null,
+      "enunciado": "O desvio padrão populacional do conjunto {2, 4, 4, 4, 5, 5, 7, 9} é:",
+      "alternativas": [
+        "4",
+        "2",
+        "5",
+        "1,5",
+        "32"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "2"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "EST-010",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "EST",
+      "area": "Estatística",
+      "assunto": "Coeficiente de variação",
+      "textoDeApoio": null,
+      "enunciado": "Um conjunto de dados tem média 50 e desvio padrão 10. Seu coeficiente de variação é:",
+      "alternativas": [
+        "5%",
+        "10%",
+        "20%",
+        "50%",
+        "500%"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "20%"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "EST-035",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "EST",
+      "area": "Estatística",
+      "assunto": "Propriedades – multiplicação por constante",
+      "textoDeApoio": null,
+      "enunciado": "Multiplicando-se por 2 todos os valores de um conjunto de dados positivos, o coeficiente de variação:",
+      "alternativas": [
+        "dobra",
+        "cai pela metade",
+        "quadruplica",
+        "não se altera",
+        "aumenta em 2 pontos percentuais"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 3,
+        "letra": "D",
+        "alternativa": "não se altera"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "EST-036",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "EST",
+      "area": "Estatística",
+      "assunto": "Gráfico de setores",
+      "textoDeApoio": null,
+      "enunciado": "Em um gráfico de setores, uma categoria ocupa um ângulo central de 72°. Ela representa:",
+      "alternativas": [
+        "7,2% do total",
+        "20% do total",
+        "25% do total",
+        "72% do total",
+        "36% do total"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "20% do total"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "EST-050",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "EST",
+      "area": "Estatística",
+      "assunto": "Classe modal",
+      "textoDeApoio": "Tempo de atendimento (min):\n0 ⊢ 5: 12\n5 ⊢ 10: 30\n10 ⊢ 15: 18\n15 ⊢ 20: 6",
+      "enunciado": "A classe modal da distribuição é:",
+      "alternativas": [
+        "0 ⊢ 5",
+        "5 ⊢ 10",
+        "10 ⊢ 15",
+        "15 ⊢ 20",
+        "não há classe modal"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "5 ⊢ 10"
+      },
+      "respostasSelecionadasDisponiveis": [
+        {
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceOriginal": -1,
+          "letra": null,
+          "alternativa": "Não sei responder",
+          "estavaCorreta": false
+        }
+      ],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": null
+    },
+    {
+      "id": "EST-053",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "EST",
+      "area": "Estatística",
+      "assunto": "Tipos de gráficos",
+      "textoDeApoio": null,
+      "enunciado": "Para representar a evolução mensal do número de transações Pix ao longo de dois anos, o gráfico mais adequado é o de:",
+      "alternativas": [
+        "setores",
+        "linhas",
+        "dispersão sem ordem temporal",
+        "pictograma de uma única figura",
+        "tabela de dupla entrada apenas"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "linhas"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "ETI-021",
+      "materiaId": "ETI",
+      "materia": "Ética, Compliance e ESG",
+      "areaId": "ETI",
+      "area": "Ética, Compliance e ESG",
+      "assunto": "Fraudes – triângulo da fraude",
+      "textoDeApoio": null,
+      "enunciado": "Segundo o “triângulo da fraude” de Donald Cressey, os três elementos que favorecem a ocorrência de fraudes são:",
+      "alternativas": [
+        "pressão, oportunidade e racionalização",
+        "risco, controle interno e auditoria",
+        "dolo, culpa e omissão do agente",
+        "pressão, controle e punição",
+        "motivação, impunidade e ganância"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 0,
+        "letra": "A",
+        "alternativa": "pressão, oportunidade e racionalização"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "ETI-032",
+      "materiaId": "ETI",
+      "materia": "Ética, Compliance e ESG",
+      "areaId": "ETI",
+      "area": "Ética, Compliance e ESG",
+      "assunto": "Lei das Estatais – nomeações",
+      "textoDeApoio": null,
+      "enunciado": "Segundo a Lei nº 13.303/2016, para a indicação de membros do conselho de administração e de diretores de estatais:",
+      "alternativas": [
+        "não há requisitos, cabendo ao acionista controlador escolher livremente os administradores.",
+        "exigem-se experiência e formação compatíveis, além de vedações a certas indicações.",
+        "basta a filiação partidária e a aprovação do nome pelo chefe do Poder Executivo.",
+        "exige-se apenas idade mínima de 18 anos e residência no país.",
+        "a indicação deve ser feita pelos empregados, em eleição direta organizada pelo sindicato."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "exigem-se experiência e formação compatíveis, além de vedações a certas indicações."
+      },
+      "respostasSelecionadasDisponiveis": [
+        {
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceOriginal": 4,
+          "letra": "E",
+          "alternativa": "a indicação deve ser feita pelos empregados, em eleição direta organizada pelo sindicato.",
+          "estavaCorreta": false
+        }
+      ],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": null
+    },
+    {
+      "id": "ETI-037",
+      "materiaId": "ETI",
+      "materia": "Ética, Compliance e ESG",
+      "areaId": "ETI",
+      "area": "Ética, Compliance e ESG",
+      "assunto": "Acordo de leniência",
+      "textoDeApoio": null,
+      "enunciado": "O acordo de leniência previsto na Lei Anticorrupção:",
+      "alternativas": [
+        "isenta a empresa de reparar integralmente o dano causado à administração pública.",
+        "pode ser firmado com empresas que colaborem com as investigações, reduzindo a multa em até 2/3.",
+        "é celebrado exclusivamente com pessoas físicas, como os dirigentes e empregados envolvidos no ilícito.",
+        "impede qualquer investigação futura sobre os fatos relatados pela empresa.",
+        "dispensa a cessação da conduta ilícita enquanto o acordo estiver em negociação."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "pode ser firmado com empresas que colaborem com as investigações, reduzindo a multa em até 2/3."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "GOV-012",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "GOV",
+      "area": "Gestão e Governança de TI",
+      "assunto": "ROI",
+      "textoDeApoio": null,
+      "enunciado": "Um projeto de automação custou R$ 200 mil e gerou economia líquida de R$ 260 mil. O ROI do projeto é:",
+      "alternativas": [
+        "130%",
+        "30%",
+        "23%",
+        "60%",
+        "76,9%"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "30%"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "GOV-047",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "GOV",
+      "area": "Gestão e Governança de TI",
+      "assunto": "OKR",
+      "textoDeApoio": null,
+      "enunciado": "Na metodologia OKR, os “Key Results” devem ser:",
+      "alternativas": [
+        "qualitativos e inspiradores, descrevendo aonde a equipe quer chegar",
+        "mensuráveis e verificáveis, indicando se o objetivo foi alcançado",
+        "listas de tarefas operacionais que a equipe deve executar no ciclo",
+        "sempre financeiros, como receita, lucro ou redução de custos",
+        "definidos somente ao fim do ciclo, conforme os resultados obtidos"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "mensuráveis e verificáveis, indicando se o objetivo foi alcançado"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "MF-004",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "MF",
+      "area": "Matemática financeira",
+      "assunto": "Taxa proporcional",
+      "textoDeApoio": null,
+      "enunciado": "Em juros simples, a taxa mensal proporcional a 24% ao ano é:",
+      "alternativas": [
+        "1,5% ao mês",
+        "1,8% ao mês",
+        "2% ao mês",
+        "2,4% ao mês",
+        "12% ao mês"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "2% ao mês"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "MF-005",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "MF",
+      "area": "Matemática financeira",
+      "assunto": "Taxa equivalente",
+      "textoDeApoio": null,
+      "enunciado": "Em juros compostos, a taxa bimestral equivalente a 2% ao mês é:",
+      "alternativas": [
+        "4,00%",
+        "4,04%",
+        "3,96%",
+        "4,40%",
+        "2,02%"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "4,04%"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "MF-021",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "MF",
+      "area": "Matemática financeira",
+      "assunto": "Equivalência de capitais",
+      "textoDeApoio": null,
+      "enunciado": "A juros compostos de 10% ao mês, qual valor hoje é equivalente a um pagamento de R$ 1.210,00 daqui a 2 meses?",
+      "alternativas": [
+        "R$ 1.100,00",
+        "R$ 1.000,00",
+        "R$ 1.010,00",
+        "R$ 1.089,00",
+        "R$ 990,00"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "R$ 1.000,00"
+      },
+      "respostasSelecionadasDisponiveis": [
+        {
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceOriginal": -1,
+          "letra": null,
+          "alternativa": "Não sei responder",
+          "estavaCorreta": false
+        }
+      ],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": null
+    },
+    {
+      "id": "NUV-003",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "NUV",
+      "area": "Computação em nuvem, Git e Kubernetes",
+      "assunto": "Características essenciais (NIST)",
+      "textoDeApoio": null,
+      "enunciado": "São características essenciais da computação em nuvem, segundo o NIST:",
+      "alternativas": [
+        "contrato de longo prazo, hardware dedicado, preço fixo, suporte presencial e serviço medido",
+        "autoatendimento sob demanda, amplo acesso à rede, pool de recursos, elasticidade e serviço medido",
+        "virtualização obrigatória, código aberto, dados mantidos no país, elasticidade e alta disponibilidade",
+        "autoatendimento, disponibilidade de 100%, backup automático, criptografia e preço fixo",
+        "amplo acesso à rede, multilocação obrigatória, IaaS, PaaS e SaaS"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "autoatendimento sob demanda, amplo acesso à rede, pool de recursos, elasticidade e serviço medido"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "NUV-012",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "NUV",
+      "area": "Computação em nuvem, Git e Kubernetes",
+      "assunto": "Git – merge x rebase",
+      "textoDeApoio": null,
+      "enunciado": "Sobre `git merge` e `git rebase`, é correto afirmar:",
+      "alternativas": [
+        "Ambos produzem sempre o mesmo histórico, diferindo apenas na mensagem do commit final.",
+        "O merge preserva os históricos; o rebase reaplica commits sobre outra base, gerando histórico linear.",
+        "O rebase preserva os hashes dos commits, por isso é seguro em branches já compartilhadas.",
+        "O merge reescreve o histórico remoto, por isso exige push forçado após a integração.",
+        "O rebase só funciona entre tags, enquanto o merge funciona apenas entre branches."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "O merge preserva os históricos; o rebase reaplica commits sobre outra base, gerando histórico linear."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "NUV-022",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "NUV",
+      "area": "Computação em nuvem, Git e Kubernetes",
+      "assunto": "Modelos de cobrança",
+      "textoDeApoio": null,
+      "enunciado": "Instâncias spot/preemptivas em nuvem são indicadas para:",
+      "alternativas": [
+        "bancos de dados críticos de produção, que exigem disponibilidade contínua e baixo custo.",
+        "cargas tolerantes a interrupção, como processamentos em lote, com grande desconto.",
+        "armazenamento permanente de backups, aproveitando o preço reduzido dos discos.",
+        "servidores de domínio e autenticação, que precisam ficar sempre disponíveis.",
+        "sistemas transacionais bancários com picos previsíveis no fim do mês."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "cargas tolerantes a interrupção, como processamentos em lote, com grande desconto."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-004",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Concordância nominal",
+      "textoDeApoio": null,
+      "enunciado": "Está correta, quanto à concordância nominal, a frase:",
+      "alternativas": [
+        "É proibido a entrada de pessoas não autorizadas no data center.",
+        "Seguem anexo as planilhas solicitadas pela auditoria interna.",
+        "Os relatórios entregues pela equipe estavam bastantes detalhados.",
+        "Ela mesma revisou os scripts, e os resultados foram meio decepcionantes.",
+        "Havia menas falhas no último trimestre do que no anterior."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 3,
+        "letra": "D",
+        "alternativa": "Ela mesma revisou os scripts, e os resultados foram meio decepcionantes."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-012",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Funções do “se”",
+      "textoDeApoio": null,
+      "enunciado": "O “se” é partícula apassivadora em:",
+      "alternativas": [
+        "Precisa-se de técnicos em redes.",
+        "Corrigiram-se os erros apontados pela auditoria.",
+        "O analista se feriu ao manusear o rack.",
+        "Trata-se de questões confidenciais.",
+        "Vive-se bem nesta cidade."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "Corrigiram-se os erros apontados pela auditoria."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-017",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Acentuação gráfica",
+      "textoDeApoio": null,
+      "enunciado": "De acordo com o Acordo Ortográfico vigente, estão corretamente grafadas todas as palavras de:",
+      "alternativas": [
+        "ideia – heroico – voo – para (verbo)",
+        "idéia – assembléia – voo – para (verbo)",
+        "ideia – heroico – vôo – enjôo",
+        "ideia – jibóia – voo – pára (verbo)",
+        "saúde – juízes – raíz – ideia"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 0,
+        "letra": "A",
+        "alternativa": "ideia – heroico – voo – para (verbo)"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-019",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Figuras de linguagem",
+      "textoDeApoio": null,
+      "enunciado": "Em “Durante as férias, li Machado de Assis inteiro”, há a figura de linguagem denominada:",
+      "alternativas": [
+        "metáfora",
+        "hipérbole",
+        "metonímia",
+        "eufemismo",
+        "antítese"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "metonímia"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-022",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Formação de palavras",
+      "textoDeApoio": null,
+      "enunciado": "É formada por parassíntese a palavra:",
+      "alternativas": [
+        "infelizmente",
+        "entristecer",
+        "desleal",
+        "pontapé",
+        "planalto"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "entristecer"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-032",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Orações subordinadas substantivas",
+      "textoDeApoio": null,
+      "enunciado": "Em “É importante que todos façam o backup diariamente”, a oração destacada “que todos façam o backup diariamente” classifica-se como subordinada substantiva:",
+      "alternativas": [
+        "objetiva direta",
+        "subjetiva",
+        "predicativa",
+        "completiva nominal",
+        "apositiva"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "subjetiva"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-037",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Redação – frases corretas",
+      "textoDeApoio": null,
+      "enunciado": "Está redigida de acordo com a norma-padrão a frase:",
+      "alternativas": [
+        "Informamos aos clientes de que o sistema estará indisponível.",
+        "Os dados a que tivemos acesso eram sigilosos.",
+        "Ele chegou no escritório antes das sete horas.",
+        "Esqueci do prazo de entrega do relatório.",
+        "Fazem meses que aguardamos a nova versão."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "Os dados a que tivemos acesso eram sigilosos."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-050",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Concordância – pronomes de tratamento",
+      "textoDeApoio": null,
+      "enunciado": "A concordância está correta em:",
+      "alternativas": [
+        "Vossa Senhoria deve trazer vossos documentos à reunião.",
+        "Vossa Excelência está preocupado com o prazo? (dirigido a um homem)",
+        "Vossa Senhoria deveis comparecer à reunião.",
+        "Vossas Senhorias sabeis da decisão.",
+        "Vossa Excelência ficou preocupada com o prazo? (dirigido a um homem)"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "Vossa Excelência está preocupado com o prazo? (dirigido a um homem)"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-052",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Regência nominal",
+      "textoDeApoio": null,
+      "enunciado": "Está correta a regência nominal em:",
+      "alternativas": [
+        "O sistema é compatível a navegadores antigos.",
+        "Ele estava ansioso para os resultados.",
+        "É preferível investir em testes a corrigir falhas em produção.",
+        "É mais preferível prevenir do que remediar.",
+        "O documento é acessível com todos os usuários."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "É preferível investir em testes a corrigir falhas em produção."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-053",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Conjugação verbal – verbos irregulares",
+      "textoDeApoio": null,
+      "enunciado": "Está correta a forma verbal em:",
+      "alternativas": [
+        "Se você manter o foco, será aprovado.",
+        "Quando ele propor a mudança, avalie os riscos.",
+        "Se os técnicos intervissem, o problema teria sido evitado.",
+        "Ele reouve os documentos extraviados.",
+        "Eu me precavenho contra golpes digitais."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 3,
+        "letra": "D",
+        "alternativa": "Ele reouve os documentos extraviados."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-058",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Acentuação – tem/têm, vem/vêm",
+      "textoDeApoio": null,
+      "enunciado": "Está correta a acentuação em:",
+      "alternativas": [
+        "Os bancos tem investido em segurança.",
+        "Os candidatos vêem o edital com atenção.",
+        "Eles têm dúvidas e vêm à reunião amanhã.",
+        "Ele têm muitos projetos.",
+        "Os analistas lêem a documentação."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "Eles têm dúvidas e vêm à reunião amanhã."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-061",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Figuras de linguagem – metáfora e comparação",
+      "textoDeApoio": null,
+      "enunciado": "Há metáfora (comparação implícita) em:",
+      "alternativas": [
+        "O código estava organizado como uma biblioteca.",
+        "Aquele sistema legado é um labirinto.",
+        "O servidor parecia uma fornalha.",
+        "Ela trabalha tal qual uma máquina.",
+        "O relatório era claro feito água."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "Aquele sistema legado é um labirinto."
+      },
+      "respostasSelecionadasDisponiveis": [
+        {
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceOriginal": 0,
+          "letra": "A",
+          "alternativa": "O código estava organizado como uma biblioteca.",
+          "estavaCorreta": false
+        }
+      ],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": null
+    },
+    {
+      "id": "POR-086",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Sinonímia e antonímia",
+      "textoDeApoio": null,
+      "enunciado": "É antônimo de “efêmero” a palavra:",
+      "alternativas": [
+        "passageiro",
+        "duradouro",
+        "transitório",
+        "breve",
+        "fugaz"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "duradouro"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-087",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Sinonímia em contexto",
+      "textoDeApoio": "A medida foi considerada inócua pelos especialistas, que esperavam resultados mais expressivos.",
+      "enunciado": "No contexto, “inócua” significa:",
+      "alternativas": [
+        "nociva, prejudicial",
+        "ineficaz, sem efeito",
+        "inovadora, original",
+        "urgente, imediata",
+        "polêmica, controversa"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "ineficaz, sem efeito"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "POR-092",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Concordância – sujeito composto",
+      "textoDeApoio": null,
+      "enunciado": "A concordância está correta em:",
+      "alternativas": [
+        "O gerente e a analista chegou cedo.",
+        "Fui eu que resolveu o problema.",
+        "Mais de um técnico participou da reunião.",
+        "Os Estados Unidos impôs novas regras.",
+        "Faltou ainda dois relatórios."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "Mais de um técnico participou da reunião."
+      },
+      "respostasSelecionadasDisponiveis": [
+        {
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceOriginal": 3,
+          "letra": "D",
+          "alternativa": "Os Estados Unidos impôs novas regras.",
+          "estavaCorreta": false
+        }
+      ],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": null
+    },
+    {
+      "id": "POR-098",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "areaId": "POR",
+      "area": "Língua Portuguesa",
+      "assunto": "Redação – frase correta",
+      "textoDeApoio": null,
+      "enunciado": "Assinale a frase redigida corretamente:",
+      "alternativas": [
+        "Fazem dois anos que trabalho com segurança.",
+        "A maioria dos candidatos estudou à noite.",
+        "Houveram muitos acertos na última prova.",
+        "Aluga-se apartamentos próximos à sede.",
+        "Os dados que precisamos estão no servidor."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "A maioria dos candidatos estudou à noite."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "PRG-046",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "PRG",
+      "area": "Programação",
+      "assunto": "C – passagem por valor",
+      "textoDeApoio": null,
+      "enunciado": "Qual é a saída do programa C?\n    void troca(int a, int b) { int t = a; a = b; b = t; }\n    int main() { int x = 1, y = 2; troca(x, y); printf(\"%d %d\", x, y); }",
+      "alternativas": [
+        "2 1",
+        "1 2",
+        "1 1",
+        "2 2",
+        "Erro de compilação"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "1 2"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "PRG-047",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "PRG",
+      "area": "Programação",
+      "assunto": "C – strings",
+      "textoDeApoio": null,
+      "enunciado": "Em C, considerando `char s[] = \"banco\";`, os valores de sizeof(s) e strlen(s) são:",
+      "alternativas": [
+        "5 e 5",
+        "6 e 5",
+        "5 e 6",
+        "6 e 6",
+        "8 e 5"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "6 e 5"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "PRG-066",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "PRG",
+      "area": "Programação",
+      "assunto": "Orientação a objetos – classe abstrata",
+      "textoDeApoio": null,
+      "enunciado": "Sobre classes abstratas, é correto afirmar:",
+      "alternativas": [
+        "Podem ser instanciadas diretamente, desde que tenham construtor público.",
+        "Não podem ser instanciadas e podem ter métodos abstratos e concretos.",
+        "Não podem ter atributos, apenas assinaturas de métodos a implementar.",
+        "Não podem ter construtores, já que nunca são instanciadas diretamente.",
+        "Todos os seus métodos devem ser abstratos, sem nenhuma implementação."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "Não podem ser instanciadas e podem ter métodos abstratos e concretos."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "R-B1-013-Q54",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "ARQ",
+      "area": "Arquitetura de sistemas",
+      "assunto": "Arquitetura de objetos distribuídos",
+      "textoDeApoio": null,
+      "enunciado": "Considerando as características de uma arquitetura de objetos",
+      "alternativas": [
+        "o modelo cliente-servidor é, por si só, um impeditivo para seu uso.",
+        "um objeto pode ser cliente e servidor no mesmo momento.",
+        "são necessários apenas protocolos de baixo nível para a interação entre os objetos.",
+        "a referência ao objeto não necessita do endereço de rede.",
+        "apenas a interface do objeto é visível."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 4,
+        "letra": "E",
+        "alternativa": "apenas a interface do objeto é visível."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "R-B2-003-Q21",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "RL",
+      "area": "Raciocínio Lógico e Matemática",
+      "assunto": "Sistema de equações",
+      "textoDeApoio": null,
+      "enunciado": "Dos 56 funcionários de uma agência bancária, alguns decidiram contribuir com uma lista beneficente. Contribuíram 2 a cada 3 mulheres e 1 a cada 4 homens, totalizando 24 pessoas. Os funcionários que contribuíram decidiram que o total da contribuição dos homens deveria ser o dobro do total da contribuição das mulheres. Sabendo que cada uma das mulheres contribuiu com 100 reais, a contribuição que coube a cada homem foi, em reais, igual a",
+      "alternativas": [
+        "200,00.",
+        "300,00.",
+        "400,00.",
+        "250,00.",
+        "150,00."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "400,00."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "R-G087-Q47",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "SO",
+      "area": "Sistemas Operacionais",
+      "assunto": "Barramentos",
+      "textoDeApoio": null,
+      "enunciado": "Pode-se comparar a placa-mãe de um computador com uma cidade, onde os prédios seriam os componentes como processador, memória, placas e discos e os barramentos seriam",
+      "alternativas": [
+        "os semáforos.",
+        "as ruas e avenidas.",
+        "as represas.",
+        "os estacionamentos.",
+        "os acostamentos."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "as ruas e avenidas."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "R-G104-Q58",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "SO",
+      "area": "Sistemas Operacionais",
+      "assunto": "Windows 64 bits e aplicativos de 16 bits",
+      "textoDeApoio": null,
+      "enunciado": "Versões mais recentes do sistema operacional Windows, como a Windows 7 e a Windows 8, podem ser encontradas para computadores com processadores de 64 bits. Nesses computadores, caso um aplicativo tenha sido desenvolvido para um processador de 16 bits,",
+      "alternativas": [
+        "poderá ser executado apenas se o usuário possuir privilégios de administrador.",
+        "poderá ser executado desde que se instale uma máquina virtual para essa finalidade.",
+        "deve-se utilizar um recurso dessas versões do Windows que recompilam qualquer aplicativo de 16 bits para que possam ser executados em 64 bits.",
+        "não poderá mais ser executado no computador de 64 bits.",
+        "poderá ser executado apenas no Modo de Segurança do Windows."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "poderá ser executado desde que se instale uma máquina virtual para essa finalidade."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "R-G113-Q27",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "PDS",
+      "area": "Processo de desenvolvimento de software",
+      "assunto": "Iterativo incremental: desvantagens",
+      "textoDeApoio": null,
+      "enunciado": "Os processos iterativos e incrementais podem apresentar como desvantagem:",
+      "alternativas": [
+        "Mitigação precoce de altos riscos e progresso visível desde o início do desenvolvimento.",
+        "Realimentação, envolvimento do usuário e adaptação imediatos, levando a um sistema refinado que pode melhor atender às reais necessidades dos interessados.",
+        "Administração da complexidade ao longo do desenvolvimento e a equipe não fica sobrecarregada por eventuais paralisias da análise ou por passos muito longos e complexos.",
+        "Geração de grandes mudanças em partes já desenvolvidas para realizar algum novo requisito incremental e aumento de gastos devido à implantação de uma versão a cada incremento.",
+        "Atraso no processo de desenvolvimento, em função do número sempre crescente de iterações a cada incremento."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 3,
+        "letra": "D",
+        "alternativa": "Geração de grandes mudanças em partes já desenvolvidas para realizar algum novo requisito incremental e aumento de gastos devido à implantação de uma versão a cada incremento."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "R-G116-Q55",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "RED",
+      "area": "Redes de computadores",
+      "assunto": "1000BASE-TX",
+      "textoDeApoio": null,
+      "enunciado": "As instalações atuais de rede de computadores utiliza o padrão 1000Base que representa 1Gbps de taxa de transmissão. Caso o padrão utilizado em uma instalação de LAN seja 1000Base-TX, o cabo recomendado é",
+      "alternativas": [
+        "par trançado CAT5e.",
+        "fibra ótica de curto alcance (550m).",
+        "par trançado CAT6.",
+        "fibra ótica de longo alcance (5km).",
+        "coaxial de 50 ohms."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "par trançado CAT6."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "R-G142-Q42",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "BD",
+      "area": "Banco de Dados",
+      "assunto": "Terceira forma normal",
+      "textoDeApoio": null,
+      "enunciado": "Na tabela abaixo, OAB_Advogado e ID_Cliente fazem parte da chave primária composta da tabela e Valor_Total_Honorario é resultado da aplicação do Percentual_De_Honorario sobre Valor_Da_Causa.\n| OAB_Advogado | ID_Cliente | Valor_Da_Causa | Percentual_De_Honorario | Valor_Total_Honorario |\n| 12345-SC | 1 | 25000 | 30 | 7500 |\n| 97845-SP | 2 | 120000 | 20 | 24000 |\n| 34869-SP | 3 | 1450000 | 10 | 145000 |\nEsta tabela",
+      "alternativas": [
+        "não está na primeira forma normal porque possui dependência funcional transitiva do campo ID_Cliente em relação ao campo OAB_Advogado.",
+        "cumpre todas as regras de normalização, já que todos os campos não chave são integralmente dependentes da chave primária composta.",
+        "não está na terceira forma normal porque possui um campo resultante de cálculo envolvendo outros dois campos que não fazem parte da chave primária.",
+        "respeita as boas práticas de modelagem e normalização, entretanto, para facilitar a busca de dados, a chave primária deveria ser composta apenas pelo campo OAB_Advogado.",
+        "não está na terceira forma normal porque possui tabelas aninhadas, ou seja, a tabela precisará ser dividida em duas tabelas relacionadas."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "não está na terceira forma normal porque possui um campo resultante de cálculo envolvendo outros dois campos que não fazem parte da chave primária."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "RED-007",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "RED",
+      "area": "Redes de computadores",
+      "assunto": "OSPF",
+      "textoDeApoio": null,
+      "enunciado": "O protocolo de roteamento OSPF:",
+      "alternativas": [
+        "é do tipo vetor de distância, usa contagem de saltos como métrica e limita as rotas a 15 saltos.",
+        "é de estado de enlace, usa o algoritmo de Dijkstra e organiza a rede em áreas, com a área 0 como backbone.",
+        "é usado para roteamento entre sistemas autônomos na internet, com base em políticas e atributos.",
+        "é de estado de enlace, mas não suporta VLSM, exigindo a mesma máscara em toda a rede.",
+        "é de vetor de caminho e opera sobre TCP porta 179, trocando rotas apenas com vizinhos configurados."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "é de estado de enlace, usa o algoritmo de Dijkstra e organiza a rede em áreas, com a área 0 como backbone."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "RED-038",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "RED",
+      "area": "Redes de computadores",
+      "assunto": "SDN – interfaces",
+      "textoDeApoio": null,
+      "enunciado": "Em SDN, as interfaces southbound e northbound do controlador conectam-se, respectivamente:",
+      "alternativas": [
+        "às aplicações (via APIs REST) e aos dispositivos de rede (via OpenFlow)",
+        "aos dispositivos de rede (ex.: OpenFlow) e às aplicações (geralmente via APIs REST)",
+        "aos servidores DNS e DHCP da rede e aos sistemas de monitoramento",
+        "aos usuários finais e aos servidores de aplicação do data center",
+        "a outros controladores SDN do cluster e aos roteadores de borda que conectam a rede à internet"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "aos dispositivos de rede (ex.: OpenFlow) e às aplicações (geralmente via APIs REST)"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "RL-004",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "RL",
+      "area": "Raciocínio Lógico e Matemática",
+      "assunto": "Lógica – leis de De Morgan",
+      "textoDeApoio": null,
+      "enunciado": "A negação de “João é analista e Maria é gerente” é:",
+      "alternativas": [
+        "João não é analista e Maria não é gerente.",
+        "João não é analista ou Maria não é gerente.",
+        "João é analista ou Maria é gerente.",
+        "Se João é analista, então Maria é gerente.",
+        "João não é analista se e somente se Maria não é gerente."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "João não é analista ou Maria não é gerente."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "RL-010",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "RL",
+      "area": "Raciocínio Lógico e Matemática",
+      "assunto": "Porcentagem – aumentos e descontos sucessivos",
+      "textoDeApoio": null,
+      "enunciado": "Uma tarifa sofreu aumento de 20% e, em seguida, desconto de 20%. Em relação ao valor inicial, o valor final é:",
+      "alternativas": [
+        "igual",
+        "4% maior",
+        "4% menor",
+        "2% menor",
+        "20% menor"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "4% menor"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "RL-020",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "MF",
+      "area": "Matemática financeira",
+      "assunto": "Desconto racional simples",
+      "textoDeApoio": null,
+      "enunciado": "Um título de valor nominal R$ 10.600,00 foi descontado 3 meses antes do vencimento, com desconto racional simples à taxa de 2% ao mês. O desconto foi de:",
+      "alternativas": [
+        "R$ 636,00",
+        "R$ 600,00",
+        "R$ 618,00",
+        "R$ 560,00",
+        "R$ 660,00"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "R$ 600,00"
+      },
+      "respostasSelecionadasDisponiveis": [
+        {
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceOriginal": 0,
+          "letra": "A",
+          "alternativa": "R$ 636,00",
+          "estavaCorreta": false
+        }
+      ],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": null
+    },
+    {
+      "id": "RL-033",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "MF",
+      "area": "Matemática financeira",
+      "assunto": "Capitalização contínua",
+      "textoDeApoio": null,
+      "enunciado": "No regime de capitalização contínua, o montante M de um capital C aplicado à taxa instantânea r durante o tempo t é dado por:",
+      "alternativas": [
+        "M = C(1 + rt)",
+        "M = C(1 + r)ᵗ",
+        "M = C·eʳᵗ",
+        "M = C/(1 − rt)",
+        "M = C·(1 + r/t)"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "M = C·eʳᵗ"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "RL-035",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "areaId": "RL",
+      "area": "Raciocínio Lógico e Matemática",
+      "assunto": "Porcentagem",
+      "textoDeApoio": null,
+      "enunciado": "Em uma agência, 40% dos clientes usam Pix diariamente. Desses, 25% também usam cartão de crédito diariamente. O percentual do total de clientes que usa Pix e cartão diariamente é:",
+      "alternativas": [
+        "65%",
+        "25%",
+        "15%",
+        "10%",
+        "16%"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 3,
+        "letra": "D",
+        "alternativa": "10%"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "SEG-006",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "SEG",
+      "area": "Segurança da Informação",
+      "assunto": "Firewall, IDS e IPS",
+      "textoDeApoio": null,
+      "enunciado": "A diferença entre IDS e IPS é que:",
+      "alternativas": [
+        "o IDS atua em linha e bloqueia o tráfego malicioso automaticamente, e o IPS apenas gera alertas.",
+        "o IDS monitora e alerta sobre atividades suspeitas; o IPS atua em linha e pode bloquear o tráfego.",
+        "ambos são antivírus instalados nas estações, diferindo apenas na base de assinaturas usada.",
+        "o IPS não analisa pacotes, apenas bloqueia os endereços IP listados manualmente pelo administrador.",
+        "o IDS só funciona em redes sem fio, e o IPS só em redes cabeadas."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "o IDS monitora e alerta sobre atividades suspeitas; o IPS atua em linha e pode bloquear o tráfego."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "SEG-011",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "SEG",
+      "area": "Segurança da Informação",
+      "assunto": "OWASP – XSS",
+      "textoDeApoio": null,
+      "enunciado": "Na OWASP Top 10:2021, o Cross-Site Scripting (XSS) passou a integrar a categoria:",
+      "alternativas": [
+        "Broken Access Control",
+        "Injection",
+        "Insecure Design",
+        "Security Logging and Monitoring Failures",
+        "SSRF"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "Injection"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "SEG-032",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "SEG",
+      "area": "Segurança da Informação",
+      "assunto": "OWASP – SSRF",
+      "textoDeApoio": null,
+      "enunciado": "No ataque SSRF (Server-Side Request Forgery):",
+      "alternativas": [
+        "o atacante força o navegador da vítima a executar scripts injetados na página.",
+        "o atacante induz o servidor a requisitar destinos escolhidos por ele, como serviços internos.",
+        "o atacante adivinha senhas por força bruta usando listas de credenciais vazadas.",
+        "o servidor fica indisponível por excesso de requisições vindas de uma botnet.",
+        "o navegador autenticado da vítima envia requisições indesejadas à aplicação."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "o atacante induz o servidor a requisitar destinos escolhidos por ele, como serviços internos."
+      },
+      "respostasSelecionadasDisponiveis": [
+        {
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceOriginal": 4,
+          "letra": "E",
+          "alternativa": "o navegador autenticado da vítima envia requisições indesejadas à aplicação.",
+          "estavaCorreta": false
+        }
+      ],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": null
+    },
+    {
+      "id": "SEG-045",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "SEG",
+      "area": "Segurança da Informação",
+      "assunto": "SSO – SAML",
+      "textoDeApoio": null,
+      "enunciado": "Sobre SSO (Single Sign-On), é correto afirmar:",
+      "alternativas": [
+        "Exige que o usuário digite a senha em cada aplicação, aumentando a segurança do acesso.",
+        "Permite autenticar-se uma vez em um provedor de identidade e acessar várias aplicações.",
+        "Elimina a necessidade de MFA, já que a autenticação passa a ser centralizada.",
+        "Só funciona entre módulos de uma mesma aplicação hospedada no mesmo servidor.",
+        "Aumenta o número de senhas, pois cada aplicação passa a ter credencial própria."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "Permite autenticar-se uma vez em um provedor de identidade e acessar várias aplicações."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "SO-031",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "SO",
+      "area": "Sistemas Operacionais",
+      "assunto": "Fragmentação interna",
+      "textoDeApoio": null,
+      "enunciado": "Em um sistema com paginação de 4 KB, um processo que precisa de 10 KB ocupará 3 páginas. A fragmentação interna gerada é de:",
+      "alternativas": [
+        "0 KB",
+        "2 KB",
+        "4 KB",
+        "6 KB",
+        "10 KB"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "2 KB"
+      },
+      "respostasSelecionadasDisponiveis": [
+        {
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceOriginal": 2,
+          "letra": "C",
+          "alternativa": "4 KB",
+          "estavaCorreta": false
+        }
+      ],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": null
+    },
+    {
+      "id": "SO-038",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "SO",
+      "area": "Sistemas Operacionais",
+      "assunto": "Linux – firewalld",
+      "textoDeApoio": null,
+      "enunciado": "No RHEL, para liberar permanentemente o serviço HTTP no firewall e aplicar a mudança, usa-se:",
+      "alternativas": [
+        "firewall-cmd --add-service=http, sem outras opções",
+        "firewall-cmd --permanent --add-service=http e depois firewall-cmd --reload",
+        "systemctl stop firewalld e systemctl disable firewalld, liberando todas as portas",
+        "iptables -F e depois systemctl restart firewalld",
+        "ufw allow http e depois ufw reload"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "firewall-cmd --permanent --add-service=http e depois firewall-cmd --reload"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "SRV-026",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "SRV",
+      "area": "Serviços e gerenciamento de redes",
+      "assunto": "SNMP – operações",
+      "textoDeApoio": null,
+      "enunciado": "No SNMP, a mensagem enviada espontaneamente por um agente ao gerente, sem confirmação de recebimento, para notificar um evento (como queda de interface), é:",
+      "alternativas": [
+        "GET",
+        "SET",
+        "TRAP",
+        "GETNEXT",
+        "INFORM"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "TRAP"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "WEB-005",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "WEB",
+      "area": "Desenvolvimento web e mobile",
+      "assunto": "React – hooks",
+      "textoDeApoio": null,
+      "enunciado": "Em React, o hook `useEffect(() => { ... }, [])` com array de dependências vazio:",
+      "alternativas": [
+        "executa o efeito após cada renderização, sempre que qualquer estado do componente mudar.",
+        "executa o efeito só após a primeira montagem (e a limpeza, se houver, na desmontagem).",
+        "nunca executa o efeito, pois não há nenhuma dependência para disparar a execução.",
+        "executa antes da renderização, de forma síncrona, bloqueando a pintura da tela.",
+        "substitui o useState, guardando valores que persistem entre as renderizações."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "executa o efeito só após a primeira montagem (e a limpeza, se houver, na desmontagem)."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "WEB-011",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "WEB",
+      "area": "Desenvolvimento web e mobile",
+      "assunto": "CSS – especificidade",
+      "textoDeApoio": null,
+      "enunciado": "Entre os seletores abaixo, o de MAIOR especificidade é:",
+      "alternativas": [
+        "p",
+        "p.destaque",
+        "#menu a",
+        "div p span",
+        "*"
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 2,
+        "letra": "C",
+        "alternativa": "#menu a"
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "WEB-012",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "WEB",
+      "area": "Desenvolvimento web e mobile",
+      "assunto": "Bootstrap 5",
+      "textoDeApoio": null,
+      "enunciado": "Sobre o Bootstrap 5, é correto afirmar:",
+      "alternativas": [
+        "Depende obrigatoriamente do jQuery para os componentes interativos, como modais e dropdowns.",
+        "Usa grid de 12 colunas baseado em flexbox, com breakpoints de sm a xxl.",
+        "Não oferece classes utilitárias responsivas, exigindo media queries escritas manualmente.",
+        "Seu grid tem 16 colunas, com breakpoints apenas para celular e computador.",
+        "Foi descontinuado e substituído pelo Bootstrap 3, que passou a ser a versão recomendada."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "Usa grid de 12 colunas baseado em flexbox, com breakpoints de sm a xxl."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    },
+    {
+      "id": "WEB-053",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "areaId": "WEB",
+      "area": "Desenvolvimento web e mobile",
+      "assunto": "Node.js – Express",
+      "textoDeApoio": null,
+      "enunciado": "No framework Express (Node.js), um middleware é:",
+      "alternativas": [
+        "um banco de dados embutido que guarda as sessões dos usuários.",
+        "uma função que recebe (req, res, next) e atua na cadeia de tratamento da requisição.",
+        "um template HTML renderizado no servidor a cada requisição.",
+        "um servidor de e-mail integrado ao Express para enviar notificações.",
+        "um gerenciador de pacotes que instala as dependências do projeto."
+      ],
+      "respostaCorreta": {
+        "indiceOriginal": 1,
+        "letra": "B",
+        "alternativa": "uma função que recebe (req, res, next) e atua na cadeia de tratamento da requisição."
+      },
+      "respostasSelecionadasDisponiveis": [],
+      "quantidadeDeErrosRegistrada": 1,
+      "foiAcertadaEmAlgumMomento": false,
+      "observacao": "A alternativa escolhida no erro histórico não foi armazenada."
+    }
+  ],
+  "simulados": {
+    "quantidade": 0,
+    "observacao": "Nenhum documento foi encontrado na subcoleção exams deste UID.",
+    "resultados": []
+  },
+  "testesCurtosAntigos": {
+    "quantidade": 14,
+    "limitacao": "Os históricos antigos armazenam apenas resultados agregados; alternativas não foram reconstruídas.",
+    "resultados": [
+      {
+        "id": "1794493852421-k7b7l",
+        "tipo": "teste",
+        "data": "2026-11-12T14:30:52.421Z",
+        "materiaId": null,
+        "cargo": null,
+        "testeDeQuestoesReais": false,
+        "questoes": 12,
+        "acertos": 5,
+        "erros": 7,
+        "aproveitamentoPercentual": 41.67,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "RLE": {
+            "materia": "Raciocínio Lógico e Estatística",
+            "questoes": 3,
+            "acertos": 1,
+            "erros": 2,
+            "aproveitamentoPercentual": 33.33
+          },
+          "POR": {
+            "materia": "Língua Portuguesa",
+            "questoes": 2,
+            "acertos": 1,
+            "erros": 1,
+            "aproveitamentoPercentual": 50
+          },
+          "ETI": {
+            "materia": "Ética, Compliance e ESG",
+            "questoes": 1,
+            "acertos": 1,
+            "erros": 0,
+            "aproveitamentoPercentual": 100
+          },
+          "ATU": {
+            "materia": "Atualidades do Mercado Financeiro e Digital",
+            "questoes": 1,
+            "acertos": 0,
+            "erros": 1,
+            "aproveitamentoPercentual": 0
+          },
+          "ESP": {
+            "materia": "Conhecimentos Específicos",
+            "questoes": 5,
+            "acertos": 2,
+            "erros": 3,
+            "aproveitamentoPercentual": 40
+          }
+        }
+      },
+      {
+        "id": "1794497784911-ev6cx",
+        "tipo": "teste",
+        "data": "2026-11-12T15:36:24.911Z",
+        "materiaId": null,
+        "cargo": null,
+        "testeDeQuestoesReais": false,
+        "questoes": 12,
+        "acertos": 0,
+        "erros": 12,
+        "aproveitamentoPercentual": 0,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "RLE": {
+            "materia": "Raciocínio Lógico e Estatística",
+            "questoes": 3,
+            "acertos": 0,
+            "erros": 3,
+            "aproveitamentoPercentual": 0
+          },
+          "POR": {
+            "materia": "Língua Portuguesa",
+            "questoes": 2,
+            "acertos": 0,
+            "erros": 2,
+            "aproveitamentoPercentual": 0
+          },
+          "ETI": {
+            "materia": "Ética, Compliance e ESG",
+            "questoes": 1,
+            "acertos": 0,
+            "erros": 1,
+            "aproveitamentoPercentual": 0
+          },
+          "ESP": {
+            "materia": "Conhecimentos Específicos",
+            "questoes": 5,
+            "acertos": 0,
+            "erros": 5,
+            "aproveitamentoPercentual": 0
+          },
+          "ATU": {
+            "materia": "Atualidades do Mercado Financeiro e Digital",
+            "questoes": 1,
+            "acertos": 0,
+            "erros": 1,
+            "aproveitamentoPercentual": 0
+          }
+        }
+      },
+      {
+        "id": "1794516603326-ge269",
+        "tipo": "teste",
+        "data": "2026-11-12T20:50:03.326Z",
+        "materiaId": "POR",
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 5,
+        "acertos": 1,
+        "erros": 4,
+        "aproveitamentoPercentual": 20,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "POR": {
+            "materia": "Língua Portuguesa",
+            "questoes": 5,
+            "acertos": 1,
+            "erros": 4,
+            "aproveitamentoPercentual": 20
+          }
+        }
+      },
+      {
+        "id": "1794593832176-qy0xb",
+        "tipo": "teste",
+        "data": "2026-11-13T18:17:12.176Z",
+        "materiaId": "POR",
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 5,
+        "acertos": 3,
+        "erros": 2,
+        "aproveitamentoPercentual": 60,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "POR": {
+            "materia": "Língua Portuguesa",
+            "questoes": 5,
+            "acertos": 3,
+            "erros": 2,
+            "aproveitamentoPercentual": 60
+          }
+        }
+      },
+      {
+        "id": "1794682185166-srq5x",
+        "tipo": "teste",
+        "data": "2026-11-14T18:49:45.166Z",
+        "materiaId": "POR",
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 5,
+        "acertos": 3,
+        "erros": 2,
+        "aproveitamentoPercentual": 60,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "POR": {
+            "materia": "Língua Portuguesa",
+            "questoes": 5,
+            "acertos": 3,
+            "erros": 2,
+            "aproveitamentoPercentual": 60
+          }
+        }
+      },
+      {
+        "id": "1794711948181-qjzi5",
+        "tipo": "teste",
+        "data": "2026-11-15T03:05:48.181Z",
+        "materiaId": "POR",
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 5,
+        "acertos": 3,
+        "erros": 2,
+        "aproveitamentoPercentual": 60,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "POR": {
+            "materia": "Língua Portuguesa",
+            "questoes": 5,
+            "acertos": 3,
+            "erros": 2,
+            "aproveitamentoPercentual": 60
+          }
+        }
+      },
+      {
+        "id": "1794773586365-3m8e0",
+        "tipo": "teste",
+        "data": "2026-11-15T20:13:06.365Z",
+        "materiaId": null,
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 12,
+        "acertos": 4,
+        "erros": 8,
+        "aproveitamentoPercentual": 33.33,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "ESP": {
+            "materia": "Conhecimentos Específicos",
+            "questoes": 5,
+            "acertos": 1,
+            "erros": 4,
+            "aproveitamentoPercentual": 20
+          },
+          "ATU": {
+            "materia": "Atualidades do Mercado Financeiro e Digital",
+            "questoes": 1,
+            "acertos": 1,
+            "erros": 0,
+            "aproveitamentoPercentual": 100
+          },
+          "ETI": {
+            "materia": "Ética, Compliance e ESG",
+            "questoes": 1,
+            "acertos": 0,
+            "erros": 1,
+            "aproveitamentoPercentual": 0
+          },
+          "POR": {
+            "materia": "Língua Portuguesa",
+            "questoes": 2,
+            "acertos": 1,
+            "erros": 1,
+            "aproveitamentoPercentual": 50
+          },
+          "RLE": {
+            "materia": "Raciocínio Lógico e Estatística",
+            "questoes": 3,
+            "acertos": 1,
+            "erros": 2,
+            "aproveitamentoPercentual": 33.33
+          }
+        }
+      },
+      {
+        "id": "1794832681429-72zb8",
+        "tipo": "teste",
+        "data": "2026-11-16T12:38:01.429Z",
+        "materiaId": null,
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 12,
+        "acertos": 3,
+        "erros": 9,
+        "aproveitamentoPercentual": 25,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "ATU": {
+            "materia": "Atualidades do Mercado Financeiro e Digital",
+            "questoes": 1,
+            "acertos": 1,
+            "erros": 0,
+            "aproveitamentoPercentual": 100
+          },
+          "ESP": {
+            "materia": "Conhecimentos Específicos",
+            "questoes": 5,
+            "acertos": 2,
+            "erros": 3,
+            "aproveitamentoPercentual": 40
+          },
+          "RLE": {
+            "materia": "Raciocínio Lógico e Estatística",
+            "questoes": 3,
+            "acertos": 0,
+            "erros": 3,
+            "aproveitamentoPercentual": 0
+          },
+          "POR": {
+            "materia": "Língua Portuguesa",
+            "questoes": 2,
+            "acertos": 0,
+            "erros": 2,
+            "aproveitamentoPercentual": 0
+          },
+          "ETI": {
+            "materia": "Ética, Compliance e ESG",
+            "questoes": 1,
+            "acertos": 0,
+            "erros": 1,
+            "aproveitamentoPercentual": 0
+          }
+        }
+      },
+      {
+        "id": "1794932243879-j9k2x",
+        "tipo": "teste",
+        "data": "2026-11-17T16:17:23.879Z",
+        "materiaId": "RLE",
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 5,
+        "acertos": 0,
+        "erros": 5,
+        "aproveitamentoPercentual": 0,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "RLE": {
+            "materia": "Raciocínio Lógico e Estatística",
+            "questoes": 5,
+            "acertos": 0,
+            "erros": 5,
+            "aproveitamentoPercentual": 0
+          }
+        }
+      },
+      {
+        "id": "1794934241797-n99sv",
+        "tipo": "teste",
+        "data": "2026-11-17T16:50:41.797Z",
+        "materiaId": "ESP",
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 5,
+        "acertos": 3,
+        "erros": 2,
+        "aproveitamentoPercentual": 60,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "ESP": {
+            "materia": "Conhecimentos Específicos",
+            "questoes": 5,
+            "acertos": 3,
+            "erros": 2,
+            "aproveitamentoPercentual": 60
+          }
+        }
+      },
+      {
+        "id": "1794935022619-u8dbj",
+        "tipo": "teste",
+        "data": "2026-11-17T17:03:42.619Z",
+        "materiaId": "ESP",
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 5,
+        "acertos": 2,
+        "erros": 3,
+        "aproveitamentoPercentual": 40,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "ESP": {
+            "materia": "Conhecimentos Específicos",
+            "questoes": 5,
+            "acertos": 2,
+            "erros": 3,
+            "aproveitamentoPercentual": 40
+          }
+        }
+      },
+      {
+        "id": "1794946310977-z3vhg",
+        "tipo": "teste",
+        "data": "2026-11-17T20:11:50.977Z",
+        "materiaId": "ESP",
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 5,
+        "acertos": 0,
+        "erros": 5,
+        "aproveitamentoPercentual": 0,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "ESP": {
+            "materia": "Conhecimentos Específicos",
+            "questoes": 5,
+            "acertos": 0,
+            "erros": 5,
+            "aproveitamentoPercentual": 0
+          }
+        }
+      },
+      {
+        "id": "1794947052450-69m81",
+        "tipo": "teste",
+        "data": "2026-11-17T20:24:12.450Z",
+        "materiaId": "ESP",
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 5,
+        "acertos": 0,
+        "erros": 5,
+        "aproveitamentoPercentual": 0,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "ESP": {
+            "materia": "Conhecimentos Específicos",
+            "questoes": 5,
+            "acertos": 0,
+            "erros": 5,
+            "aproveitamentoPercentual": 0
+          }
+        }
+      },
+      {
+        "id": "1794947813473-nmgdx",
+        "tipo": "teste",
+        "data": "2026-11-17T20:36:53.473Z",
+        "materiaId": "ESP",
+        "cargo": "TI",
+        "testeDeQuestoesReais": false,
+        "questoes": 5,
+        "acertos": 3,
+        "erros": 2,
+        "aproveitamentoPercentual": 60,
+        "nota": null,
+        "duracaoSegundos": null,
+        "porMateria": {
+          "ESP": {
+            "materia": "Conhecimentos Específicos",
+            "questoes": 5,
+            "acertos": 3,
+            "erros": 2,
+            "aproveitamentoPercentual": 60
+          }
+        }
+      }
+    ]
+  },
+  "respostasIndividuaisAindaArmazenadas": [
+    {
+      "questaoId": "POR-092",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "Os Estados Unidos impôs novas regras.",
+      "correta": "Mais de um técnico participou da reunião.",
+      "acertou": false
+    },
+    {
+      "questaoId": "POR-061",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "O código estava organizado como uma biblioteca.",
+      "correta": "Aquele sistema legado é um labirinto.",
+      "acertou": false
+    },
+    {
+      "questaoId": "MF-021",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "Não sei responder",
+      "correta": "R$ 1.000,00",
+      "acertou": false
+    },
+    {
+      "questaoId": "RL-020",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "R$ 636,00",
+      "correta": "R$ 600,00",
+      "acertou": false
+    },
+    {
+      "questaoId": "EST-050",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "Não sei responder",
+      "correta": "5 ⊢ 10",
+      "acertou": false
+    },
+    {
+      "questaoId": "ATU-058",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "baixo risco e alta liquidez, como Tesouro Selic ou CDB com liquidez diária.",
+      "correta": "baixo risco e alta liquidez, como Tesouro Selic ou CDB com liquidez diária.",
+      "acertou": true
+    },
+    {
+      "questaoId": "ETI-032",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "a indicação deve ser feita pelos empregados, em eleição direta organizada pelo sindicato.",
+      "correta": "exigem-se experiência e formação compatíveis, além de vedações a certas indicações.",
+      "acertou": false
+    },
+    {
+      "questaoId": "NUV-032",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "do diretório de trabalho para a área de preparação (staging), rumo ao próximo commit.",
+      "correta": "do diretório de trabalho para a área de preparação (staging), rumo ao próximo commit.",
+      "acertou": true
+    },
+    {
+      "questaoId": "ARQ-019",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "recusar qualquer requisição com o mesmo valor e o mesmo destino de outra feita no mesmo dia.",
+      "correta": "exigir uma chave de idempotência por operação e devolver o resultado já gravado quando ela se repetir.",
+      "acertou": false
+    },
+    {
+      "questaoId": "SEG-032",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "o navegador autenticado da vítima envia requisições indesejadas à aplicação.",
+      "correta": "o atacante induz o servidor a requisitar destinos escolhidos por ele, como serviços internos.",
+      "acertou": false
+    },
+    {
+      "questaoId": "PDS-040",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "público, privado, protegido e pacote",
+      "correta": "público, privado, protegido e pacote",
+      "acertou": true
+    },
+    {
+      "questaoId": "SO-031",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "selecionada": "4 KB",
+      "correta": "2 KB",
+      "acertou": false
+    }
+  ],
+  "qualidadeDosDados": {
+    "idsDeQuestoesComErroNaoLocalizadosNoBancoLocal": [],
+    "observacoes": [
+      "Contagens gerais, por matéria e por área vêm das estatísticas agregadas do perfil.",
+      "O histórico de erros vem de private/progress.wrongCount.",
+      "Alternativas de testes curtos concluídos não existem no histórico attempts.",
+      "Nenhuma informação de autenticação, e-mail, token ou credencial foi incluída."
+    ]
+  }
+}

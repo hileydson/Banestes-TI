@@ -13,13 +13,13 @@
 "10"
 ],
 "c": 2,
-"e": "(4 + 6 + 8 + 10 + 12)/5 = 40/5 = 8.",
+"e": "**Entenda o assunto:** A média aritmética é a medida de tendência central mais comum: soma-se todos os valores e divide-se pela quantidade de valores. Ela representa o valor que cada observação teria se o total fosse repartido igualmente entre todas. Aqui, o “total” é o número de incidentes nos cinco dias.\n**Por que esta é a resposta:** Somam-se os incidentes e divide-se por 5 dias:\n− 4 + 6 + 8 + 10 + 12 = 40\n− média = 40 ÷ 5 = 8 incidentes por dia\n**Dica de prova:** Em sequências igualmente espaçadas (4, 6, 8, 10, 12, de 2 em 2), a média coincide com o termo central: 8. Serve de conferência rápida.",
 "x": [
-"Errada: cálculo incorreto.",
-"Errada: cálculo incorreto.",
-"Correta: 40/5.",
-"Errada: cálculo incorreto.",
-"Errada: cálculo incorreto."
+"Errada: 6 é apenas o segundo valor da lista; a média exige somar tudo (40) e dividir por 5, o que dá 8, não 6.",
+"Errada: 7 seria a média se a soma fosse 35; a soma correta dos cinco valores é 40.",
+"Correta: a soma dos incidentes é 40 e, dividida por 5 dias, resulta em média 8.",
+"Errada: 9 corresponderia a uma soma de 45; a soma real é 40, logo 40 ÷ 5 = 8.",
+"Errada: 10 é o quarto valor da lista, não a média; dividir 40 por 5 dá 8."
 ]
 },
 {
@@ -36,13 +36,13 @@
 "5,5 ou 7"
 ],
 "c": 2,
-"e": "Ordenando: 1, 3, 5, 7, 8, 9. Com n par, a mediana é a média dos dois centrais: (5 + 7)/2 = 6.",
+"e": "**Entenda o assunto:** A mediana é o valor que fica no meio do conjunto depois de ordenado do menor para o maior: metade dos dados fica abaixo dela e metade acima. Se a quantidade de dados (n) é ímpar, a mediana é o termo central. Se n é par, não há um único termo no meio; toma-se a média aritmética dos dois termos centrais.\n**Por que esta é a resposta:** O conjunto tem 6 valores (n par). Ordenando:\n− 1, 3, 5, 7, 8, 9\n− os dois centrais são o 3º (5) e o 4º (7)\n− mediana = (5 + 7) ÷ 2 = 6\n**Dica de prova:** Esquecer de ordenar é o erro clássico: nos dados na ordem original (3, 7, 1, 9, 5, 8) os do meio seriam 1 e 9, o que daria um resultado errado.",
 "x": [
-"Errada: é um dos termos centrais.",
-"Errada: é a média aritmética do conjunto (33/6).",
-"Correta: (5 + 7)/2.",
-"Errada: é o outro termo central.",
-"Errada: a mediana é única."
+"Errada: 5 é só um dos dois termos centrais; com n par é preciso tirar a média dos dois, e não escolher um.",
+"Errada: 5,5 é a média aritmética do conjunto (33 ÷ 6), não a mediana. Média e mediana são medidas diferentes.",
+"Correta: com os dados ordenados, os centrais são 5 e 7, e a mediana é (5 + 7) ÷ 2 = 6.",
+"Errada: 7 é o outro termo central; assim como o 5, ele sozinho não representa a mediana de um conjunto com n par.",
+"Errada: a mediana é sempre um único valor; a média dos dois centrais resolve o impasse e dá 6, não “5,5 ou 7”."
 ]
 },
 {
@@ -59,13 +59,13 @@
 "9"
 ],
 "c": 3,
-"e": "Moda é o valor de maior frequência: 7 aparece três vezes.",
+"e": "**Entenda o assunto:** A moda é o valor que aparece com maior frequência em um conjunto, isto é, o mais comum. Diferente da média e da mediana, ela não exige conta: basta contar as repetições. Um conjunto pode ter uma moda (unimodal), duas (bimodal) ou nenhuma (amodal, quando todos aparecem o mesmo número de vezes).\n**Por que esta é a resposta:** Contando as repetições em {2, 3, 3, 5, 7, 7, 7, 9}:\n− 2: 1 vez; 3: 2 vezes; 5: 1 vez; 7: 3 vezes; 9: 1 vez\n− o 7 é o mais frequente, logo a moda é 7\n**Dica de prova:** Não confunda moda (o valor mais repetido) com média: aqui a média é 43 ÷ 8 = 5,375, que nem aparece no conjunto, e é uma das opções de distração.",
 "x": [
-"Errada: aparece duas vezes.",
-"Errada: 5 aparece apenas uma vez.",
-"Errada: é a média (43/8).",
-"Correta: maior frequência.",
-"Errada: aparece uma vez."
+"Errada: o 3 aparece duas vezes, menos que o 7, que aparece três vezes.",
+"Errada: o 5 aparece uma única vez; é um valor próximo da média, mas não o mais frequente.",
+"Errada: 5,375 é a média aritmética (43 ÷ 8), não a moda. A moda é sempre um valor que de fato ocorre no conjunto.",
+"Correta: o 7 aparece três vezes, mais que qualquer outro valor, portanto é a moda.",
+"Errada: o 9 é o maior valor do conjunto, mas aparece uma só vez; ser o maior não faz dele a moda."
 ]
 },
 {
@@ -82,13 +82,13 @@
 "12,50"
 ],
 "c": 1,
-"e": "(7,0 × 1 + 5,5 × 2)/(1 + 2) = (7 + 11)/3 = 18/3 = 6,00.",
+"e": "**Entenda o assunto:** A média ponderada é usada quando os valores têm importâncias (pesos) diferentes. Em vez de dar o mesmo peso a todos, multiplica-se cada valor pelo seu peso, somam-se os produtos e divide-se pela soma dos pesos. Em concursos, é assim que se combinam provas de pesos distintos na nota final.\n**Por que esta é a resposta:** Conhecimentos Gerais (peso 1) e Específicos (peso 2):\n− numerador: 7,0 × 1 + 5,5 × 2 = 7 + 11 = 18\n− denominador (soma dos pesos): 1 + 2 = 3\n− nota final = 18 ÷ 3 = 6,00\n**Dica de prova:** A média simples (7,0 + 5,5) ÷ 2 = 6,25 é a resposta de distração mais frequente; o peso maior da prova mais fraca puxa a nota para baixo.",
 "x": [
-"Errada: média simples (sem pesos).",
-"Correta: média ponderada.",
-"Errada: cálculo incorreto.",
-"Errada: cálculo incorreto.",
-"Errada: soma das notas."
+"Errada: 6,25 é a média simples (7,0 + 5,5) ÷ 2, que ignora os pesos. Como Específicos vale o dobro, a nota fica mais perto de 5,5.",
+"Correta: (7,0 × 1 + 5,5 × 2) ÷ (1 + 2) = 18 ÷ 3 = 6,00.",
+"Errada: 5,75 exigiria soma ponderada de 17,25 (5,75 × 3); com os pesos dados a soma é 18, e 18 ÷ 3 = 6,00.",
+"Errada: 6,50 aparece ao inverter os pesos (7,0 × 2 + 5,5 × 1) ÷ 3, dando mais importância a Gerais do que o enunciado diz.",
+"Errada: 12,50 é a soma das duas notas (7,0 + 5,5); nota final de média nunca pode superar a maior nota, que é 7,0."
 ]
 },
 {
@@ -105,13 +105,13 @@
 "11,25"
 ],
 "c": 2,
-"e": "Amplitude = maior valor − menor valor = 20 − 5 = 15.",
+"e": "**Entenda o assunto:** A amplitude total (ou range) é a medida de dispersão mais simples: a diferença entre o maior e o menor valor do conjunto. Ela mostra o tamanho da faixa em que os dados se espalham, mas olha só os extremos e ignora o que acontece entre eles.\n**Por que esta é a resposta:** No conjunto {12, 5, 20, 8}:\n− maior valor = 20; menor valor = 5\n− amplitude = 20 − 5 = 15\n**Dica de prova:** Amplitude é subtração dos extremos, não é um dos valores nem a média: 11,25 é a média (45 ÷ 4), outra opção de distração.",
 "x": [
-"Errada: diferença incorreta.",
-"Errada: diferença incorreta.",
-"Correta: 20 − 5.",
-"Errada: é o valor máximo.",
-"Errada: é a média."
+"Errada: 8 é um valor do conjunto, não uma diferença; a amplitude subtrai o menor do maior.",
+"Errada: 12 é um dos elementos do conjunto; poderia surgir de confundir com 20 − 8, que não usa o menor valor.",
+"Correta: maior (20) menos menor (5) é igual a 15.",
+"Errada: 20 é o maior valor; a amplitude é a distância entre o maior e o menor, não o maior em si.",
+"Errada: 11,25 é a média aritmética (45 ÷ 4), medida de posição, e não de dispersão como a amplitude."
 ]
 },
 {
@@ -128,13 +128,13 @@
 "32"
 ],
 "c": 1,
-"e": "Média = 40/8 = 5. Soma dos quadrados dos desvios: 9+1+1+1+0+0+4+16 = 32. Variância = 32/8 = 4. Desvio padrão = √4 = 2.",
+"e": "**Entenda o assunto:** O desvio padrão mede, em média, o quanto os valores se afastam da média; quanto maior, mais espalhados estão os dados. Para o cálculo populacional:\n− 1º: calcula-se a média;\n− 2º: subtrai-se a média de cada valor (os desvios) e elevam-se ao quadrado;\n− 3º: somam-se os quadrados e divide-se por n; o resultado é a variância;\n− 4º: o desvio padrão é a raiz quadrada da variância.\n**Por que esta é a resposta:** Conjunto {2, 4, 4, 4, 5, 5, 7, 9}, com n = 8:\n− média = 40 ÷ 8 = 5\n− quadrados dos desvios: 9, 1, 1, 1, 0, 0, 4, 16, que somam 32\n− variância = 32 ÷ 8 = 4\n− desvio padrão = √4 = 2\n**Dica de prova:** Cuidado para não parar na variância (4) nem na soma dos quadrados (32): ambos aparecem como opções. A última etapa é a raiz.",
 "x": [
-"Errada: é a variância.",
-"Correta: raiz da variância.",
-"Errada: é a média.",
-"Errada: cálculo incorreto.",
-"Errada: é a soma dos quadrados dos desvios."
+"Errada: 4 é a variância (32 ÷ 8); falta extrair a raiz quadrada para chegar ao desvio padrão.",
+"Correta: a variância é 32 ÷ 8 = 4 e o desvio padrão é √4 = 2.",
+"Errada: 5 é a média do conjunto, uma medida de posição, e não de dispersão.",
+"Errada: 1,5 não decorre da conta; o desvio padrão exige raiz da variância (4), o que dá exatamente 2.",
+"Errada: 32 é a soma dos quadrados dos desvios, passo intermediário; ainda é preciso dividir por n e extrair a raiz."
 ]
 },
 {
@@ -151,13 +151,13 @@
 "5"
 ],
 "c": 1,
-"e": "Média = 5. Desvios absolutos: 3, 1, 1, 3 → soma 8. Desvio médio = 8/4 = 2.",
+"e": "**Entenda o assunto:** O desvio médio absoluto é a média dos afastamentos de cada valor em relação à média, tomados em módulo (sem sinal). O módulo é necessário porque, sem ele, os desvios positivos e negativos se cancelam e a soma dá sempre zero. Passos: calcular a média, achar |valor − média| de cada dado, somar e dividir por n.\n**Por que esta é a resposta:** Conjunto {2, 4, 6, 8}:\n− média = 20 ÷ 4 = 5\n− desvios absolutos: |2 − 5| = 3, |4 − 5| = 1, |6 − 5| = 1, |8 − 5| = 3\n− soma = 8; desvio médio = 8 ÷ 4 = 2\n**Dica de prova:** Não confunda com desvio padrão: o desvio médio usa módulo; o desvio padrão usa quadrados e raiz. Os resultados costumam ser diferentes.",
 "x": [
-"Errada: cálculo incorreto.",
-"Correta: 8/4.",
-"Errada: maior desvio individual.",
-"Errada: cálculo incorreto.",
-"Errada: é a média."
+"Errada: 1 é o menor desvio individual (de 4 e de 6); o desvio médio é a média de todos os desvios: (3 + 1 + 1 + 3) ÷ 4 = 2.",
+"Correta: os desvios absolutos somam 8 e, divididos por 4 valores, dão 2.",
+"Errada: 3 é o maior desvio individual (de 2 e de 8), não a média dos desvios.",
+"Errada: 4 resulta de dividir a soma dos desvios (8) por 2; o divisor correto é n = 4.",
+"Errada: 5 é a média do conjunto, não o desvio médio; a média é medida de posição."
 ]
 },
 {
@@ -174,13 +174,13 @@
 "a média aumenta 10 unidades e o desvio padrão aumenta 10 unidades."
 ],
 "c": 1,
-"e": "Somar uma constante desloca todos os valores igualmente: a média aumenta da constante, mas a dispersão (variância e desvio padrão) não muda.",
+"e": "**Entenda o assunto:** Ao transformar todos os dados somando uma constante c (x → x + c), todos os pontos deslizam juntos na reta numérica pela mesma distância. Por isso as medidas de posição (média, mediana, moda) também ficam somadas de c. Já as medidas de dispersão (variância, desvio padrão, amplitude) medem a distância entre os valores, e essa distância não muda quando todos andam o mesmo tanto.\n**Por que esta é a resposta:** Somar 10 a todos os valores:\n− nova média = média antiga + 10\n− variância e desvio padrão: iguais aos anteriores, pois cada desvio (valor − média) continua o mesmo\nPor isso a média sobe 10 e a variância não se altera.\n**Dica de prova:** Regra: somar constante mexe na posição e não mexe na dispersão; multiplicar por constante mexe nas duas (desvio padrão × |k|, variância × k²).",
 "x": [
-"Errada: a variância não muda.",
-"Correta: propriedade da média e da variância.",
-"Errada: a média muda.",
-"Errada: a média muda.",
-"Errada: o desvio padrão não muda."
+"Errada: a média realmente sobe 10, mas a variância não muda, porque os desvios em relação à média permanecem os mesmos.",
+"Correta: a média aumenta 10 e a variância fica igual, pois os afastamentos em relação à média não mudam.",
+"Errada: a média acompanha o deslocamento (sobe 10); ela não permanece igual. Variância aumentar 100 também não ocorre ao somar constante.",
+"Errada: o desvio padrão de fato não muda, mas a média muda: aumenta 10 unidades, e não permanece igual.",
+"Errada: a média sobe 10, mas o desvio padrão não aumenta, pois a dispersão independe de somar uma constante a todos os dados."
 ]
 },
 {
@@ -197,13 +197,13 @@
 "a original somada de 3"
 ],
 "c": 3,
-"e": "Multiplicar os dados por k multiplica o desvio padrão por |k| e a variância por k² = 9.",
+"e": "**Entenda o assunto:** Quando todos os dados são multiplicados por uma constante k, a escala muda: cada valor, a média e cada desvio ficam multiplicados por k. O desvio padrão (que tem a mesma unidade dos dados) fica multiplicado por |k|. A variância é calculada com os desvios ao quadrado, portanto fica multiplicada por k².\n**Por que esta é a resposta:** Com k = 3:\n− desvio padrão novo = 3 × desvio padrão original\n− variância nova = 3² × variância original = 9 × variância original\n**Dica de prova:** O erro típico é responder “3 vezes” por associar a variância ao fator k. Lembre: variância = quadrado do desvio padrão, então o fator também é elevado ao quadrado.",
 "x": [
-"Errada: a dispersão muda.",
-"Errada: isso vale para o desvio padrão.",
-"Errada: cálculo incorreto.",
-"Correta: k² = 9.",
-"Errada: somar constante não é o caso."
+"Errada: a variância só permaneceria igual se somássemos uma constante; multiplicar altera a escala e, portanto, a dispersão.",
+"Errada: 3 vezes é o fator do desvio padrão (e da média); a variância envolve quadrados dos desvios, logo 3² = 9.",
+"Errada: 6 viria de somar ou multiplicar 3 por 2, o que não corresponde a nenhuma regra; o fator da variância é k² = 9.",
+"Correta: variância é medida em unidades ao quadrado; ao multiplicar os dados por 3, ela fica multiplicada por 3² = 9.",
+"Errada: somar 3 à variância não ocorre; a variância é multiplicada (por k²), e não acrescida de uma constante."
 ]
 },
 {
@@ -220,13 +220,13 @@
 "500%"
 ],
 "c": 2,
-"e": "CV = desvio padrão / média = 10/50 = 0,20 = 20%.",
+"e": "**Entenda o assunto:** O coeficiente de variação (CV) é a razão entre o desvio padrão e a média, em geral expressa em porcentagem. Ele mede a dispersão relativa, isto é, o tamanho do desvio em comparação com a média, e por não ter unidade permite comparar conjuntos com escalas diferentes.\n**Por que esta é a resposta:** Dados: média 50 e desvio padrão 10.\n− CV = 10 ÷ 50 = 0,20\n− em porcentagem: 0,20 × 100 = 20%\n**Dica de prova:** Fórmula: CV = desvio padrão ÷ média. Inverter (50 ÷ 10 = 5, ou 500%) é um erro comum que a FCC explora nas opções.",
 "x": [
-"Errada: razão invertida (50/10).",
-"Errada: cálculo incorreto.",
-"Correta: 10/50.",
-"Errada: cálculo incorreto.",
-"Errada: razão invertida em porcentagem."
+"Errada: 5% não decorre da fórmula; 5 seria a razão média ÷ desvio padrão (50 ÷ 10), que é a fração invertida.",
+"Errada: 10% confunde o próprio desvio padrão (10) com a porcentagem; o CV é 10 ÷ 50.",
+"Correta: CV = desvio padrão ÷ média = 10 ÷ 50 = 0,20 = 20%.",
+"Errada: 50% repete a média como se fosse porcentagem; o CV é o desvio dividido pela média.",
+"Errada: 500% vem de inverter a razão (50 ÷ 10 = 5); o CV divide o desvio padrão pela média, e não o contrário."
 ]
 },
 {
@@ -243,13 +243,13 @@
 "180°"
 ],
 "c": 2,
-"e": "25% de 360° = 90°.",
+"e": "**Entenda o assunto:** O gráfico de setores (“pizza”) representa as partes de um total como fatias de um círculo. O círculo completo tem 360°, e cada categoria ocupa um ângulo central proporcional à sua porcentagem: 100% corresponde a 360°, 50% a 180°, 25% a 90° e assim por diante.\n**Por que esta é a resposta:** Para achar o ângulo, multiplica-se a porcentagem por 360°:\n− 25% de 360° = 0,25 × 360° = 90°\nÉ um quarto do círculo, um ângulo reto.\n**Dica de prova:** Memorize: 1% equivale a 3,6°. Então 25% = 25 × 3,6° = 90°.",
 "x": [
-"Errada: confunde porcentagem com graus.",
-"Errada: corresponde a 12,5%.",
-"Correta: 0,25 × 360°.",
-"Errada: corresponde a 33,3%.",
-"Errada: corresponde a 50%."
+"Errada: 25° confunde porcentagem com graus; só 25 em 100 equivaleria a 25° se o círculo tivesse 100°, mas ele tem 360°.",
+"Errada: 45° corresponde a 12,5% do círculo (45 ÷ 360), metade do que o enunciado indica.",
+"Correta: 25% de 360° = 90°, um quarto do círculo.",
+"Errada: 120° corresponde a um terço do círculo (33,3%), e não a 25%.",
+"Errada: 180° corresponde à metade do círculo (50%), o dobro de 25%."
 ]
 },
 {
@@ -266,13 +266,13 @@
 "30%"
 ],
 "c": 1,
-"e": "Frequência relativa = 10/40 = 0,25 = 25%.",
+"e": "**Entenda o assunto:** A frequência absoluta é o número de vezes que uma resposta ocorre. A frequência relativa é essa quantidade dividida pelo total de observações e indica a proporção (ou porcentagem) do total que ela representa: fr = f ÷ n.\n**Por que esta é a resposta:** Há 40 clientes, dos quais 10 usam diariamente:\n− fr = 10 ÷ 40 = 0,25\n− em porcentagem: 25%\n**Dica de prova:** Divida sempre pelo TOTAL da pesquisa (40), e não pelos que não responderam ou por outra parte. 10% é a armadilha de usar o próprio 10 como porcentagem.",
 "x": [
-"Errada: confunde frequência absoluta com relativa.",
-"Correta: 10/40.",
-"Errada: é o total de clientes.",
-"Errada: razão invertida.",
-"Errada: cálculo incorreto."
+"Errada: 10% confunde a frequência absoluta (10 clientes) com a porcentagem; a relativa é 10 ÷ 40.",
+"Correta: a frequência relativa é a parte pelo total: 10 ÷ 40 = 0,25 = 25%.",
+"Errada: 40% usa o total de clientes (40) como se fosse porcentagem; a relativa divide a parte pelo total.",
+"Errada: 4% não corresponde a 10 em 40 (4% de 40 seriam 1,6 cliente); 10 ÷ 40 = 0,25, ou seja, 25%.",
+"Errada: 30% não corresponde a 10 em 40 (30% de 40 seriam 12 clientes)."
 ]
 },
 {
@@ -289,13 +289,13 @@
 "20"
 ],
 "c": 1,
-"e": "Soma original = 200. Nova soma = 231. Nova média = 231/11 = 21.",
+"e": "**Entenda o assunto:** A média é a soma dos valores dividida pela quantidade. Por isso, se conhecemos a média e a quantidade, recuperamos a soma total (soma = média × n). Ao incluir um novo valor, soma-se esse valor à soma total e divide-se pela nova quantidade.\n**Por que esta é a resposta:** − soma original = 10 × 20 = 200\n− soma nova = 200 + 31 = 231\n− quantidade nova = 11\n− nova média = 231 ÷ 11 = 21\n**Dica de prova:** Não faça (20 + 31) ÷ 2 = 25,5, que trata a média antiga como um único valor; ela representa 10 valores, e por isso pesa 10 vezes mais.",
 "x": [
-"Errada: cálculo incorreto.",
-"Correta: 231/11.",
-"Errada: média entre 20 e 31.",
-"Errada: cálculo incorreto.",
-"Errada: a média se altera."
+"Errada: 20,5 viria de um aumento de 0,5 sem base na conta; a soma nova é 231 e a divisão por 11 resulta em 21.",
+"Correta: soma 200 + 31 = 231, dividida por 11 valores, dá 21.",
+"Errada: 25,5 é (20 + 31) ÷ 2, que dá à média antiga o peso de um só valor, quando ela resume 10.",
+"Errada: 22 exigiria soma total 242 (22 × 11); a soma é 231. Dividir 231 por 10 daria 23,1: o divisor correto é 11, pois agora são 11 valores.",
+"Errada: 20 só seria mantida se o valor incluído fosse igual à média (20); como 31 é maior, a média sobe."
 ]
 },
 {
@@ -312,13 +312,13 @@
 "variância"
 ],
 "c": 2,
-"e": "A mediana depende apenas da posição central dos dados ordenados, sendo robusta a valores extremos.",
+"e": "**Entenda o assunto:** Medidas de tendência central resumem os dados em um valor típico. Mas elas reagem de forma diferente a valores extremos (outliers):\n− Média: usa todos os valores na soma, portanto um valor muito alto a puxa para cima.\n− Mediana: é só o valor do meio dos dados ordenados; um extremo pode ficar ainda mais extremo sem mudar o termo central. Por isso é uma medida resistente (ou robusta).\nAmplitude e variância não são tendência central, e sim medidas de dispersão (e são muito sensíveis a outliers).\n**Por que esta é a resposta:** Em salários com alguns valores altíssimos, a média é inflada, e a média ponderada também (é uma média com pesos). A mediana permanece praticamente igual.\n**Dica de prova:** Mediana = resistente a outliers. É por isso que se divulga a renda mediana, e não a média, quando há grandes desigualdades.",
 "x": [
-"Errada: a média é sensível a outliers.",
-"Errada: também é sensível a outliers.",
-"Correta: medida resistente.",
-"Errada: é medida de dispersão e muito sensível a extremos.",
-"Errada: é medida de dispersão."
+"Errada: a média usa todos os valores na soma; um salário muito alto a puxa para cima.",
+"Errada: a média ponderada continua sendo uma média: um outlier com peso relevante distorce o resultado.",
+"Correta: a mediana depende só da posição central dos dados ordenados e quase não é afetada por extremos.",
+"Errada: amplitude (máximo − mínimo) não é medida de tendência central e é a mais afetada por outliers, pois usa justamente os extremos.",
+"Errada: variância é medida de dispersão, não de tendência central, e é muito sensível a outliers por usar os desvios ao quadrado."
 ]
 },
 {
@@ -335,13 +335,13 @@
 "uniforme"
 ],
 "c": 1,
-"e": "Quando média > mediana > moda, a cauda alonga-se para os valores maiores: assimetria positiva.",
+"e": "**Entenda o assunto:** A assimetria descreve se a distribuição é equilibrada ou “esticada” para um dos lados. Na distribuição simétrica, média, mediana e moda coincidem. Quando há cauda longa para a direita (poucos valores muito altos), a média é puxada para cima e fica maior que a mediana: assimetria positiva (à direita). Quando a cauda é à esquerda (poucos valores muito baixos), a média cai abaixo da mediana: assimetria negativa (à esquerda).\n**Por que esta é a resposta:** Aqui, média > mediana > moda: a média, mais sensível a extremos, foi puxada para o lado dos valores grandes. Logo a cauda é à direita e a distribuição é assimétrica positiva.\n**Dica de prova:** Macete: a média “corre” atrás da cauda. Cauda para o lado dos maiores: média maior que a moda (positiva). Cauda para o lado dos menores: média menor que a moda (negativa).",
 "x": [
-"Errada: na simétrica as três medidas coincidem.",
-"Correta: cauda à direita.",
-"Errada: seria média < mediana < moda.",
-"Errada: bimodal refere-se a duas modas.",
-"Errada: não decorre da relação dada."
+"Errada: em distribuição simétrica as três medidas são iguais; aqui média, mediana e moda são diferentes.",
+"Correta: com média > mediana > moda, a cauda se alonga para os valores maiores, o que caracteriza assimetria positiva (à direita).",
+"Errada: na assimetria negativa a ordem é inversa (média < mediana < moda), com cauda à esquerda.",
+"Errada: bimodal se refere à existência de duas modas, e não à relação entre média, mediana e moda.",
+"Errada: distribuição uniforme tem frequências iguais para todos os valores e não tem moda única; não é o que a relação descreve."
 ]
 },
 {
@@ -358,13 +358,13 @@
 "R$ 4.750"
 ],
 "c": 1,
-"e": "(10 × 3.000 + 30 × 5.000)/40 = (30.000 + 150.000)/40 = 4.500.",
+"e": "**Entenda o assunto:** Quando se juntam grupos de tamanhos diferentes, a média geral não é a média das médias, e sim a média ponderada: cada média de grupo recebe como peso o número de elementos do grupo. Isso porque o grupo maior tem mais influência no total.\n**Por que esta é a resposta:** − soma do 1º setor: 10 × 3.000 = 30.000\n− soma do 2º setor: 30 × 5.000 = 150.000\n− total de salários = 180.000, para 40 funcionários\n− média geral = 180.000 ÷ 40 = R$ 4.500\n**Dica de prova:** A resposta de R$ 4.000, a média simples de 3.000 e 5.000, ignora que o setor de 5.000 tem o triplo de pessoas. A média geral deve ficar mais perto da média do grupo maior.",
 "x": [
-"Errada: média simples das médias, ignorando o tamanho dos grupos.",
-"Correta: média ponderada pelos tamanhos.",
-"Errada: cálculo incorreto.",
-"Errada: cálculo incorreto.",
-"Errada: cálculo incorreto."
+"Errada: R$ 4.000 é a média simples (3.000 + 5.000) ÷ 2, que ignora que o segundo setor tem o triplo de funcionários.",
+"Correta: (10 × 3.000 + 30 × 5.000) ÷ 40 = 180.000 ÷ 40 = R$ 4.500.",
+"Errada: R$ 4.250 não decorre da conta ponderada; ficaria entre a média simples (4.000) e a correta, mas nenhuma conta com os dados dá esse valor.",
+"Errada: R$ 3.500 ficaria perto da média do setor menor, o que contradiz o fato de o setor maior (30 pessoas) ganhar em média 5.000.",
+"Errada: R$ 4.750 exigiria que o setor de R$ 5.000 tivesse 87,5% dos funcionários; ele tem 30 de 40, ou seja, 75%, o que dá 4.500."
 ]
 },
 {
@@ -381,13 +381,13 @@
 "é convenção sem fundamento estatístico."
 ],
 "c": 1,
-"e": "A correção de Bessel (n − 1) compensa o fato de os desvios serem medidos em relação à média amostral, tornando o estimador não viesado.",
+"e": "**Entenda o assunto:** Em estatística, a população é o conjunto completo de interesse e a amostra é uma parte dela. Quando se tem a população inteira, a variância é a soma dos quadrados dos desvios dividida por n. Com uma amostra, o desvio é medido em relação à média da AMOSTRA, que é calculada com os mesmos dados e fica “ajustada” a eles: isso faz a soma dos quadrados ser, em média, menor que a real. Dividir por n subestimaria a variância populacional (viés).\n**Por que esta é a resposta:** Dividir por n − 1 (correção de Bessel) compensa essa subestimação. O resultado é um estimador não viesado da variância populacional: em média, acerta o valor verdadeiro.\n**Dica de prova:** Resposta-padrão: “n − 1 torna o estimador não viesado”. Não é questão de simplicidade nem de convenção arbitrária.",
 "x": [
-"Errada: não é o motivo.",
-"Correta: estimador não viesado.",
-"Errada: não procede.",
-"Errada: na verdade aumenta o valor.",
-"Errada: há fundamento estatístico."
+"Errada: dividir por n − 1 não simplifica a conta; a razão é estatística (corrigir o viés), e não de facilidade.",
+"Correta: a correção de Bessel compensa o uso da média amostral e torna o estimador não viesado da variância populacional.",
+"Errada: a amostra tem n elementos, nem mais nem menos; o n − 1 tem a ver com os graus de liberdade.",
+"Errada: de fato o resultado é maior que o dividido por n, mas isso é consequência, e não o motivo. O objetivo é eliminar o viés.",
+"Errada: a correção tem fundamento estatístico sólido (estimador não viesado), e não é só convenção."
 ]
 },
 {
@@ -404,13 +404,13 @@
 "média geométrica"
 ],
 "c": 2,
-"e": "Dados nominais não têm ordem nem valores numéricos; só é possível identificar a categoria mais frequente (moda).",
+"e": "**Entenda o assunto:** As variáveis qualitativas (categóricas) descrevem qualidades, e não quantidades. Elas se dividem em nominais (categorias sem ordem natural, como banco, cor, cidade) e ordinais (categorias com ordem, como escolaridade). Como categorias nominais não são números nem têm ordem, não se pode somar (média), ordenar (mediana) nem medir afastamentos (desvio padrão). Só se pode contar quantas vezes cada categoria aparece, e a de maior frequência é a moda.\n**Por que esta é a resposta:** “Banco de preferência” é qualitativa nominal. Para resumir, dizemos qual banco é o mais citado, isto é, a moda.\n**Dica de prova:** Resumo: nominal admite apenas moda; ordinal admite moda e mediana; quantitativa admite moda, mediana e média.",
 "x": [
-"Errada: exige valores numéricos.",
-"Errada: exige ordenação.",
-"Correta: categoria mais frequente.",
-"Errada: é medida de dispersão e exige valores numéricos.",
-"Errada: exige valores numéricos positivos."
+"Errada: média exige valores numéricos que possam ser somados; nomes de bancos não podem ser somados.",
+"Errada: mediana exige ordenar os dados, e categorias nominais não têm ordem natural.",
+"Correta: em dados nominais só se pode identificar a categoria mais frequente, que é a moda.",
+"Errada: desvio padrão mede dispersão numérica em torno da média, o que não existe para categorias; além disso não é medida de tendência central.",
+"Errada: média geométrica (raiz n-ésima do produto) exige números positivos e não faz sentido para nomes de bancos."
 ]
 },
 {
@@ -427,13 +427,13 @@
 "20"
 ],
 "c": 1,
-"e": "Pontos médios: 5, 15, 25. Média = (5×2 + 15×5 + 25×3)/10 = (10 + 75 + 75)/10 = 16.",
+"e": "**Entenda o assunto:** Quando os dados estão agrupados em classes (intervalos), não se conhecem os valores individuais. Para estimar a média, supõe-se que todos os valores de uma classe estejam no seu ponto médio, que é a média dos limites. Depois faz-se uma média ponderada, com as frequências como pesos: soma de (ponto médio × frequência) dividida pelo total de observações. A notação 0 ⊢ 10 indica intervalo fechado à esquerda e aberto à direita (inclui 0, exclui 10).\n**Por que esta é a resposta:** Pontos médios: 5, 15 e 25.\n− 5 × 2 + 15 × 5 + 25 × 3 = 10 + 75 + 75 = 160\n− total de observações = 2 + 5 + 3 = 10\n− média = 160 ÷ 10 = 16\n**Dica de prova:** Não tire a média simples dos pontos médios: (5 + 15 + 25) ÷ 3 = 15 ignora que a classe do meio tem mais atendimentos.",
 "x": [
-"Errada: média dos pontos médios sem ponderar.",
-"Correta: 160/10.",
-"Errada: cálculo incorreto.",
-"Errada: cálculo incorreto.",
-"Errada: cálculo incorreto."
+"Errada: 15 é a média simples dos pontos médios (5, 15 e 25), que ignora as frequências 2, 5 e 3.",
+"Correta: (5 × 2 + 15 × 5 + 25 × 3) ÷ 10 = 160 ÷ 10 = 16.",
+"Errada: 17 exigiria soma 170 (17 × 10); a soma ponderada dos pontos médios é 160.",
+"Errada: 18 exigiria soma 180; a soma correta é 160 e, dividida por 10, dá 16.",
+"Errada: 20 é o limite entre as duas últimas classes, e não a média; a maior frequência está na classe de 10 a 20, e a média fica abaixo de 20."
 ]
 },
 {
@@ -451,13 +451,13 @@
 "−30%"
 ],
 "c": 1,
-"e": "(90 − 150)/150 = −60/150 = −0,40 = −40%.",
+"e": "**Entenda o assunto:** A variação percentual compara dois valores de períodos diferentes: mede quanto o valor novo mudou em relação ao valor inicial, em termos de porcentagem. Fórmula: variação = (valor final − valor inicial) ÷ valor inicial. O resultado positivo é aumento e o negativo é queda. O denominador é sempre o valor de partida (aqui, fevereiro).\n**Por que esta é a resposta:** Fevereiro: 150 chamados; março: 90.\n− variação = (90 − 150) ÷ 150 = −60 ÷ 150 = −0,40\n− em porcentagem: −40%\n**Dica de prova:** Dividir pelo valor final (−60 ÷ 90 = −66,7%) é o erro mais comum, e é uma das opções. A base é sempre o período inicial.",
 "x": [
-"Errada: confundiu a diferença absoluta (60) com porcentagem.",
-"Correta: queda de 40%.",
-"Errada: dividiu pelo valor de março.",
-"Errada: o número caiu.",
-"Errada: cálculo incorreto."
+"Errada: −60% usa a diferença absoluta (−60 chamados) como se fosse porcentagem; é preciso dividir pelo valor inicial (150).",
+"Correta: (90 − 150) ÷ 150 = −0,40, ou seja, queda de 40%.",
+"Errada: −66,7% vem de dividir a queda (60) pelo valor final (90), quando a base deve ser o valor inicial (150).",
+"Errada: +40% tem o módulo certo, mas o sinal errado: o número de chamados caiu de 150 para 90, e não aumentou.",
+"Errada: −30% não resulta de nenhuma divisão correta com esses números; 30% de 150 seriam 45 chamados, e a queda foi de 60."
 ]
 },
 {
@@ -475,13 +475,13 @@
 "125 e 140"
 ],
 "c": 0,
-"e": "Média = (120 + 150 + 90 + 140)/4 = 500/4 = 125. Ordenando: 90, 120, 140, 150 → mediana = (120 + 140)/2 = 130.",
+"e": "**Entenda o assunto:** A média aritmética é a soma dividida pela quantidade de valores. A mediana é o valor central dos dados ordenados; quando a quantidade de valores é par, é a média dos dois centrais. As duas medidas costumam ser diferentes, e a questão pede ambas.\n**Por que esta é a resposta:** Chamados: 120, 150, 90 e 140.\n− média = (120 + 150 + 90 + 140) ÷ 4 = 500 ÷ 4 = 125\n− ordenados: 90, 120, 140, 150 (n = 4, par)\n− mediana = (120 + 140) ÷ 2 = 130\n**Dica de prova:** Lembre de ORDENAR antes de achar a mediana. Na ordem dos meses, os do meio seriam 150 e 90, o que levaria a erro.",
 "x": [
-"Correta: média 125, mediana 130.",
-"Errada: a mediana não é 125.",
-"Errada: inverteu os valores.",
-"Errada: cálculo incorreto.",
-"Errada: cálculo incorreto da mediana."
+"Correta: média = 500 ÷ 4 = 125 e mediana = (120 + 140) ÷ 2 = 130, valores nessa ordem.",
+"Errada: a média 125 está certa, mas a mediana não é 125; com os dados ordenados, os centrais são 120 e 140, e a mediana é 130.",
+"Errada: inverte os valores; a média é 125 e a mediana é 130, e não o contrário.",
+"Errada: a média não é 120 (que é apenas o valor de janeiro); a soma 500 dividida por 4 dá 125.",
+"Errada: a média 125 está certa, mas a mediana não é 140 (que é só um dos centrais); a mediana é (120 + 140) ÷ 2 = 130."
 ]
 },
 {
@@ -498,13 +498,13 @@
 "a amostra é pequena."
 ],
 "c": 1,
-"e": "Desvio padrão zero significa que nenhum valor se afasta da média, ou seja, todos são iguais à média.",
+"e": "**Entenda o assunto:** O desvio padrão mede o quanto, em média, os valores se afastam da média. Ele é calculado a partir dos desvios (valor − média), elevados ao quadrado: variância = média desses quadrados; desvio padrão = raiz da variância. Como quadrados nunca são negativos, a soma só é zero se todos os desvios forem zero.\n**Por que esta é a resposta:** Se o desvio padrão é 0, a variância é 0, e cada desvio ao quadrado é 0. Isso significa que cada valor é igual à média; logo, todos os valores são iguais entre si (sem nenhuma variabilidade). Exemplo: {7, 7, 7, 7}.\n**Dica de prova:** O desvio padrão zero nada informa sobre o valor da média ou da mediana (podem ser quaisquer números), nem sobre o tamanho da amostra.",
 "x": [
-"Errada: a média pode ser qualquer valor.",
-"Correta: ausência de dispersão.",
-"Errada: não decorre.",
-"Errada: não decorre.",
-"Errada: não decorre."
+"Errada: o valor da média não tem relação com a dispersão; o conjunto {7, 7, 7} tem desvio padrão 0 e média 7.",
+"Correta: desvio padrão zero significa que nenhum valor se afasta da média; todos os valores são iguais.",
+"Errada: a mediana do conjunto de valores iguais é esse valor, que pode ser qualquer número, não necessariamente zero.",
+"Errada: valores negativos podem existir em conjuntos com desvio padrão positivo; o que zera o desvio é a igualdade entre os valores.",
+"Errada: o tamanho da amostra não determina o desvio padrão; amostras pequenas costumam ter dispersão, apenas não é obrigatório o zero."
 ]
 },
 {
@@ -521,13 +521,13 @@
 "Não permitem identificar a classe modal."
 ],
 "c": 2,
-"e": "No histograma, as classes são intervalos contíguos de uma variável quantitativa; as barras são justapostas e a área (ou altura, com classes iguais) representa a frequência.",
+"e": "**Entenda o assunto:** O histograma é o gráfico de uma distribuição de frequências de uma variável quantitativa contínua (ou discreta com muitos valores), agrupada em classes (intervalos). Cada classe é uma barra, e como os intervalos são contíguos (um começa onde o outro termina), as barras ficam coladas (justapostas). A altura (com classes de mesma largura) mostra a frequência. A classe de barra mais alta é a classe modal.\n**Por que esta é a resposta:** − Variáveis qualitativas nominais usam gráfico de barras ou colunas, com espaço entre as barras: erro dos dois primeiros itens.\n− A altura é a frequência da classe, e não a média.\n− A barra mais alta indica a classe modal, então o histograma permite identificá-la.\nA afirmação correta é a que descreve o histograma como representação de quantitativas contínuas em classes, com barras justapostas.\n**Dica de prova:** Barras coladas = histograma (quantitativa em classes). Barras separadas = gráfico de colunas/barras (categorias).",
 "x": [
-"Errada: para qualitativas usam-se gráficos de barras ou setores.",
-"Errada: barras separadas caracterizam o gráfico de barras.",
-"Correta: definição de histograma.",
-"Errada: representa frequência (ou densidade).",
-"Errada: a classe modal é a barra mais alta (com classes de mesma amplitude)."
+"Errada: variáveis qualitativas nominais são representadas por gráfico de barras ou colunas (ou setores); o histograma exige variável quantitativa.",
+"Errada: separar as barras é característico do gráfico de colunas para categorias; no histograma os intervalos são contíguos e as barras ficam coladas.",
+"Correta: o histograma mostra a distribuição de frequências de dados quantitativos contínuos em classes, com barras justapostas.",
+"Errada: a altura das barras indica a frequência da classe (absoluta ou relativa), e não a média da classe.",
+"Errada: ao contrário, a classe de barra mais alta é a classe modal; o histograma permite identificá-la."
 ]
 },
 {
@@ -545,13 +545,13 @@
 "20,0%"
 ],
 "c": 2,
-"e": "Total = 30. Menos de 40 anos: 6 + 10 = 16 → 16/30 ≈ 53,3%.",
+"e": "**Entenda o assunto:** A frequência acumulada de uma classe é a soma das frequências dessa classe e de todas as anteriores; ela responde a perguntas do tipo “quantos estão abaixo de determinado valor”. Dividindo pelo total, obtém-se a frequência acumulada relativa, em porcentagem. A notação 30 ⊢ 40 indica de 30 (inclusive) até 40 (exclusive).\n**Por que esta é a resposta:** Os dados são: 20 ⊢ 30: 6; 30 ⊢ 40: 10; 40 ⊢ 50: 8; 50 ⊢ 60: 6.\n− total = 6 + 10 + 8 + 6 = 30 funcionários\n− menos de 40 anos = classes até 40: 6 + 10 = 16\n− percentual = 16 ÷ 30 ≈ 0,533 = 53,3%\n**Dica de prova:** “Menos de 40” acumula as classes anteriores ao limite 40; “40 ou mais” seria o complementar (14 ÷ 30 = 46,7%), que aparece como opção de distração.",
 "x": [
-"Errada: corresponde a 10/30.",
-"Errada: cálculo incorreto.",
-"Correta: frequência acumulada 16/30.",
-"Errada: cálculo incorreto.",
-"Errada: corresponde apenas à primeira classe."
+"Errada: 33,3% seria 10 de 30, só a classe de 30 a 40; falta acumular a classe de 20 a 30.",
+"Errada: 46,7% corresponde a 14 em 30, os que têm 40 anos ou mais; é o complemento do pedido.",
+"Correta: 6 + 10 = 16 funcionários com menos de 40 anos, e 16 ÷ 30 ≈ 53,3%.",
+"Errada: 60% equivaleria a 18 funcionários de 30; a soma das duas primeiras classes é 16.",
+"Errada: 20% é 6 em 30, só a primeira classe (20 a 30); o enunciado pede o acumulado até 40."
 ]
 },
 {
@@ -568,13 +568,13 @@
 "√(8/3)"
 ],
 "c": 2,
-"e": "Média = 3. Desvios ao quadrado: 4, 0, 4 → soma 8. Variância populacional = 8/3 ≈ 2,67.",
+"e": "**Entenda o assunto:** A variância populacional é a média dos quadrados dos desvios em relação à média: σ² = Σ(x − média)² ÷ n. Os desvios são elevados ao quadrado para que positivos e negativos não se anulem. O resultado vem em unidade ao quadrado; a raiz quadrada da variância é o desvio padrão.\n**Por que esta é a resposta:** Conjunto {1, 3, 5}:\n− média = 9 ÷ 3 = 3\n− desvios ao quadrado: (1 − 3)² = 4, (3 − 3)² = 0, (5 − 3)² = 4\n− soma = 8\n− variância populacional = 8 ÷ 3 ≈ 2,67\n**Dica de prova:** Dividir por n − 1 = 2 daria 4 (variância amostral), e a raiz de 8/3 é o desvio padrão. Ambos aparecem como distratores.",
 "x": [
-"Errada: valor incorreto (o desvio médio seria 4/3).",
-"Errada: é a variância amostral (8/2).",
-"Correta: 8/3.",
-"Errada: é a média.",
-"Errada: é o desvio padrão."
+"Errada: 2 é o afastamento de cada extremo (1 e 5) em relação à média 3, mas variância é a média dos QUADRADOS dos desvios: 8 ÷ 3.",
+"Errada: 4 é a variância amostral (8 ÷ 2); o enunciado pede a populacional, que divide por n = 3.",
+"Correta: soma dos quadrados dos desvios = 8; dividida por n = 3, a variância populacional é 8/3.",
+"Errada: 3 é a média do conjunto, e não uma medida de dispersão.",
+"Errada: √(8/3) ≈ 1,63 é o desvio padrão populacional; a variância é o valor antes de extrair a raiz."
 ]
 }
 ]

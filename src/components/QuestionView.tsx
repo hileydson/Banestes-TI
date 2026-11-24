@@ -80,10 +80,14 @@ export default function QuestionView({ q, numero, total, ordem, marcada, onMarca
   )
 }
 
-// `código` inline simples
+// `código` e **negrito** inline simples (o negrito só vale fora do código)
 function inline(s: string) {
   return s.split(/(`[^`]+`)/g).map((part, j) =>
-    part.startsWith('`') && part.endsWith('`') && part.length > 1 ? <code key={j}>{part.slice(1, -1)}</code> : <span key={j}>{part}</span>
+    part.startsWith('`') && part.endsWith('`') && part.length > 1 ? (
+      <code key={j}>{part.slice(1, -1)}</code>
+    ) : (
+      <span key={j}>{part.split(/(\*\*[^*\n]+\*\*)/g).map((t, k) => (t.length > 4 && t.startsWith('**') && t.endsWith('**') ? <strong key={k}>{t.slice(2, -2)}</strong> : t))}</span>
+    )
   )
 }
 

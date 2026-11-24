@@ -1,0 +1,43 @@
+Questões para conferir (apontadas durante a reescrita das explicações, 18/11/2026)
+Gabarito discutível ou fato a confirmar. Nenhum gabarito foi alterado; as explicações seguem o gabarito.
+
+R-G126-Q45: duas respostas defensáveis (hash 160 bits vs verificar corrupção)
+R-G093-Q37: Oracle imprimiria 12 e não 12.0; aspas curvas no literal
+R-B2-005-Q35: depende de zero permitido no início
+ATU-050: consentimento Open Finance prazo determinado (norma mudou?)
+ATU-030: Pix limite R$200 celular não cadastrado, 24-48h aumento limite
+ATU-006: meta contínua 3% ±1,5 p.p.
+R-G127-Q56: gabarito fraco (ISO 27002, opções distorcidas com 'qualquer'/'só')
+R-B2-002-Q59: prazo mínimo capitalização (6 vs 12 meses?) — explicação evita número
+R-B1-013-Q54: duas respostas defensáveis (objetos distribuídos)
+R-G077-Q59: opção correta tem "WDLS" (possível erro de transcrição) e publicação via WSDL vs UDDI
+POR-068: opção ambígua (este... disciplina)
+POR-065: vírgula obrigatória não unânime
+R-B2-005-Q58: crédito rural garantias, gabarito frágil
+R-G142-Q47: ALTER TABLE empresa (nome do banco no lugar da tabela)
+R-G091-Q22: trigger WHEN bloqueia linhas; gabarito é a única aceitável
+R-G102-Q39: continuidade de negócio no Desenho de Serviço (ITIL v3) discutível
+R-B1-013-Q45: função MySQL, alternativa imprecisa (não minusculiza)
+R-G096-Q89: BIA no estágio Estratégia (ITIL v3 original liga a Desenho)
+R-G113-Q59: enunciado diz 'maturidade', COBIT 5 usa 'capacidade'
+R-B1-019-Q48: PMBOK 5 'Validar o Escopo' vs 'Verificar'
+R-G093-Q48: agregação com exemplo carro/motor (mais próximo de composição)
+R-G132-Q41: mapeamento COBIT 5 APO10 x objetivos de TI não confirmado
+R-B1-015-Q42: classificação funcional/não funcional discutível
+R-G140-Q51: interface memória compartilhada x gabarito passagem de mensagem
+R-G144-Q47: 802.11b QPSK vs DSSS
+R-G132-Q55: HTTPS/TLS camada aplicação vs transporte
+R-G093-Q44: RTP camada de transporte vs aplicação
+R-G096-Q65: patch cords 6-90-3 (norma varia)
+R-G100-Q41: RIP x OSPF, outra opção também defensável
+R-G077-Q34: laço while (u != 1) pode não ordenar totalmente
+R-G120-Q50: ocultar SSID vs desabilitar versões antigas Wi-Fi
+R-G120-Q51: enunciado mistura IP classe B com 192.168.1.1
+R-G102-Q54: DNS 'atualização' vs transferência de zona
+VEN-032: prazo de 7 dias corridos (Decreto 11.034/2022) — conferir no texto oficial
+R-G130-Q04 e R-G132-Q12: enunciado truncado sem texto de apoio
+R-B1-012-Q16: gabarito depende de leitura de 'uma das formas'
+R-B2-003-Q37: enunciado vago
+R-B1-012-Q12: 'revejam' também correto; comentário com tom hesitante
+R-B1-018-Q07: 'à qual é permitido citar' aceitável; comentário hesitante
+R-G122-Q16: enunciado não diz cartuchos por impressora (premissa 1)

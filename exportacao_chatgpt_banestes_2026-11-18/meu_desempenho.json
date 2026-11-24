@@ -1,0 +1,2710 @@
+{
+  "metadados": {
+    "geradoEm": "2026-11-18T13:58:36.043Z",
+    "projetoFirebase": "banestes-ti-estudos",
+    "uidFirebaseAutenticado": "DCxpyi0tk7U3P1LTTANbhXa7hwI3",
+    "nomePerfilConfirmado": "Hileydson",
+    "escopoConsultado": "Somente users/DCxpyi0tk7U3P1LTTANbhXa7hwI3 e subcoleções conhecidas",
+    "credenciaisIncluidas": false,
+    "dadosOutrosUsuariosIncluidos": false
+  },
+  "validacaoPropriedade": {
+    "confirmada": true,
+    "documentos": {
+      "perfil": 1,
+      "privados": 4,
+      "tentativas": 14,
+      "simulados": 0,
+      "total": 19
+    },
+    "todosOsCaminhosPertencemAoUid": true,
+    "documentosPrivadosPresentes": [
+      "progress",
+      "quickTest",
+      "materiaTest",
+      "estudo"
+    ],
+    "documentosPrivadosAusentes": [
+      "realTest"
+    ]
+  },
+  "resumo": {
+    "totalRespostas": 98,
+    "acertos": 30,
+    "erros": 68,
+    "percentualAcertos": 30.61,
+    "testesConcluidos": 14,
+    "simuladosConcluidos": 0,
+    "idsQuestoesRespondidasConhecidos": [
+      "ARQ-017",
+      "ARQ-019",
+      "ARQ-027",
+      "ATU-024",
+      "ATU-030",
+      "ATU-058",
+      "ATU-068",
+      "BD-056",
+      "DEV-010",
+      "DEV-040",
+      "DEV-042",
+      "EST-006",
+      "EST-010",
+      "EST-035",
+      "EST-036",
+      "EST-050",
+      "EST-053",
+      "ETI-004",
+      "ETI-021",
+      "ETI-032",
+      "ETI-037",
+      "GOV-012",
+      "GOV-047",
+      "ING-007",
+      "ING-017",
+      "ING-025",
+      "MF-004",
+      "MF-005",
+      "MF-021",
+      "NUV-003",
+      "NUV-012",
+      "NUV-022",
+      "NUV-023",
+      "NUV-032",
+      "PDS-017",
+      "PDS-040",
+      "POR-003",
+      "POR-004",
+      "POR-012",
+      "POR-013",
+      "POR-017",
+      "POR-019",
+      "POR-022",
+      "POR-025",
+      "POR-028",
+      "POR-029",
+      "POR-032",
+      "POR-037",
+      "POR-044",
+      "POR-050",
+      "POR-052",
+      "POR-053",
+      "POR-058",
+      "POR-061",
+      "POR-067",
+      "POR-074",
+      "POR-076",
+      "POR-077",
+      "POR-086",
+      "POR-087",
+      "POR-092",
+      "POR-093",
+      "POR-098",
+      "POR-100",
+      "PRG-046",
+      "PRG-047",
+      "PRG-066",
+      "R-B1-013-Q54",
+      "R-B2-003-Q21",
+      "R-G087-Q47",
+      "R-G104-Q53",
+      "R-G104-Q58",
+      "R-G113-Q27",
+      "R-G116-Q55",
+      "R-G129-Q43",
+      "R-G132-Q58",
+      "R-G142-Q42",
+      "RED-007",
+      "RED-038",
+      "RL-004",
+      "RL-010",
+      "RL-020",
+      "RL-033",
+      "RL-035",
+      "RL-040",
+      "RL-048",
+      "SEG-006",
+      "SEG-011",
+      "SEG-028",
+      "SEG-032",
+      "SEG-045",
+      "SO-031",
+      "SO-038",
+      "SRV-026",
+      "WEB-005",
+      "WEB-011",
+      "WEB-012",
+      "WEB-053"
+    ]
+  },
+  "desempenhoPorMateria": [
+    {
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "totalRespostas": 17,
+      "acertos": 2,
+      "erros": 15,
+      "percentualAcertos": 11.76,
+      "frequenciaNosErrosPercentual": 22.06,
+      "questoesDisponiveis": 248,
+      "qualidade": "exato"
+    },
+    {
+      "materiaId": "ETI",
+      "materia": "Ética, Compliance e ESG",
+      "totalRespostas": 4,
+      "acertos": 1,
+      "erros": 3,
+      "percentualAcertos": 25,
+      "frequenciaNosErrosPercentual": 4.41,
+      "questoesDisponiveis": 75,
+      "qualidade": "exato"
+    },
+    {
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "totalRespostas": 45,
+      "acertos": 13,
+      "erros": 32,
+      "percentualAcertos": 28.89,
+      "frequenciaNosErrosPercentual": 47.06,
+      "questoesDisponiveis": 1483,
+      "qualidade": "exato"
+    },
+    {
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "totalRespostas": 28,
+      "acertos": 12,
+      "erros": 16,
+      "percentualAcertos": 42.86,
+      "frequenciaNosErrosPercentual": 23.53,
+      "questoesDisponiveis": 161,
+      "qualidade": "exato"
+    },
+    {
+      "materiaId": "ATU",
+      "materia": "Atualidades do Mercado Financeiro e Digital",
+      "totalRespostas": 4,
+      "acertos": 2,
+      "erros": 2,
+      "percentualAcertos": 50,
+      "frequenciaNosErrosPercentual": 2.94,
+      "questoesDisponiveis": 70,
+      "qualidade": "exato"
+    }
+  ],
+  "desempenhoPorAssunto": {
+    "limitacao": "O Firestore guarda erros por questão e apenas a informação de que uma questão já foi acertada. Não guarda a contagem histórica exata de acertos por assunto.",
+    "assuntos": [
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "1000BASE-TX",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "R-G116-Q55"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Acentuação – tem/têm, vem/vêm",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-058"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Acentuação gráfica",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-017"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ETI",
+        "materia": "Ética, Compliance e ESG",
+        "assunto": "Acordo de leniência",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "ETI-037"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Ansible",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "DEV-040"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Arquitetura de objetos distribuídos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "R-B1-013-Q54"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Barramentos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "R-G087-Q47"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Bootstrap 5",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "WEB-012"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "C – passagem por valor",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "PRG-046"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "C – strings",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "PRG-047"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Capitalização contínua",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "RL-033"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Características essenciais (NIST)",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "NUV-003"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Classe modal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "EST-050"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Coeficiente de variação",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "EST-010"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Concordância – pronomes de tratamento",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-050"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Concordância – sujeito composto",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-092"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Concordância nominal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-004"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Conjugação verbal – verbos irregulares",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-053"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "CSS – especificidade",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "WEB-011"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Desconto racional simples",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "RL-020"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Desvio padrão",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "EST-006"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Equivalência de capitais",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "MF-021"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 3,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "ETL x ELT",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "BD-056"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Event Sourcing",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "ARQ-027"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Figuras de linguagem",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-019"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Figuras de linguagem – metáfora e comparação",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-061"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ATU",
+        "materia": "Atualidades do Mercado Financeiro e Digital",
+        "assunto": "Finanças sustentáveis",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "ATU-068"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Firewall, IDS e IPS",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "SEG-006"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Formação de palavras",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-022"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Fragmentação interna",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "SO-031"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ETI",
+        "materia": "Ética, Compliance e ESG",
+        "assunto": "Fraudes – triângulo da fraude",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "ETI-021"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Funções do “se”",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-012"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Git – merge x rebase",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "NUV-012"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Gráfico de setores",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "EST-036"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Idempotência em integrações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "ARQ-019"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ATU",
+        "materia": "Atualidades do Mercado Financeiro e Digital",
+        "assunto": "Inovação – sandbox regulatório",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "ATU-024"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Iterativo incremental: desvantagens",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "R-G113-Q27"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ETI",
+        "materia": "Ética, Compliance e ESG",
+        "assunto": "Lei das Estatais – nomeações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "ETI-032"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Linux – firewalld",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "SO-038"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Lógica – leis de De Morgan",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "RL-004"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Modelos de cobrança",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "NUV-022"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Node.js – Express",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "WEB-053"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OKR",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "GOV-047"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OpenTelemetry",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "DEV-042"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Orações subordinadas substantivas",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-032"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Orientação a objetos – classe abstrata",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "PRG-066"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OSPF",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "RED-007"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OWASP – SSRF",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "SEG-032"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "OWASP – XSS",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "SEG-011"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Porcentagem",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "RL-035"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 5,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Porcentagem – aumentos e descontos sucessivos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "RL-010"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Propriedades – multiplicação por constante",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "EST-035"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "React – hooks",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "WEB-005"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Redação – frase correta",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-098"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Redação – frases corretas",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-037"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Regência nominal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-052"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "ROI",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "GOV-012"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "SDN – interfaces",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "RED-038"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Sinonímia e antonímia",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-086"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "POR",
+        "materia": "Língua Portuguesa",
+        "assunto": "Sinonímia em contexto",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "POR-087"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Sistema de equações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "R-B2-003-Q21"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "SNMP – operações",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "SRV-026"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "SSO – SAML",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "SEG-045"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Taxa equivalente",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "MF-005"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Taxa proporcional",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "MF-004"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Terceira forma normal",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "R-G142-Q42"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 2,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "RLE",
+        "materia": "Raciocínio Lógico e Estatística",
+        "assunto": "Tipos de gráficos",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "EST-053"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      },
+      {
+        "materiaId": "ESP",
+        "materia": "Conhecimentos Específicos",
+        "assunto": "Windows 64 bits e aplicativos de 16 bits",
+        "errosRegistrados": 1,
+        "questoesDistintasComErro": 1,
+        "questoesAcertadasEmAlgumMomento": 0,
+        "ids": [
+          "R-G104-Q58"
+        ],
+        "totalRespostas": null,
+        "acertos": null,
+        "percentualAcertos": null,
+        "frequenciaNosErrosPercentual": 1.47,
+        "questoesDisponiveis": 1,
+        "qualidade": "parcial: erros exatos; total de respostas e acertos não armazenados por assunto"
+      }
+    ]
+  },
+  "tentativasAgregadas": [
+    {
+      "id": "1794493852421-k7b7l",
+      "tipo": "teste",
+      "data": "2026-11-12T14:30:52.421Z",
+      "totalQuestoes": 12,
+      "acertos": 5,
+      "erros": 7,
+      "percentualAcertos": 41.67,
+      "materiaId": null,
+      "testeQuestoesReais": false,
+      "cargo": null,
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "ESP": {
+          "a": 2,
+          "e": 3
+        },
+        "RLE": {
+          "a": 1,
+          "e": 2
+        },
+        "ETI": {
+          "a": 1,
+          "e": 0
+        },
+        "ATU": {
+          "a": 0,
+          "e": 1
+        },
+        "POR": {
+          "a": 1,
+          "e": 1
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794497784911-ev6cx",
+      "tipo": "teste",
+      "data": "2026-11-12T15:36:24.911Z",
+      "totalQuestoes": 12,
+      "acertos": 0,
+      "erros": 12,
+      "percentualAcertos": 0,
+      "materiaId": null,
+      "testeQuestoesReais": false,
+      "cargo": null,
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "POR": {
+          "a": 0,
+          "e": 2
+        },
+        "ATU": {
+          "a": 0,
+          "e": 1
+        },
+        "ETI": {
+          "a": 0,
+          "e": 1
+        },
+        "RLE": {
+          "a": 0,
+          "e": 3
+        },
+        "ESP": {
+          "a": 0,
+          "e": 5
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794516603326-ge269",
+      "tipo": "teste",
+      "data": "2026-11-12T20:50:03.326Z",
+      "totalQuestoes": 5,
+      "acertos": 1,
+      "erros": 4,
+      "percentualAcertos": 20,
+      "materiaId": "POR",
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "POR": {
+          "a": 1,
+          "e": 4
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794593832176-qy0xb",
+      "tipo": "teste",
+      "data": "2026-11-13T18:17:12.176Z",
+      "totalQuestoes": 5,
+      "acertos": 3,
+      "erros": 2,
+      "percentualAcertos": 60,
+      "materiaId": "POR",
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "POR": {
+          "a": 3,
+          "e": 2
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794682185166-srq5x",
+      "tipo": "teste",
+      "data": "2026-11-14T18:49:45.166Z",
+      "totalQuestoes": 5,
+      "acertos": 3,
+      "erros": 2,
+      "percentualAcertos": 60,
+      "materiaId": "POR",
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "POR": {
+          "a": 3,
+          "e": 2
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794711948181-qjzi5",
+      "tipo": "teste",
+      "data": "2026-11-15T03:05:48.181Z",
+      "totalQuestoes": 5,
+      "acertos": 3,
+      "erros": 2,
+      "percentualAcertos": 60,
+      "materiaId": "POR",
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "POR": {
+          "a": 3,
+          "e": 2
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794773586365-3m8e0",
+      "tipo": "teste",
+      "data": "2026-11-15T20:13:06.365Z",
+      "totalQuestoes": 12,
+      "acertos": 4,
+      "erros": 8,
+      "percentualAcertos": 33.33,
+      "materiaId": null,
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "ESP": {
+          "a": 1,
+          "e": 4
+        },
+        "RLE": {
+          "a": 1,
+          "e": 2
+        },
+        "ETI": {
+          "a": 0,
+          "e": 1
+        },
+        "ATU": {
+          "a": 1,
+          "e": 0
+        },
+        "POR": {
+          "a": 1,
+          "e": 1
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794832681429-72zb8",
+      "tipo": "teste",
+      "data": "2026-11-16T12:38:01.429Z",
+      "totalQuestoes": 12,
+      "acertos": 3,
+      "erros": 9,
+      "percentualAcertos": 25,
+      "materiaId": null,
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "ATU": {
+          "a": 1,
+          "e": 0
+        },
+        "POR": {
+          "a": 0,
+          "e": 2
+        },
+        "RLE": {
+          "a": 0,
+          "e": 3
+        },
+        "ETI": {
+          "a": 0,
+          "e": 1
+        },
+        "ESP": {
+          "a": 2,
+          "e": 3
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794932243879-j9k2x",
+      "tipo": "teste",
+      "data": "2026-11-17T16:17:23.879Z",
+      "totalQuestoes": 5,
+      "acertos": 0,
+      "erros": 5,
+      "percentualAcertos": 0,
+      "materiaId": "RLE",
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "RLE": {
+          "a": 0,
+          "e": 5
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794934241797-n99sv",
+      "tipo": "teste",
+      "data": "2026-11-17T16:50:41.797Z",
+      "totalQuestoes": 5,
+      "acertos": 3,
+      "erros": 2,
+      "percentualAcertos": 60,
+      "materiaId": "ESP",
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "ESP": {
+          "a": 3,
+          "e": 2
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794935022619-u8dbj",
+      "tipo": "teste",
+      "data": "2026-11-17T17:03:42.619Z",
+      "totalQuestoes": 5,
+      "acertos": 2,
+      "erros": 3,
+      "percentualAcertos": 40,
+      "materiaId": "ESP",
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "ESP": {
+          "a": 2,
+          "e": 3
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794946310977-z3vhg",
+      "tipo": "teste",
+      "data": "2026-11-17T20:11:50.977Z",
+      "totalQuestoes": 5,
+      "acertos": 0,
+      "erros": 5,
+      "percentualAcertos": 0,
+      "materiaId": "ESP",
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "ESP": {
+          "a": 0,
+          "e": 5
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794947052450-69m81",
+      "tipo": "teste",
+      "data": "2026-11-17T20:24:12.450Z",
+      "totalQuestoes": 5,
+      "acertos": 0,
+      "erros": 5,
+      "percentualAcertos": 0,
+      "materiaId": "ESP",
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "ESP": {
+          "a": 0,
+          "e": 5
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    },
+    {
+      "id": "1794947813473-nmgdx",
+      "tipo": "teste",
+      "data": "2026-11-17T20:36:53.473Z",
+      "totalQuestoes": 5,
+      "acertos": 3,
+      "erros": 2,
+      "percentualAcertos": 60,
+      "materiaId": "ESP",
+      "testeQuestoesReais": false,
+      "cargo": "TI",
+      "nota": null,
+      "duracaoSegundos": null,
+      "porMateria": {
+        "ESP": {
+          "a": 3,
+          "e": 2
+        }
+      },
+      "alternativasIndividuaisDisponiveis": false
+    }
+  ],
+  "simulados": [],
+  "respostasIndividuaisArmazenadas": [
+    {
+      "questaoId": "POR-092",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": 3,
+      "alternativaSelecionada": "Os Estados Unidos impôs novas regras.",
+      "indiceCorreto": 2,
+      "alternativaCorreta": "Mais de um técnico participou da reunião.",
+      "acertou": false
+    },
+    {
+      "questaoId": "POR-061",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": 0,
+      "alternativaSelecionada": "O código estava organizado como uma biblioteca.",
+      "indiceCorreto": 1,
+      "alternativaCorreta": "Aquele sistema legado é um labirinto.",
+      "acertou": false
+    },
+    {
+      "questaoId": "MF-021",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": -1,
+      "alternativaSelecionada": "Não sei responder",
+      "indiceCorreto": 1,
+      "alternativaCorreta": "R$ 1.000,00",
+      "acertou": false
+    },
+    {
+      "questaoId": "RL-020",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": 0,
+      "alternativaSelecionada": "R$ 636,00",
+      "indiceCorreto": 1,
+      "alternativaCorreta": "R$ 600,00",
+      "acertou": false
+    },
+    {
+      "questaoId": "EST-050",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": -1,
+      "alternativaSelecionada": "Não sei responder",
+      "indiceCorreto": 1,
+      "alternativaCorreta": "5 ⊢ 10",
+      "acertou": false
+    },
+    {
+      "questaoId": "ATU-058",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": 1,
+      "alternativaSelecionada": "baixo risco e alta liquidez, como Tesouro Selic ou CDB com liquidez diária.",
+      "indiceCorreto": 1,
+      "alternativaCorreta": "baixo risco e alta liquidez, como Tesouro Selic ou CDB com liquidez diária.",
+      "acertou": true
+    },
+    {
+      "questaoId": "ETI-032",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": 4,
+      "alternativaSelecionada": "a indicação deve ser feita pelos empregados, em eleição direta organizada pelo sindicato.",
+      "indiceCorreto": 1,
+      "alternativaCorreta": "exigem-se experiência e formação compatíveis, além de vedações a certas indicações.",
+      "acertou": false
+    },
+    {
+      "questaoId": "NUV-032",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": 1,
+      "alternativaSelecionada": "do diretório de trabalho para a área de preparação (staging), rumo ao próximo commit.",
+      "indiceCorreto": 1,
+      "alternativaCorreta": "do diretório de trabalho para a área de preparação (staging), rumo ao próximo commit.",
+      "acertou": true
+    },
+    {
+      "questaoId": "ARQ-019",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": 3,
+      "alternativaSelecionada": "recusar qualquer requisição com o mesmo valor e o mesmo destino de outra feita no mesmo dia.",
+      "indiceCorreto": 1,
+      "alternativaCorreta": "exigir uma chave de idempotência por operação e devolver o resultado já gravado quando ela se repetir.",
+      "acertou": false
+    },
+    {
+      "questaoId": "SEG-032",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": 4,
+      "alternativaSelecionada": "o navegador autenticado da vítima envia requisições indesejadas à aplicação.",
+      "indiceCorreto": 1,
+      "alternativaCorreta": "o atacante induz o servidor a requisitar destinos escolhidos por ele, como serviços internos.",
+      "acertou": false
+    },
+    {
+      "questaoId": "PDS-040",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": 1,
+      "alternativaSelecionada": "público, privado, protegido e pacote",
+      "indiceCorreto": 1,
+      "alternativaCorreta": "público, privado, protegido e pacote",
+      "acertou": true
+    },
+    {
+      "questaoId": "SO-031",
+      "fonte": "private/quickTest",
+      "fase": "revisao",
+      "indiceSelecionado": 2,
+      "alternativaSelecionada": "4 KB",
+      "indiceCorreto": 1,
+      "alternativaCorreta": "2 KB",
+      "acertou": false
+    }
+  ],
+  "questoesErradas": [
+    {
+      "questaoId": "ARQ-019",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Idempotência em integrações",
+      "area": "Arquitetura de sistemas",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [
+        {
+          "questaoId": "ARQ-019",
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceSelecionado": 3,
+          "alternativaSelecionada": "recusar qualquer requisição com o mesmo valor e o mesmo destino de outra feita no mesmo dia.",
+          "indiceCorreto": 1,
+          "alternativaCorreta": "exigir uma chave de idempotência por operação e devolver o resultado já gravado quando ela se repetir.",
+          "acertou": false
+        }
+      ],
+      "referenciaBancoQuestoes": "ARQ-019"
+    },
+    {
+      "questaoId": "ARQ-027",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Event Sourcing",
+      "area": "Arquitetura de sistemas",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "ARQ-027"
+    },
+    {
+      "questaoId": "ATU-024",
+      "materiaId": "ATU",
+      "materia": "Atualidades do Mercado Financeiro e Digital",
+      "assunto": "Inovação – sandbox regulatório",
+      "area": "Atualidades do Mercado Financeiro e Digital",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "ATU-024"
+    },
+    {
+      "questaoId": "ATU-068",
+      "materiaId": "ATU",
+      "materia": "Atualidades do Mercado Financeiro e Digital",
+      "assunto": "Finanças sustentáveis",
+      "area": "Atualidades do Mercado Financeiro e Digital",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "ATU-068"
+    },
+    {
+      "questaoId": "BD-056",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "ETL x ELT",
+      "area": "Banco de Dados",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "BD-056"
+    },
+    {
+      "questaoId": "DEV-040",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Ansible",
+      "area": "DevOps e DevSecOps",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "DEV-040"
+    },
+    {
+      "questaoId": "DEV-042",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "OpenTelemetry",
+      "area": "DevOps e DevSecOps",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "DEV-042"
+    },
+    {
+      "questaoId": "EST-006",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Desvio padrão",
+      "area": "Estatística",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "EST-006"
+    },
+    {
+      "questaoId": "EST-010",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Coeficiente de variação",
+      "area": "Estatística",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "EST-010"
+    },
+    {
+      "questaoId": "EST-035",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Propriedades – multiplicação por constante",
+      "area": "Estatística",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "EST-035"
+    },
+    {
+      "questaoId": "EST-036",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Gráfico de setores",
+      "area": "Estatística",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "EST-036"
+    },
+    {
+      "questaoId": "EST-050",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Classe modal",
+      "area": "Estatística",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [
+        {
+          "questaoId": "EST-050",
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceSelecionado": -1,
+          "alternativaSelecionada": "Não sei responder",
+          "indiceCorreto": 1,
+          "alternativaCorreta": "5 ⊢ 10",
+          "acertou": false
+        }
+      ],
+      "referenciaBancoQuestoes": "EST-050"
+    },
+    {
+      "questaoId": "EST-053",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Tipos de gráficos",
+      "area": "Estatística",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "EST-053"
+    },
+    {
+      "questaoId": "ETI-021",
+      "materiaId": "ETI",
+      "materia": "Ética, Compliance e ESG",
+      "assunto": "Fraudes – triângulo da fraude",
+      "area": "Ética, Compliance e ESG",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "ETI-021"
+    },
+    {
+      "questaoId": "ETI-032",
+      "materiaId": "ETI",
+      "materia": "Ética, Compliance e ESG",
+      "assunto": "Lei das Estatais – nomeações",
+      "area": "Ética, Compliance e ESG",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [
+        {
+          "questaoId": "ETI-032",
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceSelecionado": 4,
+          "alternativaSelecionada": "a indicação deve ser feita pelos empregados, em eleição direta organizada pelo sindicato.",
+          "indiceCorreto": 1,
+          "alternativaCorreta": "exigem-se experiência e formação compatíveis, além de vedações a certas indicações.",
+          "acertou": false
+        }
+      ],
+      "referenciaBancoQuestoes": "ETI-032"
+    },
+    {
+      "questaoId": "ETI-037",
+      "materiaId": "ETI",
+      "materia": "Ética, Compliance e ESG",
+      "assunto": "Acordo de leniência",
+      "area": "Ética, Compliance e ESG",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "ETI-037"
+    },
+    {
+      "questaoId": "GOV-012",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "ROI",
+      "area": "Gestão e Governança de TI",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "GOV-012"
+    },
+    {
+      "questaoId": "GOV-047",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "OKR",
+      "area": "Gestão e Governança de TI",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "GOV-047"
+    },
+    {
+      "questaoId": "MF-004",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Taxa proporcional",
+      "area": "Matemática financeira",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "MF-004"
+    },
+    {
+      "questaoId": "MF-005",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Taxa equivalente",
+      "area": "Matemática financeira",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "MF-005"
+    },
+    {
+      "questaoId": "MF-021",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Equivalência de capitais",
+      "area": "Matemática financeira",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [
+        {
+          "questaoId": "MF-021",
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceSelecionado": -1,
+          "alternativaSelecionada": "Não sei responder",
+          "indiceCorreto": 1,
+          "alternativaCorreta": "R$ 1.000,00",
+          "acertou": false
+        }
+      ],
+      "referenciaBancoQuestoes": "MF-021"
+    },
+    {
+      "questaoId": "NUV-003",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Características essenciais (NIST)",
+      "area": "Computação em nuvem, Git e Kubernetes",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "NUV-003"
+    },
+    {
+      "questaoId": "NUV-012",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Git – merge x rebase",
+      "area": "Computação em nuvem, Git e Kubernetes",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "NUV-012"
+    },
+    {
+      "questaoId": "NUV-022",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Modelos de cobrança",
+      "area": "Computação em nuvem, Git e Kubernetes",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "NUV-022"
+    },
+    {
+      "questaoId": "POR-004",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Concordância nominal",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-004"
+    },
+    {
+      "questaoId": "POR-012",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Funções do “se”",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-012"
+    },
+    {
+      "questaoId": "POR-017",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Acentuação gráfica",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-017"
+    },
+    {
+      "questaoId": "POR-019",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Figuras de linguagem",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-019"
+    },
+    {
+      "questaoId": "POR-022",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Formação de palavras",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-022"
+    },
+    {
+      "questaoId": "POR-032",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Orações subordinadas substantivas",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-032"
+    },
+    {
+      "questaoId": "POR-037",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Redação – frases corretas",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-037"
+    },
+    {
+      "questaoId": "POR-050",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Concordância – pronomes de tratamento",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-050"
+    },
+    {
+      "questaoId": "POR-052",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Regência nominal",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-052"
+    },
+    {
+      "questaoId": "POR-053",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Conjugação verbal – verbos irregulares",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-053"
+    },
+    {
+      "questaoId": "POR-058",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Acentuação – tem/têm, vem/vêm",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-058"
+    },
+    {
+      "questaoId": "POR-061",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Figuras de linguagem – metáfora e comparação",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [
+        {
+          "questaoId": "POR-061",
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceSelecionado": 0,
+          "alternativaSelecionada": "O código estava organizado como uma biblioteca.",
+          "indiceCorreto": 1,
+          "alternativaCorreta": "Aquele sistema legado é um labirinto.",
+          "acertou": false
+        }
+      ],
+      "referenciaBancoQuestoes": "POR-061"
+    },
+    {
+      "questaoId": "POR-086",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Sinonímia e antonímia",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-086"
+    },
+    {
+      "questaoId": "POR-087",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Sinonímia em contexto",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-087"
+    },
+    {
+      "questaoId": "POR-092",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Concordância – sujeito composto",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [
+        {
+          "questaoId": "POR-092",
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceSelecionado": 3,
+          "alternativaSelecionada": "Os Estados Unidos impôs novas regras.",
+          "indiceCorreto": 2,
+          "alternativaCorreta": "Mais de um técnico participou da reunião.",
+          "acertou": false
+        }
+      ],
+      "referenciaBancoQuestoes": "POR-092"
+    },
+    {
+      "questaoId": "POR-098",
+      "materiaId": "POR",
+      "materia": "Língua Portuguesa",
+      "assunto": "Redação – frase correta",
+      "area": "Língua Portuguesa",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "POR-098"
+    },
+    {
+      "questaoId": "PRG-046",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "C – passagem por valor",
+      "area": "Programação",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "PRG-046"
+    },
+    {
+      "questaoId": "PRG-047",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "C – strings",
+      "area": "Programação",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "PRG-047"
+    },
+    {
+      "questaoId": "PRG-066",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Orientação a objetos – classe abstrata",
+      "area": "Programação",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "PRG-066"
+    },
+    {
+      "questaoId": "R-B1-013-Q54",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Arquitetura de objetos distribuídos",
+      "area": "Arquitetura de sistemas",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "R-B1-013-Q54"
+    },
+    {
+      "questaoId": "R-B2-003-Q21",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Sistema de equações",
+      "area": "Raciocínio Lógico e Matemática",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "R-B2-003-Q21"
+    },
+    {
+      "questaoId": "R-G087-Q47",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Barramentos",
+      "area": "Sistemas Operacionais",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "R-G087-Q47"
+    },
+    {
+      "questaoId": "R-G104-Q58",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Windows 64 bits e aplicativos de 16 bits",
+      "area": "Sistemas Operacionais",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "R-G104-Q58"
+    },
+    {
+      "questaoId": "R-G113-Q27",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Iterativo incremental: desvantagens",
+      "area": "Processo de desenvolvimento de software",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "R-G113-Q27"
+    },
+    {
+      "questaoId": "R-G116-Q55",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "1000BASE-TX",
+      "area": "Redes de computadores",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "R-G116-Q55"
+    },
+    {
+      "questaoId": "R-G142-Q42",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Terceira forma normal",
+      "area": "Banco de Dados",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "R-G142-Q42"
+    },
+    {
+      "questaoId": "RED-007",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "OSPF",
+      "area": "Redes de computadores",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "RED-007"
+    },
+    {
+      "questaoId": "RED-038",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "SDN – interfaces",
+      "area": "Redes de computadores",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "RED-038"
+    },
+    {
+      "questaoId": "RL-004",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Lógica – leis de De Morgan",
+      "area": "Raciocínio Lógico e Matemática",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "RL-004"
+    },
+    {
+      "questaoId": "RL-010",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Porcentagem – aumentos e descontos sucessivos",
+      "area": "Raciocínio Lógico e Matemática",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "RL-010"
+    },
+    {
+      "questaoId": "RL-020",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Desconto racional simples",
+      "area": "Matemática financeira",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [
+        {
+          "questaoId": "RL-020",
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceSelecionado": 0,
+          "alternativaSelecionada": "R$ 636,00",
+          "indiceCorreto": 1,
+          "alternativaCorreta": "R$ 600,00",
+          "acertou": false
+        }
+      ],
+      "referenciaBancoQuestoes": "RL-020"
+    },
+    {
+      "questaoId": "RL-033",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Capitalização contínua",
+      "area": "Matemática financeira",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "RL-033"
+    },
+    {
+      "questaoId": "RL-035",
+      "materiaId": "RLE",
+      "materia": "Raciocínio Lógico e Estatística",
+      "assunto": "Porcentagem",
+      "area": "Raciocínio Lógico e Matemática",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "RL-035"
+    },
+    {
+      "questaoId": "SEG-006",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Firewall, IDS e IPS",
+      "area": "Segurança da Informação",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "SEG-006"
+    },
+    {
+      "questaoId": "SEG-011",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "OWASP – XSS",
+      "area": "Segurança da Informação",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "SEG-011"
+    },
+    {
+      "questaoId": "SEG-032",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "OWASP – SSRF",
+      "area": "Segurança da Informação",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [
+        {
+          "questaoId": "SEG-032",
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceSelecionado": 4,
+          "alternativaSelecionada": "o navegador autenticado da vítima envia requisições indesejadas à aplicação.",
+          "indiceCorreto": 1,
+          "alternativaCorreta": "o atacante induz o servidor a requisitar destinos escolhidos por ele, como serviços internos.",
+          "acertou": false
+        }
+      ],
+      "referenciaBancoQuestoes": "SEG-032"
+    },
+    {
+      "questaoId": "SEG-045",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "SSO – SAML",
+      "area": "Segurança da Informação",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "SEG-045"
+    },
+    {
+      "questaoId": "SO-031",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Fragmentação interna",
+      "area": "Sistemas Operacionais",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [
+        {
+          "questaoId": "SO-031",
+          "fonte": "private/quickTest",
+          "fase": "revisao",
+          "indiceSelecionado": 2,
+          "alternativaSelecionada": "4 KB",
+          "indiceCorreto": 1,
+          "alternativaCorreta": "2 KB",
+          "acertou": false
+        }
+      ],
+      "referenciaBancoQuestoes": "SO-031"
+    },
+    {
+      "questaoId": "SO-038",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Linux – firewalld",
+      "area": "Sistemas Operacionais",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "SO-038"
+    },
+    {
+      "questaoId": "SRV-026",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "SNMP – operações",
+      "area": "Serviços e gerenciamento de redes",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "SRV-026"
+    },
+    {
+      "questaoId": "WEB-005",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "React – hooks",
+      "area": "Desenvolvimento web e mobile",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "WEB-005"
+    },
+    {
+      "questaoId": "WEB-011",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "CSS – especificidade",
+      "area": "Desenvolvimento web e mobile",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "WEB-011"
+    },
+    {
+      "questaoId": "WEB-012",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Bootstrap 5",
+      "area": "Desenvolvimento web e mobile",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "WEB-012"
+    },
+    {
+      "questaoId": "WEB-053",
+      "materiaId": "ESP",
+      "materia": "Conhecimentos Específicos",
+      "assunto": "Node.js – Express",
+      "area": "Desenvolvimento web e mobile",
+      "quantidadeErros": 1,
+      "acertadaEmAlgumMomento": false,
+      "respostasIndividuaisArmazenadas": [],
+      "referenciaBancoQuestoes": "WEB-053"
+    }
+  ],
+  "questoesErradasRepetidamente": [],
+  "consistencia": {
+    "totaisPerfil": {
+      "total": 98,
+      "acertos": 30,
+      "erros": 68
+    },
+    "totaisTentativas": {
+      "total": 98,
+      "acertos": 30,
+      "erros": 68
+    },
+    "totaisConferem": true,
+    "idsDeDesempenhoAusentesNoBancoQuestoes": [],
+    "idsDeRespostasIndividuaisAusentesNoBancoQuestoes": [],
+    "limitacoes": [
+      "Tentativas antigas armazenam apenas resultados agregados e não permitem reconstruir alternativas selecionadas.",
+      "Totais de acertos e respostas por assunto não são armazenados historicamente.",
+      "A subcoleção exams não contém registros quando a quantidade de simulados for zero."
+    ]
+  }
+}
